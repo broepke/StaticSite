@@ -1,122 +1,54 @@
-# Pelican Clean Blog Theme
+pelican-blueidea
+================
 
-Theme based in [Clean Blog layout](http://ironsummitmedia.github.io/startbootstrap-clean-blog/).
+A theme for Pelican inspired by the default theme notmyidea.
 
-## Screenshot
+Features
+--------
+* Ability to hide pages from the top menu.
+* Ability to hide categories from the top menu.
+* Ability to display categories as a submenu.
+* Ability to display a search form which exploits the [DuckDuckGo](https://duckduckgo.com/) search engine.
+* Ability to sort pages using a specific attribute like the date or any additionnal attribute.
+* Ability to hide the author's name or the article category in the articles info.
+* Icons for the following social networks: Facebook, Github, Google+, LastFM, LinkedIN, RSS/ATOM, Twitter, Vimeo and Youtube.
 
-![Screenshot](screenshot.png)
+Preview
+-------
+![Screenshot-1](https://raw.github.com/blueicefield/pelican-blueidea/master/screenshot-1.png)
 
-## Basic configuration
+Settings
+--------
+	# Display pages list on the top menu
+	DISPLAY_PAGES_ON_MENU (True)
 
-All configurations about this theme.
+	# Display categories list on the top menu
+	DISPLAY_CATEGORIES_ON_MENU (True)
 
-### Header Covers
+	# Display categories list as a submenu of the top menu
+	DISPLAY_CATEGORIES_ON_SUBMENU (False)
 
-To define custom header cover, set the property ``HEADER_COVER`` in ``pelicanconf.py``:
+	# Display the category in the article's info
+	DISPLAY_CATEGORIES_ON_POSTINFO (False)
 
-```python
-HEADER_COVER = 'static/my_image.png'
-```
+	# Display the author in the article's info
+	DISPLAY_AUTHOR_ON_POSTINFO (False)
 
-### Social URLs
+	# Display the search form
+	DISPLAY_SEARCH_FORM (False)
 
-Github, Twitter and Facebook URLs set these properties:
+	# Sort pages list by a given attribute
+	PAGES_SORT_ATTRIBUTE (Title)
 
-```python
-GITHUB_URL = 'http://github.com/myprofile'
-TWITTER_URL = 'http://twitter.com/myprofile'
-FACEBOOK_URL = 'http://facebook.com/myprofile'
-```
+	# Display the "Fork me on Github" banner
+	GITHUB_URL (None)
 
-If you have insert new links, customize ``base.html``.
+	# Blogroll
+	LINKS 
 
-### Code highlights
+	# Social widget
+	SOCIAL
 
-This theme contains this color schemes:
-
- - Tomorrow - ``tomorrow.css``;
- - Tomorrow Night - ``tomorrow_night.css``;
- - Monokai - ``monokai.css``;
- - Github - ``github.css``;
- - Darkly (Default) - ``darkly.css``;
-
-To customize, define ``COLOR_SCHEME_CSS`` in ``pelicanconf.py`` with css filename. Example:
-
-```python
-COLOR_SCHEME_CSS = 'monokai.css'
-```
-
-### Analytics
-
-Accept many analytics:
-
- - Google Analytics: ``GOOGLE_ANALYTICS``;
- - Gauges: ``GAUGES`` 
- - Piwik: ``PIWIK_URL`` and ``PIWIK_SITE_ID``.
-
-### Articles
-
-To customize header cover to articles, insert the metadata ``header_cover``:
-
- - To RST
-```rst
-My super title
-##############
-
-:date: 2010-10-03 10:20
-:modified: 2010-10-04 18:40
-:tags: thats, awesome
-:category: yeah
-:slug: my-super-post
-:authors: Alexis Metaireau, Conan Doyle
-:summary: Short version for index and feeds
-:header_cover: /images/posts/super-title/cover.png
-```
-
- - To Markdown
-```markdown
-Title: My super title
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
-Category: Python
-Tags: pelican, publishing
-Slug: my-super-post
-Authors: Alexis Metaireau, Conan Doyle
-Summary: Short version for index and feeds
-Header_Cover: /images/posts/super-title/cover.png
-
-This is the content of my super blog post.
-```
-
-Other metada was created to assign resume of article, with ``headline``:
-
- - To RST
-```rst
-My super title
-##############
-
-:date: 2010-10-03 10:20
-:modified: 2010-10-04 18:40
-:tags: thats, awesome
-:category: yeah
-:slug: my-super-post
-:authors: Alexis Metaireau, Conan Doyle
-:summary: Short version for index and feeds
-:headline: Resume of article
-```
-
- - To Markdown
-```markdown
-Title: My super title
-Date: 2010-12-03 10:20
-Modified: 2010-12-05 19:30
-Category: Python
-Tags: pelican, publishing
-Slug: my-super-post
-Authors: Alexis Metaireau, Conan Doyle
-Summary: Short version for index and feeds
-Headline: Resume of article
-
-This is the content of my super blog post.
-```
-
+Browsers compatibility
+----------------------
+Only tested with latest releases of Mozilla Firefox and Chromium/Chrome.
