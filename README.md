@@ -11,5 +11,5 @@ Useful Commands:
 * Run the ```make``` command to see everything for this command
 * Create new posts in the ```content/posts``` folder as ```.markdown``` files
 
-Great Markdown Cheatsheet
+Great Markdown Cheatsheet  
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
