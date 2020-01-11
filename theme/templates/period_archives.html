@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - Tags{% endblock %}
+{% block title %}{{ SITENAME }} - Archives for {{ period | reverse | join (' ') }}{% endblock %}
 
 {% block header %}
     <!-- Page Header -->
@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>{{ SITENAME }} - Tags</h1>
+                        <h1>Archives for {{ period | reverse | join (' ') }}</h1>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,11 @@
 {% endblock header %}
 
 {% block content %}
-    <h1>Tags for {{ SITENAME }}</h1>
-    {%- for tag, articles in tags|sort %}
-        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
-    {% endfor %}
+    <dl>
+        {% for article in dates %}
+            <dt>{{ article.locale_date }}</dt>
+            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        {% endfor %}
+        <hr>
+    </dl>
 {% endblock content %}

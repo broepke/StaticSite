@@ -22,6 +22,8 @@ AUTHOR_FEED_RSS = None
 # https://github.com/gilsondev/pelican-clean-blog/
 THEME='theme'
 
+COLOR_SCHEME_CSS = 'monokai.css'
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),

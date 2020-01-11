@@ -28,4 +28,4 @@ def upload_file(file_name, bucket, object_name=None):
 
 s3 = boto3.client('s3')
 with open("tasks.py", "rb") as f:
-    s3.upload_fileobj(f, "broepke-staticsite", "tasks.py")
+    s3.upload_fileobj(f, "broepke.com", "foo.txt")
