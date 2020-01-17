@@ -1,1 +1,1 @@
-aws s3 sync ./output s3://broepke.com --delete --exclude "*.DS_Store"
+aws s3 sync ./output s3://roepkeb.com --delete --exclude "*.DS_Store"
