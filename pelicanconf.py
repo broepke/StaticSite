@@ -24,6 +24,8 @@ THEME='theme'
 
 COLOR_SCHEME_CSS = 'monokai.css'
 
+HEADER_COVER = 'theme/images/home.jpg'
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),

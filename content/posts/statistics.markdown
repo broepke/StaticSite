@@ -6,6 +6,7 @@ Tags: code, statistics, datascience
 Slug: statistics
 Authors: Brian Roepke
 Summary: Leverging Python to Solve Statistics Problems
+Header_Cover: theme/images/cranes_night.jpg
 
 
 Using some of the more powerful Python libraries on the

@@ -6,6 +6,7 @@ Tags: code, statistics, datascience, edx
 Slug: ucsandiegox
 Authors: Brian Roepke
 Summary: MicroMasters in Data Science on edX
+Header_Cover: theme/images/botswana.jpg
 
 
 An amazing 1 year Master's level course from University of California San Diego with the following four courses:
@@ -16,4 +17,6 @@ An amazing 1 year Master's level course from University of California San Diego 
 * UCSanDiegoX: DSE230x - Big Data with Spark
 
 Learn more here:  
-https://www.edx.org/micromasters/uc-san-diegox-data-science
+[https://www.edx.org/micromasters/uc-san-diegox-data-science](https://www.edx.org/micromasters/uc-san-diegox-data-science)  
+
+_Image courtesy of: Botswana Innovation Hub - SHoP Architects_
