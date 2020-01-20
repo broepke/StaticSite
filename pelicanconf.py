@@ -21,10 +21,8 @@ AUTHOR_FEED_RSS = None
 
 # https://github.com/gilsondev/pelican-clean-blog/
 THEME='theme'
-
 COLOR_SCHEME_CSS = 'monokai.css'
-
-HEADER_COVER = 'theme/images/home.jpg'
+HEADER_COVER = 'images/home.jpg'
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -36,7 +34,14 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('Twitter', 'https://twitter.com/broepke'),
           ('GitHub', 'https://github.com/broepke/'),)
 
-DEFAULT_PAGINATION = False
+# static paths will be copied without parsing their contents
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+}
+
+DEFAULT_PAGINATION = 4
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
