@@ -4,7 +4,7 @@ Generated based on the tutorial from:
 
 https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html
 
-Useful Commands:  
+## Useful Commands:  
 
 * Use the ```make html``` to publish and update the output folder
 * Run a local python web server running at by first ```cd output``` and then
@@ -12,8 +12,10 @@ Useful Commands:
 * Run the ```make``` command to see everything for this command
 * Create new posts in the ```content/posts``` folder as ```.markdown``` files
 
-Great Markdown Cheatsheet:  
+### Great Markdown Cheatsheet:  
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+## Plugins
 
 This site also uses a few Pelican Plugins.  Follow the instructions here:  
 [Pelican Plugins on GitHub](https://github.com/getpelican/pelican-plugins)
