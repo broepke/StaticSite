@@ -14,3 +14,9 @@ Useful Commands:
 
 Great Markdown Cheatsheet:  
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+This site also uses a few Pelican Plugins.  Follow the instructions here:  
+[Pelican Plugins on GitHub](https://github.com/getpelican/pelican-plugins)
+
+Clone the following repo at the top level:  
+`git clone --recursive https://github.com/getpelican/pelican-plugins`
