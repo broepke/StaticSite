@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>roepkeb - Python, iPad</title><link href="https://www.roepkeb.com/" rel="alternate"></link><link href="https://www.roepkeb.com/feeds/python-ipad.atom.xml" rel="self"></link><id>https://www.roepkeb.com/</id><updated>2020-01-20T00:00:00-08:00</updated><entry><title>Developing on an iPad Pro</title><link href="https://www.roepkeb.com/ipad.html" rel="alternate"></link><published>2020-01-20T00:00:00-08:00</published><updated>2020-01-20T00:00:00-08:00</updated><author><name>Brian Roepke</name></author><id>tag:www.roepkeb.com,2020-01-20:/ipad.html</id><summary type="html">&lt;p&gt;Setting up an iPad Pro to develop with Python and Markdown&lt;/p&gt;</summary><content type="html">&lt;p&gt;Amazingly enough you can turn your iPad into a near fully fledge development
+environment for Python, HTML, CSS, and Markdown.  Here are the needed
+apps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://apps.apple.com/us/app/pythonista-3/id1085978097"&gt;Pythonista 3&lt;/a&gt; -
+Python IDE&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://apps.apple.com/us/app/working-copy-git-client/id896694807"&gt;Working Copy&lt;/a&gt; -
+A powerful Git client.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://apps.apple.com/us/app/textastic-code-editor-8/id1049254261"&gt;Textastic&lt;/a&gt; -
+A multi-purpose text exditor with language support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Note: These are all paid, apps.  But they are worth it if you want to
+develop on the go&lt;/em&gt;&lt;/p&gt;</content><category term="Python, iPad"></category><category term="code"></category><category term="ipad"></category><category term="apple"></category></entry></feed>

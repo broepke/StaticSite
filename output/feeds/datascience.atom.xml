@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>roepkeb - datascience</title><link href="https://www.roepkeb.com/" rel="alternate"></link><link href="https://www.roepkeb.com/feeds/datascience.atom.xml" rel="self"></link><id>https://www.roepkeb.com/</id><updated>2020-01-05T00:00:00-08:00</updated><entry><title>Anaconda</title><link href="https://www.roepkeb.com/anaconda.html" rel="alternate"></link><published>2020-01-05T00:00:00-08:00</published><updated>2020-01-05T00:00:00-08:00</updated><author><name>Brian Roepke</name></author><id>tag:www.roepkeb.com,2020-01-05:/anaconda.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.anaconda.com/"&gt;Anaconda&lt;/a&gt; is the World's most popular data science platform.&lt;/p&gt;
+&lt;p&gt;The open-source
+&lt;a href="https://www.anaconda.com/distribution/"&gt;Anaconda Distribution&lt;/a&gt;
+is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X. With over 15 million users worldwide, it is the industry standard for developing, testing, and training on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.anaconda.com/"&gt;Anaconda&lt;/a&gt; is the World's most popular data science platform.&lt;/p&gt;
+&lt;p&gt;The open-source
+&lt;a href="https://www.anaconda.com/distribution/"&gt;Anaconda Distribution&lt;/a&gt;
+is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X. With over 15 million users worldwide, it is the industry standard for developing, testing, and training on a single machine, enabling individual data scientists to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quickly download 1,500+ Python/R data science packages&lt;/li&gt;
+&lt;li&gt;Manage libraries, dependencies, and environments with Conda&lt;/li&gt;
+&lt;li&gt;Develop and train machine learning and deep learning models with scikit-learn, TensorFlow, and Theano&lt;/li&gt;
+&lt;li&gt;Analyze data with scalability and performance with Dask, NumPy, pandas, and Numba&lt;/li&gt;
+&lt;li&gt;Visualize results with Matplotlib, Bokeh, Datashader, and Holoviews&lt;/li&gt;
+&lt;/ul&gt;</content><category term="datascience"></category></entry></feed>

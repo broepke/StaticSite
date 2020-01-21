@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Brian Roepke'
 SITENAME = 'roepkeb'
-SITEURL = ''
+SITEURL = 'https://www.roepkeb.com'
+
+RELATIVE_URLS = False
 
 PATH = 'content'
 

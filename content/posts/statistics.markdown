@@ -6,7 +6,7 @@ Tags: code, statistics, datascience
 Slug: statistics
 Authors: Brian Roepke
 Summary: Leverging Python to Solve Statistics Problems
-Header_Cover: theme/images/cranes_night.jpg
+Header_Cover: images/cranes_night.jpg
 
 
 Using some of the more powerful Python libraries on the
@@ -28,4 +28,16 @@ k = 2
 n_k = sp.binom(n,k)
 print(n_k)
 
+```
+Another example is using Numpy to build a Confusion Matrix:  
+
+```python
+import numpy as np
+
+confusion_numpy = np.zeros((3, 3), dtype=int)
+np.add.at(confusion_numpy, (x, y), 1)
+
+print()
+print('using the np.add.at method')
+print(confusion_numpy)
 ```

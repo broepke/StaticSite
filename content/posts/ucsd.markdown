@@ -2,14 +2,15 @@ Title: UCSanDiegoX Data Science
 Date: 2020-01-17
 Modified: 2020-01-17
 Category: Python, DataScience, edX
-Tags: code, statistics, datascience, edx
+Tags: code, statistics, datascience, edx, learning, science
 Slug: ucsandiegox
 Authors: Brian Roepke
 Summary: MicroMasters in Data Science on edX
-Header_Cover: theme/images/botswana.jpg
+Header_Cover: images/botswana.jpg
 
 
-An amazing 1 year Master's level course from University of California San Diego with the following four courses:
+An amazing 4 part Master's level set of courses from the
+University of California San Diego on [edX.org](http://www.edx.org):  
 
 * UCSanDiegoX: DSE200x - Python for Data Science
 * UCSanDiegoX: DSE210x - Probability and Statistics in Data Science using Python

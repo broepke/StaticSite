@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>roepkeb - Python, DataScience, edX</title><link href="https://www.roepkeb.com/" rel="alternate"></link><link href="https://www.roepkeb.com/feeds/python-datascience-edx.atom.xml" rel="self"></link><id>https://www.roepkeb.com/</id><updated>2020-01-17T00:00:00-08:00</updated><entry><title>UCSanDiegoX Data Science</title><link href="https://www.roepkeb.com/ucsandiegox.html" rel="alternate"></link><published>2020-01-17T00:00:00-08:00</published><updated>2020-01-17T00:00:00-08:00</updated><author><name>Brian Roepke</name></author><id>tag:www.roepkeb.com,2020-01-17:/ucsandiegox.html</id><summary type="html">&lt;p&gt;MicroMasters in Data Science on edX&lt;/p&gt;</summary><content type="html">&lt;p&gt;An amazing 4 part Master's level set of courses from the
+University of California San Diego on &lt;a href="http://www.edx.org"&gt;edX.org&lt;/a&gt;:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UCSanDiegoX: DSE200x - Python for Data Science&lt;/li&gt;
+&lt;li&gt;UCSanDiegoX: DSE210x - Probability and Statistics in Data Science using Python&lt;/li&gt;
+&lt;li&gt;UCSanDiegoX: DSE220x - Machine Learning Fundamentals&lt;/li&gt;
+&lt;li&gt;UCSanDiegoX: DSE230x - Big Data with Spark&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learn more here:&lt;br&gt;
+&lt;a href="https://www.edx.org/micromasters/uc-san-diegox-data-science"&gt;https://www.edx.org/micromasters/uc-san-diegox-data-science&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Image courtesy of: Botswana Innovation Hub - SHoP Architects&lt;/em&gt;&lt;/p&gt;</content><category term="Python, DataScience, edX"></category><category term="code"></category><category term="statistics"></category><category term="datascience"></category><category term="edx"></category><category term="learning"></category><category term="science"></category></entry></feed>
