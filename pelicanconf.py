@@ -45,5 +45,8 @@ EXTRA_PATH_METADATA = {
 
 DEFAULT_PAGINATION = 4
 
+PLUGIN_PATHS=['pelican-plugins']
+PLUGINS = ['render_math']
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
