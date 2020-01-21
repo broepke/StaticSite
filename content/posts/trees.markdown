@@ -1,12 +1,12 @@
 Title: Trees
 Date: 2020-01-20
 Modified: 2020-01-20
-Category: Random
-Tags: apple
+Category: Test
+Tags: test
 Slug: trees
 Authors: Brian Roepke
-Summary: A random test posts with Trees header
+Summary: Test post
 Header_Cover: images/trees.jpg
 
 
-This is just a test post... 
+This is just a test post
