@@ -34,7 +34,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/broepke'),
-          ('GitHub', 'https://github.com/broepke/'),)
+          ('GitHub', 'https://github.com/broepke/'),
+          ('Facebook', 'http://www.facebook.com'),)
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
