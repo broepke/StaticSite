@@ -13,7 +13,7 @@ SSH_PORT=22
 SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
-S3_BUCKET=broepke-staticsite
+S3_BUCKET=roepkeb.com
 
 
 DEBUG ?= 0
