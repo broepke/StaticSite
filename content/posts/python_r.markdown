@@ -28,5 +28,6 @@ A comparison of Python and R:
 | Advantages                                             | Graphs are made to talk. R makes it beautiful, Large catalog for data analysis, GitHub interface RMarkdown, Shiny | Jupyter notebooks, Mathematical computation, Deployment, Code Readability, Speed, Function in Python |
 
 
+[Data Source for Above Comparison](https://www.guru99.com/r-vs-python.html)
 
 [Table built using Tableconvert.com](https://tableconvert.com)
