@@ -14,9 +14,8 @@ market like [SciPy](https://docs.scipy.org/doc/scipy/reference/index.html)
 and [Sci-Kit Learn](https://scikit-learn.org/stable/)
 you can translate any of your classic Probability and Statistics problems into Python Code.  
 
-As an example, if we want to calculate the binomial thereom for the
- number of ways you can choose `k` items out of a total of `n` items
- it's as simple as the following:
+As an example, if we want to calculate the number of ways you can
+choose `k` items out of a total of `n` items it's as simple as the following:
 
 
 ```python
