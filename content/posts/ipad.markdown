@@ -10,8 +10,7 @@ Header_Cover: images/sheep.jpg
 
 
 Amazingly enough you can turn your iPad into a near fully fledge development
-environment for Python, HTML, CSS, and Markdown.  Here are the needed
-apps:
+environment for Python, Jupyter Notebooks, HTML, CSS, and Markdown.  Here are the apps to complete the workflow:
 
 * [Pythonista 3](https://apps.apple.com/us/app/pythonista-3/id1085978097) -
 Python IDE
@@ -20,7 +19,8 @@ A powerful Git client
 * [Textastic](https://apps.apple.com/us/app/textastic-code-editor-8/id1049254261) -
 A multi-purpose text editor with language support
 * [Juno](https://apps.apple.com/us/app/juno-for-jupyter-notebook/id1462586500) -
-Jupyter Notebook Editor for your iPad
+Jupyter Notebook Editor for your iPad, and this is quite amazing.
+* [IA Writer](https://apps.apple.com/us/app/ia-writer/id775737172) - This application is a little redundant with Textastic.  That works just fine for Markdown, however this is the best Markdown writing app that I’ve seen. 
 
 A couple of great videos I used to get this all set up and learn a little more
 on [YouTube](http://www.youtube.com) by Tech Craft.
