@@ -30,4 +30,4 @@ A comparison of Python and R from [guru99](https://www.guru99.com/r-vs-python.ht
 
 
 
-[Table built using Tableconvert.com](https://tableconvert.com)
+[Table built using Tableconvert.com](https://tableconvert.com) - An extremely handy way to make markdown tables.
