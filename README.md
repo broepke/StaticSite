@@ -2,7 +2,10 @@
 
 ## Motivation
 
-I started to build this out based on wanting to play wiht AWS a little more.  This site is hosted via an `S3` bucket's static web hosting capability and then fronted with the CDN 'CloudFront'.  CloudFront, unlike direct S3 hosting also gives you the abilty to use HTTPS and not just HTTP.  Nothing here is overly complex, but the `Pelican` framework is pretty slick and I've been experimenting with various customizations, themes, and plugins.
+I started to build out this site because I wanted to play wiht AWS.  [This site](httpw://www.roepkeb.com) is hosted via an `S3` bucket's static web hosting capability and then fronted with the CDN `CloudFront`.  CloudFront, unlike direct S3 hosting also gives you the abilty to use HTTPS and not just HTTP.  Nothing here is overly complex, but the `Pelican` framework is pretty slick and I've been experimenting with various customizations, themes, and plugins.  It's been interesting to see the behavior of the caching and TTL (default of 24 hours) and how you update the site.  
+
+_Note: With S3 hosting you can force the cache to request updated itemes by versioning the filename or invalidating the cache.  Versioning the file name is much more cost effective._
+
 
 ## Working with this Site  
 
