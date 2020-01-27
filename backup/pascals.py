@@ -14,5 +14,5 @@ for n in range(11):
     row_counter += 1
 
 
-# for tri in triangle:
-#     print(tri)
+for tri in triangle:
+    print(tri)

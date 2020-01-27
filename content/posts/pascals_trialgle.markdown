@@ -29,6 +29,9 @@ for n in range(11):
         row.append(n_k)
     triangle.append(row)
     row_counter += 1
+
+for tri in triangle:
+    print(tri)
 ```
 
 ![Pascal's Triangle](images/pascals.gif)
