@@ -13,10 +13,23 @@ In [Pascal's triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle), each 
 
 In order to calculate this you can do it two different ways.  You can sum the two numbers above or you can use [Binomial Coefficients](https://en.wikipedia.org/wiki/Binomial_coefficient). The binomial coefficient appears as the _kth_ entry in the _nth_ row of Pascal's triangle (counting starts at 0).
 
-$$\begin{pmatrix} n \\ k \end{pmatrix}$$
+$$\binom{n}{k}$$
+
+Whic can also be expressed as: 
+
+$$\binom{n}{k} = \frac{n!}{k! (n-k)!}$$
+
+This is one of the [Recurrence Relations](https://en.wikipedia.org/wiki/Recurrence_relation) found in mathematics, or an equation that recursively defines a sequence or multidimensional array of values, once one or more initial terms are given; each further term of the sequence or array is defined as a function of the preceding terms.  
+
+The below code usins the method above to create the triangle to a numer of levels specified.
 
 ```python
-from scipy import special as sp
+from math import factorial
+
+def binom(n,k):
+	'''calculate binomial coefficient without using scipy'''
+
+	return factorial(n) / (factorial(k) * factorial(n-k))
 
 triangle = []
 n = 0 # Column Counter
