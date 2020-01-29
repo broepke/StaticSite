@@ -9,25 +9,25 @@ Summary: Generating Pascals Triangle in Python using Binomial Coefficients
 Header_Cover: images/blue_thing.jpg
 
 
-In [Pascal's triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle), each number is the sum of the two numbers directly above it. In mathematics, Pascal's triangle is a triangular array of the binomial coefficients. In much of the Western world, it is named after the French mathematician [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal),
+One of the many beautiful things found in mathematics are [Recurrence Relations](https://en.wikipedia.org/wiki/Recurrence_relation), or an equation that recursively defines a sequence or multidimensional array of values, once one or more initial terms are given; each further term of the sequence or array is defined as a function of the preceding terms.  My favorite one of these is [Pascal's triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle).
+
+Pascal's triangle is a triangular array of the binomial coefficients. In much of the Western world, it is named after the French mathematician [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal),
 
 In order to calculate this you can do it two different ways.  You can sum the two numbers above or you can use [Binomial Coefficients](https://en.wikipedia.org/wiki/Binomial_coefficient). The binomial coefficient appears as the _kth_ entry in the _nth_ row of Pascal's triangle (counting starts at 0).
 
 $$\binom{n}{k}$$
 
-Whic can also be expressed as: 
+Which can also be expressed as:
 
 $$\binom{n}{k} = \frac{n!}{k! (n-k)!}$$
 
-This is one of the [Recurrence Relations](https://en.wikipedia.org/wiki/Recurrence_relation) found in mathematics, or an equation that recursively defines a sequence or multidimensional array of values, once one or more initial terms are given; each further term of the sequence or array is defined as a function of the preceding terms.  
-
-The below code usins the method above to create the triangle to a numer of levels specified.
+This code uses the method above to create the triangle by looping through each level and computing the binomial coefficient for each item based on it's row and column position.   
 
 ```python
 from math import factorial
 
 def binom(n,k):
-	'''calculate binomial coefficient without using scipy'''
+	'''calculate binomial coefficient'''
 
 	return factorial(n) / (factorial(k) * factorial(n-k))
 
@@ -38,7 +38,7 @@ row_counter = 0 # Row counter
 for n in range(11):
     row = []
     for k in range(row_counter+1):
-        n_k = sp.binom(n,k)
+        n_k = binom(n,k)
         row.append(n_k)
     triangle.append(row)
     row_counter += 1
