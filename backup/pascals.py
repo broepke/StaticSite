@@ -1,26 +1,21 @@
-# from scipy import special as sp
 from math import factorial
 
 def binom(n,k):
-	'''calculate binomial coefficient without using scipy'''
+    '''calculate binomial coefficient'''
 
-	return factorial(n) / (factorial(k) * factorial(n-k))
-
+    return factorial(n) / (factorial(k) * factorial(n-k))
 
 triangle = []
 n = 0 # Column Counter
 row_counter = 0 # Row counter
 
-
-for n in range(12):
+for n in range(11):
     row = []
     for k in range(row_counter+1):
-        # n_k = sp.binom(n,k) # scipy version
-        n_k = binom(n,k) # using factorial from the math package
+        n_k = binom(n,k)
         row.append(n_k)
     triangle.append(row)
     row_counter += 1
-
 
 for tri in triangle:
     print(tri)
