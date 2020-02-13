@@ -9,6 +9,12 @@ Summary: A quick reference for the properties of exponents
 Header_Cover: images/colliseum.jpg
 
 
+## Working with Exponents
+
+The following are a list of many of the rules associated with exponents.  I've found this an incredibly useful cheatsheet for helping perform simplifications.  
+
+_Also make sure to remember your order of operations when working with exponents_ 
+
 ---
 **Product**  
 Rule:
