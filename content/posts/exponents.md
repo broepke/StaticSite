@@ -57,10 +57,10 @@ $$\left( \frac{5}{7}\right) ^3 = \frac{5^3}{7^3}$$
 ---
 **Negative Exponent**  
 Rule:  
-$$ x^{-r} = \frac{1}{x^r} $$
+$$x^{-r} = \frac{1}{x^r}$$
 
 Example:  
-$$ b^{-6} = \frac{1}{b^6} $$
+$$b^{-6} = \frac{1}{b^6}$$
 
 ---
 **Zero Exponent**  
@@ -73,7 +73,7 @@ $$7^0 = 1$$
 ---
 **Negative Exponent with Quotient**  
 Rule:  
-$$\left( \frac{x}{y}\right) ^{-r} = \left( \frac{x}{y}\right) ^r $$
+$$\left(\frac{x}{y}\right)^{-r} = \left(\frac{x}{y}\right)^r$$
 
 Example:  
 $$\left( \frac{1}{2}\right) ^{-3} = \left( \frac{2}{1}\right) ^3 = 2^3$$
