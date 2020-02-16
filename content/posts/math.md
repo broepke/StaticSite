@@ -1,6 +1,6 @@
 Title: Rendering Math in Pelican
 Date: 2020-01-21
-Modified: 2020-01-21
+Modified: 2020-02-16
 Category: Math
 Tags: math, python, pelican, science
 Slug: math
@@ -21,3 +21,8 @@ $$P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}$$
 [Inclusion–exclusion principle](https://en.wikipedia.org/wiki/Inclusion–exclusion_principle):
 
 $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
+
+
+[Quadratic Equation](https://en.wikipedia.org/wiki/Quadratic_formula):
+
+$$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
