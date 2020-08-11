@@ -13,7 +13,7 @@ Header_Cover: images/colliseum.jpg
 
 The following are a list of many of the rules associated with exponents.  I've found this an incredibly useful cheatsheet for helping perform simplifications.  
 
-_Also make sure to remember your order of operations when working with exponents_ 
+_Also make sure to remember your order of operations when working with exponents_
 
 ---
 **Product**  
@@ -73,7 +73,7 @@ $$7^0 = 1$$
 ---
 **Negative Exponent with Quotient**  
 Rule:  
-$$\left(\frac{x}{y}\right)^{-r} = \left(\frac{x}{y}\right)^r$$
+$$\left(\frac{x}{y}\right)^{-r} = \left(\frac{y}{x}\right)^r$$
 
 Example:  
 $$\left( \frac{1}{2}\right) ^{-3} = \left( \frac{2}{1}\right) ^3 = 2^3$$
