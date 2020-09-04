@@ -6,6 +6,10 @@ I started to build out this site because I wanted to play with AWS.  [This site]
 
 _Note: With S3 hosting you can force the cache to request updated items by versioning the filename or invalidating the cache.  Versioning the file name is much more cost effective._
 
+## Install the following Packages
+
+`pip install pelican`
+`pip install markdown`
 
 ## Working with this Site  
 
