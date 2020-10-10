@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Brian Roepke'
 SITENAME = 'roepkeb'
 SITEURL = 'https://www.roepkeb.com'
+GOOGLE_ANALYTICS = 'UA-309309-9'
 
 RELATIVE_URLS = False
 
