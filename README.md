@@ -11,6 +11,12 @@ _Note: With S3 hosting you can force the cache to request updated items by versi
 `pip install pelican`
 `pip install markdown`
 
+## Configure AWS CLI
+To sync this to S3, the environment will have to have AWS CLI installed and configured.  
+`pip install awscli`
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+
 ## Working with this Site  
 
 * Use the `make html` to publish and update the output folder
