@@ -1,4 +1,4 @@
-  # StaticSite
+# StaticSite
 
 ## Motivation
 
@@ -12,10 +12,11 @@ _Note: With S3 hosting you can force the cache to request updated items by versi
 `pip install markdown`
 
 ## Configure AWS CLI
+
 To sync this to S3, the environment will have to have AWS CLI installed and configured.  
 `pip install awscli`
 
-https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+[AWS CLI Configuration Quickstart](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
 ## Working with this Site  
 
@@ -26,12 +27,13 @@ then `python -m http.server` which will be running at `localhost:8000`:
 * Create new posts in the `content/posts` folder as `.markdown` files
 * Useful tool to minify JS and CSS [Minifer.org](https://www.minifier.org)
 
-### Markdown
+## Markdown
+
 Here is a great basic **Markdown** cheatsheet
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 Additionally, for **MultiMarkdown** which is supported many places, see here:
-https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide
+[Multi-Markdown Cheatshet](https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide)
 
 ## Plugins
 
@@ -45,4 +47,4 @@ Clone the following repo at the top level:
 
 Generated originally based on the tutorial from:  
 
-https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html
+[How to Create Your First Static Site with Pelican and Jinja2](https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html)
