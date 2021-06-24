@@ -28,12 +28,6 @@ THEME='theme'
 COLOR_SCHEME_CSS = 'monokai.css'
 HEADER_COVER = 'images/home.jpg'
 
-# Blogroll
-# LINKS = (('Pelican', 'http://getpelican.com/'),
-#         ('Python.org', 'http://python.org/'),
-#         ('Jinja2', 'http://jinja.pocoo.org/'),
-#         ('Anaconda', 'https://www.anaconda.com'),)
-
 # Social widget
 GITHUB_URL = 'http://github.com/broepke'
 TWITTER_URL = 'http://twitter.com/broepke'
