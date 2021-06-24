@@ -29,15 +29,14 @@ COLOR_SCHEME_CSS = 'monokai.css'
 HEADER_COVER = 'images/home.jpg'
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('Anaconda', 'https://www.anaconda.com'),)
+# LINKS = (('Pelican', 'http://getpelican.com/'),
+#         ('Python.org', 'http://python.org/'),
+#         ('Jinja2', 'http://jinja.pocoo.org/'),
+#         ('Anaconda', 'https://www.anaconda.com'),)
 
 # Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/broepke'),
-          ('GitHub', 'https://github.com/broepke/'),
-          ('Facebook', 'http://www.facebook.com'),)
+GITHUB_URL = 'http://github.com/broepke'
+TWITTER_URL = 'http://twitter.com/broepke'
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
@@ -46,10 +45,7 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 
-DEFAULT_PAGINATION = 4
+DEFAULT_PAGINATION = 6
 
 PLUGIN_PATHS=['pelican-plugins']
 PLUGINS = ['render_math']
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
