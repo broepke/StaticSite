@@ -11,8 +11,8 @@ DISTRIBUTION_ID = "E82N9W7N8X7BR"
 # Create CloudFront invalidation
 def create_invalidation():
     res = cf.create_invalidation(
-        DistributionId=DISTRIBUTION_ID,
-        InvalidationBatch={
+        DistributionId = DISTRIBUTION_ID,
+        InvalidationBatch = {
             'Paths': {
                 'Quantity': 1,
                 'Items': [
