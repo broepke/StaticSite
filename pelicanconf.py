@@ -31,6 +31,7 @@ HEADER_COVER = 'images/home.jpg'
 # Social widget
 GITHUB_URL = 'http://github.com/broepke'
 TWITTER_URL = 'http://twitter.com/broepke'
+LINKEDIN_URL = 'https://www.linkedin.com/in/broepke/'
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
