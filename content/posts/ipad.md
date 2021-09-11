@@ -1,6 +1,6 @@
 Title: Developing on an iPad Pro
 Date: 2020-01-20
-Modified: 2020-01-24
+Modified: 2021-09-10
 Category: Python, iPad
 Tags: code, ipad, apple
 Slug: ipad
