@@ -25,7 +25,7 @@ AUTHOR_FEED_RSS = None
 
 # https://github.com/gilsondev/pelican-clean-blog/
 THEME='theme'
-COLOR_SCHEME_CSS = 'monokai.css'
+COLOR_SCHEME_CSS = 'github.css'
 HEADER_COVER = 'images/home.jpg'
 
 # Social widget
@@ -43,4 +43,4 @@ EXTRA_PATH_METADATA = {
 DEFAULT_PAGINATION = 6
 
 PLUGIN_PATHS=['pelican-plugins']
-PLUGINS = ['render_math']
+PLUGINS = ['render_math', 'gravatar']
