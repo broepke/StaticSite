@@ -59,7 +59,7 @@ Now the workhorse.
 3. Remove **punctuation**.  This is using the string library.  Other punctuation can be added as needed.
 4. Remove **stop words** using the NLTK library.  There is a list in the next line to add additional stop words to the function as needed.  These might be noisy domain words or anything else that makes the contextless clear.
 5. Removing **numbers**.  Optional depending on your data.
-6. Stemming or Lemmatization.  This process is an argument in the function.  You can choose either one via with `Stem` or `Lem`.  The default is to use none.   I typically use Lemmatization.
+6. **Stemming** or **Lemmatization**.  This process is an argument in the function.  You can choose either one via with `Stem` or `Lem`.  The default is to use none.   I typically use Lemmatization.
 
 
 ```{python}
