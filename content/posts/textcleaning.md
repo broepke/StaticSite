@@ -22,7 +22,8 @@ The following is a script that I’ve been using to clean a majority of my text 
 
 ### Imports
 
-```{python}
+```python
+import pandas as pd
 import re
 import string
 from bs4 import BeautifulSoup
@@ -35,7 +36,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 
 Removing HTML is optional and depending on what your data source is. I’ve found beautiful soup is the best way to clean this versus RegEx.
 
-```{python}
+```python
 def clean_html(html):
     
     # parse html content
@@ -61,7 +62,7 @@ Now the workhorse.
 6. **Stemming** or **Lemmatization**.  This process is an argument in the function.  You can choose either one via with `Stem` or `Lem`.  The default is to use none.   I typically use Lemmatization.
 
 
-```{python}
+```python
 def clean_string(text, stem="None"):
     
     final_string = ""
@@ -102,15 +103,41 @@ def clean_string(text, stem="None"):
     return final_string
 ```
 
-To apply this to a standard data frame, use the `apply` method like so:
+### Example
 
-```{python}
+To apply this to a standard data frame, use `apply` function from Pandas like below.  Let's take a look at the starting text:
+
+```html
+<p><a href="https://forge.autodesk.com/en/docs/data/v2/tutorials/download-file/#step-6-download-the-item" rel="nofollow noreferrer">https://forge.autodesk.com/en/docs/data/v2/tutorials/download-file/#step-6-download-the-item</a></p>\n\n<p>I have followed the tutorial and have successfully obtained the contents of the file, but where is the file being downloaded. In addition, how do I specify the location of where I want to download the file?</p>\n\n<p>Result on Postman\n<a href="https://i.stack.imgur.com/VrdqP.png" rel="nofollow noreferrer"><img src="https://i.stack.imgur.com/VrdqP.png" alt="enter image description here"></a></p>\n
+```
+
+Let's start by cleaning the HTML.
+
+```python
 # To remove HTML first and apply it directly to the source text column.
 df['body'] = df['body'].apply(lambda x: clean_html(x))
+```
 
+After applying the function to clean HTML, this is the result:
+
+```html
+I have followed the tutorial and have successfully obtained the contents of the file, but where is the file being downloaded. In addition, how do I specify the location of where I want to download the file? Result on Postman
+```
+
+Next let's apply the `clean_string` function.
+
+```python
 # Next apply the clean_string function to the text
 df['body_clean'] = df['body'].apply(lambda x: clean_string(x, stem='Lem'))
 ```
+
+And the final resulting text:
+
+```html
+followed tutorial successfully obtained content file file downloaded addition specify location want download file result postman
+```
+
+Fully clean and ready to use in your NLP project.
 
 **Note:** I often create a new column like above, `body_clean`, so I preserve the original in case punctuation is needed.
 
