@@ -8,7 +8,7 @@ SITEURL = 'https://www.roepkeb.com'
 GOOGLE_ANALYTICS = 'UA-309309-9'
 DISQUS_SITENAME = 'roepkeb'
 
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 PATH = 'content'
 
