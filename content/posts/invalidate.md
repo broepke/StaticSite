@@ -26,7 +26,7 @@ After you run the srcipt, you can go to your AWS CloudFront console and check th
 
 ## Python Boto3 Script
 
-```{python}
+```python
 import boto3
 import time
  
