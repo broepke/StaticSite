@@ -25,7 +25,7 @@ AUTHOR_FEED_RSS = None
 
 # https://github.com/gilsondev/pelican-clean-blog/
 THEME='theme'
-COLOR_SCHEME_CSS = 'github.css'
+COLOR_SCHEME_CSS = 'tomorrow.css'
 HEADER_COVER = 'images/home.jpg'
 
 # Social widget
