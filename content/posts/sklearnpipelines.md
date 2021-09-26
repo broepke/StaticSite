@@ -30,7 +30,7 @@ from sklearn. pre-processing import OneHotEncoder
 
 Next is a function for making a column transformer.  I prefer to call this as a function to make the code more reusable.
 
-The column transformer allows you to combine any number of pre-processing steps into a single transformer.  In the example below, we have a MinMaxScaler for numeric columns and an OneHotEncoder for categorical values.  You could include any transformer from Sklearn in these steps.
+The column transformer allows you to combine any number of pre-processing steps into a single transformer.  In the example below, we have a `MinMaxScaler` for numeric columns and an `OneHotEncoder` for categorical values.  You could include any transformer from Sklearn in these steps.
 
 A good example of this from their documentation:  
 [Column Transformer with Mixed Types](https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py)
