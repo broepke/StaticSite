@@ -64,10 +64,10 @@ Now the workhorse.
 
 
 ```python
+# Load spacy
+nlp = spacy.load('en_core_web_sm')
+
 def clean_string(text, stem="None"):
-    
-    # Load spacy
-    nlp = spacy.load('en_core_web_sm')
     
     final_string = ""
     
