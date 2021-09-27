@@ -10,9 +10,9 @@ Header_Cover: images/cranes_night.jpg
 
 ## Why Pipelines?
 
-When I started building models in Sklearn, I would break each pre-processing step into its cell or chunk of code.  This was a good way to get started, but it was not very readable.  While it was easier to read, it ended up lacking repeatability.  The next time you presented your model with new data, you had to run through all the steps to transform the data before running the model on the new data.  This presents a lot of problems.  If the training data's dimensionality is different from your test, or new data, then the model might fail.  There could be new columns that it doesn't understand for categorical columns that have been One Hot Encoded.
+When I started building models in Sklearn, I would break each pre-processing step into its cell or chunk of code.  This was a good way to get started because you could easily break down the steps into readable chunks.  However, while it was easier to read, it ended up lacking repeatability.  The next time you presented your model with new data, you had to run through all the steps to transform the data before running the model on the new data, which presented many problems.  For example the dimensionality of your data can change if there are new columns created during One Hot Encoding.
 
-The Answer? **Pipelines**! 
+The Answer? [Pipelines](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline)
 
 ## Anatomy of a Pipeline
 
@@ -24,6 +24,7 @@ from sklearn.compose import make_column_selector as selector
 from sklearn.compose import ColumnTransformer
 from sklearn. pre-processing import MinMaxScaler
 from sklearn. pre-processing import OneHotEncoder
+from sklearn.ensemble import RandomForestRegressor
 ```
 
 ### Column Tranformers

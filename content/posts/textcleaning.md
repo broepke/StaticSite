@@ -10,7 +10,7 @@ Header_Cover: images/botswana.jpg
 
 ## Cleaning Text
 
-One of the most common tasks in Natural Language Processing (NLP) is to clean text data.  There are several steps that you should take to ensure that the various methods applied are maximized.  Here are a few common steps:
+One of the most common tasks in Natural Language Processing (NLP) is to clean text data.  In order to maximize your results, it's important to distill you text to the most important root words in the corpus.  This post will show how I typically accomplish this.  The following are general steps in text preprocessing:
 
 * **Tokenization**: Tokenization breaks the text into smaller units vs. large chunks of text. We understand these units as words or sentences, but a machine cannot until they’re separated. Special care has to be taken when breaking down terms so that logical units are created. Most software packages handle edge cases (U.S. broke into the US and not U and S), but it’s always essential to ensure it’s done correctly.
 * **Cleaning**: The cleaning process is critical to removing text and characters that are not important to the analysis. Text such as URLs, noncritical items such as hyphens or special characters, web scraping, HTML, and CSS information are discarded.
@@ -30,6 +30,7 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.stem import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
+import spacy
 ```
 
 ### Cleaning HTML
@@ -65,6 +66,9 @@ Now the workhorse.
 ```python
 def clean_string(text, stem="None"):
     
+    # Load spacy
+    nlp = spacy.load('en_core_web_sm')
+    
     final_string = ""
     
     # Make lower
@@ -77,11 +81,11 @@ def clean_string(text, stem="None"):
     translator = str.maketrans('', '', string.punctuation)
     text = text.translate(translator)
 
+    # Remove stop words
     text = text.split()
     useless_words = nltk.corpus.stopwords.words("english")
     useless_words = useless_words + ['hi', 'im']
     
-    # Remove stop words
     text_filtered = [word for word in text if not word in useless_words]
     
     # Remove numbers
@@ -94,11 +98,13 @@ def clean_string(text, stem="None"):
     elif stem == 'Lem':
         lem = WordNetLemmatizer()
         text_stemmed = [lem.lemmatize(y) for y in text_filtered]
+    elif stem == 'Spacy':
+        text_filtered = nlp(' '.join(text_filtered))
+        text_stemmed = [y.lemma_ for y in text_filtered]
     else:
         text_stemmed = text_filtered
     
-    for word in text_stemmed:
-        final_string += word + " "
+    final_string = ' '.join(text_stemmed)
     
     return final_string
 ```
@@ -141,6 +147,13 @@ Fully clean and ready to use in your NLP project.
 
 **Note:** I often create a new column like above, `body_clean`, so I preserve the original in case punctuation is needed.
 
-And that’s about it.  The order in the above function does matter.  You should complete certain steps before others, such as making lowercase first.  The function contains one RegEx example for removing numbers; a solid utility function that you can adjust to remove other items from the text using RegEx. You can read about it a little here: 
+And that’s about it.  The order in the above function does matter.  You should complete certain steps before others, such as making lowercase first.  The function contains one RegEx example for removing numbers; a solid utility function that you can adjust to remove other items from the text using RegEx.
+
+## Spacy vs. NLKT Lemmatization
+
+The above function contains twi different ways to Lemmatize your text.  The NLTK `WordNetLemmatizer` requires a Part of Speech (POS) argument (`noun`, `verb`) and therefore either requires multiple passes to get each word or will only capture one POS.  The alternative is to use `Spacy` which will automatically lemmatize each word and determine which POS it belongs to.  The issue is that Spacy's performance will be signficantly slower than NLTK.
+
+## References
 
 [Text Processing Is Coming](https://towardsdatascience.com/text-processing-is-coming-c13a0e2ee15c)
+[Stemming vs Lemmatization](https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221)
