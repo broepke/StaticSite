@@ -134,7 +134,7 @@ Next let's apply the `clean_string` function.
 
 ```python
 # Next apply the clean_string function to the text
-df['body_clean'] = df['body'].apply(lambda x: clean_string(x, stem='Lem'))
+df['body_clean'] = df['body'].apply(lambda x: clean_string(x, stem='Stem'))
 ```
 
 And the final resulting text:
