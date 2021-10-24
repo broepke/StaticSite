@@ -23,6 +23,7 @@ To sync this to S3, the environment will have to have AWS CLI installed and conf
 * Use the `make html` to publish and update the output folder
 * Run a local python web server running at by first `cd output` and
 then `python -m http.server` which will be running at `localhost:8000`:
+* Run `make regenerate` to constantly regen each time a chagne is detected
 * Run the `make` command to see everything for this command
 * Create new posts in the `content/posts` folder as `.markdown` files
 * Useful tool to minify JS and CSS [Minifer.org](https://www.minifier.org)
