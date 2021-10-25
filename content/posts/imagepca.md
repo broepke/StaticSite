@@ -40,7 +40,7 @@ plt.imshow(image_raw)
 
 The results show a matrix of size `(3120, 4160, 3)`.  The first is the height of the image, the second is the width, and the third is the three channels of RGB values.  Given the number of dimensions of this image, you can see how if you compared this to a classic tabular set of data, this would be considered quite large.
 
-Before we continue, let's change this to a grayscale image to remove the RDB value.
+Before we continue, let's change this to a grayscale image to remove the RGB value.
 
 ```python
 # Show the new shape of the image
