@@ -6,7 +6,7 @@ Tags: datascience, sql
 Slug: cte
 Authors: Brian Roepke
 Summary: Building complex select queries with CTEs.
-Header_Cover: images/factory.jpg
+Header_Cover: images/trees.jpg
 
 ## What is a Common Table Expression
 
@@ -14,5 +14,16 @@ When writing complex queries it's often useful to break them up into smaller chu
 
 CTEs are very simple to implement.  They start with a simple `WITH` statement, the name of the new temoporary table that you're going to `SELECT` 
 
+
+```sql
+WITH
+    cte_name AS (
+        SELECT
+            ...
+    )
+```
+
 ## References
 
+1. [Common Table Expressions: When and How to Use Them](https://chartio.com/resources/tutorials/using-common-table-expressions/)
+2. 
