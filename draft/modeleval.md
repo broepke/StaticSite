@@ -20,4 +20,4 @@ Header_Cover: images/trees.jpg
 
 ## References
 
-1. []()
+1. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
