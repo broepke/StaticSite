@@ -14,9 +14,17 @@ Header_Cover: images/trees.jpg
 ## Confusion Matrix
 
 
+$$
+\text { True Negative } \operatorname{Rate}\left(A c c^{-}\right)=\frac{T N}{T N+F P}
+$$
+
+
 ## Evaluation Metrics
 
-
+1. Accuracy
+2. Precision
+3. Recall
+4. F1 Score
 
 ## References
 

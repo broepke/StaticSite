@@ -14,19 +14,30 @@ Header_Cover: images/botswana.jpg
 
 ## Different Methods for dealign with Imbalanced Data
 
+1. Algorithme Selection
+2. SMOTE
+
+
+### SMOTE 
+
+Synthetic Minority Oversampling Technique uses a nearest-neighbor approach for generating new minority class samples. The method is applied only to the training data and then tested on the original, untouched test partition. The method chosen here is first to oversample the minority class making it balanced, and then undersample it to reduce the size. This helps bring balance without bloating the dataset [4].
+
+
+## Cross Validation
+
+*stratified*!
 
 ## Evaluation Results
 
-Accuracy
-Precision
-Recall
-F1 Score
+1. Accuracy
+2. Precision
+3. Recall
+4. F1 Score
 
 
-$$
-\text { True Negative } \operatorname{Rate}\left(A c c^{-}\right)=\frac{T N}{T N+F P}
-$$
+
 
 ## References
 
-1. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
+1. [SMOTE for Imbalanced Classification with Python](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
+2. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
