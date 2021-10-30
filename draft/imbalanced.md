@@ -1,7 +1,7 @@
 
 Title: Working with Imbalanced Data
-Date: 2021-11-24
-Modified: 2021-11-24
+Date: 2021-11-07
+Modified: 2021-11-07
 Category: SQL
 Tags: datascience, ml, machine learning, confusion matrix, scikit-learn, imblearn
 Slug: imbalanced
@@ -39,5 +39,6 @@ Synthetic Minority Oversampling Technique uses a nearest-neighbor approach for g
 
 ## References
 
-1. [SMOTE for Imbalanced Classification with Python](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
-2. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
+1. [SMOTE: Synthetic Minority Over-sampling Technique](https://doi.org/10.1613/jair.953)
+2. [SMOTE for Imbalanced Classification with Python](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)
+3. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
