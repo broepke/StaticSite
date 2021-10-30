@@ -1,6 +1,6 @@
 Title: Common Table Expressions
-Date: 2021-10-24
-Modified: 2021-10-24
+Date: 2021-10-30
+Modified: 2021-10-30
 Category: SQL
 Tags: datascience, sql
 Slug: cte
