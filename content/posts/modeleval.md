@@ -14,6 +14,10 @@ Header_Cover: images/trees.jpg
 ## Confusion Matrix
 
 
+![Confusion Matrix](images/modeleval_1.png)
+
+![Confusion Matrix Calculations](images/modeleval_2.png)
+
 $$
 \text { True Negative } \operatorname{Rate}\left(A c c^{-}\right)=\frac{T N}{T N+F P}
 $$
