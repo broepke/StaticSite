@@ -6,7 +6,7 @@ Tags: datascience, ml, machine learning, confusion matrix
 Slug: modeleval
 Authors: Brian Roepke
 Summary: How to evaluate models using a confusion matrix and when to use different metrics.
-Header_Cover: images/trees.jpg
+Header_Cover: images/confused.jpg
 
 ## Model Evaluation
 
