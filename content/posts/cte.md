@@ -18,7 +18,7 @@ CTEs are very simple to implement.  They start with a simple `WITH` statement, t
 ```sql
 WITH
     cte_name AS (
-        SELECT
+        SELECT * FROM foo
             ...
     )
 ```
@@ -28,13 +28,13 @@ The beauty is that you can chain multiple CTEs together.  As many as you'd like.
 ```sql
 WITH
     cte_name AS (
-        SELECT
+        SELECT * FROM foo
             ...
     ),
 
 another_cte AS (
-    SELECT * FROM foo
-    JOIN cte_name ON cte_name.id = foo.id
+    SELECT * FROM bar
+    JOIN cte_name ON cte_name.id = bar.id
 )
 
 SELECT * FROM another_cte
