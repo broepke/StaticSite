@@ -22,19 +22,9 @@ A Confusion Matrix is a 2x2 table (for binary classification) that plots the act
 
 ![Confusion Matrix](images/modeleval_1.png)
 
-![Confusion Matrix Calculations](images/modeleval_2.png)
+
 
 $$ \text { True Negative } = \frac{T N}{T N+F P} $$
-
-## ROC Curve and AUC
-
-Another methiod is to use the **ROC Curve** to determine the **Area Under the Curve**.
-
-An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds. This curve plots two parameters:
-
-* True positive rate
-* False positive rate
-
 
 ## Evaluation Metrics
 
@@ -43,8 +33,20 @@ An ROC curve (receiver operating characteristic curve) is a graph showing the pe
 3. **Recall:** 
 4. **F1 Score:** 
 
+![Confusion Matrix Calculations](images/modeleval_2.png)
+
+
+## ROC Curve and AUC
+
+Another methiod is to use the **ROC Curve** to determine the **Area Under the Curve** [^ROC].
+
+An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds. This curve plots two parameters:
+
+* True positive rate
+* False positive rate
+
 ## References
 
-[^CROSS] [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html)
-
-1. [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
+[^CROSS][Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html)
+[^IMB][Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)
+[^ROC][Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
