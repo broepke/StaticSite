@@ -7,6 +7,8 @@ Slug: ggu
 Authors: Brian Roepke
 Summary: I got admitted to the Bachelors of Science in Data Analytics
 Header_Cover: images/rebar.jpg
+Og_Image: http://roepke.com/images/rebar.jpg
+Twitter_Image: http://roepke.com/images/rebar.jpg
 
 
 # Golden Gate University

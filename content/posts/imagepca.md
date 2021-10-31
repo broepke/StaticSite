@@ -7,6 +7,8 @@ Slug: imagepca
 Authors: Brian Roepke
 Summary: Using PCA dimensionality reduction to compress images.
 Header_Cover: images/factory.jpg
+Og_Image: http://roepke.com/images/refactorybar.jpg
+Twitter_Image: http://roepke.com/images/factory.jpg
 
 ## What is PCA?
 

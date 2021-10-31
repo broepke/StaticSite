@@ -7,6 +7,8 @@ Slug: textcleaning
 Authors: Brian Roepke
 Summary: A powerful function to clean text data.
 Header_Cover: images/botswana.jpg
+Og_Image: http://roepke.com/images/botswana.jpg
+Twitter_Image: http://roepke.com/images/botswana.jpg
 
 ## Cleaning Text
 

@@ -7,6 +7,8 @@ Slug: pascals_triangle
 Authors: Brian Roepke
 Summary: Generating Pascals Triangle in Python using Binomial Coefficients
 Header_Cover: images/blue_thing.jpg
+Og_Image: http://roepke.com/images/blue_thing.jpg
+Twitter_Image: http://roepke.com/images/blue_thing.jpg
 
 
 One of the many beautiful things found in mathematics are [Recurrence Relations](https://en.wikipedia.org/wiki/Recurrence_relation), or an equation that recursively defines a sequence or multidimensional array of values, once one or more initial terms are given; each further term of the sequence or array is defined as a function of the preceding terms.  My favorite one of these is [Pascal's triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle).

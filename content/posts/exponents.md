@@ -7,6 +7,8 @@ Slug: exponents
 Authors: Brian Roepke
 Summary: A quick reference for the properties of exponents
 Header_Cover: images/colliseum.jpg
+Og_Image: http://roepke.com/images/colliseum.jpg
+Twitter_Image: http://roepke.com/images/colliseum.jpg
 
 
 ## Working with Exponents

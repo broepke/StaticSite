@@ -7,6 +7,8 @@ Slug: cte
 Authors: Brian Roepke
 Summary: Building complex select queries with CTEs.
 Header_Cover: images/table.jpg
+Og_Image: http://roepke.com/images/table.jpg
+Twitter_Image: http://roepke.com/images/table.jpg
 
 ## What is a Common Table Expression
 
