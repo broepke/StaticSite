@@ -26,7 +26,7 @@ After a model is trained and tested on data (Scikit-Learn has a great write-up o
 
 The matrix shows correctly classified observations in the top left and bottom right quadrants, while misclassified are in the other corners.  Thinking about these as rows or columns independently helps you interpret each class.   
 
-See the `Scikit-Learn` documentation[^CM] for how to display a Confusion Matrix.
+See the [Scikit-Learn](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html) documentation for how to display a Confusion Matrix.
 
 ## Evaluation Metrics
 
@@ -60,4 +60,3 @@ Hopefully, this helps you better understand how to interpret a confusion matrix 
 [^CROSS]: [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html)  
 [^IMB]: [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)  
 [^METRIC]: [Performance Metrics: Confusion matrix, Precision, Recall, and F1 Score](https://towardsdatascience.com/performance-metrics-confusion-matrix-precision-recall-and-f1-score-a8fe076a2262) 
-[^CM]: [How to display a Confusion Matrix](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html)
