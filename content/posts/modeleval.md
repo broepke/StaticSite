@@ -55,7 +55,7 @@ A critical part of picking the right evaluation metric is to decide what is the 
 
 ## Confustion Matrix in Practice
 
-Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My objective was to predict when a use would convert from a trial account to a paid account for a cloud platform.  This example is created from Scikit-Learn and is also showing the various evaluation metrics above.  In my case, the positive class, `1`, was for those that converted to paid, and the negative class were for those that failed to convert.  Take a look for yourself and see how you interpret the results.
+Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My objective was to predict when a user would convert from a trial account to a paid account for a SaaS offering.  This example is created from **Scikit-Learn** and is also showing the various evaluation metrics above.  In my case, the *positive* class (`1`) was those that converted to paid, and the *negative* class was for those that failed to convert.  Take a look for yourself and see how you interpret the results.
 
 ![Confusion Matrix Calculations](images/modeleval_3.png)  
 
