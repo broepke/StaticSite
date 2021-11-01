@@ -53,6 +53,12 @@ A critical part of picking the right evaluation metric is to decide what is the 
 2. **Minimize False Negatives:** The best example here for me is medical screening.  It would be incredibly bad if the algorithm had false negatives with the patient, but they were sick.  It would be best to flag potential issues and have an expert follow up.  In this case, you want to focus on a *high Recall*.
 3. **Both:** If your use case doesn't have a bias to one or the other, then choose *F1* for a balanced metric for *both* Precision and Recall.
 
+## Confustion Matrix in Practice
+
+Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My objective was to predict when a use would convert from a trial account to a paid account for a cloud platform.  This example is created from Scikit-Learn and is also showing the various evaluation metrics above.  In my case, the positive class, `1`, was for those that converted to paid, and the negative class were for those that failed to convert.  Take a look for yourself and see how you interpret the results.
+
+![Confusion Matrix Calculations](images/modeleval_3.png)  
+
 Hopefully, this helps you better understand how to interpret a confusion matrix and choose the best evaluation metric for your use case!
 
 ## References

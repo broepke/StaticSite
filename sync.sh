@@ -1,4 +1,7 @@
-# run the HTML command from the Makefile to publish any pages
+# Delete any local copies of the output files
+make clean
+
+# Run the HTML command from the Makefile to publish any pages
 make html
 
 # Sync to S3 - Delete any files that are no longer present
