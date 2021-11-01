@@ -7,8 +7,8 @@ Slug: math
 Authors: Brian Roepke
 Summary: How to render Math in a pelican post
 Header_Cover: images/trees.jpg
-Og_Image: http://roepke.com/images/trees.jpg
-Twitter_Image: http://roepke.com/images/trees.jpg
+Og_Image: images/trees.jpg
+Twitter_Image: images/trees.jpg
 
 [Binomial Theorem](https://en.wikipedia.org/wiki/Binomial_theorem) or Binomial Expansion:  
 $$(x+y)^n = \sum_{k=0}^n {n \choose k} x^{n - k} y^k$$

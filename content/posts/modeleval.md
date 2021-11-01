@@ -7,8 +7,8 @@ Slug: modeleval
 Authors: Brian Roepke
 Summary: How to evaluate models using a confusion matrix and when to use different metrics.
 Header_Cover: images/cranes_night.jpg
-Og_Image: http://roepke.com/images/cranes_night.jpg
-Twitter_Image: http://roepke.com/images/cranes_night.jpg
+Og_Image: images/cranes_night.jpg
+Twitter_Image: images/cranes_night.jpg
 
 ## Model Evaluation for Binary Classification
 

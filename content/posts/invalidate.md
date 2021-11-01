@@ -7,8 +7,8 @@ Slug: invalidate
 Authors: Brian Roepke
 Summary: How to invalidate CloudFront's caches and ensure all items are up to date.
 Header_Cover: images/sheep.jpg
-Og_Image: http://roepke.com/images/sheep.jpg
-Twitter_Image: http://roepke.com/images/sheep.jpg
+Og_Image: images/sheep.jpg
+Twitter_Image: images/sheep.jpg
 
 ## Invalidating with Python and the Boto3 SDK
 
