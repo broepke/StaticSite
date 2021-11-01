@@ -17,7 +17,7 @@ Principal Component Analysis or PCA is a *dimensionality reduction technique* fo
 
 >"PCA is the workhorse in your machine learning toolbox."
 
-PCA finds the axis with the maximum variance and projects the points onto this axis.  PCA uses a concept from Linear Algebra known as Eigenvectors and Eigenvalues.  There is a post on [Stack Exchange](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579) which beautifully explains it.
+PCA finds the axis with the maximum variance and projects the points onto this axis.  PCA uses a concept from Linear Algebra known as Eigenvectors and Eigenvalues.  There is a post on **Stack Exchange** which beautifully explains it[^LA].
 
 ## Image Compression
 
@@ -147,5 +147,5 @@ plt.show()
 And that's it! As few as `10` components even lets us make out what the image is, and at `250` it's hard to tell the difference between the original image and the PCA reduced image. 
 ## References
 
-1. [Making sense of principal component analysis, eigenvectors & eigenvalues](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579)
-2. [Introduction to PCA: Image Compression example](https://www.kaggle.com/mirzarahim/introduction-to-pca-image-compression-example)
+[^LA]: [Making sense of principal component analysis, eigenvectors & eigenvalues](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579)
+[^PCA]: [Introduction to PCA: Image Compression example](https://www.kaggle.com/mirzarahim/introduction-to-pca-image-compression-example)

@@ -2,7 +2,7 @@ Title: Evaluating Models with a Confusion Matrix
 Date: 2021-11-07
 Modified: 2021-11-07
 Category: SQL
-Tags: datascience, ml, machine learning, confusion-matrix
+Tags: datascience, ml, machine learning, confusion matrix
 Slug: modeleval
 Authors: Brian Roepke
 Summary: How to evaluate models using a confusion matrix and when to use different metrics.

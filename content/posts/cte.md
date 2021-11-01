@@ -12,9 +12,9 @@ Twitter_Image: http://roepke.com/images/table.jpg
 
 ## What is a Common Table Expression
 
-When writing complex queries, it's often useful to break them up into smaller chunks both for readability and debugging.  Common Table Expressions or CTEs provide the ability to do this, and I've found them to be one of the most useful tools in my SQL toolbox.  
+When writing complex queries, it's often useful to break them up into smaller chunks both for readability and debugging.  Common Table Expressions or CTEs provide the ability to do this, and I've found them to be one of the most useful tools in my SQL toolbox[^CTE].  
 
-CTEs are very simple to implement.  They start with a simple `WITH` statement, the name of the new temporary table that you're going to `SELECT`.  They start like this:
+CTEs are very simple to implement.  They start with a simple `WITH` statement[^MYSQL], the name of the new temporary table that you're going to `SELECT`.  They start like this:
 
 
 ```sql
@@ -74,5 +74,5 @@ LIMIT 10
 
 ## References
 
-1. [Common Table Expressions: When and How to Use Them](https://chartio.com/resources/tutorials/using-common-table-expressions/)
-2. [MySQL: WITH (Common Table Expressions)](https://dev.mysql.com/doc/refman/8.0/en/with.html)
+[^CTE]: [Common Table Expressions: When and How to Use Them](https://chartio.com/resources/tutorials/using-common-table-expressions/)
+[^MYSQL]: [MySQL: WITH (Common Table Expressions)](https://dev.mysql.com/doc/refman/8.0/en/with.html)

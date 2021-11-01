@@ -157,5 +157,5 @@ The above function contains twi different ways to Lemmatize your text.  The NLTK
 
 ## References
 
-[Text Processing Is Coming](https://towardsdatascience.com/text-processing-is-coming-c13a0e2ee15c)
-[Stemming vs Lemmatization](https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221)
+[^TXT]: [Text Processing Is Coming](https://towardsdatascience.com/text-processing-is-coming-c13a0e2ee15c)
+[^LEM]: [Stemming vs Lemmatization](https://towardsdatascience.com/stemming-vs-lemmatization-2daddabcb221)

@@ -62,7 +62,7 @@ id = create_invalidation()
 print("Invalidation created successfully with Id: " + id)
 ```
 
-**References**:
+## References**:
 
-1. [Python Script to Create CloudFront Invalidations
+[^INV]: [Python Script to Create CloudFront Invalidations
 ](https://tecadmin.net/python-script-create-cloudfront-invalidations/)
