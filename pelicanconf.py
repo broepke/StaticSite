@@ -5,8 +5,12 @@ from __future__ import unicode_literals
 AUTHOR = 'Brian Roepke'
 SITENAME = 'roepkeb'
 SITEURL = 'https://www.roepkeb.com'
+# https://analytics.google.com/analytics/web
 GOOGLE_ANALYTICS = 'UA-309309-9'
+# https://disqus.com/admin/
 DISQUS_SITENAME = 'roepkeb'
+# https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings
+ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 
 RELATIVE_URLS = False
 
