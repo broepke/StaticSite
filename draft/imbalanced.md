@@ -8,6 +8,8 @@ Slug: imbalanced
 Authors: Brian Roepke
 Summary: Multiple techniques for dealing with imbalanced data from algorightm selection to synthetic data generation.
 Header_Cover: images/time.jpg
+Og_Image: images/time.jpg
+Twitter_Image: images/time.jpg
 
 ## What is Imbalanced Data
 
