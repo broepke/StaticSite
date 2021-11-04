@@ -17,4 +17,8 @@ Twitter_Image: images/dog.jpg
 
 ## References
 
-https://soorajsknair.medium.com/how-and-why-exploratory-data-analysis-eda-used-in-python-data-analysis-db451394eb7f
+https://www.overleaf.com/latex/templates/template-and-sample-for-authoring-apa7-manuscripts/pvhtwcrvcmsp
+
+https://ctan.org/pkg/apa7 
+
+https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/apa7/apa7.pdf
