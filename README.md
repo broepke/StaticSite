@@ -14,7 +14,7 @@ _Note: With S3 hosting you can force the cache to request updated items by versi
 ## Configure AWS CLI
 
 To sync this to S3, the environment will have to have AWS CLI installed and configured.  
-`pip install awscli`
+[AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 
 [AWS CLI Configuration Quickstart](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
