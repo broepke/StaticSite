@@ -17,6 +17,13 @@ Twitter_Image: images/dog.jpg
 ## Installing LaTeX
 
 
+
+## VS Code and LaTeX
+
+
+Overleaf as an alternative 
+
+
 ## The APA Template
 
 
