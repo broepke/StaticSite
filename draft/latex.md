@@ -17,6 +17,8 @@ Twitter_Image: images/dog.jpg
 ## Installing LaTeX
 
 
+https://www.tug.org/mactex/ 
+
 
 ## VS Code and LaTeX
 
