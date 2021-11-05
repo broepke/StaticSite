@@ -8,4 +8,4 @@ make html
 aws s3 sync ./output s3://roepkeb.com --delete --exclude "*.DS_Store"
 
 # Run this python script to invalidate CloudFront and ensure changes are visible
-python3 invalidate_cf.py
+$CONDA_PYTHON_EXE invalidate_cf.py
