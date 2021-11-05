@@ -11,11 +11,28 @@ Header_Cover: images/dog.jpg
 Og_Image: images/dog.jpg
 Twitter_Image: images/dog.jpg
 
-## What is EDA?
+## Whate is LaTeX?
 
 
+## Installing LaTeX
+
+
+## The APA Template
+
+
+## Builidng Blocks of an APA Paper
+
+```latex
+\title{Capstone Project}
+\shorttitle{}
+
+\authorsnames{Walter Sobcheck}
+\authorsaffiliations{{Data Science, Very Difficult Technical University}}
+```
 
 ## References
+
+https://baconipsum.com/ 
 
 https://www.overleaf.com/latex/templates/template-and-sample-for-authoring-apa7-manuscripts/pvhtwcrvcmsp
 
