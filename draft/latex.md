@@ -17,8 +17,6 @@ Twitter_Image: images/dog.jpg
 
 ## References
 
-https://www.overleaf.com/latex/templates/template-and-sample-for-authoring-apa7-manuscripts/pvhtwcrvcmsp
-
-https://ctan.org/pkg/apa7 
-
-https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/apa7/apa7.pdf
+[^TEXAPA]: [apa7 – Format documents in APA style (7th edition)](https://ctan.org/pkg/apa7) 
+[^OVER]: [Template and Sample for Authoring APA7 Manuscripts](https://www.overleaf.com/latex/templates/template-and-sample-for-authoring-apa7-manuscripts/pvhtwcrvcmsp)
+[^DOC]: [Formatting documents in APA style (7th Edition) with the apa7 LATEX class](https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/apa7/apa7.pdf)
