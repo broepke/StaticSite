@@ -171,13 +171,13 @@ The output will look something like the below, showing both in text and classic 
 
 ## Integrating with Your Project Code
 
-I mentioned above that one of the advantages of using LaTeX and VS Code together is integrating with your code automatically.  What exactly was I referring to? I ended up doing for my Capstone are references images that were saved from Python directly in the references to the images in the LaTeX document.
+I mentioned above that one of the advantages of using **LaTeX** and **VS Code** together is integrating with your code automatically.  You can easily reference images that were saved from Python directly in the references to the images in the LaTeX document.
 
-If you're using Matplotlib, add these two lines after your plot:
+If you're using `matplotlib`, add these two lines after your plot:
 
 ```python
 plt.tight_layout()
-plt.savefig('Images/img_cust_category.png', dpi=300);
+plt.savefig('images_path/img_name.png', dpi=300);
 ```
 
 And then reference that image in your LaTeX document.  Every time your plot updates, you won't have to worry about updating it.
