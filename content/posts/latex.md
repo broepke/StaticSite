@@ -184,7 +184,7 @@ And then reference that image in your LaTeX document.  Every time your plot upda
 
 ## Conclusion
 
-![TeX Live Utility](images/latex_2.png)
+![Sample Page](images/latex_2.jpg)
 
 This post turned out to be a little lengthy, but hopefully, it will help you set up and get your first document published.  I've posted the source code on [GitHub](https://github.com/broepke/LaTeX-APA) if you'd like to see the entire project.
 

@@ -1,18 +1,18 @@
-Title: Evaluating Models with a Confusion Matrix
+Title: Evaluating ML Models with a Confusion Matrix
 Date: 2021-11-07
 Modified: 2021-11-07
 Category: SQL
 Tags: datascience, ml, machine learning, confusion matrix
 Slug: modeleval
 Authors: Brian Roepke
-Summary: How to evaluate models using a confusion matrix and when to use different metrics.
+Summary: How to evaluate machine learning models using a confusion matrix and when to use different metrics.
 Header_Cover: images/cranes_night.jpg
 Og_Image: images/modeleval_1.png
 Twitter_Image: images/modeleval_1.png
 
 ## Model Evaluation for Binary Classification
 
-Understanding how to evaluate models is a critical part of any Machine Learning (ML) project.  Many times when we're starting with ML or when having conversations with people that aren't as well versed in ML, the term **Accuracy** is thrown out as a generalization of the model's performance.  The problem using talking about the **Accuracy** of a model is that it specifically refers to a calculation that divides the number of observations it correctly classified vs. the total number in the test set.
+Understanding how to evaluate models is a critical part of any Machine Learning (ML) project.  Many times when we're starting with ML or when having conversations with people that aren't as well versed in ML, the term **Accuracy** is thrown out as a generalization of the model's performance.  The problem with talking about the **Accuracy** of a model is that it specifically refers to a calculation that divides the number of observations it correctly classified vs. the total number in the test set.
 
 While **Accuracy** is acceptable for model performance when your dataset is perfectly balanced (equal positive and negative classes), the reality is that this is rarely the case.  There are methods to deal with imbalanced data, which I'll talk about in a later post, but for now, let's understand how to interpret the results of a model's performance properly.
 
