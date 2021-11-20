@@ -14,6 +14,8 @@ ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 
 RELATIVE_URLS = False
 
+DISPLAY_PAGES_ON_MENU = True
+
 PATH = 'content'
 
 TIMEZONE = 'America/Los_Angeles'
@@ -49,3 +51,15 @@ DEFAULT_PAGINATION = 6
 
 PLUGIN_PATHS=['pelican-plugins']
 PLUGINS = ['render_math', 'gravatar']
+
+
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+USE_FOLDER_AS_CATEGORY = True 
+PATH = 'content'
+ARTICLE_PATHS = ['posts',]
+PAGE_PATHS = ['pages',]
+
+MENUITEMS = (
+    ('Resume', '/pages/resume.html'),
+)
