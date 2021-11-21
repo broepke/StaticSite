@@ -23,6 +23,7 @@ MENUITEMS = (
     ('Resume', '/pdf/roepkeb-resume.pdf'),
     # ('Blog', '/blog_index.html'),
     ('Blog', '/index.html'),
+    ('Portfolio', '/pages/portfolio.html'),
     ('About', '/pages/about.html'),
 )
 TIMEZONE = 'America/Los_Angeles'
