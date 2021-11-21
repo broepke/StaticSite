@@ -13,16 +13,22 @@ DISQUS_SITENAME = 'roepkeb'
 ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 
 RELATIVE_URLS = False
-
-DISPLAY_PAGES_ON_MENU = True
-
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+USE_FOLDER_AS_CATEGORY = True 
 PATH = 'content'
-
+ARTICLE_PATHS = ['posts',]
+PAGE_PATHS = ['pages',]
+MENUITEMS = (
+    ('Resume', '/pdf/roepkeb-resume.pdf'),
+    # ('Blog', '/blog_index.html'),
+    ('Blog', '/index.html'),
+    ('About', '/pages/about.html'),
+)
 TIMEZONE = 'America/Los_Angeles'
-
 DEFAULT_LANG = 'en'
+# INDEX_SAVE_AS = 'blog_index.html'
 
-# Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -41,7 +47,7 @@ SOCIAL = (('twitter', 'https://twitter.com/broepke'),
 
 
 # static paths will be copied without parsing their contents
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
@@ -51,15 +57,3 @@ DEFAULT_PAGINATION = 6
 
 PLUGIN_PATHS=['pelican-plugins']
 PLUGINS = ['render_math', 'gravatar']
-
-
-DISPLAY_PAGES_ON_MENU = False
-DISPLAY_CATEGORIES_ON_MENU = False
-USE_FOLDER_AS_CATEGORY = True 
-PATH = 'content'
-ARTICLE_PATHS = ['posts',]
-PAGE_PATHS = ['pages',]
-
-MENUITEMS = (
-    ('Resume', '/pages/resume.html'),
-)
