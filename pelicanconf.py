@@ -20,7 +20,7 @@ PATH = 'content'
 ARTICLE_PATHS = ['posts',]
 PAGE_PATHS = ['pages',]
 MENUITEMS = (
-    ('Curriculum Vitae', '/pdf/cv.pdf'),
+    ('Résumé', '/pdf/roepkeb.pdf'),
     # ('Blog', '/blog_index.html'),
     ('Blog', '/index.html'),
     ('Portfolio', '/pages/portfolio.html'),
