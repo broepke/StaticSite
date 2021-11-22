@@ -27,12 +27,12 @@ This report will look at user's discussions, mostly in 2020, from the [Tesla Mod
 
 **Note:** This report will not look to surface the root cause of issues, positive or negative, but rather surface topics that are most top-of-mind for customers and where the Tesla team could investigate further.
 
-The plan's four-step master plan:
+The following analyses were conducted:
 
-1. Build sports car
-2. Use that money to build an affordable car
-3. Use that money to build an even more affordable car
-4. While doing above, also provide zero emission electric power generation options
+1. Perform **lexicon-based sentiment analysis** on forum posts using Bing and AFINN lexicons.
+1. Utilize **n-Grams** to identify potential topics of interest.
+1. Build **Topic Models** utilizing **Latent Dirichlet Allocation** (LDA) and interpret results.
+1. Identify top **Features of the vehicle** from the **n-Grams** and **Topic Models** and perform sentiment analysis on a per-feature basis.
 
 [View the Full Analysis Here](../other/tesla.html)
 
