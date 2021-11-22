@@ -40,16 +40,16 @@ The plan's four-step master plan:
 
 ## Analyzing Yelp Reviews
 
-The concept of social ratings and reviews of products is a common model of recommendation that the internet-enabled. We use reviews in nearly all aspects of eCommerce. Products on Amazon contain reviews and ratings that help us find the top-rated product. Reviews on TripAdvisor help us find the best places to have a vacation. For businesses and restaurants, a common destination is Yelp. Headquartered in San Francisco, California, it develops, hosts, and markets the Yelp.com website and the Yelp mobile app, which publish crowd-sourced reviews about businesses. It also operates an online reservation service called Yelp Reservations. As of June 30, 2019, Yelp stated they had 192 million reviews on their site.
+The concept of social ratings and reviews of products is a common model of recommendation that the internet-enabled. We use reviews in nearly all aspects of eCommerce.  Products on Amazon contain reviews and ratings that help us find the top-rated product.  Reviews on TripAdvisor help us find the best places to have a vacation.  For businesses and restaurants, a common destination is **Yelp**.  Headquartered in San Francisco, California, it develops, hosts, and markets the Yelp.com website and the Yelp mobile app, which publish crowd-sourced reviews about businesses. It also operates an online reservation service called Yelp Reservations.  As of June 30, 2019, Yelp stated they had 192 million reviews on their site.
 
 How important are these reviews to businesses? Reviews become a critical way for us to find trusted information, and that translates to more business. According to a Professor at Harvard Business School, an analysis of Yelp reviews found that each star rating for a business translated to a 5-9% increase in revenues.
 
-Yelp has opened up a large portion of its dataset for academic and personal use. It contains a massive amount of textual data from their reviews and other information about their businesses. The following analysis uses a subset of that information to try to understand the following questions better:
+Yelp has opened up a large portion of its dataset for academic and personal use. It contains a massive amount of textual data from their reviews and other information about their businesses.  The following analysis uses a subset of that information to try to understand the following questions better:
 
-* Leveraging a **lexicon-based sentiment** polarity score, find the most positive and negative **words frequencies** across reviews and what insights this brings.
-* Utilizing a Machine Learning model for **classification** determines the relationship between the **text** of the review and its **rating**. Is there a relationship between what people write about a business to the star rating they give it? Can this be combined with any other data to improve this prediction?
-* Use a Machine Learning **Multi-label classification** model to see what **categories** would an algorithm recommended a business use and how they related to the ones that a business manually chose.
-* Build a **Neural Network** using **TensorFlow** with text as input layer and the review rating as output if we can improve on the statistical Machine Learning model above.
+1. Leveraging a **lexicon-based sentiment** polarity score, find the most positive and negative **words frequencies** across reviews and what insights this brings.
+2. Utilizing a Machine Learning model for **classification** determines the relationship between the **text** of the review and its **rating**. Is there a relationship between what people write about a business to the star rating they give it? Can this be combined with any other data to improve this prediction?
+3. Use a Machine Learning **Multi-label classification** model to see what **categories** would an algorithm recommended a business use and how they related to the ones that a business manually chose.
+4. Build a **Neural Network** using [TensorFlow](https://www.tensorflow.org) with **text** as input layer and the review rating as output if we can improve on the statistical Machine Learning model above.
 
 [View the Full Analysis Here](../other/yelp.html)
 
