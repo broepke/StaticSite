@@ -48,7 +48,7 @@ SOCIAL = (('twitter', 'https://twitter.com/broepke'),
 
 
 # static paths will be copied without parsing their contents
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf']
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf', 'other']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
