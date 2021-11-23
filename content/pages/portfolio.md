@@ -7,7 +7,7 @@ Header_Cover: images/cranes_night.jpg
 Og_Image: images/cranes_night.jpg
 Twitter_Image: images/cranes_night.jpg
 
-The following are a few projects I've worked on, mostly in context of my recent undergraduate degree in Data Analytics.  Other examples available upon request.
+*The following are a few projects I've worked on, mostly in context of my recent undergraduate degree in Data Analytics.  Other examples available upon request.*
 ## Tesla User Forums "Voice of Customer" Analysis
 
 In 2006 Elon Musk wrote a blog post titled, [The Secret Tesla Motors Master Plan (just between you and me)](https://www.tesla.com/blog/secret-tesla-motors-master-plan-just-between-you-and-me), where he detailed out the strategy for the company.  In this post, he offered up a multi-step plan to achieve the [mission](https://www.tesla.com/about) slated by the company:

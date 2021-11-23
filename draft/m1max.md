@@ -19,7 +19,7 @@ Twitter_Image: images/computer.jpg
 https://developer.apple.com/metal/tensorflow-plugin/ 
 
 
-```
+```python
 Epoch 1/10
 702/702 [==============================] - 41s 59ms/step - loss: 0.6462 - accuracy: 0.6129 - val_loss: 0.5476 - val_accuracy: 0.7166
 Epoch 2/10
@@ -53,7 +53,7 @@ Epoch 10/10
 
 
 
-```
+```python
 Epoch 1/10
 2021-11-05 10:33:15.456260: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 702/702 [==============================] - ETA: 0s - loss: 0.6174 - accuracy: 0.64862021-11-05 10:33:26.647448: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
