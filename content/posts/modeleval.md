@@ -16,7 +16,7 @@ Understanding how to evaluate models is a critical part of any Machine Learning 
 
 While **Accuracy** is acceptable for model performance when your dataset is perfectly balanced (equal positive and negative classes), the reality is that this is rarely the case.  There are methods to deal with imbalanced data, which I'll talk about in a later post, but for now, let's understand how to interpret the results of a model's performance properly.
 
-For information on dealing with **imbalanced data**, check out my other post: [Working with Imbalanced Data](imbalanced.html).
+**More: **For information on dealing with **imbalanced data**, check out my other post: [Working with Imbalanced Data](imbalanced.html).
 ## Interpreting a Confusion Matrix
 
 After a model is trained and tested on data (Scikit-Learn has a great write-up of this process[^CROSS]), you can generate a **Confusion Matrix** to give a view of how observations the model misclassified.  A Confusion Matrix is a 2x2 table (for binary classification) that plots the **actual** values vs. the **predicted** values on its axes.  Once you understand how to interpret it, it is easy and intuitive to see your model's performance. 

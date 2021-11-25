@@ -33,7 +33,7 @@ Let's start with the most simple way. In this example, I'll refer to Scikit-Lern
 >**class_weight{“balanced”, “balanced_subsample”}, dict or list of dicts, default=None** 
 >Weights associated with classes in the form `{class_label: weight}`. If not given, all classes are supposed to have weight one. For multi-output problems, a list of dicts can be provided in the same order as the columns of `y'.
 
->The "balanced" mode uses the values of `y' to automatically adjust weights inversely proportional to class frequencies in the input data as `n_samples / (n_classes * np.bincount(y))`
+>The "balanced" mode uses the values of `y` to automatically adjust weights inversely proportional to class frequencies in the input data as `n_samples / (n_classes * np.bincount(y))`
 
 If during your model selection phase you find that one of these classifiers performs well, it's quite simple to use this feature of the algorithm to accommodate for 
 
@@ -65,10 +65,12 @@ from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 
 pipeline = Pipeline([('prep',column_trans),
- ('over', SMOTE(random_state=42)),
- ('under', RandomUnderSampler(random_state=42)),
- ('clf', clf)])
+                     ('over', SMOTE(random_state=42)),
+                     ('under', RandomUnderSampler(random_state=42)),
+                     ('clf', clf)])
 ```
+
+**More: **For more information on utilizing pipelines, check out my post: [Using Pipelines in Sci-kit Learn](sklearnpipelines.html).
 
 ## Evaluating Results
 
