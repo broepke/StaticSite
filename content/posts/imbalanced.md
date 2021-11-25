@@ -76,7 +76,7 @@ pipeline = Pipeline([('prep',column_trans),
 
 Finally, choosing the right evaluation metric is critical with imbalanced data. If you're relying on Accuracy, you're most likely not going to achieve the results you think you are. Please look at my other post on [Evaluating Models with a Confusion Matrix](modeleval.html). 
 
-# Consclusion
+# Conclusion
 
 There are many great articles out there, such as the full walkthrough from Jason Brownlee on *Machine Learning Mastery* [^SMOTE] and Tara Boyle on *Towards Data Science* [^IMBAL]. Check them out for further learning.
 
