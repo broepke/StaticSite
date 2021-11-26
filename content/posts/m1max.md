@@ -1,7 +1,7 @@
-
 Title: Tensorflow on an Apple MacbookPro M1 Max
 Date: 2021-11-21
 Modified: 2021-11-21
+Status: draft
 Category: Deep Learning
 Tags: datascience, m1, apple, tensorflow
 Slug: m1max
