@@ -1,7 +1,7 @@
 Title: Pascals Triangle
 Date: 2020-01-27
 Modified: 2020-01-27
-Category: Combinatorics
+Category: Math
 Tags: math
 Slug: pascals_triangle
 Authors: Brian Roepke

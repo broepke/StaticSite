@@ -1,7 +1,7 @@
 Title: Using Pipelines in Sci-kit Learn
 Date: 2021-10-01
 Modified: 2021-10-01
-Category: Python
+Category: Data Science
 Tags: datascience, python, machine learning
 Slug: sklearnpipelines
 Authors: Brian Roepke

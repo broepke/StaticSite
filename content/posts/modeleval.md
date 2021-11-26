@@ -1,7 +1,7 @@
 Title: Evaluating ML Models with a Confusion Matrix
 Date: 2021-11-07
 Modified: 2021-11-07
-Category: SQL
+Category: Data Science
 Tags: datascience, machine learning
 Slug: modeleval
 Authors: Brian Roepke

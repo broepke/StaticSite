@@ -1,7 +1,7 @@
 Title: Developing on an iPad Pro
 Date: 2020-01-20
 Modified: 2021-09-10
-Category: Python, iPad
+Category: Apple
 Tags: ipad, apple
 Slug: ipad
 Authors: Brian Roepke
