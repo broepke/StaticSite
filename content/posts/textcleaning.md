@@ -2,7 +2,7 @@ Title: Text Cleaning for NLP in Python
 Date: 2021-09-25
 Modified: 2021-09-25
 Category: Python
-Tags: aws, datascience, python, nlp
+Tags: datascience, python, nlp, machine learning
 Slug: textcleaning
 Authors: Brian Roepke
 Summary: A powerful function to clean text data.

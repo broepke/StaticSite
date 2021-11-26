@@ -3,7 +3,7 @@ Date: 2021-11-21
 Modified: 2021-11-21
 Status: draft
 Category: Deep Learning
-Tags: datascience, m1, apple, tensorflow
+Tags: datascience, apple
 Slug: m1max
 Authors: Brian Roepke
 Summary: A comparison of training a neural network on a first gen M1 Mac vs. the monster M1 Max with 32 core GPU.

@@ -2,7 +2,7 @@ Title: Rendering Math in Pelican
 Date: 2020-01-21
 Modified: 2020-02-16
 Category: Math
-Tags: math, python, pelican, science
+Tags: math
 Slug: math
 Authors: Brian Roepke
 Summary: How to render Math in a pelican post

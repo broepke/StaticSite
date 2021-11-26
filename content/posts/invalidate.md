@@ -2,7 +2,7 @@ Title: Invalidating CloudFront's Cache
 Date: 2021-06-24
 Modified: 2021-06-24
 Category: AWS
-Tags: aws, python, s3, static-site
+Tags: aws, python
 Slug: invalidate
 Authors: Brian Roepke
 Summary: How to invalidate CloudFront's caches and ensure all items are up to date.

@@ -2,7 +2,7 @@ Title: Publishing an APA Paper with LaTeX
 Date: 2021-11-21
 Modified: 2021-11-21
 Category: SQL
-Tags: apa, student paper, latex, writing
+Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
 Summary: I actually published my capstone using LaTeX... and it wasn't bad! 

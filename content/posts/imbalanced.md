@@ -2,7 +2,7 @@ Title: Working with Imbalanced Data
 Date: 2021-11-25
 Modified: 2021-11-25
 Category: SQL
-Tags: datascience, ml, machine learning, confusion matrix, scikit-learn, imblearn, imbalanced data
+Tags: datascience, machine learning, python
 Slug: imbalanced
 Authors: Brian Roepke
 Summary: Multiple techniques for dealing with imbalanced data from algorithm selection to synthetic data generation.

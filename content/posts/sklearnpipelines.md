@@ -2,7 +2,7 @@ Title: Using Pipelines in Sci-kit Learn
 Date: 2021-10-01
 Modified: 2021-10-01
 Category: Python
-Tags: aws, datascience, python, sklearn
+Tags: datascience, python, machine learning
 Slug: sklearnpipelines
 Authors: Brian Roepke
 Summary: Why you should be using pipelines and not processing steps separately.

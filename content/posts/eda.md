@@ -1,6 +1,7 @@
 Title: Eploratory Data Analysis
 Date: 2021-12-04
 Modified: 2021-12-04
+Status: draft
 Category: EDA
 Tags: datascience, machine learning, eda, data
 Slug: eda
@@ -192,12 +193,12 @@ A univariate plot is exactly as it sounds-a plot agasint a single variable.  Let
 # using seaborn library, plot each individually
 fig, axes = plt.subplots(3, 2, figsize=(14,14))
 
-ax = sns.boxplot(x="y", y="age", data=df, ax=axes[0, 0], palette='tab20')
-ax = sns.boxplot(x="y", y="balance", data=df, ax=axes[0, 1], palette='tab20')
-ax = sns.boxplot(x="y", y="duration", data=df, ax=axes[1, 0], palette='tab20')
-ax = sns.boxplot(x="y", y="campaign", data=df, ax=axes[1, 1], palette='tab20')
-ax = sns.boxplot(x="y", y="pdays", data=df, ax=axes[2, 0], palette='tab20')
-ax = sns.boxplot(x="y", y="previous", data=df, ax=axes[2, 1], palette='tab20')
+ax = sns.boxplot(x="y", y="age", data=df, ax=axes[0, 0])
+ax = sns.boxplot(x="y", y="balance", data=df, ax=axes[0, 1])
+ax = sns.boxplot(x="y", y="duration", data=df, ax=axes[1, 0])
+ax = sns.boxplot(x="y", y="campaign", data=df, ax=axes[1, 1])
+ax = sns.boxplot(x="y", y="pdays", data=df, ax=axes[2, 0])
+ax = sns.boxplot(x="y", y="previous", data=df, ax=axes[2, 1])
 ```
 
 

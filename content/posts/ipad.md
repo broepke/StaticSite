@@ -2,7 +2,7 @@ Title: Developing on an iPad Pro
 Date: 2020-01-20
 Modified: 2021-09-10
 Category: Python, iPad
-Tags: code, ipad, apple
+Tags: ipad, apple
 Slug: ipad
 Authors: Brian Roepke
 Summary: Setting up an iPad Pro to develop with Python and Markdown

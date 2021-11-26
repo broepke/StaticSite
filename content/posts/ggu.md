@@ -2,7 +2,7 @@ Title: Golden Gate University
 Date: 2020-02-04
 Modified: 2020-02-04
 Category: Education, DataScience, School
-Tags: code, statistics, datascience, school, learning, science
+Tags: datascience, school
 Slug: ggu
 Authors: Brian Roepke
 Summary: I got admitted to the Bachelors of Science in Data Analytics
