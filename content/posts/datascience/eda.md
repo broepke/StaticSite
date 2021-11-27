@@ -187,7 +187,8 @@ Outliers are another extrememly common issue in data.  Outliers need to be asses
 
 ```python
 def get_outliers(df):
-    '''Function to identify the number of outliers +/- 3 standard deviations outside of mean. Pass this function a dataframe and it returns a dictionary'''
+    '''Identify the number of outliers +/- 3 standard deviations. 
+    Pass this function a dataframe and it returns a dictionary'''
     
     outs = {}
     
@@ -246,21 +247,30 @@ I like to break my visualizations into two different parts.  Explicitly first ut
 
 ### Univariate Plots
 
-A univariate plot is exactly as it sounds-a plot agasint a single variable.  Let's start by looking at box plots of all the numeric variables in the dataset.
+A univariate plot is exactly as it sounds-a plot agasint a single variable.  Let's start by looking at box plots of all the numeric variables in the dataset.  Let's start out with the two most common, a box plot and a histogram.
+
+#### Box Plots
+
+A box plot takes a single variable and displays information regarding how the data is distributed throughout its [quartiles](https://en.wikipedia.org/wiki/Quartile) which essetially means dividing the data into quarter [^BOX].  This simple graphic packs a lot of information into it and also can be a handy too to compare two or more differnt categorical subsegments.  The below example shows the `duration` variable in the box plot and then slices it by the `y` variable, in this case the `y` variable is the target in a classification model (yes/no). 
 
 ```python
-# using seaborn library, plot each individually
-fig, axes = plt.subplots(3, 2, figsize=(14,14))
-
-ax = sns.boxplot(x="y", y="age", data=df, ax=axes[0, 0])
-ax = sns.boxplot(x="y", y="balance", data=df, ax=axes[0, 1])
-ax = sns.boxplot(x="y", y="duration", data=df, ax=axes[1, 0])
-ax = sns.boxplot(x="y", y="campaign", data=df, ax=axes[1, 1])
-ax = sns.boxplot(x="y", y="pdays", data=df, ax=axes[2, 0])
-ax = sns.boxplot(x="y", y="previous", data=df, ax=axes[2, 1])
+plt.figure(figsize=(7,6))
+sns.boxplot(x="y", y="duration", data=df, showfliers=True)
 ```
 
+![Box Plot]({static}/images/eda_box.png)  
 
+Utilizing this graphic, we can see that both the median (line in the center of the box) as well the innerquartile range (IQR), or the upper and lower portions of the box as a whole, is greater for the `yes` than the `no` values.
+
+#### Histograms
+
+
+
+```python
+sns.histplot(x='age', data=df, bins=20)
+```
+
+![Histogram]({static}../../images/eda_hist.png)  
 
 ### Bivariate Plots
 
@@ -276,5 +286,5 @@ All the code above is avaiable in [Github](https://github.com/broepke/EDA).
 Photo by <a href="https://unsplash.com/@amanda_sandlin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Amanda Sandlin</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
-[^EDA]: [How And Why Exploratory Data Analysis — EDA used in Python Data Analysis](https://soorajsknair.medium.com/how-and-why-exploratory-data-analysis-eda-used-in-python-data-analysis-db451394eb7f)
 [^OUTS]: [How to Remove Outliers for Machine Learning](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
+[^BOX]: [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
