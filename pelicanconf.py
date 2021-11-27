@@ -21,10 +21,10 @@ ARTICLE_PATHS = ['posts',]
 PAGE_PATHS = ['pages',]
 MENUITEMS = (
     ('Résumé', '/pdf/cv.pdf'),
-    # ('Blog', '/blog_index.html'),
-    ('Blog', '/index.html'),
     ('Portfolio', '/pages/portfolio.html'),
     ('About', '/pages/about.html'),
+    # ('Blog', '/blog_index.html'),
+    ('Blog Home', '/index.html'),
 )
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
