@@ -1,7 +1,6 @@
 Title: Rendering Math in Pelican
 Date: 2020-01-21
 Modified: 2020-02-16
-Category: Misc
 Tags: math
 Slug: math
 Authors: Brian Roepke

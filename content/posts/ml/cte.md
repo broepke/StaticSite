@@ -1,7 +1,6 @@
 Title: Common Table Expressions
 Date: 2021-10-24
 Modified: 2021-10-24
-Category: ML
 Tags: datascience, sql
 Slug: cte
 Authors: Brian Roepke

@@ -1,7 +1,6 @@
 Title: Invalidating CloudFront's Cache
 Date: 2021-06-24
 Modified: 2021-06-24
-Category: AWS
 Tags: aws, python
 Slug: invalidate
 Authors: Brian Roepke

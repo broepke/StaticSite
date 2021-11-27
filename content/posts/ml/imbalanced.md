@@ -1,7 +1,6 @@
 Title: Working with Imbalanced Data
 Date: 2021-11-25
 Modified: 2021-11-25
-Category: ML
 Tags: datascience, machine learning, python
 Slug: imbalanced
 Authors: Brian Roepke

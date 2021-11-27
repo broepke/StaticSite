@@ -1,7 +1,6 @@
 Title: Pascals Triangle
 Date: 2020-01-27
 Modified: 2020-01-27
-Category: Misc
 Tags: math
 Slug: pascals
 Authors: Brian Roepke

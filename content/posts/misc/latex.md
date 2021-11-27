@@ -1,7 +1,6 @@
 Title: Publishing an APA Paper with LaTeX
 Date: 2021-11-21
 Modified: 2021-11-21
-Category: Misc
 Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
