@@ -3,7 +3,7 @@ Date: 2021-12-04
 Modified: 2021-12-04
 Status: draft
 Category: Data Science
-Tags: datascience, machine learning, eda, nlp
+Tags: datascience, machine learning, nlp
 Slug: topicmodels
 Authors: Brian Roepke
 Summary: Building topic models in NLP.
