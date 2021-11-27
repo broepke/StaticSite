@@ -9,3 +9,6 @@ aws s3 sync ./output s3://roepkeb.com --delete --exclude "*.DS_Store"
 
 # Run this python script to invalidate CloudFront and ensure changes are visible
 python3 invalidate_cf.py
+
+# Remove the pychache folder
+rm -rf __pycache__

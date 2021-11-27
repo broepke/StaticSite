@@ -1,9 +1,9 @@
 Title: Pascals Triangle
 Date: 2020-01-27
 Modified: 2020-01-27
-Category: Math
+Category: Education
 Tags: math
-Slug: pascals_triangle
+Slug: pascals
 Authors: Brian Roepke
 Summary: Generating Pascals Triangle in Python using Binomial Coefficients
 Header_Cover: images/blue_thing.jpg
