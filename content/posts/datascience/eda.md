@@ -13,7 +13,7 @@ Twitter_Image: images/road.jpg
 
 ## What is EDA?
 
-EDA, or Exploratory Data Analysis, is the process of examining and understanding the structure of a dataset.  It's a critical part of any machine learning project and it is the tool in your toolbox that allows you to approach data you've never need before, and get comfortable with all sorts of charicteristics.
+EDA, or Exploratory Data Analysis, is the process of examining and understanding the structure of a dataset.  It's a critical part of any machine learning project and it is the tool in your toolbox that allows you to approach data you've never seen before, and get comfortable with all sorts of charicteristics.
 
 I find that a lot of people jump right into their data without first properly performing EDA.  Especially after they've done a few projects and think they know what they're doing.  To me, this is a critical first step that uncovers so manny hidden gems in the data it's indespensible.
 
@@ -260,24 +260,42 @@ sns.boxplot(x="y", y="duration", data=df, showfliers=True)
 
 ![Box Plot]({static}/images/eda_box.png)  
 
-Utilizing this graphic, we can see that both the median (line in the center of the box) as well the innerquartile range (IQR), or the upper and lower portions of the box as a whole, is greater for the `yes` than the `no` values.
+Utilizing this graphic, we can see that both the median (line in the center of the box) as well the interquartile range (IQR), or the upper and lower portions of the box as a whole, is greater for the `yes` than the `no` values.
+
+A fantastic write up on Towards Data Science on how to interpret box plots: [Understanding Boxplots](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
 
 #### Histograms
 
-
+Histograms show the distribution of data of a single variable in "bins" or groups of data based on the frequency of the values occorance. Those not familar with them might have a a harder time reading these at first becase they can be mixed up with bar charts.  However, a bar chart is plotting two different variables on the *X-Axis* and *Y-Axis*, where as the *X-Axis* in a histogram is the bin and the *Y-Axis* is the count in that bin. 
 
 ```python
-sns.histplot(x='age', data=df, bins=20)
+sns.histplot(x='age', data=df, bins=20, kde=True)
 ```
 
 ![Histogram]({static}../../images/eda_hist.png)  
 
+When you look at the `age` variable plotted with a histogram, you can see really clearly that the amount of people in the data set with ages between 30 and 40 have the highest frequency.  Because the histogram is not centered, we call this skewness.  In this case, the skew is referred to as [**Right Skewed**](https://en.wikipedia.org/wiki/Skewness) because the right tail is longer.
+
 ### Bivariate Plots
 
+#### Correlation Matrix
+
+The absolute must bivariate (or multi-variate) plot you need to run is the correlation matrix.  This is a matrix that shows the correlation between all the variables in the dataset.  It will help you identify which variables are strongly correlated, for cases like simple linear regression, or those that are not correlated, for cases when you're trying to models with multiple features adding to your models performance.
+
+```python
+corr = df.corr()
+f, ax = plt.subplots(figsize=(12, 8))
+sns.heatmap(corr, annot=True, square=False, ax=ax, linewidth = 1)
+plt.title('Pearson Correlation of Features')
+```
+
+![Correlation Matrix]({static}../../images/eda_corr.png)  
+
+For the most part there is not any variables that are strongly correlated with the exception of `pdays` and `previous` with a `0.62` positive correlation value between them.  It would be valuable to understand why these are and if they're related to similar actions.
 
 ## Conclusion
 
-EDA is a very powerful technique that you should get comfortable with and you should do every time you start workign on a new dataset.  There are plenty of other tecniques out there that you can add to these basics.  Go out there, explore and get to know your data before you jump into machine learning.
+EDA is a very powerful technique that you should get comfortable with and should do every time you start workign on a new dataset.  There are plenty of other tecniques out there that you can add to these basics.  Go out there, explore and get to know your data before you jump into machine learning.
 
 All the code above is avaiable in [Github](https://github.com/broepke/EDA).
 
