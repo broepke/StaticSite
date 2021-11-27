@@ -13,13 +13,13 @@ Twitter_Image: images/road.jpg
 
 ## What is EDA?
 
-EDA, or Exploratory Data Analysis, is the process of examining and understanding the structure of a dataset.  It's a critical part of any machine learning project and it is the tool in your toolbox that allows you to approach data you've never seen before, and get comfortable with all sorts of charicteristics.
+EDA, or Exploratory Data Analysis, is the process of examining and understanding the structure of a dataset. It's a critical part of any machine learning project, and it is the tool in your toolbox that allows you to approach data you've never seen before and get comfortable with all sorts of characteristics.
 
-I find that a lot of people jump right into their data without first properly performing EDA.  Especially after they've done a few projects and think they know what they're doing.  To me, this is a critical first step that uncovers so manny hidden gems in the data it's indespensible.
+I find that many people jump right into their data without first properly performing EDA. Especially after they've done a few projects and think they know what they're doing. To me, this is a critical first step that uncovers so many hidden gems in the data it's indispensable.
 
 ## My Appraoch to EDA
 
-This is the generalized process I use to perform EDA.  It can very from dataset to dataset, depending on the type of data, the complexity, and the messiness.  However, these steps are generally the same for all datasets.
+This article describes the generalized process I use to perform EDA. It can vary from dataset to dataset, depending on the type of data, the complexity, and the messiness. However, these steps are generally the same for all datasets.
 
 1. Basic Exploration
 2. Check for Null & Duplicate Values
