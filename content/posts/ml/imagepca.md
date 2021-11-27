@@ -1,7 +1,7 @@
 Title: Image Compression with PCA
 Date: 2021-10-24
 Modified: 2021-10-24
-Category: Data Science
+Category: ML
 Tags: datascience, python, sklearn
 Slug: imagepca
 Authors: Brian Roepke

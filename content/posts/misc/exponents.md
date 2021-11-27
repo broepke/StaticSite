@@ -1,7 +1,7 @@
 Title: Properties of Exponents
 Date: 2020-02-11
 Modified: 2020-02-11
-Category: Education
+Category: Misc
 Tags: math, school
 Slug: exponents
 Authors: Brian Roepke

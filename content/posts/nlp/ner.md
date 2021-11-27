@@ -2,7 +2,7 @@ Title: Named Entity Recognition
 Date: 2021-12-04
 Modified: 2021-12-04
 Status: draft
-Category: Data Science
+Category: NLP
 Tags: datascience, nlp
 Slug: ner
 Authors: Brian Roepke

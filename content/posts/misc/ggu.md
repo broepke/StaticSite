@@ -1,7 +1,7 @@
 Title: Golden Gate University
 Date: 2020-02-04
 Modified: 2020-02-04
-Category: Education
+Category: Misc
 Tags: datascience, school
 Slug: ggu
 Authors: Brian Roepke

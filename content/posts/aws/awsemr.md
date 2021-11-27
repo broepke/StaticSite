@@ -1,7 +1,7 @@
 Title: Setting Up AWS EMR with Jupyter Notebooks
 Date: 2021-06-22
 Modified: 2021-06-22
-Category: Computing
+Category: AWS
 Tags: aws, datascience, python, data
 Slug: awsemr
 Authors: Brian Roepke

@@ -2,7 +2,7 @@ Title: Topic Models in NLP
 Date: 2021-12-04
 Modified: 2021-12-04
 Status: draft
-Category: Data Science
+Category: NLP
 Tags: datascience, machine learning, nlp
 Slug: topicmodels
 Authors: Brian Roepke
