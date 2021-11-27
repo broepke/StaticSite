@@ -136,9 +136,11 @@ Name: marital, dtype: int64
 
 ## Check for Null & Duplicate Values
 
+Both null values and duplicate values end up being an issue in Machine Learning models, so let's check for and deal with them.
+
 ### Null Values
 
-The next step I perform is checking for null values.  Null values are often not allowed in a Machine learning model, so it's important to deal with them.  It will take a bit of exploration and interpretation to know *how* you want to deal with them.  It can range from simply dropping them when there are a very small amount, filling them with a default value such as `0` or filling them based on adjacent values.  This method is common with time series data where you might fill a missing value with the mean of the prior and following values.  Pandas has extensive support with there `fillna()` function that you can read about [here](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html).
+First I start by testing for null values.  It will take a bit of exploration and interpretation to know *how* you want to deal with them.  It can range from simply dropping them when there are a very small amount, filling them with a default value such as `0` or filling them based on adjacent values.  Filling them based on adjacent values is common with timeseries data where you might fill a missing value with the *mean* of the prior and following values.  Pandas has extensive support with there `fillna()` function that you can read about [here](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html).
 
 For this example I'll explore if there are any, and drop them from the dataset.
 
@@ -180,6 +182,65 @@ In this case, there were no duplicate rows or null values, but it's very importa
 
 ## Dealing with Outliers
 
+Outliers are another extrememly common issue in data.  Outliers need to be assesed if they are good observations in the dataset or if they are errors.  First you can test for how many there are.  The most common method, on normally distributed data, is to look for any observations that lie outside +/- 3 standard deviations.  If you remember back to your statistics class, there is the [68-95-99.7](https://en.wikipedia.org/wiki/68–95–99.7_rule) rule.  This rule states that 99.7% of all data, in a normal distribution, lies within 3 standard deviations of the mean.  When your data is highly left or right skewed this will not be true. You can utilize box plots or histograms to test for nomality.  I'll cover that below.
+
+
+```python
+def get_outliers(df):
+    '''Function to identify the number of outliers +/- 3 standard deviations outside of mean.
+    Pass this function a dataframe and it returns a dictionary'''
+    
+    outs = {}
+    
+    df = df.select_dtypes(include=['int64'])
+
+    
+    for col in df.columns:
+        
+        # calculate summary statistics
+        data_mean, data_std = np.mean(df[col]), np.std(df[col])
+        
+        # identify outliers
+        cut_off = data_std * 3
+        lower, upper = data_mean - cut_off, data_mean + cut_off
+        
+        # identify outliers
+        outliers = [x for x in df[col] if x < lower or x > upper]
+        
+        outs[col] = len(outliers)
+        
+    return outs
+```
+Then pass the `dataframe` into the function to return the number of outliers.
+
+```python
+get_outliers(df)
+```
+```text
+{'age': 44,
+ 'balance': 88,
+ 'day': 0,
+ 'duration': 88,
+ 'campaign': 87,
+ 'pdays': 171,
+ 'previous': 99}
+```
+
+>*A good tip is to consider plotting the identified outlier values, perhaps in the context of non-outlier values to see if there are any systematic relationship or pattern to the outliers. If there is, perhaps they are not outliers and can be explained, or perhaps the outliers themselves can be identified more systematically[^OUTS].*
+
+### Removing Outliers
+Should you choose to drop outliers from your dataset, here is a simple method to do so.  From `scipy.stats` you can use the `zscore` fuction to easily identify outliers, similar to the above method:
+
+```python
+from scipy import stats
+
+# build a list of columns that you wish to remove ouliers from
+# pass multiple colummns like this: ['col1', 'col2', 'col3']
+out_list = ['balance']
+
+# overwrite the dataframe with outlier rows removed.
+df = df[((np.abs(stats.zscore(df[out_list])) < 3)).all(axis=1)]
+```
 
 ## Visualize the Data
 
