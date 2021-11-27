@@ -187,8 +187,7 @@ Outliers are another extrememly common issue in data.  Outliers need to be asses
 
 ```python
 def get_outliers(df):
-    '''Function to identify the number of outliers +/- 3 standard deviations outside of mean.
-    Pass this function a dataframe and it returns a dictionary'''
+    '''Function to identify the number of outliers +/- 3 standard deviations outside of mean. Pass this function a dataframe and it returns a dictionary'''
     
     outs = {}
     
@@ -226,7 +225,7 @@ get_outliers(df)
  'previous': 99}
 ```
 
->*A good tip is to consider plotting the identified outlier values, perhaps in the context of non-outlier values to see if there are any systematic relationship or pattern to the outliers. If there is, perhaps they are not outliers and can be explained, or perhaps the outliers themselves can be identified more systematically[^OUTS].*
+>*A good tip is to consider plotting the identified outlier values, perhaps in the context of non-outlier values to see if there are any systematic relationship or pattern to the outliers. If there is, perhaps they are not outliers and can be explained, or perhaps the outliers themselves can be identified more systematically [^OUTS].*
 
 ### Removing Outliers
 Should you choose to drop outliers from your dataset, here is a simple method to do so.  From `scipy.stats` you can use the `zscore` fuction to easily identify outliers, similar to the above method:
@@ -235,8 +234,7 @@ Should you choose to drop outliers from your dataset, here is a simple method to
 from scipy import stats
 
 # build a list of columns that you wish to remove ouliers from
-# pass multiple colummns like this: ['col1', 'col2', 'col3']
-out_list = ['balance']
+out_list = ['balance', 'pdays', 'duration']
 
 # overwrite the dataframe with outlier rows removed.
 df = df[((np.abs(stats.zscore(df[out_list])) < 3)).all(axis=1)]
