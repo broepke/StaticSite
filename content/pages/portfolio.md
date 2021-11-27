@@ -31,7 +31,7 @@ The following analyses were conducted:
 1. Build **Topic Models** utilizing **Latent Dirichlet Allocation** (LDA) and interpret results.
 1. Identify top **Features of the vehicle** from the **n-Grams** and **Topic Models** and perform sentiment analysis on a per-feature basis.
 
-[View the Full Analysis Here](../other/tesla.html)
+[View the Full Analysis Utilizing R Here](../other/tesla.html)
 
 ![Tesla Bi-Gram Analysis](../images/portfolio_tesla.png)
 
@@ -48,6 +48,18 @@ Yelp has opened up a large portion of its dataset for academic and personal use.
 3. Use a Machine Learning **Multi-label classification** model to see what **categories** would an algorithm recommended a business use and how they related to the ones that a business manually chose.
 4. Build a **Neural Network** using [TensorFlow](https://www.tensorflow.org) with **text** as input layer and the review rating as output if we can improve on the statistical Machine Learning model above.
 
-[View the Full Analysis Here](../other/yelp.html)
+[View the Full Analysis Utilizing Python Here](../other/yelp.html)
 
 ![Neural Network](../images/portfolio_nn.png)
+
+## Clothing Reviews Analysis
+
+As a clothing retailer with an e-Commerce presence, it's important for us to understand what customers are saying about our products, which products are most popular with our customers, and how we can improve our offerings.  To accomplish this we'll take a look at several different analyses that will help with the following:
+
+1. **Review Trends**: General trends of customer reviews, quantity, distribution, etc.
+1. **Sentiment Analysis**:  How customers feel about the products; are they positive or negative generally.
+1. **Part of Speech Analysis**: Using different parts of speech (Nouns, Verbs, Adjectives, etc.).  Via this, we can see the most common positive and negative words used to describe products as well as which a the most commonly referenced products categories.
+1. **Recommendation Prediction**: We will use this customer sentiment to understand better if a customer will give a positive rating on the clothing items based on their review.
+1. **Department Prediction**: Finally, we'll use a multi-label classification model to predict the departments a product belongs to based on the description that's being used.  This might identify cross-selling opportunities or cross-listing opportunities for products in new categories.
+
+[View the Full Analysis Utilizing Python Here](../other/clothing.html)
