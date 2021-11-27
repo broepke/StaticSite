@@ -24,7 +24,7 @@ Utilizing the python boto3 sdk, it's possible to invalidate items.  The below sc
 
 After you run the srcipt, you can go to your AWS CloudFront console and check the status.
 
-![AWS CloudFront Invalidate Status](images/invalidate.png)
+![AWS CloudFront Invalidate Status]({static}../../images/invalidate.png)
 
 ## Python Boto3 Script
 

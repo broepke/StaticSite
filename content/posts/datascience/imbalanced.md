@@ -16,7 +16,7 @@ Twitter_Image: images/time.jpg
 
 ## What is the Challenge? 
 
-The challenge you will run into with imbalanced data is around how algorithms learn off of your data. As you build a train/test dataset, the number of observations representing the minority class will be much smaller than the majority. The algorithm doesn't have enough data to truly model what the minority class will look like and ends up over-biasing to the majority class. It can be especially dangerous to use a simple *Accuracy* metric to evaluate your model or look for high precision or recall towards the minority class. More on [evaluation metrics](modeleval.html) later.
+The challenge you will run into with imbalanced data is around how algorithms learn off of your data. As you build a train/test dataset, the number of observations representing the minority class will be much smaller than the majority. The algorithm doesn't have enough data to truly model what the minority class will look like and ends up over-biasing to the majority class. It can be especially dangerous to use a simple *Accuracy* metric to evaluate your model or look for high precision or recall towards the minority class. More on [evaluation metrics]({filename}modeleval.md) later.
 
 ## Methods for Working with Imbalanced Data
 
@@ -49,7 +49,7 @@ When performing cross-validation for model evaluation, you should use the `Strat
 
 Synthetic Minority Oversampling Technique (SMOTE) uses a nearest-neighbor approach for generating new minority class samples. The method is applied *only to the training data* and then tested on the original, *untouched* test partition. The method chosen here is first to oversample the minority class making it balanced, and then undersample it to reduce the size and bloat [^PAPER].
 
-![Imbalanced](../images/imbalanced.png)
+![Imbalanced]({static}../../images/imbalanced.png)
 
 By synthetically generating minority class observations that are *similar* but not identical to other minority class observations, we can improve the model's performance on the minority class.
 
@@ -74,7 +74,7 @@ pipeline = Pipeline([('prep',column_trans),
 
 ## Evaluating Results
 
-Finally, choosing the right evaluation metric is critical with imbalanced data. If you're relying on Accuracy, you're most likely not going to achieve the results you think you are. Please look at my other post on [Evaluating Models with a Confusion Matrix](modeleval.html). 
+Finally, choosing the right evaluation metric is critical with imbalanced data. If you're relying on Accuracy, you're most likely not going to achieve the results you think you are. Please look at my other post on [Evaluating Models with a Confusion Matrix]({filename}modeleval.md). 
 
 # Conclusion
 

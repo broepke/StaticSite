@@ -38,7 +38,7 @@ plt.imshow(image_raw)
 ```html
 (3120, 4160, 3)
 ```
-![Uncompressed Image](images/pca_1.png)  
+![Uncompressed Image]({static}../../images/pca_1.png)  
 
 The results show a matrix of size `(3120, 4160, 3)`.  The first is the height of the image, the second is the width, and the third is the three channels of RGB values.  Given the number of dimensions of this image, you can see how if you compared this to a classic tabular set of data, this would be considered quite large.
 
@@ -89,7 +89,7 @@ ax = plt.plot(var_cumu)
 ```html
 Number of components explaining 95% variance: 54
 ```
-![Cumulative Explained Variance](images/pca_2.png)  
+![Cumulative Explained Variance]({static}../../images/pca_2.png)  
 
 
 By printing off the length of components, we can see that there are `3120` components overall.  I'm doing this to show how the number of components relates to the first value of our image matrix printed above. 
@@ -116,7 +116,7 @@ plt.figure(figsize=[12,8])
 plt.imshow(image_recon,cmap = plt.cm.gray)
 ```
 
-![Reduced Image](images/pca_3.png)
+![Reduced Image]({static}../../images/pca_3.png)
 
 We clearly can see the quality of the image has been reduced, but it's still what the image is.  From a Machine Learning perspective, training on this reduced set of data can produce nearly as good results but with fewer data.
 
@@ -142,7 +142,7 @@ for i in range(6):
 plt.subplots_adjust(wspace=0.2, hspace=0.0)
 plt.show()
 ```
-![Different k-Values](images/pca_4.png)
+![Different k-Values]({static}../../images/pca_4.png)
 
 And that's it! As few as `10` components even lets us make out what the image is, and at `250` it's hard to tell the difference between the original image and the PCA reduced image. 
 ## References
