@@ -97,7 +97,7 @@ df.tail()
 There is a super powerful command that in a single function, `df.describe()` can give you a birds-eye view of your data.  It will show counts, mean, standard deviation, min, max, and more.  With this data you can get a pretty good sense of what you're up against, however, visualizing this later will add to your analysis.
 
 ```python
-# Without an parameters passed into the describ function, it will return numerical only.
+# Without an parameters passed into the describe function, it will return numerical only.
 df.describe().round(2)
 ```
 ```text
