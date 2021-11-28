@@ -24,7 +24,7 @@ MENUITEMS = (
     ('Portfolio', '/pages/portfolio.html'),
     ('About', '/pages/about.html'),
     # ('Blog', '/blog_index.html'),
-    ('Blog Home', '/index.html'),
+    # ('Blog Home', '/index.html'),
 )
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
