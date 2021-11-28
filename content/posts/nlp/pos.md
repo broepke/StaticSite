@@ -12,8 +12,7 @@ Twitter_Image: images/covers/speech.jpg
 
 ## What is a Part of Speech?
 
-
-There are eight different parts of speech in English that are commonly defined [^POS].
+Part of Speech (POS) is a way to describe the grammatical function of a word.  There are eight different parts of speech in English that are commonly defined [^POS].
 
 1. **Noun**: A noun is the name of a person, place, thing, or idea.
 2. **Pronoun**: A pronoun is a word used in place of a noun.
@@ -23,8 +22,6 @@ There are eight different parts of speech in English that are commonly defined [
 6. **Preposition**: A preposition is a word placed before a noun or pronoun to form a phrase modifying another word in the sentence.
 7. **Conjunction**: A conjunction joins words, phrases, or clauses.
 8. **Interjection**: An interjection is a word used to express emotion. 
-
-
 
 ## References
 
