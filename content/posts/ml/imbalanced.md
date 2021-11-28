@@ -48,7 +48,7 @@ When performing cross-validation for model evaluation, you should use the `Strat
 
 Synthetic Minority Oversampling Technique (SMOTE) uses a nearest-neighbor approach for generating new minority class samples. The method is applied *only to the training data* and then tested on the original, *untouched* test partition. The method chosen here is first to oversample the minority class making it balanced, and then undersample it to reduce the size and bloat [^PAPER].
 
-![Imbalanced]({static}../../images/imbalanced.png)
+![Imbalanced]({static}../../images/posts/imbalanced.png)
 
 By synthetically generating minority class observations that are *similar* but not identical to other minority class observations, we can improve the model's performance on the minority class.
 

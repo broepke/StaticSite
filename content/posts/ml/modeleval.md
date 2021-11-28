@@ -20,7 +20,7 @@ While **Accuracy** is acceptable for model performance when your dataset is perf
 
 After a model is trained and tested on data (Scikit-Learn has a great write-up of this process[^CROSS]), you can generate a **Confusion Matrix** to give a view of how observations the model misclassified.  A Confusion Matrix is a 2x2 table (for binary classification) that plots the **actual** values vs. the **predicted** values on its axes.  Once you understand how to interpret it, it is easy and intuitive to see your model's performance. 
 
-![Confusion Matrix]({static}../../images/modeleval_1.png)  
+![Confusion Matrix]({static}../../images/posts/modeleval_1.png)  
 
 *Image by Author. The concept from Baptiste Rocca[^IMB]*
 
@@ -37,7 +37,7 @@ See the [Scikit-Learn](https://scikit-learn.org/stable/auto_examples/model_selec
 
 The following image is the best way that I've seen to illustrate how each calculation is performed.  It can also help you, once you understand what you're trying to optimize for, which type of metric you should use.
 
-![Confusion Matrix Calculations]({static}../../images/modeleval_2.png)  
+![Confusion Matrix Calculations]({static}../../images/posts/modeleval_2.png)  
 
 *Image by Author. The concept from Baptiste Rocca[^IMB]*
 
@@ -57,7 +57,7 @@ A critical part of picking the right evaluation metric is to decide what is the 
 
 Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My objective was to predict when a user would convert from a trial account to a paid account for a SaaS offering.  This example is created from **Scikit-Learn** and is also showing the various evaluation metrics above.  In my case, the *positive* class (`1`) was those that converted to paid, and the *negative* class was for those that failed to convert.  Take a look for yourself and see how you interpret the results.
 
-![Confusion Matrix]({static}../../images/modeleval_3.png)  
+![Confusion Matrix]({static}../../images/posts/modeleval_3.png)  
 
 Hopefully, this helps you better understand how to interpret a confusion matrix and choose the best evaluation metric for your use case!
 

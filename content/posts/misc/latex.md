@@ -30,7 +30,7 @@ I find this distribution complete and easy to manage.  It installs as a DMG and 
 
 After installing the software, you need to make sure all appropriate packages are up to date.  You can accomplish this by Launching the **TeX Live Utility** and running the *Update All Packages* command.
 
-![TeX Live Utility]({static}../../images/latex_1.png)
+![TeX Live Utility]({static}../../images/posts/latex_1.png)
 
 ## VS Code and LaTeX
 
@@ -183,7 +183,7 @@ And then reference that image in your LaTeX document.  Every time your plot upda
 
 ## Conclusion
 
-![Sample Page]({static}../../images/latex_2.jpg)
+![Sample Page]({static}../../images/posts/latex_2.jpg)
 
 This post turned out to be a little lengthy, but hopefully, it will help you set up and get your first document published.  I've posted the source code on [GitHub](https://github.com/broepke/LaTeX-APA) if you'd like to see the entire project.
 

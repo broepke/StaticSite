@@ -258,7 +258,7 @@ plt.figure(figsize=(7,6))
 sns.boxplot(x="y", y="duration", data=df, showfliers=True)
 ```
 
-![Box Plot]({static}/images/eda_box.png)  
+![Box Plot]({static}../../images/posts/eda_box.png)  
 
 Utilizing this graphic, we can see that both the median (line in the center of the box) as well the interquartile range (IQR), or the upper and lower portions of the box as a whole, is greater for the `yes` than the `no` values.
 
@@ -272,7 +272,7 @@ Histograms show the distribution of a single variable in "bins" or groups of dat
 sns.histplot(x='age', data=df, bins=20, kde=True)
 ```
 
-![Histogram]({static}../../images/eda_hist.png)  
+![Histogram]({static}../../images/posts/eda_hist.png)  
 
 When you look at the `age` variable plotted with a histogram, you can see that the number of people in the data set with ages between 30 and 40 has the highest frequency. Because the histogram is not centered, we call this skewness. In this case, the skew is referred to as [**Right Skewed**](https://en.wikipedia.org/wiki/Skewness) because the right tail is longer.
 
@@ -289,7 +289,7 @@ sns.heatmap(corr, annot=True, square=False, ax=ax, linewidth = 1)
 plt.title('Pearson Correlation of Features')
 ```
 
-![Correlation Matrix]({static}../../images/eda_corr.png)  
+![Correlation Matrix]({static}../../images/posts/eda_corr.png)  
 
 For the most part, there are not any strongly correlated variables except `pdays` and `previous` with a `0.62` positive correlation value between them. It would be valuable to understand why these are and if they're related to similar actions.
 
@@ -302,7 +302,7 @@ g.fig.set_size_inches(12,12)
 g=sns.pairplot(df, diag_kind = 'auto', hue="y")
 ```
 
-![Pairplot]({static}../../images/eda_pairs.png)  
+![Pairplot]({static}../../images/posts/eda_pairs.png)  
 
 With just a single line of code, you can quickly, visually evaluate the relationships shown in the correlation matrix. We can see now visually there doesn't appear to be much of a correlation between the variable `pdays` and `previous`.
 

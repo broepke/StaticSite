@@ -22,7 +22,7 @@ Twitter_Image: images/covers/computer.jpg
 
 It's important not to use the root account for this process.  In most cases, the Notebook environment will fail to start/attach to the Python or PySpark kernels after initializing.  To overcome this, create the account with the appropriate permissions.  I used the following as a generic catch-all; I didn't try to get to the bare minimum.
 
-![AWS IAM User]({static}../../images/awsemr-1.png)
+![AWS IAM User]({static}../../images/posts/awsemr-1.png)
 
 ## Create a new Cluster
 
@@ -30,13 +30,13 @@ Next, you want to create a new cluster.  The image below shows all of the releva
 
 Step through to the final page and make sure you select a PEM file that you will associate with the cluster.  It will be important to access the user interfaces for Hadoop, Hue, Spark, etc.
 
-![AWS IAM User]({static}../../images/awsemr-2.png)
+![AWS IAM User]({static}../../images/posts/awsemr-2.png)
 
 ## Create a new Notebook
 
 Next, `Create Notebook` in EMR.  While you can create a cluster for yourself, it's important to select the one you just created. Use the `Choose existing cluster` option. This process will allow you to kill the cluster, and in turn, re-create it without losing data and the ability to continue coding on your cluster/Notebook.
 
-![AWS IAM User]({static}../../images/awsemr-3.png)
+![AWS IAM User]({static}../../images/posts/awsemr-3.png)
 
 ## After Analysis - Terminating
 
