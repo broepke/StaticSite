@@ -6,7 +6,7 @@ Modified: 2020-12-05
 Tags: Mac, Apple, Computers, Tech
 Authors: Brian Roepke
 Summary: MacMini with the new Apple Silicon M1 chip
-Header_Cover: images/computer.jpg
+Header_Cover: images/covers/computer.jpg
 
 
 When apple announced the new M1 chip I ordered a Mac Mini.  It simply blows away any other computer I've had the pleasure to use.  It is super responsive and quiet.  I've only run into a single issue with running Tableau.  It says the processor isn't compatible.  I'm sure that will be resolved sooner or later.  

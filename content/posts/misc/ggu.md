@@ -5,9 +5,9 @@ Tags: datascience, school
 Slug: ggu
 Authors: Brian Roepke
 Summary: I got admitted to the Bachelors of Science in Data Analytics
-Header_Cover: images/rebar.jpg
-Og_Image: images/rebar.jpg
-Twitter_Image: images/rebar.jpg
+Header_Cover: images/covers/rebar.jpg
+Og_Image: images/covers/rebar.jpg
+Twitter_Image: images/covers/rebar.jpg
 
 
 # Golden Gate University

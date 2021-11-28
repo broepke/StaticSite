@@ -6,9 +6,9 @@ Tags: datascience, nlp
 Slug: pos
 Authors: Brian Roepke
 Summary: How to leverage NLP to tag words with its Part of Speech
-Header_Cover: images/speech.jpg
-Og_Image: images/speech.jpg
-Twitter_Image: images/speech.jpg
+Header_Cover: images/covers/speech.jpg
+Og_Image: images/covers/speech.jpg
+Twitter_Image: images/covers/speech.jpg
 
 ## What is a Part of Speech?
 

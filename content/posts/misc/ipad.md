@@ -5,9 +5,9 @@ Tags: ipad, apple
 Slug: ipad
 Authors: Brian Roepke
 Summary: Setting up an iPad Pro to develop with Python and Markdown
-Header_Cover: images/sheep.jpg
-Og_Image: images/sheep.jpg
-Twitter_Image: images/sheep.jpg
+Header_Cover: images/covers/sheep.jpg
+Og_Image: images/covers/sheep.jpg
+Twitter_Image: images/covers/sheep.jpg
 
 
 Amazingly enough you can turn your iPad into a near fully fledge development environment for Python, Jupyter Notebooks, HTML, CSS, and Markdown.  Here are the apps to complete the workflow. Make sure to watch the videos below for a preview of how this all works together.

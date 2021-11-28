@@ -3,9 +3,9 @@ Date: 2021-11-20
 Modified: 2021-11-20
 Slug: portfolio
 Authors: Brian Roepke
-Header_Cover: images/cranes_night.jpg
-Og_Image: images/cranes_night.jpg
-Twitter_Image: images/cranes_night.jpg
+Header_Cover: images/covers/cranes_night.jpg
+Og_Image: images/covers/cranes_night.jpg
+Twitter_Image: images/covers/cranes_night.jpg
 
 *The following are a few projects I've worked on, mostly in context of my recent undergraduate degree in Data Analytics.  Other examples available upon request.*
 ## Tesla User Forums "Voice of Customer" Analysis

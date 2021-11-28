@@ -4,9 +4,9 @@ Modified: 2021-11-20
 Slug: home
 Authors: Brian Roepke
 
-Header_Cover: images/home.jpg
-Og_Image: images/home.jpg
-Twitter_Image: images/home.jpg
+Header_Cover: images/covers/home.jpg
+Og_Image: images/covers/home.jpg
+Twitter_Image: images/covers/home.jpg
 
 ## Welcome!
 

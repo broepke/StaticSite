@@ -5,7 +5,7 @@ Tags: datascience, sql
 Slug: cte
 Authors: Brian Roepke
 Summary: Building complex select queries with CTEs.
-Header_Cover: images/trees.jpg
+Header_Cover: images/covers/trees.jpg
 
 ## What is a Common Table Expression
 

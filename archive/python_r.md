@@ -6,7 +6,7 @@ Tags: tables, markdown, python, r
 Slug: python_r
 Authors: Brian Roepke
 Summary: A table comparing Python and R languages
-Header_Cover: images/trees.jpg
+Header_Cover: images/covers/trees.jpg
 
 
 A comparison of Python and R from [guru99](https://www.guru99.com/r-vs-python.html):

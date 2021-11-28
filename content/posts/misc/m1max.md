@@ -6,9 +6,9 @@ Tags: datascience, apple
 Slug: m1max
 Authors: Brian Roepke
 Summary: A comparison of training a neural network on a first gen M1 Mac vs. the monster M1 Max with 32 core GPU.
-Header_Cover: images/computer.jpg
-Og_Image: images/computer.jpg
-Twitter_Image: images/computer.jpg
+Header_Cover: images/covers/computer.jpg
+Og_Image: images/covers/computer.jpg
+Twitter_Image: images/covers/computer.jpg
 
 ## The 2021 Macbook Pro M1 Max
 

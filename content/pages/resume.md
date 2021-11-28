@@ -6,9 +6,9 @@ Tags: personal, resume
 Slug: resume
 Authors: Brian Roepke
 Summary: My resume.
-Header_Cover: images/table.jpg
-Og_Image: images/table.jpg
-Twitter_Image: images/table.jpg
+Header_Cover: images/covers/table.jpg
+Og_Image: images/covers/table.jpg
+Twitter_Image: images/covers/table.jpg
 
 ## Introduction
 

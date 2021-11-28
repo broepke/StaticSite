@@ -5,9 +5,9 @@ Tags: aws, python
 Slug: invalidate
 Authors: Brian Roepke
 Summary: How to invalidate CloudFront's caches and ensure all items are up to date.
-Header_Cover: images/sheep.jpg
-Og_Image: images/sheep.jpg
-Twitter_Image: images/sheep.jpg
+Header_Cover: images/covers/sheep.jpg
+Og_Image: images/covers/sheep.jpg
+Twitter_Image: images/covers/sheep.jpg
 
 ## Invalidating with Python and the Boto3 SDK
 

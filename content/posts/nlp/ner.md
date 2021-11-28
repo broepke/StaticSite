@@ -6,9 +6,9 @@ Tags: datascience, nlp
 Slug: ner
 Authors: Brian Roepke
 Summary: Classify text into pre-defined categories such as person names, organizations, locations, and more!
-Header_Cover: images/road.jpg
-Og_Image: images/road.jpg
-Twitter_Image: images/road.jpg
+Header_Cover: images/covers/road.jpg
+Og_Image: images/covers/road.jpg
+Twitter_Image: images/covers/road.jpg
 
 ## What is a Topic Model?
 

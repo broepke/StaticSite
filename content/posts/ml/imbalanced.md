@@ -5,9 +5,9 @@ Tags: datascience, machine learning, python
 Slug: imbalanced
 Authors: Brian Roepke
 Summary: Multiple techniques for dealing with imbalanced data from algorithm selection to synthetic data generation.
-Header_Cover: images/time.jpg
-Og_Image: images/time.jpg
-Twitter_Image: images/time.jpg
+Header_Cover: images/covers/time.jpg
+Og_Image: images/covers/time.jpg
+Twitter_Image: images/covers/time.jpg
 
 ## What is Imbalanced Data
 

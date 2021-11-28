@@ -5,9 +5,9 @@ Tags: datascience, python, machine learning
 Slug: sklearnpipelines
 Authors: Brian Roepke
 Summary: Why you should be using pipelines and not processing steps separately.
-Header_Cover: images/cranes_night.jpg
-Og_Image: images/cranes_night.jpg
-Twitter_Image: images/cranes_night.jpg
+Header_Cover: images/covers/cranes_night.jpg
+Og_Image: images/covers/cranes_night.jpg
+Twitter_Image: images/covers/cranes_night.jpg
 
 ## Why Pipelines?
 

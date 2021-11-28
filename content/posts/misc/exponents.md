@@ -5,9 +5,9 @@ Tags: math, school
 Slug: exponents
 Authors: Brian Roepke
 Summary: A quick reference for the properties of exponents
-Header_Cover: images/colliseum.jpg
-Og_Image: images/colliseum.jpg
-Twitter_Image: images/colliseum.jpg
+Header_Cover: images/covers/colliseum.jpg
+Og_Image: images/covers/colliseum.jpg
+Twitter_Image: images/covers/colliseum.jpg
 
 
 ## Working with Exponents

@@ -6,9 +6,9 @@ Tags: datascience, machine learning, eda, data
 Slug: eda
 Authors: Brian Roepke
 Summary: My approach to EDA; One of the most critical steps in your project.
-Header_Cover: images/road.jpg
-Og_Image: images/road.jpg
-Twitter_Image: images/road.jpg
+Header_Cover: images/covers/road.jpg
+Og_Image: images/covers/road.jpg
+Twitter_Image: images/covers/road.jpg
 
 ## What is EDA?
 

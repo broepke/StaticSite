@@ -6,7 +6,7 @@ Tags: code, statistics, datascience, edx, learning, science
 Slug: ucsandiegox
 Authors: Brian Roepke
 Summary: MicroMasters in Data Science on edX
-Header_Cover: images/botswana.jpg
+Header_Cover: images/covers/botswana.jpg
 
 
 An amazing 4 part Master's level set of courses from the

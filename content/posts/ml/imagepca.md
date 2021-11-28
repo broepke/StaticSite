@@ -5,9 +5,9 @@ Tags: datascience, python, sklearn
 Slug: imagepca
 Authors: Brian Roepke
 Summary: Using PCA dimensionality reduction to compress images.
-Header_Cover: images/factory.jpg
-Og_Image: images/factory.jpg
-Twitter_Image: images/factory.jpg
+Header_Cover: images/covers/factory.jpg
+Og_Image: images/covers/factory.jpg
+Twitter_Image: images/covers/factory.jpg
 
 ## What is PCA?
 

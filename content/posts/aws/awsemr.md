@@ -5,9 +5,9 @@ Tags: aws, datascience, python, data
 Slug: awsemr
 Authors: Brian Roepke
 Summary: A setup guide for configuring AWS EMR with Spark and Jupyter Notebooks
-Header_Cover: images/computer.jpg
-Og_Image: images/computer.jpg
-Twitter_Image: images/computer.jpg
+Header_Cover: images/covers/computer.jpg
+Og_Image: images/covers/computer.jpg
+Twitter_Image: images/covers/computer.jpg
 
 ## Basic Steps
 

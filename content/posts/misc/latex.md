@@ -5,9 +5,9 @@ Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
 Summary: I actually published my capstone using LaTeX... and it wasn't bad! 
-Header_Cover: images/dog.jpg
-Og_Image: images/dog.jpg
-Twitter_Image: images/dog.jpg
+Header_Cover: images/covers/dog.jpg
+Og_Image: images/covers/dog.jpg
+Twitter_Image: images/covers/dog.jpg
 
 ## Overview
 
