@@ -1,7 +1,7 @@
 Title: Exploratory Data Analysis
 Date: 2021-12-04
 Modified: 2021-12-04
-Status: draft
+Status: published
 Tags: datascience, machine learning, eda, data
 Slug: eda
 Authors: Brian Roepke
