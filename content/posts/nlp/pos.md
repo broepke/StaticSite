@@ -26,7 +26,9 @@ Part of Speech (POS) is a way to describe the grammatical function of a word.  T
 ## References
 
 Photo by <a href="https://unsplash.com/@apellaes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandre Pellaes</a> on <a href="https://unsplash.com/s/photos/conferences?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-[^POS]: [The Eight Parts of Speech](https://www.butte.edu/departments/cas/tipsheets/grammar/parts_of_speech.html)
 
-https://en.wikipedia.org/wiki/Part_of_speech
+[^POS]: [The Eight Parts of Speech](https://www.butte.edu/departments/cas/tipsheets/grammar/parts_of_speech.html)
+[^WIKI]: [Part of Speech on Wikipedia](https://en.wikipedia.org/wiki/Part_of_speech)
+[^NLTK]: [NLTK: Natural Language Toolkit](https://www.nltk.org)
+[^SPACY]: [Spacy: Industrial-Strength Natural Language Processing](https://spacy.io)
+[^BLOB]: [TextBlob: Simplified Text Processing](https://textblob.readthedocs.io/en/dev/)
