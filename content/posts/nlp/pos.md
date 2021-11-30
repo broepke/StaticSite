@@ -23,6 +23,13 @@ Part of Speech (POS) is a way to describe the grammatical function of a word.  T
 7. **Conjunction**: A conjunction joins words, phrases, or clauses.
 8. **Interjection**: An interjection is a word used to express emotion. 
 
+
+
+https://www.quora.com/What-are-the-applications-of-tagging-in-NLP 
+
+There is a hierarchy of tasks in NLP (see Natural language processing for a list). At the bottom is sentence and word segmentation. POS tagging builds on top of that, and phrase chunking builds on top of POS tags. These tags in turn can be used as features for higher level tasks such as building parse trees, which can in turn be used for Named Entity Resolution, Coreference Resolution, Sentiment Analysis and Question Answering.
+
+
 ## References
 
 Photo by <a href="https://unsplash.com/@apellaes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandre Pellaes</a> on <a href="https://unsplash.com/s/photos/conferences?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
