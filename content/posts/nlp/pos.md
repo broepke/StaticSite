@@ -1,11 +1,11 @@
 Title: Part of Speech Tagging
 Date: 2021-12-11
 Modified: 2021-12-11
-Status: draft
+Status: published
 Tags: datascience, nlp
 Slug: pos
 Authors: Brian Roepke
-Summary: How to leverage NLP to tag words with their Part of Speech (POS) and how might a Product Manager utilize them to help understand the Voice of Customer.
+Summary: How to leverage NLP to tag words with their Part of Speech (POS) and leverage them to help understand the Voice of Customer.
 Header_Cover: images/covers/speech.jpg
 Og_Image: images/covers/speech.jpg
 Twitter_Image: images/covers/speech.jpg
