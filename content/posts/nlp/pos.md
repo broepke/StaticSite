@@ -5,7 +5,7 @@ Status: draft
 Tags: datascience, nlp
 Slug: pos
 Authors: Brian Roepke
-Summary: How to leverage NLP to tag words with its Part of Speech
+Summary: How to leverage NLP to tag words with their Part of Speech (POS) and how might a Product Manager utilize this to help understand the Voice of Customer.
 Header_Cover: images/covers/speech.jpg
 Og_Image: images/covers/speech.jpg
 Twitter_Image: images/covers/speech.jpg
@@ -50,7 +50,8 @@ import spacy
 For our examples, we'll use two sentences with a common word (book) to test how well the POS taggers work in context.
 
 * *Please book my flight to California*
-* *I read a very good book*
+* *I read a very good book*  
+
 ### NLTK
 
 Let's start with the most common library for NLP in Python; the **Natural Language Toolkit** or **NLTK**.
