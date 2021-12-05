@@ -31,3 +31,5 @@ orange neon
 Photo by <a href="https://unsplash.com/@kylry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kyle  Ryan</a> on <a href="https://unsplash.com/s/photos/phrases?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 [^SPACY]: [Spacy: Industrial-Strength Natural Language Processing](https://spacy.io)
+[^TDS]: [Chunking in NLP: decoded](https://towardsdatascience.com/chunking-in-nlp-decoded-b4a71b2b4e24)
+
