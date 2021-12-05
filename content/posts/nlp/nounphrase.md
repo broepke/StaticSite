@@ -5,13 +5,14 @@ Status: draft
 Tags: datascience, nlp
 Slug: nounphrase
 Authors: Brian Roepke
-Summary: Beyond Parts of Speech Tagging to Noun Phrase Chunking.
+Summary: Moving Beyond Part of Speech Tagging to Noun Phrase Chunking.
 Header_Cover: images/covers/orangeneon.jpg
 Og_Image: images/covers/orangeneon.jpg
 Twitter_Image: images/covers/orangeneon.jpg
 
 ## What is Noun Phrase Chunking?
 
+In the last post, I covered [Part of Speech Tagging]({filename}pos.md) which is the process of tagging words with their gramatical parts.  Here I will cover **Noun Chunking** or **Noun Phrase Chunking**, or **Base Noun Phrases** [^SPACY]
 
 ```python
 import spacy
@@ -31,5 +32,6 @@ orange neon
 Photo by <a href="https://unsplash.com/@kylry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kyle  Ryan</a> on <a href="https://unsplash.com/s/photos/phrases?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 [^SPACY]: [Spacy: Industrial-Strength Natural Language Processing](https://spacy.io)
+[^NLTK]: [Ch 7. Extracting Information from Text](https://www.nltk.org/book/ch07.html)
 [^TDS]: [Chunking in NLP: decoded](https://towardsdatascience.com/chunking-in-nlp-decoded-b4a71b2b4e24)
 
