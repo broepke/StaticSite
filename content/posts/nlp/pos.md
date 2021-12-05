@@ -1,6 +1,6 @@
 Title: Part of Speech Tagging
-Date: 2021-12-04
-Modified: 2021-12-04
+Date: 2021-12-11
+Modified: 2021-12-11
 Status: draft
 Tags: datascience, nlp
 Slug: pos
