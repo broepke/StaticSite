@@ -17,13 +17,13 @@ In the last post, I covered [Part of Speech Tagging]({filename}pos.md) which is 
 ```python
 import spacy
 nlp = spacy.load("en_core_web_sm")
-doc = nlp("Five words in orange neon")
+doc = nlp("Five Words in Orange Neon")
 for chunk in doc.noun_chunks:
     print(chunk.text)
 ```
 ```text
-Five words
-orange neon
+Five Words
+Orange Neon
 ```
 
 
