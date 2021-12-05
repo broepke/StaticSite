@@ -12,9 +12,9 @@ Twitter_Image: images/covers/speech.jpg
 
 ## What is a Part of Speech?
 
-Part of Speech (POS) is a way to describe the grammatical function of a word.  In Natural Language Processing (NLP) POS is an essential building block of language models and interpreting text.  While POS tags are used in higher level functions of NLP, it's important to understand them on their own, and it's possible to leverage them for useful purposes in your text analysis.
+Part of Speech (POS) is a way to describe the grammatical function of a word. In Natural Language Processing (NLP), POS is an essential building block of language models and interpreting text. While POS tags are used in higher-level functions of NLP, it's important to understand them on their own, and it's possible to leverage them for useful purposes in your text analysis.
 
-> There is a hierarchy of tasks in NLP (see [Natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing#Major_tasks_in_NLP) for a list). At the bottom is sentence and word segmentation. POS tagging builds on top of that, and phrase chunking builds on top of POS tags. These tags in turn can be used as features for higher level tasks such as building parse trees, which can in turn be used for Named Entity Resolution, Coreference Resolution, Sentiment Analysis and Question Answering [^QUORA].
+> There is a hierarchy of tasks in NLP (see [Natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing#Major_tasks_in_NLP) for a list). At the bottom are sentence and word segmentation. POS tagging builds on top of that, and phrase chunking builds on top of POS tags. These tags, in turn, can be used as features for higher-level tasks such as building parse trees, which can, in turn, be used for Named Entity Resolution, Coreference Resolution, Sentiment Analysis, and Question Answering [^QUORA].
 
 There are eight different parts of speech in English that are commonly defined [^POS].
 
@@ -26,11 +26,11 @@ There are eight different parts of speech in English that are commonly defined [
 6. **Preposition**: A preposition is a word placed before a noun or pronoun to form a phrase modifying another word in the sentence.
 7. **Conjunction**: A conjunction joins words, phrases, or clauses.
 8. **Interjection**: An interjection is a word used to express emotion. 
-9. **Determiner (Article)**: A determiner is a word that indicates a number of objects or people. (These are not always considered a POS but often included in POS tagging libraries.)
+9. **Determiner (Article)**: A determiner is a word that indicates several objects or people. (These are not always considered a POS but are often included in POS tagging libraries.)
 
 ## The Basics of POS Tagging
 
-Let's start out with some simple examples of POS tagging with three common Python libraries: NLTK [^NLTK], TextBlob [^BLOB], and Spacy [^SPACY].  We'll do the absolute basics for each and compare the results.
+Let's start with some simple examples of POS tagging with three common Python libraries: NLTK [^NLTK], TextBlob [^BLOB], and Spacy [^SPACY]. We'll do the absolute basics for each and compare the results.
 
 Start by importing all the needed libraries.
 
@@ -47,7 +47,7 @@ from textblob.taggers import PatternTagger
 import spacy
 ```
 
-For our examples we'll use two sentences with a common word (book) to test how well the POS taggers work in context.  
+For our examples, we'll use two sentences with a common word (book) to test how well the POS taggers work in context.
 
 * *Please book my flight to California*
 * *I read a very good book*
@@ -81,13 +81,13 @@ tokenized_sent = nltk.sent_tokenize("I read a very good book")
   ('book', 'NN')]]
 ```
 
-What we notice here is that for the most part, **NLTK** is properly recognizing the word in context however a few errors such as *Please* is tagged as a *Proper Noun (NNP)* and *book* is tagged as a *Noun (NN)* in our first sentence when it should be a *Verb (VB)*. 
+What we notice here is that for the most part, **NLTK** properly recognizes the word in context; however, a few errors such as *Please* is tagged as a *Proper Noun (NNP)* and *book* is tagged as a *Noun (NN)* in our first sentence when it should be a *Verb (VB)*. 
 
 **Note:** For a list of what the tags mean, see [Penn Treebank Project](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
 
 ### TextBlob
 
-Let's try another library called **TextBlob** which provides a simple API for diving into common natural language processing (NLP) tasks [^BLOB].  It's a very good Pythonic implementation of a NLP library and simplifies some of the common NLP tasks.  Much of what **TextBlob** does is *wrap NLTK* and other poplular NLP libraries in order to make them easier to use.
+Let's try another library called **TextBlob** which provides a simple API for diving into standard natural language processing (NLP) tasks [^BLOB]. It's a very good Pythonic implementation of an NLP library and simplifies some of the common NLP tasks. Much of what **TextBlob** does is *wrap NLTK* and other popular NLP libraries to make them easier to use.
 
 ```python
 blob = TextBlob("Please book my flight to California", pos_tagger=PatternTagger())
@@ -115,11 +115,11 @@ blob.tags
  ('book', 'NN')]
 ```
 
-Notice the use of `PatternTagger` in the initialization of the Blob.  The default is to use NLTK's tagger which would yeild the exact same results as above.  This allows us to try a differnt POS Tagger and check its performance.  We can see that **TextBlob** correctly identifies *Please* as a *Verb* this time, but still misses *Book* as a *Verb* in the first sentence.
+Notice the use of `PatternTagger` in the initialization of the Blob. The default is to use NLTK's tagger, yielding the same results as above. This allows us to try a different POS Tagger and check its performance. We can see that **TextBlob** correctly identifies *Please* as a *Verb* this time but still misses *Book* as a *Verb* in the first sentence.
 
 ### Spacy
 
-**Spacy** is the most modern and advanced of the three of these.  It's incredibly robust for tons of NLP tasks, and allows for customization if more power is needed.  This is currently my favorite NLP library.  Let's check it out with our sentences.
+**Spacy** is the most modern and advanced of the three of these. It's incredibly robust for tons of NLP tasks and allows for customization if more power is needed. This is currently my favorite NLP library, and let's check it out with our sentences.
 
 ```python
 # Spacy Version
@@ -151,9 +151,9 @@ good ADJ
 book NOUN
 ```
 
-We see with here, that **Spacy** correctly tagged all of our words.  It identified *Please* as an *Interjection* [^PLEASE] as opposed to a *Verb*, which is more accurate and also identified *Book* as a *Verb* in the first sentence.
+We see here that **Spacy** correctly tagged all of our words, and it identified *Please* like an *Interjection* [^PLEASE] as opposed to a *Verb*, which is more accurate and also identified *Book* as a *Verb* in the first sentence.
 
-Each of these libraries has their pros and cons.  I belive you should start with **NLTK** to get an understanding of how it works, especially since it has so much robust support for different lexicons.  **TextBlob** is great when you want simplicity across a number of NLP asks, and **Spacy** when you want the most robust.
+Each of these libraries has its pros and cons. I believe you should start with **NLTK** to understand how it works, especially since it has so much robust support for different lexicons. **TextBlob** is great when you want simplicity across several NLP tasks, and **Spacy** when you want the most robust.
 
 ## References
 
