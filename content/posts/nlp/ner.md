@@ -1,59 +1,42 @@
 Title: Named Entity Recognition
-Date: 2021-12-04
-Modified: 2021-12-04
+Date: 2021-12-19
+Modified: 2021-12-19
 Status: draft
 Tags: datascience, nlp
 Slug: ner
 Authors: Brian Roepke
 Summary: Classify text into pre-defined categories such as person names, organizations, locations, and more!
+Header_Cover: images/covers/dc.jpg
 Og_Image: images/covers/dc.jpg
 Twitter_Image: images/covers/dc.jpg
 ## What is Named Entity Recognition?
 
 
+
+## NER with Spacy
+
+We'll start with a pargrah taken from a Teslarati article title [Tesla could receive $12.36 million worth of Model 3 orders from New York City](https://www.teslarati.com/tesla-new-york-city-12-million-model-3-order/).  
+
 ```python
 import spacy
 from spacy import displacy
-
-text = "Mr. Biden’s announcement came as several new cases of the Omicron variant were reported in the United States, including five people in New York State, a Minnesota resident who had recently traveled to New York City and a Colorado resident who had recently returned from southern Africa. Hawaii also reported its first known case, and California its second."
-
 nlp = spacy.load("en_core_web_sm")
+
+text = "IN THE MATTER OF a proposed contract between the Department of Citywide Administrative Services of the City of New York and Tesla, Inc., located at 3500 Deer Creek Rd., Palo Alto, CA 94304, for procuring Tesla Model 3 All-Electric Sedans. The contract is in the amount of $12,360,000.00. The term of the contract shall be five years from date of Notice of Award. The proposed contractor has been selected by Sole Source Procurement Method, pursuant to Section 3-05 of the Procurement Policy Board Rules. If the plan does go through, the $12.36 million could effectively purchase about 274 units of the base Model 3 Rear-Wheel-Drive, which cost $44,990 under Tesla's current pricing structure."
+
 doc = nlp(text)
 displacy.render(doc, style="ent")
 ```
+## Output with Displacy
 
-```python
-import spacy
+Spacy has a wonderful ability to render NER tags inline with the text.  This is a fantastic way to see what's being recognized in context of the orginal article.
 
-nlp = spacy.load("en_core_web_sm")
-# Merge noun phrases and entities for easier analysis
-nlp.add_pipe("merge_entities")
-nlp.add_pipe("merge_noun_chunks")
-
-TEXTS = [
-    "Net income was $9.4 million compared to the prior year of $2.7 million.",
-    "Revenue exceeded twelve billion dollars, with a loss of $1b.",
-]
-for doc in nlp.pipe(TEXTS):
-    for token in doc:
-        if token.ent_type_ == "MONEY":
-            # We have an attribute and direct object, so check for subject
-            if token.dep_ in ("attr", "dobj"):
-                subj = [w for w in token.head.lefts if w.dep_ == "nsubj"]
-                if subj:
-                    print(subj[0], "-->", token)
-            # We have a prepositional object with a preposition
-            elif token.dep_ == "pobj" and token.head.dep_ == "prep":
-                print(token.head.head, "-->", token)
-```
+<figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">IN THE MATTER OF a proposed contract between <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">the Department of Citywide Administrative Services<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark> of the City of <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">New York<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> and <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Tesla, Inc.<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>, located at <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">3500<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span></mark> Deer Creek Rd., <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Palo Alto<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark>, CA 94304, for procuring Tesla Model 3 All-Electric Sedans. The contract is in the amount of $<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">12,360,000.00<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark>. The term of the contract shall be <mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">five years from date<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span></mark> of Notice of Award. The proposed contractor has been selected by <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Sole Source Procurement Method<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>, pursuant to <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Section 3-05<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LAW</span></mark> of <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">the Procurement Policy Board Rules<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>. If the plan does go through, the <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">$12.36 million<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark> could effectively purchase <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">about 274<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span></mark> units of the base Model 3 Rear-Wheel-Drive, which cost $<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">44,990<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark> under <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Tesla<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>'s current pricing structure.</div></figure>
 
 ## References
 
 Photo by <a href="https://unsplash.com/@connave?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bob Bowie</a> on <a href="https://unsplash.com/s/photos/washington-dc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 [^SPACY]: [Spacy: Industrial-Strength Natural Language Processing](https://spacy.io)
-
-```text
-file:///Users/brianroepke/Projects/DATA110/Week%208/DATA110_Week8-broepke.html
-file:///Users/brianroepke/Projects/DATA110/Week%2011/DATA110-Week11-Midterm-broepke.html 
-```
+[^TDS]: [Named Entity Recognition: Applications and Use Cases](https://towardsdatascience.com/named-entity-recognition-applications-and-use-cases-acdbf57d595e)
+[^MLPLUS]: [How to Train spaCy to Autodetect New Entities (NER) [Complete Guide]](https://www.machinelearningplus.com/nlp/training-custom-ner-model-in-spacy/)
