@@ -6,7 +6,6 @@ Tags: datascience, nlp
 Slug: ner
 Authors: Brian Roepke
 Summary: Classify text into pre-defined categories such as person names, organizations, locations, and more!
-Header_Cover: images/covers/dc.jpg
 Og_Image: images/covers/dc.jpg
 Twitter_Image: images/covers/dc.jpg
 ## What is Named Entity Recognition?
