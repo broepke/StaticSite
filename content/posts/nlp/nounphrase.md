@@ -35,7 +35,7 @@ For this post, we'll take this blob of text about Chatbots[^WIKI] and compare bo
 
 ## Noun Phrase Chunking with NLTK
 
-Let's start with NLTK. I mentioned in the post on [Part of Speech Tagging]({filename}pos.MD) that having a solid understanding of NLTK will give you a good foundation in Natural Language Processing. Some methods require a little more effort to implement than other NLP libraries; however, NLTK is a solid foundation to build upon.
+Let's start with NLTK. I mentioned in the post on [Part of Speech Tagging]({filename}pos.md) that having a solid understanding of NLTK will give you a good foundation in Natural Language Processing. Some methods require a little more effort to implement than other NLP libraries; however, NLTK is a solid foundation to build upon.
 
 To chunk with NLTK, you use `RegEx` to pull out the different chunks that you wish to work with. It can take a little bit of experimentation, but it's quite flexible overall. First, let's import the needed parts of NLTK.
 
