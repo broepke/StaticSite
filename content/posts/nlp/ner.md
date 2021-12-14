@@ -77,13 +77,34 @@ With the above function, we can pass in `text`, `target`, and `type` to get the 
 
 ```python
 TRAIN_DATA = []
-TRAIN_DATA.append(built_spacy_ner("I want to create a cloud-based service that can connect to a Revit Server.", "Revit Server", "PRODUCT"))
-TRAIN_DATA.append(built_spacy_ner("I'm new to the Forge API and not sure where a design parameter is required", "Forge API", "PRODUCT"))
-TRAIN_DATA.append(built_spacy_ner("I've uploaded a Revit model to my OSS bucket.", "OSS", "PRODUCT"))
-TRAIN_DATA.append(built_spacy_ner("Changes are sent to a central BIM 360 server.", "BIM 360", "PRODUCT"))
-TRAIN_DATA.append(built_spacy_ner("All of this is possible on IFC.", "IFC", "ORG"))
 TRAIN_DATA.append(built_spacy_ner("I work for Autodesk.", "Autodesk", "ORG"))
 ```
+The final format is a `tuple` with the original `string` and a `dictionary` with the entity `start` and `end` location in the `string` and its `type`.
+
+```python
+[('Model Derivative API provides translation', 
+  {'entities': [(0, 20, 'API')]}),
+ ('I want to create a cloud-based service connected to Revit Server.',
+  {'entities': [(61, 73, 'PRODUCT')]}),
+ ("I'm new to the Forge API unsure where a design parameter is required",
+  {'entities': [(15, 24, 'API')]}),
+ ('I would like to automate Revit with the Design Automation API',
+  {'entities': [(40, 61, 'API')]}),
+ ("I've uploaded a Revit model to my OSS bucket.",
+  {'entities': [(34, 37, 'SERVICE')]}),
+ ('Autodesk Forge is my Platform of choice',
+  {'entities': [(0, 14, 'PRODUCT')]}),
+ ('The native file format for Revit is RVT.',
+  {'entities': [(36, 39, 'FORMAT')]}),
+ ('I work for Autodesk.', {'entities': [(11, 19, 'ORG')]}),
+ ('The Model Derivative API used in conjunction with the Viewer',
+  {'entities': [(4, 24, 'API')]}),
+ ('Changes are sent to a central BIM 360 server.',
+  {'entities': [(30, 37, 'PRODUCT')]}),
+ ('All of this is possible on IFC.', 
+  {'entities': [(27, 30, 'FORMAT')]})]
+```
+
 
 ### Before
 
