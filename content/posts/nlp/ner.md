@@ -11,7 +11,7 @@ Og_Image: images/covers/dc.jpg
 Twitter_Image: images/covers/dc.jpg
 ## What is Named Entity Recognition?
 
-[Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) or NER is a technique for identifying and classifying named entities in text.  These entities are a level above [Part of Speech Tagging]({filename}pos.md) and [Noun Phrase Chunking]({filename}nounphrase.md) where instead of identifying gramical parts, it's actually identifying and classifying words as their proper entities.  The main categories that are recognized (before retraining) are:
+[Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) or NER is a technique for identifying and classifying named entities in text.  These entities are a level above [Part of Speech Tagging]({filename}pos.md) and [Noun Phrase Chunking]({filename}nounphrase.md) where instead of identifying gramical parts, it's actually identifying and classifying words as their proper entities.  The main categories that are recognized are:
 
 ```text
 PERSON:      People, including fictional.
@@ -60,7 +60,17 @@ Spacy has a wonderful ability to render NER tags inline with the text.  This is 
 
 ## Training Custom Entities
 
-https://stackoverflow.com/questions/66779014/use-the-revit-native-file-language-instead-of-english-when-converting-properties 
+NER models as they come trained are fantastic if you're a reporter covering Washington, DC.  However, most of us are not.  What if you're on a product team and you'd like to **update** the model to include **new entities** that map to your business? Fortunatley this is possible  with **Spacy**.  For the following example, I will use a post on [StackOverflow](https://stackoverflow.com/questions/66779014/use-the-revit-native-file-language-instead-of-english-when-converting-properties) of a developer who's utilizing one of my company's APIs to illustrate the process.  Let's take a look at the the output before we retrain the model.
+
+### Before
+
+<figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">I've been using for a long time the Model Derivative API from <mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Autodesk Forge<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span></mark> to (successfully) export <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> files to IFC. However, I notice that even when the original <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> files are saved with the <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark> version of the software (namely, <mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit FRA<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span></mark>), the properties (e.g. ) are exported in <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">English<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LANGUAGE</span></mark> ( ), and I see no option in the Model Derivative API to force using the native language. Does someone have an idea on how to do that (if it is feasible)? I have searched on the official documentation and tried modifying the parameters mentioned for the conversion (see ), but with no success so far. Of course the same issue can be of interest for those exporting to other formats than IFC, or other languages than <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark>. Thanks!</div></figure>
+
+### Training the Model
+
+It's possible to train a new model from scratch or to **update** an exisiting one.  The example below will show you how to update the existing model with both new **entities** as well as new words under new and existing entities. The industry I work in, like many others, has a lot of specific language that needs to be covered to give NER proper context.  Product names, new organizations, and in my case, I'm even going to teach it what an API is.
+
+The first thing we need to do is build a **training set**.  This can be constructed with sentences you create, or you could potentially take them from a dataset.  You can add **one** or **two** examples for each **new entitiy** you'd like to train.  I've also build a simple utility function that simplifies the creation of the `tuple` format needed by Spacy.
 
 
 ```python
@@ -73,13 +83,13 @@ def built_spacy_ner(text, target, type):
 
 With the above function, we can pass in `text`, `target`, and `type` to get the correctly formatted tuple. The result is a list.
 
-**Note:** One thing that I've seen (and read[^CAT]) in pactice, is that if you provide too many examples of text, it will overfit and end up not recognizing anything except your trained examples.  I started with trying to train the entire `DataFrame`, but it returned poor results.
-
 ```python
 TRAIN_DATA = []
-TRAIN_DATA.append(built_spacy_ner("I work for Autodesk.", "Autodesk", "ORG"))
+TRAIN_DATA.append(
+  built_spacy_ner("I work for Autodesk.", "Autodesk", "ORG")
+  )
 ```
-The final format is a `tuple` with the original `string` and a `dictionary` with the entity `start` and `end` location in the `string` and its `type`.
+The final format is a `tuple` with the original `string` and a `dictionary` with the entity `start` and `end` location in the `string` and its `type`.  The below is the full set of training data I used for my example.  We can see the new entity types of `API`, `SERVICE` and `FORMAT` are added as well as existing entities of `ORG` and `PROUDCT` have new entries.
 
 ```python
 [('Model Derivative API provides translation', 
@@ -96,7 +106,8 @@ The final format is a `tuple` with the original `string` and a `dictionary` with
   {'entities': [(0, 14, 'PRODUCT')]}),
  ('The native file format for Revit is RVT.',
   {'entities': [(36, 39, 'FORMAT')]}),
- ('I work for Autodesk.', {'entities': [(11, 19, 'ORG')]}),
+ ('I work for Autodesk.', 
+  {'entities': [(11, 19, 'ORG')]}),
  ('The Model Derivative API used in conjunction with the Viewer',
   {'entities': [(4, 24, 'API')]}),
  ('Changes are sent to a central BIM 360 server.',
@@ -105,19 +116,86 @@ The final format is a `tuple` with the original `string` and a `dictionary` with
   {'entities': [(27, 30, 'FORMAT')]})]
 ```
 
-
-### Before
-
-<figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">I've been using for a long time the Model Derivative API from <mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Autodesk Forge<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span></mark> to (successfully) export <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> files to IFC. However, I notice that even when the original <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> files are saved with the <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark> version of the software (namely, <mark class="entity" style="background: #aa9cfc; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit FRA<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PERSON</span></mark>), the properties (e.g. ) are exported in <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">English<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LANGUAGE</span></mark> ( ), and I see no option in the Model Derivative API to force using the native language. Does someone have an idea on how to do that (if it is feasible)? I have searched on the official documentation and tried modifying the parameters mentioned for the conversion (see ), but with no success so far. Of course the same issue can be of interest for those exporting to other formats than IFC, or other languages than <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark>. Thanks!</div></figure>
+**Note:** One thing that I experienced (and read[^CAT]), is that if you provide too many examples of text, it will overfit and end up not recognizing anything except your trained examples.  I started with trying to train the entire `DataFrame`, but it ended up essentially eliminating the pre-trained entities.
 
 
+After we have our training data, we need to update the available entities with our new ones.
 
+```python
+# adding a named entity label
+ner = nlp.get_pipe('ner')
 
+# Iterate through training data and add new entitle labels.
+for _, annotations in TRAIN_DATA:
+  for ent in annotations.get("entities"):
+    ner.add_label(ent[2])
+```
 
+Next, we need to train the model.  We first want to ensure that we're only updating the **NER** model by slecting only `pipe_names` related to `ner`[^MLPLUS].  We then loop over the training data and utilize the `Example` function and `upadate` the NER model with each of our new entities.
 
+```python
+# creating an optimizer and selecting a list of pipes NOT to train
+optimizer = nlp.create_optimizer()
+other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
+
+with nlp.disable_pipes(*other_pipes):
+    for itn in range(10):
+        random.shuffle(TRAIN_DATA)
+        losses = {}
+
+        # batch the examples and iterate over them
+        for batch in spacy.util.minibatch(TRAIN_DATA, size=2):
+            for text, annotations in batch:
+                doc = nlp.make_doc(text)
+                example = Example.from_dict(doc, annotations)
+                nlp.update([example], drop=0.35, sgd=optimizer, losses=losses)
+
+print("Final loss: ", losses)
+```
+
+That is the basics of it.  When considering fully training a model for your production you should read the Spacy documentation to understand how to deploy this into a production environment.
 ### After
 
-<figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">I've been using for a long time the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> from <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Autodesk Forge<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark> to (successfully) export Revit files to <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">IFC<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">FORMAT</span></mark>. However, I notice that even when the original Revit files are saved with the <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark> version of the software (namely, <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit FRA<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark>), the properties (e.g. ) are exported in English ( ), and I see no option in the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> to force using the native language. Does someone have an idea on how to do that (if it is feasible)? I have searched on the official documentation and tried modifying the parameters mentioned for the conversion (see ), but with no success so far. Of course the same issue can be of interest for those exporting to other formats than IFC, or other languages than <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark>. Thanks!</div></figure>
+And then finally let's try to process our text again with the **new model**.
+
+```python
+doc = nlp(text)
+displacy.render(doc, style="ent", jupyter=True)
+```
+
+<figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">I've been using for a long time the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> from <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Autodesk Forge<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark> to (successfully) export Revit files to <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">IFC<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>. However, I notice that even when the original Revit files are saved with the <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark> version of the software (namely, <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit FRA<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark>), the properties (e.g. ) are exported in <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">English<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LANGUAGE</span></mark> ( ), and I see no option in the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> to force using the native language. Does someone have an idea on how to do that (if it is feasible)? I have searched on the official documentation and tried modifying the parameters mentioned for the conversion (see ), but with no success so far. Of course the same issue can be of interest for those exporting to other formats than IFC, or other languages than <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark>. Thanks!</div></figure>
+
+We can clearly see the updated results now are properly tagging `APIs`, it's  now capturing `PRODUCTS` correctly for **Autodesk Forge** and **Revit**, and finally, **IFC** is listed as an `ORG` which it should be based on training.  For a short experiment, this shows a lot of promise for adapting **NER models** to fit your specific needs.
+
+## NER with NLTK
+
+The **Natural Language Toolkit** (NLTK) also offers **NER** as a capability.  Let's take a look at the oritinal paragraph from above and run it through NLTK's NER.
+
+```python
+for sent in sent_tokenize(text):
+   for chunk in ne_chunk(pos_tag(word_tokenize(sent))):
+      if hasattr(chunk, 'label'):
+         print(chunk.label(), ' '.join(c[0] for c in chunk))
+```
+```text
+ORGANIZATION Department
+ORGANIZATION Citywide Administrative Services
+ORGANIZATION City
+GPE New York
+PERSON Tesla
+PERSON Palo Alto
+PERSON Tesla Model
+PERSON Award
+PERSON Sole Source
+ORGANIZATION Procurement Policy Board Rules
+PERSON Tesla
+```
+
+**NLTK** doesn't seem to tag items as well as **Spacy** for this particular text.  A couple of differences only three types of tags are recognized where spacy has `cardinal`, `date`, `money`, and `law` all recognized from the same text.  Additionally, **Palo Alto** and **Tesla** are regognized incorrectly as people, as well as selver otehr mis-tagged items.  My experience is while **NLTK** is certainly fully featured, **Spacy** tends to perform better overall. 
+
+## Conclusion
+
+I hope you enjoyed this quick walkthrough, especially the ability to train the NER model with additional entities that improve NER for your use case.  The full source used in this post is available on [GitHub](https://github.com/broepke/NER).
 
 ## References
 
