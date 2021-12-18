@@ -11,7 +11,7 @@ Og_Image: images/covers/dc.jpg
 Twitter_Image: images/covers/dc.jpg
 ## What is Named Entity Recognition?
 
-[Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) or NER is a technique for identifying and classifying named entities in text.  These entities are a level above [Part of Speech Tagging]({filename}pos.md) and [Noun Phrase Chunking]({filename}nounphrase.md) where instead of identifying gramical parts, it's actually identifying and classifying words as their proper entities.  The main categories that are recognized are:
+[Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) or NER is a technique for identifying and classifying named entities in text. These entities are a level above [Part of Speech Tagging]({filename}pos.md) and [Noun Phrase Chunking]({filename}nounphrase.md) where instead of identifying grammatical parts; it's identifying and classifying words as their proper entities. The main categories that are recognized are:
 
 ```text
 PERSON:      People, including fictional.
@@ -34,11 +34,11 @@ ORDINAL:     “first”, “second”, etc.
 CARDINAL:    Numerals that do not fall under another type.
 ```
 
-There are many libraries to choose from, my tool of choice these days is [SpaCy](https://spacy.io/) [^SPACY].  It's powerful API and models are ready to go with a few lines of code, and as we'll see later, we can use it to train our own models.  To really demonstrate the power, let's take a look at it in action. 
+There are many libraries to choose from; my tool of choice these days is [SpaCy](https://spacy.io/) [^SPACY]. Its powerful API and models are ready to go with a few lines of code, and as we'll see later, we can use it to train our models. To demonstrate the power, let's take a look at it in action. 
 
 ## NER with Spacy
 
-We'll start with a pargrah taken from a **Teslarati** article: [Tesla could receive $12.36 million worth of Model 3 orders from New York City](https://www.teslarati.com/tesla-new-york-city-12-million-model-3-order/).  
+We'll start with a paragraph from a **Teslarati** article: [Tesla could receive $12.36 million worth of Model 3 orders from New York City](https://www.teslarati.com/tesla-new-york-city-12-million-model-3-order/). 
 
 ```python
 import spacy
@@ -51,14 +51,14 @@ doc = nlp(text)
 displacy.render(doc, style="ent")
 ```
 
-Spacy has a wonderful ability to render NER tags inline with the text.  This is a fantastic way to see what's being recognized in context of the orginal article.
+**Spacy** has a wonderful ability to render **NER** tags in line with the text, a fantastic way to see what's being recognized in the context of the original article.
 
 <figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">IN THE MATTER OF a proposed contract between <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">the Department of Citywide Administrative Services<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark> of the City of <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">New York<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark> and <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Tesla, Inc.<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>, located at <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">3500<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span></mark> Deer Creek Rd., <mark class="entity" style="background: #feca74; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Palo Alto<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">GPE</span></mark>, CA 94304, for procuring Tesla Model 3 All-Electric Sedans. The contract is in the amount of $<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">12,360,000.00<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark>. The term of the contract shall be <mark class="entity" style="background: #bfe1d9; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">five years from date<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DATE</span></mark> of Notice of Award. The proposed contractor has been selected by <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Sole Source Procurement Method<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>, pursuant to <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Section 3-05<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LAW</span></mark> of <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">the Procurement Policy Board Rules<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>. If the plan does go through, the <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">$12.36 million<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark> could effectively purchase <mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">about 274<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">CARDINAL</span></mark> units of the base Model 3 Rear-Wheel-Drive, which cost $<mark class="entity" style="background: #e4e7d2; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">44,990<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">MONEY</span></mark> under <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Tesla<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>'s current pricing structure.</div></figure>
 
 
 ## Training Custom Entities
 
-NER models as they come trained are fantastic if you're a reporter covering Washington, DC.  However, most of us are not.  What if you're on a product team and you'd like to **update** the model to include **new entities** that map to your business? Fortunatley this is possible  with **Spacy**.  For the following example, I will use a post on [StackOverflow](https://stackoverflow.com/questions/66779014/use-the-revit-native-file-language-instead-of-english-when-converting-properties) of a developer who's utilizing one of my company's APIs to illustrate the process.  Let's take a look at the the output before we retrain the model.
+NER models as they come trained are fantastic if you're a reporter covering Washington, DC. However, most of us are not. What if you're on a product team, and you'd like to **update** the model to include **new entities** that map to your business? Fortunately, this is possible with **Spacy**. I will use a post on [StackOverflow](https://stackoverflow.com/questions/66779014/use-the-revit-native-file-language-instead-of-english-when-converting-properties) of a developer who's utilizing one of my company's APIs to illustrate the process. Let's look at the output before we retrain the model.
 
 ### Before
 
@@ -66,9 +66,9 @@ NER models as they come trained are fantastic if you're a reporter covering Wash
 
 ### Training the Model
 
-It's possible to train a new model from scratch or to **update** an exisiting one.  The example below will show you how to update the existing model with both new **entities** as well as new words under new and existing entities. The industry I work in, like many others, has a lot of specific language that needs to be covered to give NER proper context.  Product names, new organizations, and in my case, I'm even going to teach it what an API is.
+It's possible to train a new model from scratch or to **update** an existing one. The example below will show you how to update the existing model with both **new entities** and new words under new and existing entities. The industry I work in, like many others, has much specific language that needs to be covered to give NER proper context. Product names, new organizations, and in my case, I'm even going to teach it what an API is.
 
-The first thing we need to do is build a **training set**.  This can be constructed with sentences you create, or you could potentially take them from a dataset.  You can add **one** or **two** examples for each **new entitiy** you'd like to train.  I've also build a simple utility function that simplifies the creation of the `tuple` format needed by Spacy.
+We need to build a **training set** which can be constructed with sentences you create, or you could potentially take them from a dataset. You can add **one** or **two** examples for each **new entity** you'd like to train. I've also built a utility function that simplifies the creation of the `tuple` format needed by Spacy.
 
 
 ```python
@@ -79,7 +79,7 @@ def built_spacy_ner(text, target, type):
     return (text, {"entities": [(start, end, type)]})
 ```
 
-With the above function, we can pass in `text`, `target`, and `type` to get the correctly formatted tuple. The result is a list.
+We can pass in `text`, `target`, and `type` to get the correctly formatted tuple with the above function. The result is a list.
 
 ```python
 TRAIN_DATA = []
@@ -87,7 +87,7 @@ TRAIN_DATA.append(
   built_spacy_ner("I work for Autodesk.", "Autodesk", "ORG")
   )
 ```
-The final format is a `tuple` with the original `string` and a `dictionary` with the entity `start` and `end` location in the `string` and its `type`.  The below is the full set of training data I used for my example.  We can see the new entity types of `API`, `SERVICE` and `FORMAT` are added as well as existing entities of `ORG` and `PROUDCT` have new entries.
+The final format is a `tuple` with the original `string` and a `dictionary` with the entity `start` and `end` location in the `string` and its `type`. The below is the full set of training data I used for my example. We can see the new entity types of `API`, `SERVICE`, and `FORMAT` are added, and existing entities of `ORG` and `PRODUCT` have new entries.
 
 ```python
 [('Model Derivative API provides translation', 
@@ -114,8 +114,7 @@ The final format is a `tuple` with the original `string` and a `dictionary` with
   {'entities': [(27, 30, 'FORMAT')]})]
 ```
 
-**Note:** One thing that I experienced (and read[^CAT]), is that if you provide too many examples of text, it will overfit and end up not recognizing anything except your trained examples.  I started with trying to train the entire `DataFrame`, but it ended up essentially eliminating the pre-trained entities.
-
+**Note:** One thing that I experienced (and read[^CAT]) is that if you provide too many examples of text, it will overfit and end up not recognizing anything except your trained examples. I started with trying to train the entire `DataFrame`, but it essentially eliminated the pre-trained entities.
 
 After we have our training data, we need to update the available entities with our new ones.
 
@@ -129,7 +128,7 @@ for _, annotations in TRAIN_DATA:
     ner.add_label(ent[2])
 ```
 
-Next, we need to train the model.  We first want to ensure that we're only updating the **NER** model by slecting only `pipe_names` related to `ner`[^MLPLUS].  We then loop over the training data and utilize the `Example` function and `upadate` the NER model with each of our new entities.
+Next, we need to train the model. We first want to ensure that we're only updating the **NER** model by selecting only `pipe_names` related to `ner`[^MLPLUS]. We then loop over the training data, utilize the `Example` function, and update the NER model with each new entity.
 
 ```python
 # creating an optimizer and selecting a list of pipes NOT to train
@@ -151,10 +150,11 @@ with nlp.disable_pipes(*other_pipes):
 print("Final loss: ", losses)
 ```
 
-That is the basics of it.  When considering fully training a model for your production you should read the Spacy documentation to understand how to deploy this into a production environment.
+That is the basics of it. When fully training a model for your production, you should read the Spacy documentation to understand how to deploy this into a production environment.
+
 ### After
 
-And then finally let's try to process our text again with the **new model**.
+And then finally, let's try to process our text again with the **new model**.
 
 ```python
 doc = nlp(text)
@@ -163,11 +163,11 @@ displacy.render(doc, style="ent", jupyter=True)
 
 <figure style="margin-bottom: 6rem"><div class="entities" style="line-height: 2.5; direction: ltr">I've been using for a long time the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> from <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Autodesk Forge<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark> to (successfully) export Revit files to <mark class="entity" style="background: #7aecec; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">IFC<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">ORG</span></mark>. However, I notice that even when the original Revit files are saved with the <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark> version of the software (namely, <mark class="entity" style="background: #bfeeb7; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Revit FRA<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">PRODUCT</span></mark>), the properties are exported in <mark class="entity" style="background: #ff8197; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">English<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">LANGUAGE</span></mark>, and I see no option in the <mark class="entity" style="background: #ddd; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">Model Derivative API<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">API</span></mark> to force using the native language. Does someone have an idea on how to do that (if it is feasible)? I have searched on the official documentation and tried modifying the parameters mentioned for the conversion, but with no success so far. Of course the same issue can be of interest for those exporting to other formats than IFC, or other languages than <mark class="entity" style="background: #c887fb; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">French<span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">NORP</span></mark>. Thanks!</div></figure>
 
-We can clearly see the updated results now are properly tagging `APIs`, it's  now capturing `PRODUCTS` correctly for **Autodesk Forge** and **Revit**, and finally, **IFC** is listed as an `ORG` which it should be based on training.  For a short experiment, this shows a lot of promise for adapting **NER models** to fit your specific needs.
+We can see the updated results are properly tagging `APIs`, it's now capturing `PRODUCTS` correctly for **Autodesk Forge** and **Revit**, and finally, **IFC** is listed as an `ORG`, which it should be based on training. The results show promise for adapting **NER models** to fit your specific needs for a short experiment.
 
 ## NER with NLTK
 
-The **Natural Language Toolkit** (NLTK) also offers **NER** as a capability.  Let's take a look at the oritinal paragraph from above and run it through NLTK's NER.
+The **Natural Language Toolkit** (NLTK) also offers **NER** as a capability. Let's look at the original paragraph from above and run it through NLTK's NER.
 
 ```python
 for sent in sent_tokenize(text):
@@ -189,11 +189,11 @@ ORGANIZATION Procurement Policy Board Rules
 PERSON Tesla
 ```
 
-**NLTK** doesn't seem to tag items as well as **Spacy** for this particular text.  A couple of differences only three types of tags are recognized where spacy has `cardinal`, `date`, `money`, and `law` all recognized from the same text.  Additionally, **Palo Alto** and **Tesla** are regognized incorrectly as people, as well as selver otehr mis-tagged items.  My experience is while **NLTK** is certainly fully featured, **Spacy** tends to perform better overall. 
+**NLTK** doesn't seem to tag items as well as **Spacy** for this particular text. A couple of differences only three types of tags are recognized where spacy has `cardinal`, `date`, `money`, and `law` all recognized from the same text. Additionally, **Palo Alto** and **Tesla** are recognized incorrectly as people and several other mistagged items. My experience is that while **NLTK** is certainly fully-featured, **Spacy** tends to perform better overall. 
 
 ## Conclusion
 
-I hope you enjoyed this quick walkthrough, especially the ability to train the NER model with additional entities that improve NER for your use case.  The full source used in this post is available on [GitHub](https://github.com/broepke/NER).
+I hope you enjoyed this quick walkthrough, especially the ability to train the NER model with different entities that improve NER for your use case. The full source used in this post is available on [GitHub](https://github.com/broepke/NER).
 
 ## References
 
