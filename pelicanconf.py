@@ -44,6 +44,7 @@ MENUITEMS = (
     ('Résumé', '/pdf/cv.pdf'),
     ('Portfolio', '/pages/portfolio.html'),
     ('About', '/pages/about.html'),
+    ('Subscribe', 'https://campaign.dataknowsall.com/subscribe'),
     # ('Blog', '/blog_index.html'),
     # ('Blog Home', '/index.html'),
 )
