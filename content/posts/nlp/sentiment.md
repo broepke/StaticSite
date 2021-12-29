@@ -15,12 +15,11 @@ Twitter_Image: images/covers/road.jpg
 
 ## Sentiment Analysis with TexBlob
 
+Works with longer text, simple to use, general solution.
 
-## Sentiment Analysis with Vader
+## Social Media Sentiment Analysis with Vader
 
-
-## Sentiment Analysis with BERT
-
+Vader is trained for short texts.
 
 ## Conclusion
 
