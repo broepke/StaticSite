@@ -13,7 +13,7 @@ DISQUS_SITENAME = 'roepkeb'
 # https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings
 ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 
-RELATIVE_URLS = False
+RELATIVE_URLS = True
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True 
@@ -26,6 +26,7 @@ HEADER_COVER = 'images/home.jpg'
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
+# Used this if you want to have a custom static homepage and not blogroll
 # INDEX_SAVE_AS = 'blog_index.html'
 
 FEED_ALL_ATOM = None
@@ -38,13 +39,14 @@ PATH = 'content'
 ARTICLE_PATHS = ['posts',]
 PAGE_PATHS = ['pages',]
 PLUGIN_PATHS=['pelican-plugins']
-PLUGINS = ['render_math', 'gravatar']
+PLUGINS = ['render_math', 'gravatar', 'sitemap']
 
 MENUITEMS = (
     ('Résumé', '/pdf/cv.pdf'),
     ('Portfolio', '/pages/portfolio.html'),
     ('About', '/pages/about.html'),
     ('Subscribe', 'https://campaign.dataknowsall.com/subscribe'),
+    # Similar to the above, uncomment these to have a custom static homepage
     # ('Blog', '/blog_index.html'),
     # ('Blog Home', '/index.html'),
 )
@@ -61,4 +63,19 @@ STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf', 'other
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
+}
+
+# https://github.com/getpelican/pelican-plugins/tree/master/sitemap 
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.8,
+        'indexes': 0.1,
+        'pages': 0.8
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'indexes': 'weekly',
+        'pages': 'monthly'
+    }
 }
