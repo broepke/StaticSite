@@ -1,6 +1,6 @@
 Title: Sentiment Analysis
-Date: 2021-01-04
-Modified: 2021-01-04
+Date: 2022-01-04
+Modified: 2022-01-04
 Status: published
 Tags: datascience, nlp
 Slug: sentiment
