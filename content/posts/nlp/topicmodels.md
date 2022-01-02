@@ -23,6 +23,7 @@ The specific methodology used in this analysis is [Latent Dirichlet Allocation (
 This post will not get into the details of LDA, but we'll be using the [Gensim](https://radimrehurek.com/gensim/) library to perform the analysis. If you would like to learn more about LDA, check out the paper by Blei, Ng, & Jordan (2003) [^BLEI].
 
 Two terms you will want to understand when evaluating LDA models are:
+
 * **Perplexity**: Lower the perplexity better the model.
 * **Coherence**: Higher the topic coherence, the topic is more human interpretable.
 
@@ -36,7 +37,6 @@ We'll start by importing the necessary libraries and loading our data.
 import numpy as np
 import pandas as pd
 from collections import defaultdict
-from pprint import pprint
 
 from gensim import corpora, models
 from gensim.models import Phrases
@@ -283,6 +283,12 @@ pyLDAvis.display(lda_viz)
 ![LDAviz]({static}../../images/posts/topic_viz.png)
 
 Check out the interactive visualization yourself and decide if you think the topics make sense! [Tesla Forums Viz]({static}../../other/lda.html)
+
+## Conclusion
+
+Topic Models are an incredibly powerful tool for interpreting unstructured text. Topic Modeling can use it on various sources such as social media, product reviews, customer support tickets, and more. As a former Product Manager, I've used topic modeling to inform roadmap decisions on where to invest resources and prioritize. Best of luck on your journey utilizing them!
+
+You can get the source code for this post on [Github](https://github.com/broepke/TopicModels)
 
 ## References
 

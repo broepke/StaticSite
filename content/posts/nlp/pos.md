@@ -238,12 +238,12 @@ df_adj.groupby('WORD')['WORD'].count().reset_index(name='count').\
 523       lovely    125
 349   flattering    122
 ```
-Tada 🎉! the top-most used words that describe *how* our customers are talking about our products. We have lost of positive words but also some words that might be worth looking into. Things such as *small* and *little* speak potentially to a sizing issue where some clothes are not true to fit. A product manager can take this information and dive deeper into the reviews which mention this word.
+Tada 🎉! the top-most used words that describes *how* our customers are talking about our products. We have lost of positive words but also some words that might be worth looking into. Things such as *small* and *little* speak potentially to a sizing issue where some clothes are not true to fit. A product manager can take this information and dive deeper into the reviews which mention this word.
 
 As mentioned, there are other ways to analyze text which might be better, such as Sentiment Analysis and Topic Modeling. However, this is a fun way to apply POS tagging in a practical use case and even be combined with those other NLP tools to help you get the most out of your customer's feedback.
 
 * All the code for this analysis is available on [GitHub](https://github.com/broepke/POS)
-* I performed an in-depth review of this dataset which you can find in my Portfolio under [Clothing Reviews]({filename}../../pages/portfolio.md) where I demonstrate additional analysis leveraging NLP and ML tecniques.
+* I performed an in-depth review of this dataset which you can find in my Portfolio under [Clothing Reviews]({filename}../../pages/portfolio.md) where I demonstrate additional analysis leveraging NLP and ML techniques.
 
 ## References
 
