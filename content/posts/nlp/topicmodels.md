@@ -12,15 +12,15 @@ Twitter_Image: images/covers/swirls.jpg
 
 ## What is a Topic Model?
 
-[Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is one of my favorite NLP technqiques.  It is a technique for discovering topics in a large collection of documents.  It allows you to take unstructured text and bring structure to in in the form or topics, which are collections of related words.  These can then be intepreted by a subject matter expert to give them additional meaning.
+[Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is one of my favorite NLP techniques. It is a technique for discovering topics in a large collection of documents. It allows you to take unstructured text and bring structure into topics, which are collections of related words. A subject matter expert can then interpret these to give them additional meaning.
 
-The data that we'll be using for this analysis was scraped from the official [Tesla User Forums](https://forums.tesla.com/categories/tesla-model-3).  It's a collection of about 55,000 entries consisting of Tesla owers asking questions about their cars and the community providing answers.  User forums are a great place to mine for customer feedfback and unserstand areas of interest.  We'll approach this as if we were a *Product Manager* looking for areas to investigate.
+We scraped the data we'll be using for this analysis from the official [Tesla User Forums](https://forums.tesla.com/categories/tesla-model-3). It's a collection of about 55,000 entries consisting of Tesla owners asking questions about their cars and the community providing answers. User forums are a great place to mine for customer feedback and understand areas of interest. We'll approach this as a *Product Manager* looking for areas to investigate.
 
 ## Latent Dirichlet Allocation (LDA)
 
-The specific methodology used in this analysis is [Latent Dirichlet Allocation (LDA)](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation), a probabilistic model for generating groups of words associated with *n*-topics. In LDA, the algorithm looks at documents as a mixture of topics. The topics are a mixture of words, and the algorithm calculates the probability of each word associated with a topic[^BLEI].  LDA is potentially the most common method for building topic models in NLP.
+The specific methodology used in this analysis is [Latent Dirichlet Allocation (LDA)](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation), a probabilistic model for generating groups of words associated with *n*-topics. In LDA, the algorithm looks at documents as a mixture of topics. The topics are a mixture of words, and the algorithm calculates the probability of each word associated with a topic[^BLEI]. LDA is potentially the most common method for building topic models in NLP.
 
-This post will not get into the details of LDA, but we'll be using the [Gensim](https://radimrehurek.com/gensim/) library to perform the analysis.  If you would like to learn more about LDA, check out the paper by Blei, Ng, & Jordan (2003) [^BLEI].
+This post will not get into the details of LDA, but we'll be using the [Gensim](https://radimrehurek.com/gensim/) library to perform the analysis. If you would like to learn more about LDA, check out the paper by Blei, Ng, & Jordan (2003) [^BLEI].
 
 Two terms you will want to understand when evaluating LDA models are:
 * **Perplexity**: Lower the perplexity better the model.
@@ -28,9 +28,9 @@ Two terms you will want to understand when evaluating LDA models are:
 
 ## Text Cleaning and Prep
 
-Text used for Topic Modeling must be cleaned prior to analsyis.  The objective is to find as munch commonality amoungts words and therefore you want to avoid issues like **Run**, **run**, and **running** being interpreted as a different word.  I've covered [Text Cleaning]({filename}textcleaning.md) in this series already.  The methods from this article were applied directly to the data.  I opted to use *Lemmatization* over *Stemming* since words tend to be more intepretable when they are brought to their root, or lemma versus being chopped off with stemming.
+We must clean the text used for Topic Modeling before analysis. The objective is to find as munch commonality amongst words, and therefore you want to avoid issues like **Run**, **run**, and **running** being interpreted as a different word. I've covered [Text Cleaning]({filename}textcleaning.md) in this series already. We applied the methods from this article directly to the data. I opted to use *Lemmatization* over *Stemming* since words tend to be more interpretable when brought to their root or lemma versus being chopped off with stemming.
 
-We'll start by importing the neccesary libraries and loading our data.
+We'll start by importing the necessary libraries and loading our data.
 
 ```python
 import numpy as np
@@ -54,15 +54,15 @@ import seaborn as sns
 ```python
 df = pd.read_pickle('tesla_clean.pkl')
 ```
-The first thing we need to do is turn our column from the Data Frame into a giant **list**.  This is a simple task that can be done with one line.
+We first need to turn our column from the Data Frame into a giant **list**, a simple task that we can do with one line.
 
 ```python
 documents = df['Discussion_Clean'].to_list()
 ```
 
-After we have our list of documents we can create a list of **stop words** and remove them and tokenize each document.  **Tokenizing** is the process of breaking the string up into individual words.  
+After we have our list of documents, we can create a list of **stop words** and remove them and tokenize each document. **Tokenizing** is the process of breaking the string up into individual words. 
 
-**Note**: I reccomend building your own stop word list.  You can iterate over your model and remove words that add little to no value to your topics.  The words you might wish to remove probably are not common stop words but are not helping you interprete the results.  Towards the end of my stop list you can see words like `troll` and `fish` which are not helpful.
+**Note**: I recommend building your stop word list. You can iterate over your model and remove words that add little to no value to your topics. The words you might wish to remove probably are not common stop words but are not helping you interpret the results. Towards the end of my stop list, you can see words like `troll` and `fish` which are not helpful.
 
 ```python
 stoplist = ['the', 'a', 'an', 'of', 'and', 'or', 'in', 'for', 'to', 'at', 'by', 'from', 'with', 'on', 'as', 'but', 'is', 'are', 'was', 'were', 'be', 'been', 'am', 'i', 'me', 'my', 'we', 'our', 'you', 'fish', 'troll', 'ha', 'bye', 'ok', 'okay', 'andy', 'idiot']
@@ -72,7 +72,7 @@ texts = [[word for word in document.split() if word not in stoplist]
          for document in documents]
 ```
 
-Next we can remove words that **infrequently occur**; in this case, only once in the corpus.  This number can be adjusted to your needs.
+Next, we can remove words that **infrequently occur**; in this case, only words that only appear **once** in the corpus. We can adjust this number to your needs.
 
 ```python
 # remove words that appear only once
@@ -85,7 +85,7 @@ texts = [[token for token in text if frequency[token] > 1]
          for text in texts]
 ```
 
-Another treatment you can add **n-grams** to your documents.  On this particular set of documents it didn't seem to add much new context, but I kept int in as an example for you.  You can experiement with this on our own and see how it affects your results.
+Another treatment you can add is **n-grams** to your documents. You can experiment with this on your own and see how it affects your results.
 
 ```python
 # Add bigrams to docs (only ones that appear 20 times or more).
@@ -97,7 +97,7 @@ for idx in range(len(texts)):
             texts[idx].append(token)
 ```
 
-Next we create our **dictionary** and **corpus**.  The corpus is a list of documents and the dictionary is a list of unique words.  Note the powerful function to remove words that are **extremes**.  By adjusting these values you can hone in on more meaningful topics depending on your documents.  
+Next we create our **dictionary** and **corpus**. The corpus is a list of documents, and the dictionary lists unique words. Note the powerful function to remove words that are **extremes**. You can hone in on more meaningful topics depending on your documents by adjusting these values. 
 
 ```python
 # Create the dictionary
@@ -121,14 +121,14 @@ Number of documents: 54335
 
 ## Training the Topic Model
 
-Next we need to train the topic model.  This is somewhat akin to hyperparmeter tuning in a Machine Learning model.  We're going to iterate through different parameters until the model converges across all (or almost all) of our documents.  In order to do this we need to turn on logging in `DEBUG` mode.  We can do this via the following code.
+Next, we need to train the topic model. Training in this context is somewhat akin to hyperparameter tuning in a Machine Learning model. We will iterate through different parameters until the model converges across all (or almost all) of our documents. We need to turn logging into `DEBUG` mode to do this, and we can do this via the following code.
 
 ```python
 import logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.DEBUG)
 ```
 
-Next we can set parameter and attempt multiple passes at them until we get the results we want.
+Next, we can set parameters and attempt multiple passes until we get the results we want.
 
 ```python
 NUM_TOPICS = 10
@@ -152,18 +152,18 @@ model = LdaModel(
 )
 ```
 
-After running this, open up the log (if you're using VS Code you should just be able to open it in a new tab).  Next search for **converged** and look for a line like the following.  Adjust the `iterations` and `passses` values until you see all of the documents converged.  After some playing with my model, I ended up with the following results.
+After running this, open up the log (if you're using VS Code, you should be able to open it in a new tab). Next, search for **converged** and look for a line like the following. Adjust the `iterations` and `passes` values until you see all the documents converged. After some playing with my model, I ended up with the following results.
 
 ```text
-2022-01-01 13:47:55,782 : DEBUG : 1998/2000 documents converged within 100 iterations
-2022-01-01 13:47:55,817 : DEBUG : 335/335 documents converged within 100 iterations
+2022-01-01 : DEBUG : 1998/2000 documents converged within 100 iterations
+2022-01-01 : DEBUG : 335/335 documents converged within 100 iterations
 ```
 
-With these settings, you can move on to now choosing the best number of topics.  The Gensim documentation [^GEN] describes this process as well.
+With these settings, you can now choose the best number of topics. The Gensim documentation [^GEN] describes this process as well.
 
 ## Choosing the Best Number of Topics
 
-In order to chose the best number of topics, we can calcuatlte the **coherence value** for different topic-number settings and find out which has the **greatest value**.  The below function simplifies this for us.  This can be a bit of an time consuming process.  Try to iterate through and get the best results.  I wouldn't reccoment running `100` processes stepping by `1` to begin.
+To choose the best number of topics, we can calculate the **coherence value** for different topic-number settings and determine which has the **greatest value**. The below function simplifies this and can be a bit of a time-consuming process. Try to iterate through and get the best results. I wouldn't recommend running `100` processes stepping by `1` to begin.
 
 ```python
 def compute_coherence_values(dictionary, corpus, texts, 
@@ -191,7 +191,7 @@ def compute_coherence_values(dictionary, corpus, texts,
     return coherence_values
 ```
 
-Next we'll create some parameters for steping through the range of topics we want to test.  Some corpus might have hundreds of topics, smaller ones will have few.  You can play with these values to see how yours change.  I started with stepping to `100` by `5` orginally to narrow down the window, and then stepped by `2` when finishing. These variables will also be used in the plot below, which is why they're separated out. 
+Next, we'll create some parameters for stepping through the range of topics we want to test. Some corpus might have hundreds of topics; smaller ones will have few. You can play with these values to see how yours change. I started with stepping to `100` by `5` originally to narrow down the window and then stepped by `2` when finishing. We will also use these variables in the plot below, which is why they're separated. 
 
 ```python
 limit=50
@@ -199,7 +199,7 @@ start=2
 step=2
 ```
 
-Let's run the above function calculating the **coherence value** for each number of topics.  The result of the function returns a list of values.
+Let's run the above function calculating the **coherence value** for each number of topics. The result of the function returns a list of values.
 
 ```python
 coherence_values = compute_coherence_values(dictionary=dictionary, 
@@ -211,7 +211,7 @@ coherence_values = compute_coherence_values(dictionary=dictionary,
                                             step=step)
 ```
 
-We can now easily plot these values and simply calculate the **Max** value.  I've plotted a vertical line to help visualize it easier.
+We can now easily plot these values and calculate the **Max** value. I've plotted a vertical line to help visualize it easier.
 
 ```python
 plt.figure(figsize=(8,5))
@@ -242,16 +242,16 @@ legend_elements = [Line2D([0], [0], color='#238C8C',
 ax.legend(handles=legend_elements, loc='upper right')
 ```
 
-We can see here that the Coherence Value peeks at `8`.  Remember above we said:
+We can see here that the Coherence Value peeks at `8`. Remember above we said:
 >Higher the topic coherence, the topic is more human interpretable.
 
-While this is great for guidance, you still need to interpret the results and determine if they make sense.  We'll utilize `8` topics as our final and visualize the results.
+While this is great for guidance, you still need to interpret the results and determine if they make sense. We'll utilize `8` topics as our final and visualize the results.
 
 ![Coherence Value]({static}../../images/posts/topic_coherence.png)
 
 ## Final Run and Visualiztion of the Results
 
-Finally we can run our trained and tuned model and visualize our results! 
+Finally, we can run our trained and tuned model and visualize our results! 
 
 ```python
 temp = dictionary[0]
@@ -269,7 +269,7 @@ model = LdaModel(
     eval_every=None)
 ```
 
-Next, let's visualize the results.  We'll use the `pyLDAvis` package to visualize the results. 
+Next, let's visualize the results. We'll use the `pyLDAvis` package to visualize the results. 
 
 ```python
 pyLDAvis.enable_notebook()
@@ -282,7 +282,7 @@ pyLDAvis.display(lda_viz)
 
 ![LDAviz]({static}../../images/posts/topic_viz.png)
 
-Check out the interactive visualization yourself and decide if you think the topics make sense! [Tesla Forumns Viz]({static}../../other/lda.html)
+Check out the interactive visualization yourself and decide if you think the topics make sense! [Tesla Forums Viz]({static}../../other/lda.html)
 
 ## References
 
