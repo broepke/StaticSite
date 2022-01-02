@@ -1,11 +1,11 @@
-Title: Term Frequency-Inverse Document Frequency
-Date: 2021-12-04
-Modified: 2021-12-04
+Title: Bag of Words and TF-IDF
+Date: 2022-01-19
+Modified: 2022-01-19
 Status: draft
 Tags: datascience, nlp
-Slug: tfidf
+Slug: bowtfidf
 Authors: Brian Roepke
-Summary: xxxxxx
+Summary: The building block of language models in Bag of Words and TF-IDF.
 Header_Cover: images/covers/frequency.jpg
 Og_Image: images/covers/frequency.jpg
 Twitter_Image: images/covers/frequency.jpg
