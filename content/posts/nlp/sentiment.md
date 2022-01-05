@@ -1,4 +1,4 @@
-Title: Sentiment Analysis
+Title: Social Media Sentiment Analysis
 Date: 2022-01-04
 Modified: 2022-01-04
 Status: published
