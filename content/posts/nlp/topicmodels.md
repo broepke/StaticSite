@@ -286,7 +286,7 @@ Check out the interactive visualization yourself and decide if you think the top
 
 ## Conclusion
 
-Topic Models are an incredibly powerful tool for interpreting unstructured text. Topic Modeling can use it on various sources such as social media, product reviews, customer support tickets, and more. As a former Product Manager, I've used topic modeling to inform roadmap decisions on where to invest resources and prioritize. Best of luck on your journey utilizing them!
+Topic Models are an incredibly powerful tool for interpreting unstructured text. Topic Modeling can be used on various sources such as social media, product reviews, customer support tickets, and more. As a former Product Manager, I've used topic modeling to inform roadmap decisions on where to invest resources and prioritize. Best of luck on your journey utilizing them!
 
 You can get the source code for this post on [Github](https://github.com/broepke/TopicModels)
 
