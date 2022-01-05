@@ -1,7 +1,7 @@
 Title: Topic Models with Gensim
-Date: 2021-12-04
-Modified: 2021-12-04
-Status: draft
+Date: 2021-01-09
+Modified: 2021-01-09
+Status: published
 Tags: datascience, machine learning, nlp
 Slug: topicmodels
 Authors: Brian Roepke
