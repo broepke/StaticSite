@@ -290,6 +290,8 @@ Topic Models are an incredibly powerful tool for interpreting unstructured text.
 
 You can get the source code for this post on [Github](https://github.com/broepke/TopicModels)
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@splashabout?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nareeta Martin</a> on <a href="https://unsplash.com/s/photos/clusters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

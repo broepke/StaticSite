@@ -26,3 +26,5 @@ A couple of great videos I used to get this all set up and learn a little more o
 Most of this is made possible since iOS opened up the Files API.  Having access to this has brought new amazing integrations and capabilities.  You can see the evolution of the iPad becoming a primary computing device and a incredibly powerful machine. Enjoy! 
 
 *Note: These are all paid, apps.  But they are worth it if you want to try something awesome and develop on your iPad*
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

@@ -245,6 +245,8 @@ As mentioned, there are other ways to analyze text which might be better, such a
 * All the code for this analysis is available on [GitHub](https://github.com/broepke/POS)
 * I performed an in-depth review of this dataset which you can find in my Portfolio under [Clothing Reviews]({filename}../../pages/portfolio.md) where I demonstrate additional analysis leveraging NLP and ML techniques.
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@apellaes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandre Pellaes</a> on <a href="https://unsplash.com/s/photos/conferences?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

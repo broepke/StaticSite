@@ -154,6 +154,8 @@ And that’s about it.  The order in the above function does matter.  You should
 
 The above function contains two different ways to Lemmatize your text.  The NLTK `WordNetLemmatizer` requires a Part of Speech (POS) argument (`noun`, `verb`) and therefore either requires multiple passes to get each word or will only capture one POS.  The alternative is to use `Spacy` which will automatically lemmatize each word and determine which POS it belongs to.  The issue is that Spacy's performance will be signficantly slower than NLTK.
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 [^TXT]: [Text Processing Is Coming](https://towardsdatascience.com/text-processing-is-coming-c13a0e2ee15c)

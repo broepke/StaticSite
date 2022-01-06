@@ -137,6 +137,8 @@ After plotting our results again, we can see that VADER better represents the se
 
 There you have it! Voice of Customer analysis of sentiment on Social Media data. This post is just the start of what you can do and how you might leverage this information; however, it's a powerful tool in your toolbox to understand your customers and their emotions better. The full code for Twitter data extraction and Sentiment analysis is available on [GitHub](https://github.com/broepke/SentimentAnalysis)
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@bel2000a?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Belinda Fewings</a> on <a href="https://unsplash.com/s/photos/sentiment?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

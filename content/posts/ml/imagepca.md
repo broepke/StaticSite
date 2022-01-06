@@ -144,6 +144,8 @@ plt.show()
 ![Different k-Values]({static}../../images/posts/pca_4.png)
 
 And that's it! As few as `10` components even lets us make out what the image is, and at `250` it's hard to tell the difference between the original image and the PCA reduced image. 
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 ## References
 
 [^LA]: [Making sense of principal component analysis, eigenvectors & eigenvalues](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579)

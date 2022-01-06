@@ -162,6 +162,9 @@ You can see here that there is a high degree of overlap of the terms extracted v
 
 From here, you can leverage Noun Chunks in your analysis to better identify what customers are talking about. In the post on POS tagging, I showed how you could separate products (nouns) from how people are talking about them. With Noun Phrase tagging, you can extract more specific product information for your analysis. I have a quick demo of this available; check out the full notebook on [Gitub](https://github.com/broepke/POS).
 
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@kylry?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kyle Ryan</a> on <a href="https://unsplash.com/s/photos/phrases?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

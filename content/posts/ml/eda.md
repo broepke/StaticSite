@@ -314,6 +314,8 @@ From here, you can create any number of visuals to help you better understand th
 
 EDA is a powerful technique that you should get comfortable with every time you start working on a new dataset. There are plenty of other techniques out there that you can add to these basics. Go out there, explore and get to know your data before you jump into Machine Learning.
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@amanda_sandlin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Amanda Sandlin</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

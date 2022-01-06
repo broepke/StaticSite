@@ -79,6 +79,8 @@ Finally, choosing the right evaluation metric is critical with imbalanced data. 
 
 There are many great articles out there, such as the full walkthrough from Jason Brownlee on *Machine Learning Mastery* [^SMOTE] and Tara Boyle on *Towards Data Science* [^IMBAL]. Check them out for further learning.
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 [^PAPER]: [SMOTE: Synthetic Minority Over-sampling Technique](https://doi.org/10.1613/jair.953)

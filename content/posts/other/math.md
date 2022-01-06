@@ -27,3 +27,6 @@ $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |
 [Quadratic Equation](https://en.wikipedia.org/wiki/Quadratic_formula):
 
 $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

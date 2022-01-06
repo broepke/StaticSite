@@ -50,3 +50,5 @@ You can very easily build up a very large bill with EMR and clusters.  You must 
 When you're ready to continue with your analysis, simply `Clone` the cluster and wait for it to start.  Then return to the Notebook from earlier, and then use the `Change Cluster` button at the top to associate it with your newly cloned cluster.  
 
 That's it.  Launch your Notebook and continue!
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

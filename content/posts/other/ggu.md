@@ -39,3 +39,5 @@ According to the website, the following are what students in this degree will le
 The first degree-conferring program of the university started in 1901, with the formation of California's first evening law school. By offering classes at night, Golden Gate made legal studies available to the common person. Four students comprised the law school's first graduating class.
 
 Today, Golden Gate University continues as a pioneer of adult education in business and management, accounting, taxation, and law. As always, GGU emphasizes hands-on learning taught by professionals practicing in the field. Campuses and teaching sites are located in San Francisco, Seattle, Silicon Valley and online through GGU's nationally-acclaimed eLearning programs.
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

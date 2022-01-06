@@ -80,3 +80,5 @@ Example:
 $$\left( \frac{1}{2}\right) ^{-3} = \left( \frac{2}{1}\right) ^3 = 2^3$$
 
 $$5^{-2} = \left( \frac{5}{1}\right) ^{-2} = \left( \frac{1}{5}\right) ^2$$
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

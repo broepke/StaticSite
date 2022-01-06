@@ -61,6 +61,8 @@ Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My 
 
 Hopefully, this helps you better understand how to interpret a confusion matrix and choose the best evaluation metric for your use case!
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 [^CROSS]: [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html)  

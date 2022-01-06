@@ -189,6 +189,8 @@ This post turned out to be a little lengthy, but hopefully, it will help you set
 
 Enjoy!
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Cute and confused dog photo by <a href="https://unsplash.com/@anotherleaf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chris Arthur-Collins</a> on <a href="https://unsplash.com/s/photos/confusion-dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

@@ -85,3 +85,6 @@ pipeline.fit(X_train, y_train)
 ## Summary
 
 The above demonstrates the simplicity of setting up a pipeline.  The first time you walk through this, it can seem a little confusing versus doing each step independently.  The benefit is that each time you want to apply this to a new model, or even better, run new data against your fit model, all of the transformation to the data will happen automatically. 
+
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*

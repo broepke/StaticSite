@@ -17,5 +17,10 @@ file:///Users/brianroepke/Projects/DATA110/Week%208/DATA110_Week8-broepke.html
 file:///Users/brianroepke/Projects/DATA110/Week%2011/DATA110-Week11-Midterm-broepke.html 
 
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
+## References
+
+
 Photo by <a href="https://unsplash.com/@jan_huber?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Huber</a> on <a href="https://unsplash.com/s/photos/frequency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
