@@ -24,3 +24,5 @@ file:///Users/brianroepke/Projects/DATA110/Week%2011/DATA110-Week11-Midterm-broe
 
 Photo by <a href="https://unsplash.com/@jan_huber?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Huber</a> on <a href="https://unsplash.com/s/photos/frequency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+
+[^GENTLE]: [A Gentle Introduction to the Bag-of-Words Model](https://machinelearningmastery.com/gentle-introduction-bag-words-model/)
