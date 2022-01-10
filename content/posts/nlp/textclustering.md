@@ -12,13 +12,13 @@ Twitter_Image: images/covers/wine.jpg
 
 ## What Text Clustering?
 
-In the last post we talked about [Topic Modeling]({filename}topicmodels.md), or a way to idetify a number of topics form a corpus of documents.  The method used there was Latent Dirichlet Allocation, or LDA.  In this article, we're going to perform a similar task but through the use of the **unsupervised machine learning** method of **clustering**.  While the method is different, the outcome is a number of groups (or topics) of words that are related to each other.
+In the last post, we talked about [Topic Modeling]({filename}topicmodels.md), or a way to identify several topics from a corpus of documents. The method used there was Latent Dirichlet Allocation or LDA. In this article, we're going to perform a similar task but through the **unsupervised machine learning** method of **clustering**. While the method is different, the outcome is several groups (or topics) of words related to each other.
 
-For this eaxample, we're going to use the Wine Spectator reviews dataset from Kaggle[^KAGGLE].  It contains a little over 100,000 different wine reviews of varietals from around the world.  The descriptions of the wines as tasting notes is the text-based variable that we're going to use to cluster and interpret the results. 
+For this example, we will use the Wine Spectator reviews dataset from Kaggle[^KAGGLE]. It contains a little over 100,000 different wine reviews of varietals worldwide. The descriptions of the wines as tasting notes are the text-based variable that we're going to use to cluster and interpret the results. 
 
-Start by importing the needed libraries.  
+Start by importing the needed libraries. 
 
-**Note**:  I'm not going to show the preprocessing of the text here.  You can see the full code on [GitHub](https://github.com/broepke/TextClustering).  There is also a full article on [Text Cleaning]({filename}textcleaning.md) you can reference.
+**Note**: I'm not going to show the preprocessing of the text here. You can see the full code on [GitHub](https://github.com/broepke/TextClustering). There is also a full article on [Text Cleaning]({filename}textcleaning.md) you can reference.
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -32,12 +32,12 @@ import seaborn as sns
 
 ## Text Vectorizing
 
-Vectorizing text is the process of converting text **documents** into **numeric representations**.  There are a couple different versions of this such as Bag-of-Words (BoW) or Term Frequency (TF) as well as Term Frequency Inverse Document Frequency (TF-IDF) which we'll be using here.
+Vectorizing text is the process of converting text **documents** into **numeric representations**. There are a couple of different versions of this, such as **Bag-of-Words** (BoW) or **Term Frequency** (TF), as well as **Term Frequency-Inverse Document Frequency** (TF-IDF) which we'll be using here.
 
-* **BoW or TF**: Represents the count of each word on a per document basis. In this case, a document an observation in the data set of the column we're targeting.
-* **TF-IDF**: As opposed to just taking the count of words, it inverts this and gives a higher weighting to those words that appear less frequenty.  This means common words have a lower weighting where words that are probably more domain specific and appear less, will have a higher weighting.
+* **BoW or TF**: Represents the count of each word on a per-document basis. In this case, a document an observation in the data set of the column we're targeting.
+* **TF-IDF**: Instead of just taking the count of words, it inverts this and gives a higher weighting to those words that appear less frequently. Common words have a lower weighting, whereas words that are probably more domain-specific and appear less will have a higher weighting.
 
-It's quite easy to create the **TF-IDF**, simply create an instance of the vectorizer and then `fit-transform` the column of the Data Frame.
+It's quite easy to create the **TF-IDF**, create an instance of the vectorizer, and then `fit-transform` the column of the Data Frame.
 
 ```python
 vectorizer = TfidfVectorizer()
@@ -46,13 +46,13 @@ X = vectorizer.fit_transform(df['description_clean'])
 
 ## Determining the Best Number of Clusters
 
-I mentioned above that clustering is an **unsupervised** machine learning method.  Unsupervised means that we don't have information in our dataset that tells us the *right* answer; this is commonly referred to as **labeled data**.  In our case we don't know how many differnt types of wine there are or different topics that are discussed in the text.  However, just becasue we don't know this information, it doesn't mean we can't try to find the right number of clusters. 
+I mentioned above that clustering is an **unsupervised** machine learning method. Unsupervised means that we don't have information in our dataset that tells us the *right* answer; this is commonly referred to as **labeled data**. In our case, we don't know how many different types of wine there are or different topics discussed in the text. However, just because we don't know this information, it doesn't mean we can't find the right number of clusters. 
 
-With clustering we need to initialize a number of **cluster-centers**.  This number is fed into the model and then after the results are outputted, someone with knowlege of the data can interprete those results.  There are howver ways to try to evaluate which is the right number of cluster centers.   I'll cover two methods that are commonly used.
+With clustering, we need to initialize several **cluster-centers**. This number is fed into the model, and then after the results are outputted, someone with knowledge of the data can interpret those results. However, there are ways to evaluate which is the right number of cluster centers, and I'll cover two commonly used methods.
 
 ### Elbow Method
 
-The first one is known as the **Elbow Method**.  The name is derrived from the way the plot looks after you run this analysis.  What we're ideally looking for is a point where the curve starts to flatten out.  This method uses `inertia` to determine the number of clusters.  The inertia is the **sum of the squared distances** from each point to the cluster center.  We can calculate this for a sequence of different cluster values and plot them and look for the **elbow**.
+The first one is known as the **Elbow Method**. The name is derived from how the plot looks after running this analysis. Ideally, we're looking for a point where the curve starts to flatten out. This method uses `inertia` to determine the number of clusters. The inertia is the **sum of the squared distances** from each point to the cluster center. We can calculate this for a sequence of different cluster values, plot them, and look for the **elbow**.
 
 
 ```python
@@ -75,15 +75,15 @@ plt.title('Elbow Method For Optimal k')
 plt.show()
 ```
 
-After the data is plotted, the elbow isn't totally obvious, but the best approximation is at 2 clusters where we see a *slight kink* in the curve.  I've plotted a vertical line to identify it.
+The elbow isn't obvious after the data is plotted, but the best approximation is at 2 clusters where we see a *slight kink* in the curve. I've plotted a vertical line to identify it.
 
 ![Elbow Method]({static}../../images/posts/textclustering_elbow.png) 
 
 ### Silhouette Score
 
-Another method for caculating the best number of cluster centers is the **Silhouette Coefficient**.  The Silhouette Coefficient is calculated using the mean intra-cluster distance and the mean nearest-cluster distance for each sample. In other words, the distance between a sample and the nearest cluster that the sample is not a part of[^SCIKIT].
+Another method for calculating the best cluster centers is the **Silhouette Coefficient**. The Silhouette Coefficient is calculated using the mean intra-cluster distance and the mean nearest-cluster distance for each sample. In other words, the distance between a sample and the nearest cluster that the sample is not a part of[^SCIKIT].
 
-The best value is `1`, and the worst value is `-1`. Values near `0` indicate overlapping clusters. Negative values generally indicate that a sample has been assigned to the wrong cluster, as a different cluster is more similar.  Let's calculate these scores for for various cluster centers values as well.
+The best value is `1`, and the worst is `-1`. Values near `0` indicate overlapping clusters. Negative values generally indicate that a sample has been assigned to the wrong cluster, as a different cluster is more similar versus the one it's assigned. Let's calculate these scores for various cluster centers values as well.
 
 
 ```python
@@ -108,16 +108,14 @@ For n_clusters = 8 The average silhouette_score is: 0.005962146586290015
 For n_clusters = 9 The average silhouette_score is: 0.00632540099660495
 ```
 
-Per the definition, the number closest to `1` is the best, which in our case is `2` clusters.  The values are however close to zero meaning there is high overlap of our clusters.  
+Per the definition, the number closest to `1` is the best, which in our case is `2` clusters. However, the values are close to zero, meaning our clusters have a high overlap. 
 
-While neither method gave us ideal visibility into the number of clusters we should use, both point to `2` as the best value.
-
-
+While neither method gave us ideal visibility into the number of clusters, we should use, both point to `2` as the best value.
 ## Clustering with k-Means
 
-Okay! We're ready to build our model and check our results.  This process is pretty straight forward.  We're going to repeat most of what we did above but on a single run with the number of clusters we've selected.
+Okay! We're ready to build our model and check our results. This process is pretty straightforward, and we're going to repeat most of what we did above but on a single run with the number of clusters we've selected.
 
-For this example we're going to use k-Means.  k-Means is one of the most common, if not the most common clustering algorithm.  Normally, k-Means will randomly initialize cluster center and then iterate until it finds ideal locations.  In the paramerters below we're specifying `init="k-means++"` which means that we're going to use the k-means++ algorithm to initialize the cluster centers which was proposed in 2007 as a way to reduce issues with random initialization[^WIKI].  For starters, I would suggest using this but also would sugest you read up a little bit on how it works.
+For this example, we're going to use k-Means. k-Means is one of the most common, if not the most common, clustering algorithms. Normally, k-Means will randomly initialize the cluster center and then iterate until it finds ideal locations. Specifying `init="k-means++"`means that we're going to use the k-means++ algorithm to initialize the cluster centers, which was proposed in 2007 as a way to reduce issues with random initialization[^WIKI]. I would suggest using this and reading up a little bit on how it works, for starters.
 
 ```python
 # Set the number of clusters
@@ -130,7 +128,7 @@ model = KMeans(init="k-means++", n_clusters=k, max_iter=25, n_init=1)
 model.fit(X)
 ```
 
-This is an optional step, but sometimes it's handy to create a new column in our dataframe with the cluster numbers for future reference.
+You can save the cluster assignments as a new column in our data frame with the cluster numbers for future reference.
 
 ```python
 # Get the cluster labels
@@ -141,7 +139,7 @@ kmeans_labels = pd.DataFrame(clust_labels)
 df.insert((df.shape[1]),'clusters',kmeans_labels)
 ```
 
-And finally, let's build a quick dataframe that shows the top `15` words from each of the two clusters and see what we get.
+And finally, let's build a quick data frame that shows the top `15` words from each of the two clusters and see what we get.
 
 ```python
 order_centroids = model.cluster_centers_.argsort()[:, ::-1]
@@ -180,11 +178,11 @@ df_clusters
 14      lemon       sweet
 ```
 
-Looking at cluster `0` we see words that would typically be associated with **White** wines and cluster `1` are words that are associated with **Red**.
+Looking at cluster `0`, we see words typically associated with **White** wines, and cluster `1` are associated with **Red**.
 
 ## Predicting New Docs
 
-Next we can try to see how the model would cluster new wine reviews that it's not seen in the past.  I've made up a few sentences that use words that white and red wines might have assocated to them.
+Next, we can see how the model would cluster new wine reviews that it's not seen in the past. I've made up a few sentences that use words that white and red wines might have associated with them.
 
 ```python
 new_docs = ['Rich deep color of oak and chocolate.',
@@ -203,18 +201,18 @@ The red wines are classified as `1` and whites as `0` exactly as we would expect
 
 ## Conclusion
 
-The first time I performed clustering on this dataset I was honestly blown away.  It was so obvious to me that with `2` clusters the algorithm was identifying and clustering red versus white wines.  This to me felt a little like magic, but in the end it's just math!  Enjoy playing with this process.  It's powerful, and can help you identify related groups of topics in your text! 
+The first time I performed clustering on this dataset, I was honestly blown away. It was so obvious that with `2` clusters, the algorithm identified and clustered red versus white wines. It felt a little like magic, but in the end, it's just math! Enjoy playing with this process. It's powerful and can help you identify related groups of topics in your text! 
 
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
 
+Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/s/photos/wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 [^KAGGLE]: [Wine Reviews](https://www.kaggle.com/zynicide/wine-reviews)
 [^SCIKIT]: [Silhouette Score on Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html)
 [^WIKI]: [k-means++](https://en.wikipedia.org/wiki/K-means%2B%2B)
-
-Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/s/photos/wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 
   
