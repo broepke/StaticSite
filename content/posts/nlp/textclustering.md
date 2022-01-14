@@ -1,7 +1,7 @@
 Title: Clustering Text with k-Means
 Date: 2022-01-09
 Modified: 2022-01-09
-Status: draft
+Status: published
 Tags: datascience, nlp, machinelearning
 Slug: textclustering
 Authors: Brian Roepke
@@ -32,7 +32,7 @@ import seaborn as sns
 
 ## Text Vectorizing
 
-Vectorizing text is the process of converting text **documents** into **numeric representations**. There are a couple of different versions of this, such as **Bag-of-Words** (BoW) or **Term Frequency** (TF), as well as **Term Frequency-Inverse Document Frequency** (TF-IDF) which we'll be using here.
+Vectorizing text is the process of converting text **documents** into **numeric representations**. There different versions of this, such as **Bag-of-Words** (BoW), as well as **Term Frequency-Inverse Document Frequency** (TF-IDF) which we'll be using here.
 
 * **BoW or TF**: Represents the count of each word on a per-document basis. In this case, a document an observation in the data set of the column we're targeting.
 * **TF-IDF**: Instead of just taking the count of words, it inverts this and gives a higher weighting to those words that appear less frequently. Common words have a lower weighting, whereas words that are probably more domain-specific and appear less will have a higher weighting.

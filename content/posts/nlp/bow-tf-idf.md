@@ -10,6 +10,11 @@ Header_Cover: images/covers/frequency.jpg
 Og_Image: images/covers/frequency.jpg
 Twitter_Image: images/covers/frequency.jpg
 
+
+## What is a Bag of Words or BoW?
+
+
+
 ## What is TF-IDF?
 
 file:///Users/brianroepke/Projects/DATA110/Week%208/DATA110_Week8-broepke.html
@@ -26,3 +31,4 @@ Photo by <a href="https://unsplash.com/@jan_huber?utm_source=unsplash&utm_medium
   
 
 [^GENTLE]: [A Gentle Introduction to the Bag-of-Words Model](https://machinelearningmastery.com/gentle-introduction-bag-words-model/)
+[^SOMA]: [TF-IDF](https://jonathansoma.com/lede/foundations/classes/text%20processing/tf-idf/)
