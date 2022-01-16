@@ -13,7 +13,9 @@ Twitter_Image: images/covers/radio.jpg
 
 ## What is a Bag of Words
 
-Have you ever wondered how Machine Learning (ML) deals with text when ML is based on math and statistics? I mean, the text isn't numbers after all. Let me introduce you to the** Bag-of-Words (BoW)** model. Aside from its funny-sounding name, a BoW is a critical part of **Natural Language Processing (NLP)** and one of the building blocks of performing Machine Learning on text.
+Have you ever wondered how Machine Learning (ML) deals with text when ML is based on math and statistics? I mean, the text isn't numbers after all... Right? 
+
+Let me introduce you to the** Bag-of-Words (BoW)** model. Aside from its funny-sounding name, a BoW is a critical part of **Natural Language Processing (NLP)** and one of the building blocks of performing Machine Learning on text.
 
 A BoW is simply an *unordered* collection of words and their frequencies (counts).  For example, let's look at the following text:
 
