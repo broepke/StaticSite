@@ -1,7 +1,7 @@
 Title: Bag of Words and TF-IDF
 Date: 2022-01-22
 Modified: 2022-01-22
-Status: draft
+Status: published
 Tags: datascience, nlp
 Slug: bowtfidf
 Authors: Brian Roepke
@@ -65,7 +65,7 @@ We can see a little more clearly what the matrix looks like for our BoW. **Rows 
 
 ## What is TF-IDF?
 
-We saw that the BoW model would count the occurrences and put more weight on most words. There is an alternative method known as **TF-IDF** which does just the opposite. TF-IDF stands for **Term Frequency-Inverse Document Frequency**, which nicely spells out the method it's using. Instead of giving more weight to words that occur more frequently, it gives a higher weight to words that occur **less** frequently (*across the entire corpus*). In use cases where you have more **domain-specific language** in your text, this model performs better by giving weight to these less frequently occurring words. Let's run it on the same documents as before.
+We saw that the BoW model would count the occurrences and more weight on most words. An alternative method known as **TF-IDF** does just the opposite. TF-IDF stands for **Term Frequency-Inverse Document Frequency**, which nicely spells out the method it's using. Instead of giving more weight to words that occur more frequently, it gives a higher weight to words that occur **less** frequently (*across the entire corpus*). In use cases where you have more **domain-specific language** in your text, this model performs better by giving weight to these less frequently occurring words. Let's run it on the same documents as before.
 
 Before we do inverse document frequency, let's **Term Frequency**, which will work like a BoW but give us a value for each term where the *sum of squares* of the vector (document) `= 1`. This is the same as the BoW model but normalized.
 
