@@ -1,4 +1,5 @@
 Title: Social Media Sentiment Analysis
+Subtitle: Understand how your customers feel about your products and services
 Date: 2022-01-04
 Modified: 2022-01-04
 Status: published

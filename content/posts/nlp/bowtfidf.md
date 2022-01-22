@@ -1,4 +1,5 @@
 Title: Bag of Words and TF-IDF
+Subtitle: How Machine Learning and Natural Language Processing Models Deal with Text
 Date: 2022-01-22
 Modified: 2022-01-22
 Status: published
