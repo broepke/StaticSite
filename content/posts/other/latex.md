@@ -1,6 +1,6 @@
 Title: Publishing an APA Paper with LaTeX
 Date: 2021-11-21
-Modified: 2021-11-21
+Modified: 2022-01-29
 Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
@@ -166,7 +166,19 @@ The output will look something like the below, showing both in text and classic 
 
 >Andouille alcatra burgdoggen, tri-tip boudin shank jerky buffalo beef short loin Huff and Geis (2010) filet mignon leberkas (Huff & Geis, 2010).
 
-**Note:** If you use a reference manager like [EndNote](https://endnote.com), you can export your entire citation list as BibTex and paste it into the `.bib` file. 
+### Working with a Reference Manager
+
+**Note:** If you use a reference manager like [EndNote](https://endnote.com) or [Zotero](https://www.zotero.org), you can export your entire citation list as BibTex and paste it into the `.bib` file. I used EndNote for a good portion of my academic studies, but I recently switched to Zotero because it's excellent and free to use. Here is a quick flow on how you export your citations.
+
+![Zotero Interface]({static}../../images/posts/latex_3.png)
+
+From the Zotero interface, highlight the items you wish to export and select the `Export items...` menu option.
+
+![Export from Zotero]({static}../../images/posts/latex_4.png)
+
+Next, select the `BibTex` option and save the file. From here, you can move these into the `bibliography.bib` file. Make sure to remove the `file:` key-value pair.
+
+![Sample Page]({static}../../images/posts/latex_5.png)
 
 ## Integrating with Your Project Code
 
