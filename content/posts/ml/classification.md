@@ -14,17 +14,17 @@ Twitter_Image: images/covers/class.jpg
 
 ## What is Classification in Machine Learning?
 
-At it's simpliest form there are two genearly types of supervised machine learning outcomes.  First you can have a regression problem, where you're trying to predict a continuous variable, such as the temperature or a stock price.  Second is a classification problem where you want to predict a categorical variable such as pass/fail, or spam/ham.  Additionally we can have binary classificaiton problems which we'll cover here where there are only two outcomes, and multi-class classification where there are more than two outcomes.
+There are two general types of supervised machine learning outcomes in their simplest form. First, you can have a regression problem, where you're trying to predict a continuous variable, such as the temperature or a stock price. The second is a classification problem where you want to predict a categorical variable such as pass/fail or spam/ham. Additionally, we can have binary classification problems that we'll cover here with only two outcomes and multi-class classification with more than two outcomes.
 
 ## Prepping the Data
 
-There are a number of steps you want to take when preparing data for machine learning.  You wan to clean the data removing unwanted characters or numbers, you want to remove stop words, or words that appear too frequently, and you also should *stem* or *lemmatize* words, which takes words such as *running* and *runs* and brings them to their root form of *run*.  Additionally you might want to create new columns, or features, that aid in your machine learning classification process. For this example, we will use the dataset of [Women’s E-Commerce Clothing Reviews on Kaggle](https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews).
+You want to take several steps when preparing data for machine learning. You want to clean the data removing unwanted characters or numbers, you want to remove stop words, or words that appear too frequently, and you also should *stem*, or *lemmatize* words, which takes words such as *running* and *runs* and brings them to their root form of *run*. Additionally, you might want to create new columns or features that aid your machine learning classification process. For this example, we will use the dataset of [Women’s E-Commerce Clothing Reviews on Kaggle](https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews).
 
 Before we start cleaning, let's import the data and create a few key features:
 
-1. Since we're performing a binary classification, our **target** variable needs to be `1` or `0`.  In a five star review system, we can take the `4` and `5` star reviews and make them **positive** and then letting the remainder, `1`, `2`, and `3` star reviews be **negative**.
-2. This particular set of reviews has both a **title* and a *body**.  To simplify our processing we can combine these two columns into a single new column called **Text**.
-3. As another feature in our model, we can create a new column that represents the **total length** of the review text.
+1. Since we're performing binary classification, our **target** variable needs to be `1` or `0`. In a five-star review system, we can take the `4` and `5` star reviews and make them **positive** and then let the remainder, `1`, `2`, and `3` star reviews be **negative**.
+2. This particular set of reviews has both a **title* and a *body**. We can combine these two columns into a single new column called **Text**to simplify our processing.
+3. As another feature in our model, we can create a new column representing the review text's **total length**.
 
 
 ```python
@@ -41,7 +41,7 @@ df['Text'] = df['Title'] + ' ' + df['Review Text']
 df['text_len'] = df.apply(lambda row: len(row['Text']), axis = 1)
 ```
 
-Next we need to clean the text.  I've created a function that can be adapted to almost any NLP cleaning situation.  Let's take a look at the text before text:
+Next, we need to clean the text. I've created a function adapted to almost any NLP cleaning situation. Let's take a look at the text before text:
 
 ```text
 ' Love this dress!  it\'s sooo pretty.  i happened to find it in a store, and i\'m glad i did bc i never would have ordered it online bc it\'s petite.  i bought a petite and am 5\'8".  i love the length on me- hits just a little below the knee.  would definitely be a true midi on someone who is truly petite.'
@@ -77,7 +77,7 @@ def process_string(text):
     return final_string
 ```
 
-In order to run this on our Data Frame, we simply use the **pandas** `apply` method.  After applying this function, let's take a look at the resulting string.
+We use the **Pandas** `apply` method to run this on our Data Frame. After applying this function, let's look at the resulting string.
 
 ```python
 df['Text_Processed'] = df['Text'].apply(lambda x: process_string(x))
@@ -87,11 +87,11 @@ df['Text_Processed'] = df['Text'].apply(lambda x: process_string(x))
 'love dress sooo pretti happen find store im glad bc never would order onlin bc petit bought petit  love length hit littl knee would definit true midi someon truli petit'
 ```
 
-We can see that the string is perfectly clean, free of numbers, punctions, stop words, and the words are stemmed to their most simple forms.  We're ready to start building our model! 
+We can see that the string is perfectly clean, free of numbers, punctions, stop words, and the words are stemmed from their most simple forms. We're ready to start building our model! 
 
 ## Testing for Imbalanced Data
 
-It's critical that we understand if our dataset is *imbalanced* between the two classes in our Target.  We can do this quickly with one line of code from Pandas.  Imblanced data is where one class has far more (or fewer) observations than the other.  When we train our model, the result will be that the model will be biased towards the class with the most observations.  This is called *overfitting* and is a common problem with machine learning.
+We must understand if our dataset is *imbalanced* between the two classes in our Target. We can do this quickly with one line of code from Pandas. Imbalanced data is where one class has far more (or fewer) observations than the other. When we train our model, the result will be that the model will be biased towards the class with the most observations. This bias is called *overfitting* and is a common problem with machine learning.
 
 ```python
 df['Target'].value_counts()
@@ -102,36 +102,36 @@ df['Target'].value_counts()
 Name: Target, dtype: int64
 ```
 
-That is good enought to let us know that **we do have imbalanced data**.  There are three times the number of positive class `1` observations versus the negative class `0`.  We will have to make sure that we handle this appropriately in our model.  I'll cover a couple fo different ways in this article.  
+That is good enough to let us know that **we do have imbalanced data**. There is three times the number of positive class `1` observations versus the negative class `0`. We will have to make sure that we handle this appropriately in our model. I'll cover a couple of different ways in this article. 
 
 ## Model Selection
 
-A best-practice when building a machine learning model is to perform what is known as **Model Selection**.  Model select lets you test diffeernt algorithms on your data and find out which performs best.  First we're going to start by splitting our dataset it on `X` and `y` datasets.  `X` represents all of the features of the our model and `y` will represent the target variable.  The target is the variable we're trying to predict.
+When building a machine learning model, a best practice is to perform what is known as **Model Selection**. Model select lets you test different algorithms on your data and determine which performs best. First, we will split our dataset into `X` and `y` datasets. `X` represents all of the features of our model, and `y` will represent the target variable. The target is the variable we're trying to predict.
 
 ```python
 X = df[['Text', 'text_len']]
 y = df['Target']
 ```
 
-Next, we're going to use a column transformer.  A column transfomer allows us to preprocess data in any number of ways that is appropriate for our model.  There are *many* different ways to transform your data and I'll not cover them all here, but let me explain the two we're using.
+Next, we're going to use a column transformer. A column transformer allows us to preprocess data in any number of ways that are appropriate for our model. There are *many* different ways to transform your data, and I'll not cover them all here, but let me explain the two we're using.
 
-* **TfidfVectorizer**: the TF-IDF vectorizer transforms text into numeric values.  For a great descripion of this, check out my post on [BoW and TF-IDF](({filename}../nlp/bowtfidf.md)).  Here we're transforming our `Text` column.
-* **MinMaxScaler**: This transforms all numeric values into a range between `0` and `1`. In general, most ML algorithms do not handle data with a wide range of values, it's always a best-practice to scale your data.  You can read more about this on Scikit-Learn's [documentation](https://scikit-learn.org/stable/modules/preprocessing.html).  Here we're scaling our `text_len` column.
+* **TfidfVectorizer**: the TF-IDF vectorizer transforms text into numeric values. For a great descripion of this, check out my post on [BoW and TF-IDF](({filename}../nlp/bowtfidf.md)). Here we're transforming our `Text` column.
+* **MinMaxScaler**: This transforms all numeric values into a range between `0` and `1`. Most ML algorithms do not handle data with a wide range of values; it's always a best practice to scale your data. You can read more about this on Scikit-Learn's [documentation](https://scikit-learn.org/stable/modules/preprocessing.html). Here we're scaling our `text_len` column.
 
 ```python
 def col_trans():
     column_trans = ColumnTransformer(
-            [('Text', TfidfVectorizer(stop_words='english'), 'Text'),
+            [('Text', TfidfVectorizer(), 'Text'),
              ('Text Length', MinMaxScaler(), ['text_len'])],
             remainder='drop') 
     
     return column_trans
 ```
 
-Next we have a function for creating a [Pipeline](({filename}sklearnpipelines.md)).  A Pipeline allows us to consistently preprocess our data and ally various additional steps in a single workflow.  Let's breakdown what's happening below.
+Next we have a function for creating a [Pipeline](({filename}sklearnpipelines.md)). A Pipeline allows us to consistently preprocess our data and ally various additional steps in a single workflow. Let's break down what's happening below.
 
-1. **Prep**: This is the column transformer from above.  It's going to vectorize our text and scale our text length.
-2. **CLF**: This is where we choose and instance of our classifier.  You can see that this is passed into our function and we do it like this so that we can test different classifiers with the same data.
+1. **Prep**: This is the column transformer from above. It's going to vectorize our text and scale our text length.
+2. **CLF**: This is where we choose an instance of our classifier. You can see that this is passed into our function, and we do it like this so that we can test different classifiers with the same data.
 
 ```python
 def create_pipe(clf):
@@ -146,11 +146,11 @@ def create_pipe(clf):
     return pipeline
 ```
 
-Now it's time to **Cross Validate** a couple of classifiers.  Cross validation is the process of partitioning data into *n* number of different splits which you then validate your model against.  Why this is so important, is that in some cases of of a train-test split, the observations it learns off of in the train set might not represent the observations in the test set and therefore you avoid this but running through different slices of the data.  Read more about this on [Scikit-Learn's documentation](https://scikit-learn.org/stable/modules/cross_validation.html).
+Now it's time to **Cross Validate** a couple of classifiers. Cross-validation is the process of partitioning data into *n* number of different splits, which you then validate your model against. This is so important because, in some cases of a train-test split, the observations it learns off of in the train set might not represent the observations in the test set, and therefore, you avoid this but running through different slices of the data. Read more about this on [Scikit-Learn's documentation](https://scikit-learn.org/stable/modules/cross_validation.html).
 
-**Important**: One thing I want to bring special attention to below is the use of [**RepeatedStratifiedKFold**](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html) for cross validation.  A *Stratified* cross validator will ensure in the case of *imbalanced* data that the partitions *preserve relative class frequencies* in in split.
+**Important**: One thing I want to bring special attention to below is [**RepeatedStratifiedKFold**](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html) for cross-validation. A *Stratified* cross validator will ensure in the case of *imbalanced* data that the partitions *preserve relative class frequencies* in the split.
 
-Finally regarding the how we're dealing with imblanced data, we are going to use a classifier that suppors the `class_weight` parameter.  There are a handfull of models from Scikit-Learn that support this and simply by setting the value to `balanced` we can account for imbalanced data.  There are other methods such as SMOTE, but this is a great place to start.  You can read more about [working with imbalanced data](({filename}imbalanced.md)) from my other post.
+Finally, regarding how we're dealing with imbalanced data, we will use a classifier that supports the `class_weight` parameter. A handful of models from Scikit-Learn support this, and simply by setting the value to `balanced`, we can account for imbalanced data. There are other methods, such as SMOTE, but this is a great place to start. You can read more about [working with imbalanced data](({filename}imbalanced.md)) from my other post.
 
 ```python
 models = {'LogReg' : LogisticRegression(random_state=42, 
@@ -178,21 +178,21 @@ LogReg : Mean f1 Weighted: 0.879 and Standard Deviation: (0.005)
 RandomForest : Mean f1 Weighted: 0.845 and Standard Deviation: (0.006)
 ```
 
-In the above funtion you can see that scoring is done with `f1_weighted`.  This is a whole discussion that is critical to understand.  I've written about how to choose the right [evaluation metric](({filename}modeleval.md)). 
+In the above function, you can see that scoring is done with `f1_weighted`. Choosing the right metric is a whole discussion that is critical to understand. I've written about how to choose the right [evaluation metric](({filename}modeleval.md)). 
 
-A quick explanation of why I chose this.  First off we have Imbalanced data and we **never** want to use `accuracy` as our metric.  Accuracy on imbalanced data will give you a false sense of success but in practice will only tell about the class with more observations.  In some projects you might want to make sure you have no false positives and others you may want to ensure you have better prediction of true-positives.  
+Here is a quick explanation of why I chose this metric. First, we have Imbalanced data, and we **never** want to use `accuracy` as our metric. Accuracy on imbalanced data will give you a false sense of success, but practice will only tell about the class with more observations. In some projects, you might want to make sure you have no false positives, and in others, you may want to ensure you have a better prediction of true positives. 
 
-Second, in this case, we really don't have a preference to predict posistive reviews versus negative reviews so I've chosen the `F1` score.  `F1` by defintion is the harmonic mean of Precision and Recall combining them into a single metric.  However, there is a way to also tell this metric to score imbalanced data and that's with the `weighted` flag.  As the [Sciki-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) documentation states:
+Second, we don't prefer to predict positive reviews versus negative reviews in this case, so I've chosen the `F1` score. `F1` by definition, is the harmonic mean of Precision and Recall combining them into a single metric. However, there is also a way to tell this metric to score imbalanced data with the `weighted` flag. As the [Sciki-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) documentation states:
 
->*Calculate metrics for each label, and find their average weighted by support (the number of true instances for each label). This alters ‘macro’ to account for label imbalance; it can result in an F-score that is not between precision and recall.*
+>*Calculate metrics for each label and find their average weighted by support (the number of true instances for each label). This alters ‘macro’ to account for label imbalance; it can result in an F-score between precision and recall.*
 
-Based on these results, we can see that the `LogisticRegression` classifier performs slightly bette, and was much faster, therefore we can move forward and train our model with it.
+Based on these results, we can see that the `LogisticRegression` classifier performs slightly better and is much faster. Therefore we can move forward and train our model with it.
 
-Again, Please read my full explanation of [evaluation metric](({filename}modeleval.md)) to give you a better sense of which one to use and when.
+Again, please read my full explanation of [evaluation metric](({filename}modeleval.md)) to give you a better sense of which one to use and when.
 
 ## Model Training and Validation
 
-We're finally here! It's time to train our final model and validate it.  We'll split our data into **training** and **test** data sets since we didn't do this yet when we used Cross Validation above.  You never want to train your data on *all* of your data, but rather leave a portion out for testing. Any time a model has seen data during training it will know that data and cause *overfitting*.  Overfitting is a problem where a model is too good at predicting the data it has seen and is not generalizable to new data.
+We're finally here! It's time to train our final model and validate it. We'll split our data into **training** and **test** data sets since we didn't do this yet when we used Cross-Validation above. You never want to train your data on *all* of your data, but rather leave a portion out for testing. Whenever a model has seen data during training, it will know that data and cause *overfitting*. Overfitting is a problem where a model is too good at predicting the data it has seen and is not generalizable to new data.
 
 ```python
 # Make training and test sets 
@@ -202,7 +202,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,
                                                     random_state=53)
 ```
 
-Next a quick function that will fit our model and evaluate it with both a `classification_report` and a Confusion Matrix.  I belive it's critical to run the classification report at a minimum.  It will show you each of your key evaluation metrics and tell you how the model performed.  The Confusion Matrix is a great way to visualize the results.
+Next, a quick function will fit our model and evaluate it with both a `classification_report` and a Confusion Matrix. I believe it's critical to run the classification report at a minimum, and it will show you each of your key evaluation metrics and tell you how the model performed. The Confusion Matrix is a great way to visualize the results.
 
 ```python
 def fit_and_print(pipeline, name):
@@ -243,11 +243,11 @@ weighted avg      0.888     0.872     0.876      7467
 
 ![Confusion Matrix]({static}../../images/posts/classification_1.png)  
 
-The results are in! The classification report shows us everything we need.  Because we said we don't necesarrily want to optimize for the postive or negative class, we will use the `f1_score` column.  We can see the `0` class performed at `0.752` and the `1` class at `0.913`.  Whenever you have imbalanced data you can expect that the larger class will perform better but some of the above steps can be used to increase the performance of the model.
+The results are in! The classification report shows us everything we need. Because we said we don't necessarily want to optimize for the positive or negative class, we will use the `f1_score` column. We can see the `0` class performed at `0.752` and the `1` class at `0.913`. Whenever you have imbalanced data, you can expect that the larger class will perform better, but you can use some of the above steps to increase the model's performance.
 
 ## Testing on New Data
 
-Now for a demonstration of what's truly the important part.  How well does your model predict new observations it has never seen before?  In production this would be very different, but for a quick example, we can simulate it by creating a few new reviews.  I've also created a function that 
+Now for a demonstration of what's truly the important part. How well does your model predict new observations it has never seen before? In production, this would be very different, but we can simulate it by creating a few new reviews for a quick example. I've also created a function that transforms a list of strings into the properly formatted dataframe with cleaned text and the `text_len` column.
 
 ```python
 def create_test_data(x):
@@ -291,6 +291,8 @@ this item is too little and tight. = [0]
 
 ## Conclusion
 
+
+All of the code for this post is available here in [GitHub](https://github.com/broepke/Classification)
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
