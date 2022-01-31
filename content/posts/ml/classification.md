@@ -218,10 +218,10 @@ for name, model, in models.items():
 ```text
 CPU times: user 23.2 s, sys: 10.7 s, total: 33.9 s
 Wall time: 15.5 s
-LogReg : Mean f1 Weighted: 0.878 and Standard Deviation: (0.005)
+LogReg : Mean f1 Weighted: 0.878 and StdDev: (0.005)
 CPU times: user 3min, sys: 2.35 s, total: 3min 2s
 Wall time: 3min 2s
-RandomForest : Mean f1 Weighted: 0.824 and Standard Deviation: (0.008)
+RandomForest : Mean f1 Weighted: 0.824 and StdDev: (0.008)
 ```
 
 In the above function, you can see that scoring is done with `f1_weighted`. Choosing the right metric is a whole discussion that is critical to understand. I've written about how to choose the right [evaluation metric]({filename}modeleval.md). 
