@@ -1,10 +1,10 @@
-Title: Common Table Expressions
+Title: 1 Trick That Changed the Way I Write Queries Forever
 Date: 2021-10-24
 Modified: 2021-10-24
 Tags: datascience, sql
 Slug: cte
 Authors: Brian Roepke
-Summary: Building complex select queries with CTEs.
+Summary: Leverage Common Table Expressions to Simplify the Writing and Troubleshooting Complex Queries
 Header_Cover: images/covers/trees.jpg
 
 ## What is a Common Table Expression

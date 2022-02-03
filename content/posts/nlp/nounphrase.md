@@ -1,11 +1,11 @@
-Title: Noun Phrase Chunking
+Title: A Quick Guide to Noun Phrase Chunking
 Date: 2021-12-18
 Modified: 2021-12-18
 Status: published
 Tags: datascience, nlp
 Slug: nounphrase
 Authors: Brian Roepke
-Summary: Moving Beyond Part of Speech Tagging to Noun Phrase Chunking.
+Summary: Noun Phrase Chunking in NLTK and sPacy
 Header_Cover: images/covers/orangeneon.jpg
 Og_Image: images/covers/orangeneon.jpg
 Twitter_Image: images/covers/orangeneon.jpg

@@ -1,10 +1,10 @@
-Title: Publishing an APA Paper with LaTeX
+Title: Simplify Your Academic Life With LaTeX on Your Next Paper
 Date: 2021-11-21
 Modified: 2022-01-29
 Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
-Summary: I actually published my capstone using LaTeX... and it wasn't bad! 
+Summary: Publishing an APA Paper with LaTeX
 Header_Cover: images/covers/dog.jpg
 Og_Image: images/covers/dog.jpg
 Twitter_Image: images/covers/dog.jpg

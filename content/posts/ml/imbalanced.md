@@ -1,10 +1,10 @@
-Title: Working with Imbalanced Data
+Title: Don’t Get Caught in the Trap of Imbalanced Data When Building Your ML Model
 Date: 2021-11-25
 Modified: 2021-11-25
 Tags: datascience, machine learning, python
 Slug: imbalanced
 Authors: Brian Roepke
-Summary: Multiple techniques for dealing with imbalanced data from algorithm selection to synthetic data generation.
+Summary: Utilize These Techniques to Bring Balance and Improve Performance.
 Header_Cover: images/covers/time.jpg
 Og_Image: images/covers/time.jpg
 Twitter_Image: images/covers/time.jpg
@@ -22,8 +22,22 @@ The challenge you will run into with imbalanced data is around how algorithms le
 Fortunately, with a little additional thought and set up in your training and testing phases, you can deal with imbalanced data; there are numerous ways to handle imbalanced data. The following are some (not all) of the ways you can manage it:
 
 1. Algorithm Selection
-2. Generating synthetic data
-3. Choosing the right performance metric
+2. Cross-Validation for Imbalanced Data
+3. Generating synthetic data
+4. Choosing the right performance metric
+
+## How do I Know if I Have Imbalanced Data
+
+One simple line of code is all you need to check for imbalanced data. Take your target variable, and use the following code.
+
+```python
+df['Target'].value_counts()
+[OUT]
+1    17433 
+0     5193
+```
+
+By checking the count of items, we can quickly and easily see that there are far more of the `1` class than the `0` class.
 
 ## Algorithm Selection
 
@@ -36,9 +50,15 @@ Let's start with the most simple way. In this example, I'll refer to Scikit-Lern
 
 If during your model selection phase you find that one of these classifiers performs well, it's quite simple to use this feature of the algorithm to accommodate for 
 
-### Train/Test Split and Cross-Validation
+### Train-Test Split and Cross-Validation
 
-Since the data is imbalanced, you should always split your data in such as way that preserves the class proportions. `train_test_split` automatically defaults to split data via the `stratify=None` parameter. 
+When data is imbalanced, you need to split your data in a way that preserves the class proportions, also known as a Stratified Split. `train_test_split` automatically defaults to split data via the `stratify=None` parameter. To stratify your split, then use your target variable `stratify=y`.
+
+So what does Stratify mean? According to [Wikipedia](https://en.wikipedia.org/wiki/Stratified_sampling):
+
+> In statistics, stratified sampling is a method of sampling from a population that can be partitioned into subpopulations.
+
+In other words, it’s honoring the sizes of the subpopulations or classes and taking that into account when splitting.
 
 When performing cross-validation for model evaluation, you should use the `StratifiedKFold` cross-validator. It will ensure that the folds are made by preserving the percentage of samples for each class [^STRAT].
 
@@ -71,13 +91,13 @@ pipeline = Pipeline([('prep',column_trans),
 
 **More: **For more information on utilizing pipelines, check out my post: [Using Pipelines in Sci-kit Learn](sklearnpipelines.html).
 
-## Evaluating Results
+## Choosing the Right Evaluation Metrics
 
-Finally, choosing the right evaluation metric is critical with imbalanced data. If you're relying on Accuracy, you're most likely not going to achieve the results you think you are. Please look at my other post on [Evaluating Models with a Confusion Matrix]({filename}modeleval.md). 
+Finally, choosing the right evaluation metric is critical with imbalanced data. If you’re relying on Accuracy, you’re most likely not going to achieve the results you think you are. Depending on the outcome you’re looking for, you can look at several different metrics such as precision, recall, and F1-score. Please look at my other post: [Stop Using Accuracy to Evaluate Your Classification Models]({filename}modeleval.md). 
 
 # Conclusion
 
-There are many great articles out there, such as the full walkthrough from Jason Brownlee on *Machine Learning Mastery* [^SMOTE] and Tara Boyle on *Towards Data Science* [^IMBAL]. Check them out for further learning.
+Imbalanced data is everywhere in real-life applications of machine learning. It’s easy to fall into the trap of overlooking imbalanced data only to find out that not performing the way you think it is. Fortunately, there are several ways to handle this, such as choosing an algorithm that deals with imbalanced data, splitting your data and cross-validating your model in a stratified way, utilizing SMOTE to synthetically generate data, and last but not least, choosing the best evaluation metric for the outcome you desire. Happy model building!
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 

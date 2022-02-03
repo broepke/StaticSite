@@ -1,4 +1,4 @@
-Title: Clustering Text with k-Means
+Title: How to Utilize Machine Learning to Automatically Detect Patterns in Text
 Subtitle: How to Utilize Unsupervised Machine Learning to Automatically Detect Patterns in Text
 Date: 2022-01-09
 Modified: 2022-01-09
@@ -6,7 +6,7 @@ Status: published
 Tags: datascience, nlp, machinelearning
 Slug: textclustering
 Authors: Brian Roepke
-Summary: Using unsupervised learning to cluster text into groups.
+Summary: Clustering Wine Reviews into Varietals with k-Means
 Header_Cover: images/covers/wine.jpg
 Og_Image: images/covers/wine.jpg
 Twitter_Image: images/covers/wine.jpg

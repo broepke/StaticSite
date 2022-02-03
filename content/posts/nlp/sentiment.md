@@ -1,12 +1,11 @@
-Title: Social Media Sentiment Analysis
-Subtitle: Understand how your customers feel about your products and services
+Title: Up Your Game in Social Media Sentiment Analysis
 Date: 2022-01-04
 Modified: 2022-01-04
 Status: published
 Tags: datascience, nlp
 Slug: sentiment
 Authors: Brian Roepke
-Summary: Voice of Customer Analysis of Social Media Data.
+Summary: Understand how your customers feel about your products and services
 Header_Cover: images/covers/grass_love.jpg
 Og_Image: images/covers/grass_love.jpg
 Twitter_Image: images/covers/grass_love.jpg

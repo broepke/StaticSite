@@ -1,11 +1,11 @@
-Title: Part of Speech Tagging
+Title: A Quick Guide to Part of Speech Tagging
 Date: 2021-12-11
 Modified: 2021-12-11
 Status: published
 Tags: datascience, nlp
 Slug: pos
 Authors: Brian Roepke
-Summary: How to leverage NLP to tag words with their Part of Speech (POS) and leverage them to help understand the Voice of Customer.
+Summary: Leverage this essential building block of NLP to perform a Voice of Customer analysis
 Header_Cover: images/covers/speech.jpg
 Og_Image: images/covers/speech.jpg
 Twitter_Image: images/covers/speech.jpg

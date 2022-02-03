@@ -1,10 +1,10 @@
-Title: Image Compression with PCA
+Title: The Magic of Principal Component Analysis through Image Compression
 Date: 2021-10-24
 Modified: 2021-10-24
 Tags: datascience, python, sklearn
 Slug: imagepca
 Authors: Brian Roepke
-Summary: Using PCA dimensionality reduction to compress images.
+Summary: Utilizing Images to Beautifully Demonstrate PCA
 Header_Cover: images/covers/factory.jpg
 Og_Image: images/covers/factory.jpg
 Twitter_Image: images/covers/factory.jpg

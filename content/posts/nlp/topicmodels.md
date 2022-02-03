@@ -1,11 +1,11 @@
-Title: Topic Models with Gensim
+Title: Find out What Your Customers Want with Topic Models
 Date: 2022-01-09
 Modified: 2022-01-09
 Status: published
 Tags: datascience, machine learning, nlp
 Slug: topicmodels
 Authors: Brian Roepke
-Summary: Building topic models in NLP.
+Summary: Step-by-Step Process for Identifying top Topics with Gensim
 Header_Cover: images/covers/swirls.jpg
 Og_Image: images/covers/swirls.jpg
 Twitter_Image: images/covers/swirls.jpg

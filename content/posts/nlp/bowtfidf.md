@@ -1,4 +1,4 @@
-Title: Bag of Words and TF-IDF
+Title: A Quick Introduction to Bag of Words and TF-IDF
 Subtitle: How Machine Learning and Natural Language Processing Models Deal with Text
 Date: 2022-01-22
 Modified: 2022-01-22
@@ -6,7 +6,7 @@ Status: published
 Tags: datascience, nlp
 Slug: bowtfidf
 Authors: Brian Roepke
-Summary: The building block of language models in Bag of Words and TF-IDF.
+Summary: How Machine Learning and Natural Language Processing Models Deal with Text
 Header_Cover: images/covers/radio.jpg
 Og_Image: images/covers/radio.jpg
 Twitter_Image: images/covers/radio.jpg

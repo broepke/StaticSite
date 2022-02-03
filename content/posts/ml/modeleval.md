@@ -1,10 +1,10 @@
-Title: Evaluating ML Models with a Confusion Matrix
+Title: Stop Using Accuracy to Evaluate Your Classification Models
 Date: 2021-11-07
 Modified: 2021-11-07
 Tags: datascience, machine learning
 Slug: modeleval
 Authors: Brian Roepke
-Summary: How to evaluate machine learning models using a confusion matrix and when to use different metrics.
+Summary: How to Interpret a Confusion Matrix and When to use Different Evaluation Metrics
 Header_Cover: images/covers/cranes_night.jpg
 Og_Image: images/posts/modeleval_1.png
 Twitter_Image: images/posts/modeleval_1.png
@@ -59,7 +59,27 @@ Here is a recent Confusion Matrix from a Random Forest algorithm I trained.  My 
 
 ![Confusion Matrix]({static}../../images/posts/modeleval_3.png)  
 
-Hopefully, this helps you better understand how to interpret a confusion matrix and choose the best evaluation metric for your use case!
+## Code
+To output the above confusion matrix, you can utilize the following code.
+
+```python
+from sklearn.metrics import classification_report
+from sklearn.metrics import ConfusionMatrixDisplay
+
+# print classification report
+print(classification_report(y_test, y_pred, digits=3))
+
+# show confusion matrix
+ConfusionMatrixDisplay.from_predictions(y_test, 
+                                        y_pred, 
+                                        cmap=plt.cm.Blues)
+plt.show()
+```
+
+See the [Scikit-Learn documentation](https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html) for more information on displaying a Confusion Matrix.
+
+## Conclusion
+A confusion matrix is a powerful tool in your toolbox for evaluating both binary and multi-class classification models’ performance. The trick, however, is not just to understand how to interpret the matrix; it is to understand the correct evaluation metric to use truly. Remember not to default to accuracy; there is an appropriate metric for your desired outcome! Enjoy!
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 

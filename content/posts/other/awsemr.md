@@ -1,10 +1,10 @@
-Title: Setting Up AWS EMR with Jupyter Notebooks
+Title: How to Configure AWS EMR for Jupyter Notebooks in a Way that Won’t Break the Bank
 Date: 2021-06-22
 Modified: 2021-06-22
 Tags: aws, datascience, python, data
 Slug: awsemr
 Authors: Brian Roepke
-Summary: A setup guide for configuring AWS EMR with Spark and Jupyter Notebooks
+Summary: Deploy a Distributed Computing Environment in Seconds with AWS
 Header_Cover: images/covers/computer.jpg
 Og_Image: images/covers/computer.jpg
 Twitter_Image: images/covers/computer.jpg

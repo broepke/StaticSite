@@ -1,11 +1,11 @@
-Title: Exploratory Data Analysis
+Title: My Goto Process for Exploratory Data Analysis with Python
 Date: 2021-12-04
 Modified: 2021-12-04
 Status: published
 Tags: datascience, machine learning, eda, data
 Slug: eda
 Authors: Brian Roepke
-Summary: My approach to EDA; One of the most critical steps in your project.
+Summary: A structured approach for exploring a new dataset
 Header_Cover: images/covers/road.jpg
 Og_Image: images/covers/road.jpg
 Twitter_Image: images/covers/road.jpg

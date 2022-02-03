@@ -1,10 +1,10 @@
-Title: Using Pipelines in Sci-kit Learn
+Title: Stop Building Your Models One Step at a Time. Automate the Process with Pipelines!
 Date: 2021-10-01
 Modified: 2021-10-01
 Tags: datascience, python, machine learning
 Slug: sklearnpipelines
 Authors: Brian Roepke
-Summary: Why you should be using pipelines and not processing steps separately.
+Summary: Using Pipelines in Sci-kit Learn
 Header_Cover: images/covers/cranes_night.jpg
 Og_Image: images/covers/cranes_night.jpg
 Twitter_Image: images/covers/cranes_night.jpg

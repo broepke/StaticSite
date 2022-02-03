@@ -1,11 +1,11 @@
-Title: Named Entity Recognition
+Title: An Accessible Guide to Named Entity Recognition
 Date: 2021-12-29
 Modified: 2021-12-29
 Status: published
 Tags: datascience, nlp
 Slug: ner
 Authors: Brian Roepke
-Summary: Classify text into pre-defined categories such as person names, organizations, locations, and more!
+Summary: How to automatically recognize proper entities from text using Natural Language Processing
 Header_Cover: images/covers/dc.jpg
 Og_Image: images/covers/dc.jpg
 Twitter_Image: images/covers/dc.jpg
