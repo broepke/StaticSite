@@ -5,9 +5,9 @@ Tags: datascience, machine learning
 Slug: modeleval
 Authors: Brian Roepke
 Summary: How to Interpret a Confusion Matrix and When to use Different Evaluation Metrics
-Header_Cover: images/covers/cranes_night.jpg
-Og_Image: images/posts/modeleval_1.png
-Twitter_Image: images/posts/modeleval_1.png
+Header_Cover: images/covers/topics.jpg
+Og_Image: images/posts/topics.png
+Twitter_Image: images/posts/topics.png
 
 ## Model Evaluation for Binary Classification
 
@@ -84,6 +84,9 @@ A confusion matrix is a powerful tool in your toolbox for evaluating both binary
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
+
+Photo by <a href="https://unsplash.com/@vackground?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vackground</a> on <a href="https://unsplash.com/@vackground?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 
 [^CROSS]: [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html)  
 [^IMB]: [Handling imbalanced datasets in machine learning](https://towardsdatascience.com/handling-imbalanced-datasets-in-machine-learning-7a0e84220f28)  
