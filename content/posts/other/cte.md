@@ -5,7 +5,7 @@ Tags: datascience, sql
 Slug: cte
 Authors: Brian Roepke
 Summary: Leverage Common Table Expressions to Simplify the Writing and Troubleshooting Complex Queries
-Header_Cover: images/covers/trees.jpg
+Header_Cover: images/covers/cabinet.jpg
 
 ## What is a Common Table Expression
 
@@ -69,9 +69,45 @@ LIMIT 10
 -- LIMIT 10
 ```
 
+## Example in Real Life
+I wrote a query for a view I was creating in Snowflake. Without CTEs, this would have proven to be much more difficult.
+
+```sql
+WITH DAILY as (
+    SELECT ID
+    FROM "LOGS_DAILY"),
+MAP AS (
+    SELECT SOURCE_ID AS ID, ANY_VALUE(UUID) AS UUID
+    FROM "CONTACT_MAP"
+    WHERE SOURCE_ID_NAME = 'ID'
+    AND DT = (SELECT MAX(DT) FROM "CONTACT_MAP")
+    GROUP BY SOURCE_ID),
+CONTACT AS (
+    SELECT CONTACT_UUID, SITE_UUID
+    FROM "CONTACT_MASTER"
+    WHERE DT = (SELECT MAX(DT) FROM "CONTACT_MASTER")),
+ACCOUNT AS (
+    SELECT *
+    FROM "ACCOUNT"
+    WHERE SITE_STATUS = 'Active')
+SELECT DISTINCT *
+FROM DAILY
+LEFT JOIN MAP ON MAP.ID = DAILY.ID
+LEFT JOIN CONTACT ON CONTACT.CONTACT_UUID = MAP.CONTACT_UUID
+LEFT JOIN ACCOUNT ON ACCOUNT.SITE_UUID = CONTACT.SITE_UUID
+LIMIT 100
+```
+
+## Conclusion
+
+Common Table Expressions or CTEs are a powerful tool in your Querying toolbox that allows you to take complex, layered SELECT statements, break them down into more manageable chunks, and then pull them back together in the end. If you’re not using them today, give them a try, and I’m confident they will be a regular
+
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
+
+Photo by <a href="https://unsplash.com/@jankolar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Antonin Kolar</a> on <a href="https://unsplash.com/@jankolar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 1. [Common Table Expressions: When and How to Use Them](https://chartio.com/resources/tutorials/using-common-table-expressions/)
 2. [MySQL: WITH (Common Table Expressions)](https://dev.mysql.com/doc/refman/8.0/en/with.html)
