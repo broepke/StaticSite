@@ -1,6 +1,6 @@
 Title: Simplify Your Academic Life With LaTeX on Your Next Paper
 Date: 2021-11-21
-Modified: 2022-01-29
+Modified: 2022-02-05
 Tags: school, latex
 Slug: latex
 Authors: Brian Roepke
@@ -15,16 +15,19 @@ Using LaTeX to author a paper can be a tedious process when you're just getting 
 
 1. Documentation-as-Code along with version control.
 2. Ability to integrate with your codebase making updates seamless.
-3. Prebuilt templates that perfectly format based on a standard such as APA.
+3. Prebuilt templates that perfectly format based on a standard such as the American Psychological Association or APA format.
 4. Ability to insert advanced LaTeX such as math equations.
 
 I wanted to document the process I ended up using.  I hope it's helpful to you! 
+
+## What is LaTex?
+[LaTeX](https://en.wikipedia.org/wiki/LaTeX) is a software system that's used for document production. Instead of utilizing a graphical editor, LaTeX is authored using plain text and a markup language. Combined with the [TeX](https://en.wikipedia.org/wiki/TeX) typesetting system, the document is compiled into an output format.
 
 ## Installing LaTeX
 
 First, you need to get LaTeX installed. I'm running a Mac, and therefore I'm using the MacTeX distribution.  You can download it here: [https://www.tug.org/mactex/](https://www.tug.org/mactex/).
 
-I find this distribution complete and easy to manage.  It installs as a DMG and comes with basically everything you need to author and publish TeX documents.  It's also compatible with Intel or Arm (Apple Silicon) processors.
+I find this distribution complete and easy to manage. An installer is provided that has everything you need to author and publish TeX documents. It’s also compatible with Intel or Arm (Apple Silicon) processors.
 
 ### Updating the TeX Distribution
 
