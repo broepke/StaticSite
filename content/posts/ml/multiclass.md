@@ -309,6 +309,3 @@ There you have it! Moving beyond binary classification takes a little extra know
 
 Photo by <a href="https://unsplash.com/@judithgirardmarczak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">judith girard-marczak</a> on <a href="https://unsplash.com/s/photos/multicolor?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
-Search term = multicolor
-  
