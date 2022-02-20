@@ -20,7 +20,7 @@ Here is a quick visual of two-dimensional data plotted with their eigenvectors. 
 
 ![Explained Variance]({static}../../images/posts/pcavisualize_0.png) 
 
-As I was learning about PCA and how powerful it is as a tool in your Machine Learning toolbox, I came across two different ways to **visualize PCA** that finally made it click for me. I thought I would share those two ways with you and take it further and show how models perform *with* and *without* dimensionality reduction. The two methods are:
+Recently I wrote about how PCA can be used for [image compression]({filename}imagepca.md).  This time I want to talk about some of the fundamentals of PCA through visualization.  As I was learning about PCA and how powerful it is as a tool in your Machine Learning toolbox, I came across two different ways to **visualize PCA** that finally made it click for me. I thought I would share those two ways with you and take it further and show how models perform *with* and *without* dimensionality reduction. The two methods are:
 
 1. **Explained Variance Cumulative Plot**: This is simple but powerful. It immediately tells you how much of the variance in the data is explained by each component and how they combinations of the different components add up to the total variance.
 2. **Principal Components Overlayed with the Original Data**: This one is my absolute favorite. You can see the progression of how each principal component brings in slightly more information, and in turn, it becomes hard to distinguish between the different components. This plot is a perfect companion to the Explained Variance Cumulative Plot.
