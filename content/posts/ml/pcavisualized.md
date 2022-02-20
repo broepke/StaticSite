@@ -160,25 +160,26 @@ data_rescaled = scaler.fit_transform(X)
 
 pca = PCA().fit(data_rescaled)
 
-plt.rcParams["figure.figsize"] = (12,6)
+plt.rcParams["figure.figsize"] = (8,5)
 
 fig, ax = plt.subplots()
 xi = np.arange(1, 14, step=1)
 y = np.cumsum(pca.explained_variance_ratio_)
 
 plt.ylim(0.0,1.1)
-plt.plot(xi, y, marker='o', linestyle='-', color='tab:blue')
+plt.plot(xi, y, marker='o', linestyle='-', color='black')
 
 plt.xlabel('Number of Components')
-plt.xticks(np.arange(1, 14, step=1))
+plt.xticks(np.arange(1, 14, step=1)) 
 plt.ylabel('Cumulative variance (%)')
 plt.title('The number of components needed to explain variance')
 
-plt.axhline(y=0.95, color='tab:red', linestyle='--')
+plt.axhline(y=0.95, color='grey', linestyle='--')
 plt.text(1.1, 1, '95% cut-off threshold', color = 'black', fontsize=16)
 
 ax.grid(axis='x')
 plt.tight_layout()
+plt.savefig('pcavisualize_1.png', dpi=300)
 plt.show()
 ```
 ![Explained Variance]({static}../../images/posts/pcavisualize_1.png)  
@@ -221,18 +222,19 @@ for row in range(rows):
             ax = sns.scatterplot(x=X_scaled[:, 0], 
                                  y=X_scaled[:, 1], 
                                  ax=axes[row, col], 
-                                 palette='tab20', 
+                                 color='grey', 
                                  alpha=.3)
             ax = sns.scatterplot(x=X_new[:, 0], 
                                  y=X_new[:, 1], 
                                  ax=axes[row, col], 
-                                 palette='tab20')
+                                 color='black')
             ax.set_title(f'PCA Components: {comps}');
 
             comps += 1
         except:
             pass
 plt.tight_layout()
+plt.savefig('pcavisualize_2.png', dpi=300)
 ```
 
 ![PCA by Component]({static}../../images/posts/pcavisualize_2.png)  
