@@ -1,6 +1,6 @@
-Title: 2 Beautiful Ways to Visualize Principal Component Analysis (PCA)
-Date: 2022-02-20
-Modified: 2022-02-20
+Title: 2 Beautiful Ways to Visualize (PCA)
+Date: 2022-02-26
+Modified: 2022-02-26
 Status: draft
 Tags: datascience, python, sklearn
 Slug: pcavisualized
@@ -12,14 +12,14 @@ Twitter_Image: images/covers/less.jpg
 
 ## What is PCA?
 
-Principal Component Analysis or PCA is a *dimensionality reduction technique* for data sets with many features or dimensions.  It uses linear algebra to determine the most important features of a dataset.  After these features have been identified, you can use only these features to train a machine learning model and acheive improve the computational performance of the model without saccrificing accuracy.
+**Principal Component Analysis** or **PCA** is a *dimensionality reduction technique* for data sets with many features or dimensions.  It uses linear algebra to determine the most important features of a dataset.  After these features have been identified, you can use only the most important features, or those that *explain the most variance*, to train a machine learning model and acheive improve the computational performance of the model without saccrificing accuracy.
 
-PCA finds the axis with the maximum variance and projects the points onto this axis.  PCA uses a concept from Linear Algebra known as Eigenvectors and Eigenvalues.  There is a post on [Stack Exchange](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579) which beautifully explains it.
+PCA finds the axis with the maximum variance and projects the points onto this axis.  PCA uses a concept from Linear Algebra known as **Eigenvectors** and **Eigenvalues**.  There is a post on [Stack Exchange](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579) which beautifully explains it.
 
-As I was learning about PCA and how powerful it is as a tool in your Machine Learning toolbox I came across two different ways to visualize dimensionality reduction that made PCA finally made it "click" for me.  I thought I would share those two ways with you, as well as to take it further and show how models perform with and without dimiensionality reduction.  
+As I was learning about PCA and how powerful it is as a tool in your Machine Learning toolbox I came across two different ways to **visualize dimensionality reduction** that finally made it click for me.  I thought I would share those two ways with you, as well as to take it further and show how models perform *with* and *without* dimiensionality reduction.  The two methods are:
 
 * **Explaind Variance Cumulative Plot**: This one is simple but powerful. It immediately tells you how much of the data is explained by each feature.  It is a good way to visualize how much of the data is explained by each feature.
-* **Principal Components Overlayed with the Full Data**: This one is my absolute favorite. You can see the progression of how each principal component brings in slightly more information, and in turn, it become hard to distinguish between the different components.  This plot is a perfect companion to the Explained Variance Cumulative Plot.
+* **Principal Components Overlayed with the Original Data**: This one is my absolute favorite. You can see the progression of how each principal component brings in slightly more information, and in turn, it become hard to distinguish between the different components.  This plot is a perfect companion to the Explained Variance Cumulative Plot.
 
 Heard enought? Let's go!
 
@@ -27,9 +27,7 @@ Heard enought? Let's go!
 
 The dataset we'll be using is the is the [Wine Data Set](https://archive.ics.uci.edu/ml/datasets/wine) from UC Irvine's Machine Learning repository.  The data set contains data about wine quality.  This dataset is licensed under a [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) International (CC BY 4.0) license.
 
-Dua, D., & Graff, C. (2017). UCI Machine Learning Repository. University of California, Irvine, School of Information and Computer Sciences. [http://archive.ics.uci.edu/ml](http://archive.ics.uci.edu/ml)
-
-We will of course start by importing the required packages and loading the data.
+We will of course start by **importing** the required packages and **loading the data**.
 
 ```python
 import numpy as np
@@ -66,7 +64,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("wine.csv")
 ```
 
-This particular dataset has 13 features and a target variable of quality as well as a target variable we can use for [classification]({filename}multiclass.md).
+This particular dataset has **13 features** and a target varialble named **Class** we can use for [classification]({filename}multiclass.md).  Each of the values are continuous and therefore we do not have to drop anything in order to apply PCA to all variables.  Normally we would use PCA on a much higher dimensional dataset but this one will work to show the concepts.
 
 ```python
 df.info()
@@ -95,7 +93,7 @@ dtypes: float64(11), int64(3)
 memory usage: 19.6 KB
 ```
 
-A quick check for imbalanced data shows us that this datset, unlike most, is pretty balanced.  
+A quick **check for imbalanced data** shows us that this datset, unlike most, is pretty balanced with the `3` class having the least amount of data.
 
 ```python
 df['Class'].value_counts()
@@ -116,6 +114,10 @@ X = df.drop(columns=['Class']).copy().values
 
 ## Find Explained Variance
 
+The first step is to find the **explained variance**.  This is the amount of variance explained by each feature.  We calculate them by first scaling our data with the `StandardScalar` and then fitting a PCA model to the scaled data.  The [Standard Scaler](https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-scaler) is a simple transformation that normalizes the data to have a mean of zero and zero unit variance.  
+
+You will also notice that the total *number of Principal Components* is equal to the *number of Features* in your dataset.  One important thing to note however, is that the Principal components are not the actual features, but rather PCA is constructing new features that best explain the data.
+
 ```python
 def get_variance(X, n):
     scaler = StandardScaler()
@@ -128,7 +130,8 @@ def get_variance(X, n):
 
 ```python
 for i in range(1,14):
-    print('Components:\t', i, '=\t',get_variance(X, i), '\tCumulative Variance')
+    print('Components:\t', i, '=\t', get_variance(X, i), 
+          '\tCumulative Variance')
 ```
 ```text
 Components:	 1 =	 [0.36198848] 	Cumulative Variance
@@ -145,7 +148,11 @@ Components:	 11 =	 [0.97906553] 	Cumulative Variance
 Components:	 12 =	 [0.99204785] 	Cumulative Variance
 Components:	 13 =	 [1.] 	        Cumulative Variance
 ```
+
+Additionally, each of the principal components is summed together and the total of all components will equal `1`. As you look through the list of cumulative variance you will see that the *first component is the most important* and the *last component is the least important*; in other words it contributes the most to the variance.  As we include more and more of the compnents, the amount of contribution starts to decrease.  Let's visualize this by plotting the cumulative variance.
 ## Plot the Threshold for Explained Variance
+
+While the print out of the values is a good start, we can improve this by plotting each of these values.  Additionally, we're going to plot a line that represents `95%` of the explained variance.  While there is no rule as to how much explained variance you need to include in a model, `95%` is a good threshold to start with.  Later we will actually perform a grid search to fine the optimal number of commponents to use in a model.
 
 ```python
 scaler = StandardScaler()
@@ -176,8 +183,11 @@ plt.show()
 ```
 ![Explained Variance]({static}../../images/posts/pcavisualize_1.png)  
 
+After plotting the cumulative explained variance, we can see how the curve flattens slightly around `6` or `7` components.  And where our line is drawn for `95%` total explained variance is at approximatley `9` components.  And that is explained variance visualized!  Let's move on to plotting the actual components.
+
 ## Plotting Each Component vs. Original Data
 
+The next step in the journey is to visualize the progression of each of the components.  Not the explained variance but the actual resulting data from each component.  In order to do this we will use the `inverse_transform` method of the PCA model.  This will take each of the components and transform them back into the original data scale. We will plot the entire reange of components from 1-13 and overlay them with the orignal data.
 
 ```python
 def transform_pca(X, n):
@@ -227,17 +237,17 @@ plt.tight_layout()
 
 ![PCA by Component]({static}../../images/posts/pcavisualize_2.png)  
 
+In our plot, the gray data is the original data and the black points are the Principal Components.  With just **one component** displayed it takes the form of a set of points projected on a line that goes is along the axis with the most variance in the original data.  As more and more components are added, we can see how the data starts to resemble the original data even tho there is less information being displayed.  By the time we get into the upper values, the data starts to match the original data where finally at all 13 components, it is the same as the original.
+
+And there is my favorite way to visualize PCA! Now let's put it into action with a machine learning classification model.
+
 ## Comparing PCA and Non-PCA Classification Models
 
-The following section demonstrates the effects of PCA on a dataset with various classifiers.
+Let's run three classifiers against our dataset both with and without PCA applied and see how they perform.  To make it very interseting we'll compare them utilizing only the first two components (`n_components=2`). We'll compare `KNeighborsClassifier`, `RandomForestClassifier`, and `LogisticRegression` as our classifiers and see how they perform.
 
-1. **PCA vs. Non PCA**: Demonstrate three different classifiers `KNeighborsClassifier`, `RandomForestClassifier`, and `LogisticRegression` against the dataset. First without PCA and second with PCA (`n_components=2`).  Compare the Results.
-1. **Model Optimization and Validation**: Using the `GridSearch` function, find the optimal parameters for our `n_components` and evaluate the final results.
+As always, we'll use a pipeline to combine our data preprocessing and PCA into a single step.  We'll scale our data with the same `StandardScaler` we used previously and then fit the data with a certian number of components.  Since we'll use this function a few times in our workflow, we've set it up to be flexible.
 
-```python
-y = df['Class'].copy()
-X = df.drop(columns=['Class']).copy().values
-```
+Next is looping over the different classifiers and performing **Cross Validation**.
 
 ```python
 def create_pipe(clf, do_pca=False, n=2):
@@ -245,7 +255,6 @@ def create_pipe(clf, do_pca=False, n=2):
     scaler = StandardScaler()
     pca = PCA(n_components=n)
 
-    # Build estimator from PCA and Univariate selection:
     if do_pca == True:
         combined_features = FeatureUnion([("scaler", scaler), 
                                           ("pca", pca)])
@@ -262,25 +271,21 @@ def create_pipe(clf, do_pca=False, n=2):
 ```python
 models = {'KNeighbors' : KNeighborsClassifier(),
           'RandomForest' : RandomForestClassifier(random_state=42),
-          'LogisticReg' : LogisticRegression(multi_class='multinomial', 
-                                             random_state=42),
-          'Perceptron' : Perceptron(random_state=42)}
+          'LogisticReg' : LogisticRegression(random_state=42),
+          }
 
 
 def run_models(with_pca):
     for name, model, in models.items():
         clf = model
-        pipeline = create_pipe(clf, do_pca = with_pca, n=6)
-        cv = RepeatedStratifiedKFold(n_splits=10, 
-                                     n_repeats=5, 
-                                     random_state=42)
+        pipeline = create_pipe(clf, do_pca = with_pca, n=2)
         scores = cross_val_score(pipeline, X, 
                                  y, 
                                  scoring='accuracy', 
-                                 cv=cv, n_jobs=1, 
+                                 cv=3, n_jobs=1, 
                                  error_score='raise')
-        print(name, ': Mean Accuracy: %.3f and Standard Deviation: (%.3f)' \
-            % (np.mean(scores), np.std(scores)))
+        print(name, ': Mean Accuracy: %.3f and Standard Deviation: (%.3f)' % \
+            (np.mean(scores), np.std(scores)))
 
 print(68 * '-')
 print('Without PCA')
@@ -290,26 +295,31 @@ print(68 * '-')
 print('With PCA')
 print(68 * '-')
 run_models(True)
+print(68 * '-')
 ```
 ```text
 --------------------------------------------------------------------
 Without PCA
 --------------------------------------------------------------------
-KNeighbors : Mean Accuracy: 0.968 and Standard Deviation: (0.048)
-RandomForest : Mean Accuracy: 0.984 and Standard Deviation: (0.025)
-LogisticReg : Mean Accuracy: 0.985 and Standard Deviation: (0.025)
-Perceptron : Mean Accuracy: 0.983 and Standard Deviation: (0.026)
+KNeighbors : Mean Accuracy: 0.944 and Standard Deviation: (0.021)
+RandomForest : Mean Accuracy: 0.961 and Standard Deviation: (0.021)
+LogisticReg : Mean Accuracy: 0.972 and Standard Deviation: (0.021)
 --------------------------------------------------------------------
 With PCA
 --------------------------------------------------------------------
-KNeighbors : Mean Accuracy: 0.708 and Standard Deviation: (0.088)
-RandomForest : Mean Accuracy: 0.974 and Standard Deviation: (0.041)
-LogisticReg : Mean Accuracy: 0.966 and Standard Deviation: (0.041)
-Perceptron : Mean Accuracy: 0.664 and Standard Deviation: (0.212)
+KNeighbors : Mean Accuracy: 0.663 and Standard Deviation: (0.059)
+RandomForest : Mean Accuracy: 0.955 and Standard Deviation: (0.021)
+LogisticReg : Mean Accuracy: 0.972 and Standard Deviation: (0.028)
+--------------------------------------------------------------------
 ```
-## Model Optimization and Validation
 
-For this portion, we'll use the `train_test_split` function to split the dataset into `70/30%` partitions and then use the `GridSearch` feature to find optimal parameters.  The most critical parameter here that we want to validate is the performance of various **PCA component number** settings.   We will test the entire range from `1-13` and find the best setting.  As we saw from the scatterplots above, when we approach higher numbers like `9`, the dataset after transformation looks a lot like the original with `95%` of the variation explained by the transformed dataset.  
+**Magic!** We see without PCA all three models perform fairly well.  However, with only the first two components, `RandomForest` performs nearly the same and `LogisticRegression` performed identical to the orginal! Not all use cases would turn out like this, but hopefully that gives a peak into the power of PCA.  If you refer back to the plot above with each of the components overlaid, you can see just how much less data is needed.
+
+## Find the Optimal Number of Components
+
+For this portion, we'll use the `train_test_split` function to split the dataset into `70/30%` partitions and then use the `GridSearch` feature to find optimal parameters.  The most critical parameter here that we want to validate is the performance of various **PCA component numbers**.  
+
+As we saw from the scatterplots above, when we approach higher numbers like `9`, the dataset after transformation looks a lot like the original with `95%` of the variation explained by the transformed dataset.  We also saw how only `2` components performed well so we can test the entire range from `1-13` and find the best setting. 
 
 ```python
 # Make training and test sets 
@@ -319,17 +329,25 @@ X_train, X_test, y_train, y_test = train_test_split(X,
                                                     random_state=53)
 ```
 
+### Tuning the Model
+
+Next we'll perform what's called **Hyperparameter Tuning**.  After we've selected the model based on the cross validation utilizing default parameters, we perform a Grid Search to fine tune the model and select the best parameters.  We'll loop over three things
+
+1. Number of **Components**, from `2` to `13`.
+2. **Regularization** Parameter `C`, from `0.1` to `100`
+3. **Solver** Parameter `solver`, from `'liblinear'` to `'saga'`
+4. **Penalty** Parameter `penalty`, from `l1` to `l2`
+
+Check out the [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) for `LogisticRegression` for more information on the parameters.
+
 ```python
 def get_params(parameters, X, y, pipeline):
     
-    cv = RepeatedStratifiedKFold(n_splits=10, 
-                                 n_repeats=5, 
-                                 random_state=42)
     grid = GridSearchCV(pipeline, 
                         parameters, 
                         scoring='accuracy', 
                         n_jobs=1, 
-                        cv=cv, 
+                        cv=3, 
                         error_score='raise')
     grid.fit(X, y)
 
@@ -340,9 +358,10 @@ def get_params(parameters, X, y, pipeline):
 clf = LogisticRegression(random_state=41)
 pipeline = create_pipe(clf, do_pca=True)
 
-param_grid = dict(features__pca__n_components = list(range(1,14)),
-                 clf__C = [0.1, 1.0, 10,],
-                 clf__solver = ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'])
+param_grid = dict(features__pca__n_components = list(range(2,14)),
+                 clf__C = [0.1, 1.0, 10, 100],
+                 clf__solver = ['liblinear', 'saga'],
+                 clf__penalty = ['l2', 'l1'])
 
 grid = get_params(param_grid, X_train, y_train, pipeline)
 
@@ -351,14 +370,19 @@ print("Test set score: {:.3f}".format(grid.score(X_test, y_test)))
 print("Best parameters: {}".format(grid.best_params_))
 ```
 ```text
-Best cross-validation accuracy: 0.981
+Best cross-validation accuracy: 0.976
 Test set score: 0.944
-Best parameters: {'clf__C': 1.0, 'clf__solver': 'liblinear', 'features__pca__n_components': 6}
+Best parameters: {'clf__C': 10, 'clf__penalty': 'l1', 
+'clf__solver': 'liblinear', 'features__pca__n_components': 2}
 ```
 
-## Model Validation
+Simple as that - after performing the Grid Search we can see a few of the settings that performed the best.  We can see that the best parameters are `C=10`, `penalty='l1'`, `solver='liblinear'` and `n_components=2`.  We can also see that the test set score is pretty close to the best cross-validation score.  We can also see that the cross validation accuracy improved a little from `0.972` to `0.976`.
 
-Perform a final fit and test with the new parameters.  One for our optimized Number of Components (`6`) and one for a set of data that has not had PCA performed on it.
+As a side note, this is pretty typical of Hyperparameter Tuning.  You *don't get massive improvements*, it's small, incremental improvents.  The biggest gains are made with your *feature engineering* and *model selection*.
+
+### Model Validation
+
+Perform a final fit and test with the new parameters.  One for our optimized Number of Components (`2`) and one for a set of data that has not had PCA performed on it.  We'll print out a **classification report** and generate a **confusion matrix** to compare the results.
 
 ```python
 def fit_and_print(pipeline):
@@ -370,7 +394,7 @@ def fit_and_print(pipeline):
     
     ConfusionMatrixDisplay.from_predictions(y_test, 
                                             y_pred, 
-                                            cmap=plt.cm.Blues)
+                                            cmap=plt.cm.Greys)
     
     plt.tight_layout()
     plt.ylabel('True Label')
@@ -379,8 +403,8 @@ def fit_and_print(pipeline):
 ```
 
 ```python
-clf = LogisticRegression(C=1, solver='liblinear', random_state=41)
-pipeline = create_pipe(clf, do_pca=True, n=6)
+clf = LogisticRegression(C=100, solver='liblinear',random_state=41)
+pipeline = create_pipe(clf, do_pca=True, n=2)
 fit_and_print(pipeline)
 ```
 ```text
@@ -394,10 +418,10 @@ fit_and_print(pipeline)
    macro avg      0.944     0.955     0.947        54
 weighted avg      0.949     0.944     0.944        54
 ```
-![Confusion Matrix with PCA]({static}../../images/posts/pcavisualize_3.png)  
+![Confusion Matrix Comparison]({static}../../images/posts/pcavisualize_3.png)  
 
 ```python
-clf = LogisticRegression(C=1, solver='liblinear', random_state=41)
+clf = LogisticRegression(C=100, solver='liblinear',random_state=41)
 pipeline = create_pipe(clf, do_pca=False)
 fit_and_print(pipeline)
 ```
@@ -412,13 +436,12 @@ fit_and_print(pipeline)
    macro avg      0.982     0.985     0.983        54
 weighted avg      0.982     0.981     0.982        54
 ```
-![Confusion Matrix without PCA]({static}../../images/posts/pcavisualize_4.png)  
+![Confusion Matrix Comparison]({static}../../images/posts/pcavisualize_4.png)  
 
-
-
-
-
+In the end, while the performance of PCA is lower than the full dataset, we can see that we were able to come fairly close with only using the first two components.  If we had a much larger, much higher dimensional dataset, we could drammatically improve performance without much loss of accuracy! 
 ## Conclusion
+
+PCA is an incredible tool 
 
 All the code for this post is available on [GitHub](https://github.com/broepke/PCA/blob/main/PCA.ipynb).
 
@@ -428,3 +451,5 @@ All the code for this post is available on [GitHub](https://github.com/broepke/P
 Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/less-is-more?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 search - less is more
+
+Dua, D., & Graff, C. (2017). UCI Machine Learning Repository. University of California, Irvine, School of Information and Computer Sciences. [http://archive.ics.uci.edu/ml](http://archive.ics.uci.edu/ml)
