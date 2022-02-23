@@ -1,4 +1,4 @@
-Title: A Geltle Guide to Hyperparameter Tuning with Pipelines
+Title: 6 Times Faster Hyperparameter Tuning with HalvingGridSearch
 Date: 2022-03-06
 Modified: 2022-03-06
 Status: draft
@@ -14,7 +14,7 @@ Twitter_Image: images/covers/tune.jpg
 
 
 
-## Pipelines
+## Accessing Model Parameters in a Pipelines
 
 ```python
 pipeline.get_params()
@@ -54,7 +54,11 @@ pipeline.get_params()
 ## Grid Search
 
 Exhastive
-There are 60 permutations of the parameters.
+There are 60 permutations of the parameters below.
+
+**4x** Solver, **5x** C, **3x** n-Grams
+
+`4x5x3 = 60`
 
 ```python
 parameters = [{'clf__solver' : ['newton-cg', 'lbfgs', 'sag', 'liblinear'],
@@ -87,10 +91,17 @@ log_ngram = grid.best_params_['prep__Text__ngram_range']
 
 Best cross-validation accuracy: 0.867
 Test set score: 0.872
-Best parameters: {'clf__C': 100, 'clf__solver': 'newton-cg', 'prep__Text__ngram_range': (1, 2)}
+Best parameters: {'clf__C': 100, 'clf__solver': 'newton-cg', 
+'prep__Text__ngram_range': (1, 2)}
 ```
 
 ## Halving Search
+
+How does the Halving search work? 
+
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.HalvingGridSearchCV.html 
+
+>The search strategy starts evaluating all the candidates with a small amount of resources and iteratively selects the best candidates, using more and more resources.
 
 
 ```python
@@ -114,15 +125,14 @@ log_ngram_b = grid.best_params_['prep__Text__ngram_range']
 
 Best cross-validation accuracy: 0.867
 Test set score: 0.872
-Best parameters: {'clf__C': 100, 'clf__solver': 'sag', 'prep__Text__ngram_range': (1, 2)}
+Best parameters: {'clf__C': 100, 'clf__solver': 'sag', 
+'prep__Text__ngram_range': (1, 2)}
 ```
 
 ## Evaluating the Results
 
 ```python
 def fit_and_print(pipeline, name):
-    ''' take a supplied pipeline and run it against the train-test spit 
-    and product scoring results.'''
     
     pipeline.fit(X_train, y_train)
     y_pred = pipeline.predict(X_test)
@@ -132,7 +142,7 @@ def fit_and_print(pipeline, name):
 
     ConfusionMatrixDisplay.from_predictions(y_test, 
                                             y_pred, 
-                                            cmap=plt.cm.Blues)
+                                            cmap=plt.cm.Greys)
     
     plt.tight_layout()
     plt.title(name)
@@ -146,7 +156,7 @@ def fit_and_print(pipeline, name):
 ```python
 clf = LogisticRegression(random_state=42, max_iter=500)
 pipeline = create_pipe(clf)
-fit_and_print(pipeline, 'hyper_defaults')
+fit_and_print(pipeline, 'Default Parameters')
 ```
 ```text
               precision    recall  f1-score   support
@@ -158,12 +168,12 @@ fit_and_print(pipeline, 'hyper_defaults')
    macro avg      0.857     0.869     0.863     29915
 weighted avg      0.882     0.879     0.880     29915
 ```
-![Default Settings]({static}../../images/posts/hyper_defaults.png)
+![Default Settings]({static}../../images/posts/hyper_01.png)
 
 ```python
 clf = LogisticRegression(C=log_C, solver=log_solver, random_state=42, max_iter=500)
 pipeline = create_pipe(clf, log_ngram)
-fit_and_print(pipeline, 'hyper_grid')
+fit_and_print(pipeline, 'GridSearch Parameters')
 ```
 ```text
               precision    recall  f1-score   support
@@ -176,12 +186,12 @@ fit_and_print(pipeline, 'hyper_grid')
 weighted avg      0.889     0.890     0.889     29915
 ```
 
-![Default Settings]({static}../../images/posts/hyper_grid.png)
+![Default Settings]({static}../../images/posts/hyper_02.png)
 
 ```python
 clf = LogisticRegression(C=log_C_b, solver=log_solver_b, random_state=42, max_iter=500)
 pipeline = create_pipe(clf, log_ngram_b)
-fit_and_print(pipeline, 'hyper_halving')
+fit_and_print(pipeline, 'HalvingGridSearch Parameters')
 ```
 ```text
               precision    recall  f1-score   support
@@ -193,7 +203,7 @@ fit_and_print(pipeline, 'hyper_halving')
    macro avg      0.875     0.869     0.872     29915
 weighted avg      0.889     0.890     0.889     29915
 ```
-![Default Settings]({static}../../images/posts/hyper_halving.png)
+![Default Settings]({static}../../images/posts/hyper_03.png)
 
 
 ## Conclusion
