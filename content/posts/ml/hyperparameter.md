@@ -322,6 +322,8 @@ Finally, we see the results of the Halving grid search model. The F1-Macro score
 
 Hyperparameter tuning is a way for you to tune your model after feature selection and model selection finely have been performed. Hyperparameters are not parameters learned during the training process but rather those adjusted to improve the overall performance of your model. We saw how to access parameters in a Pipeline and perform a Grid Search to select the best. Finally, you saw how you could utilize the Halving Grid search method to reduce the time it takes to search for the best parameters. I hope you enjoyed this article. Happy model building!
 
+If you’d like to re-create this, all of this code is available in a [Notebook](https://github.com/broepke/Tuning/blob/main/Tuning.ipynb) on GitHub.
+
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
