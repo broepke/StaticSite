@@ -76,7 +76,7 @@ def clean_string(text, stem="None"):
     text = text.lower()
 
     # Remove line breaks
-    text = re.sub('\n', '', text)
+    text = re.sub(r'\n', '', text)
 
     # Remove puncuation
     translator = str.maketrans('', '', string.punctuation)
@@ -90,7 +90,7 @@ def clean_string(text, stem="None"):
     text_filtered = [word for word in text if not word in useless_words]
     
     # Remove numbers
-    text_filtered = [re.sub('\w*\d\w*', '', w) for w in text_filtered]
+    text_filtered = [re.sub(r'\w*\d\w*', '', w) for w in text_filtered]
     
     # Stem or Lemmatize
     if stem == 'Stem':
