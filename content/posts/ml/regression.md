@@ -1,11 +1,11 @@
-Title: Hint: Excel Might be all You Need for Your Next Linear Regression Model!
+Title: The Trick to Building a Complete Regression Model Using Excel!
 Date: 2022-03-22
 Modified: 2022-03-22
 Status: draft
 Tags: datascience, machine learning
 Slug: regression
 Authors: Brian Roepke
-Summary: Simple Linear Regression Three Ways with R, Python, and Excel
+Summary: Plus, compare how R and Python stack up with the same model.
 Header_Cover: images/covers/divide.jpg
 Og_Image: images/covers/divide.jpg
 Twitter_Image: images/covers/divide.jpg
@@ -23,7 +23,7 @@ It is also common that when we're using a simple linear regression model, we uti
 
 Today, our example will illustrate the simple relationship between the **number of users** in a system versus our **Cost of Goods Sold (COGS)**. Through this analysis, we'll not only be able to see how strongly the two variables are correlated but also use our coefficients to predict the COGS for a given number of users.
 
-Let's take a look at our data and a scatter plot to understand the relationship between the two. As they say, *a picture is worth a thousand words*.
+Let's take a look at our data and a scatter plot to understand the relationship between the two. As they say, [a picture is worth a thousand words](https://en.wikipedia.org/wiki/Anscombe%27s_quartet).
 
 ```text
 USERS	     COGS
@@ -197,15 +197,20 @@ Next, we might want to predict new values. There are a couple of ways to do this
 
 ![Slope and Intercept]({static}../../images/posts/regression_07.png)
 
-Once you have your slop and intercept, you can plug them into the linear regression equation.
-
-$$Y_{i}=\beta_{0}+\beta_{1} X_{i}$$
-
-Because this is a simple linear regression, we can think of this as the equation of a line or `Y = MX + B` where `M` is the **Slope** and `B` is the **Y-Intercept**. Something we learned back in high school math is now paying dividends in data science! 
+Once you have your slop and intercept, you can plug them into the linear regression equation.  Because this is a simple linear regression, we can think of this as the equation of a line or `Y = MX + B` where `M` is the **Slope** and `B` is the **Y-Intercept**. Something we learned back in high school math is now paying dividends in data science! 
 
 ![Predicting New Values]({static}../../images/posts/regression_08.png)
 
 ## Conclusion
+
+We covered linear regressiona and specifically a simple linear regression consisting of two variables and the Ordinary Least Sqares method of evaluating the accuracy of the model.  
+
+* First we walked through how **R** performs this regression using the base `lm` function.  
+* Next we looked at how **Python** does the same thing with the `statsmodels` package.  
+* Finally, we saw how the **Data Analysis** Regression tool in **Excel** performed the same analysis with the click of a few buttons! 
+
+When it comes to a simple linear regression model, Excel provides a comprehensive tool for performing an analysis.  While R and Python can perform similar analysis, you can get the exact same results using Excel!
+
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
