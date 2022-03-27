@@ -1,29 +1,29 @@
-Title: The Trick to Building a Complete Regression Model Using Excel!
-Date: 2022-03-22
-Modified: 2022-03-22
-Status: draft
+Title: I Bet You Didn’t Know Excel Could Do a Linear Regression Like This
+Date: 2022-03-27
+Modified: 2022-03-27
+Status: published
 Tags: datascience, machine learning
 Slug: regression
 Authors: Brian Roepke
-Summary: Plus, compare how R and Python stack up with the same model.
+Summary: Plus, Compare How R and Python Stack Up With the Same Data
 Header_Cover: images/covers/divide.jpg
 Og_Image: images/covers/divide.jpg
 Twitter_Image: images/covers/divide.jpg
 
 ## Introduction
 
-**Linear Regression** is the most common type of regression analysis and is an incredibly powerful tool when two or more variables are involved. On smaller projects or business-oriented use cases, you might find a [simple linear regression](https://en.wikipedia.org/wiki/Simple_linear_regression) model using **Excel** is the perfect tool for you to do your analysis quickly.
+**Linear Regression** is the most common type of regression analysis and is an incredibly powerful tool. On smaller projects or business-oriented use cases, you might find a [simple linear regression](https://en.wikipedia.org/wiki/Simple_linear_regression) model using **Excel** is the perfect tool for you to complete your analysis quickly.
 
 Regression analysis helps you examine the relationship between two or more variables. We use `y` to represent the **dependent variable** and `X` to represent the **independent variable**. The dependent variable `X` is the one that is fixed in nature or inputs into your model, and the `y` variable is the one that you are predicting with the model. 
 
 * **Independent** variables are also known as *predictor* or *explanatory* variables.
 * **Dependent** variables are also known as *response* variables. 
 
-It is also common that when we're using a simple linear regression model, we utilize the [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) (**OLS**) method for fitting the model. In the **OLS** method, the model's accuracy is measured by the sum of squares for the residuals of each predicted point. The residual is the orthogonal distance between the point in the dataset and the fitted line.
+It is also common with a simple linear regression model to utilize the [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) (**OLS**) method for fitting the model. In the **OLS** method, the model's accuracy is measured by the sum of squares for the residuals of each predicted point. The residual is the orthogonal distance between the point in the dataset and the fitted line.
 
 Today, our example will illustrate the simple relationship between the **number of users** in a system versus our **Cost of Goods Sold (COGS)**. Through this analysis, we'll not only be able to see how strongly the two variables are correlated but also use our coefficients to predict the COGS for a given number of users.
 
-Let's take a look at our data and a scatter plot to understand the relationship between the two. As they say, [a picture is worth a thousand words](https://en.wikipedia.org/wiki/Anscombe%27s_quartet).
+Let's look at our data and a scatter plot to understand the relationship between the two. As they say, [a picture is worth a thousand words](https://en.wikipedia.org/wiki/Anscombe%27s_quartet).
 
 ```text
 USERS	     COGS
@@ -141,7 +141,7 @@ array([[1.00000e+00, 1.82301e+05],
        [1.00000e+00, 8.74305e+05]])
 ```
 
-And next, we can **fit** the model to our data and print a **summary** similar to **R**
+And next, we can **fit** the model to our data and print a **summary** similar to **R**. Note that we're utilizing `sm.OLS` for the Ordinary Least Squares method.
 
 ```python
 mod = sm.OLS(y, X_i)
@@ -173,6 +173,8 @@ ax.legend(loc="best")
 
 Finally! Let's use the **Excel** application to perform the same regression analysis. One of the things about Excel is that it has AMAZING depth in numerical analysis that many users have never discovered. Let's look at how we can perform the same analysis using Excel but accomplish it in just a few minutes! 
 
+### Setup
+
 Start by navigating to the **Data Analysis** pack, located in the **Data** tab. 
 
 ![Data Analysis Tools]({static}../../images/posts/regression_01.png)
@@ -185,7 +187,9 @@ And as with most things in Excel, we simply populate the dialog with the right r
 
 ![Regression Settings]({static}../../images/posts/regression_03.png)
 
-And finally, we can see the output from our analysis. Excel creates a new sheet with the results. It contains evaluation statistics such as the R-Squared and Adjusted R-Squared. It also produces and [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance) table producing values such as the **Sum of Squares** (SS), **Mean Square** (MS), and **F-statistic**. The **F-statistic** can tell us if the model is statistically significant, typically when the value is less than `0.05`. 
+And finally, we can see the output from our analysis. Excel creates a new sheet with the results. It contains evaluation statistics such as the R-Squared and Adjusted R-Squared. It also produces and [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance) table producing values such as the **Sum of Squares** (SS), **Mean Squared Error** (MS), and **F-statistic**. The **F-statistic** can tell us if the model is statistically significant, typically when the value is less than `0.05`. 
+
+### Results
 
 ![Excel Regression]({static}../../images/posts/regression_06.png)
 
@@ -193,23 +197,26 @@ Excel also provides several plots for visual inspection, such as the **Residual 
 
 ![Excel Plots]({static}../../images/posts/regression_10.png)
 
-Next, we might want to predict new values. There are a couple of ways to do this. The first is that you can directly reference the cell outputted from the regression analysis tool in Excel. The second is computing the **slope** and **intercept** yourself and using this in our regression formula. I typically did it this way and wanted to show how you accomplished it. You will use two formulas, appropriately named `=SLOPE` and `=INTERCEPT`. Select the appropriate `X` and `y` cells in the formula below.
+### Predicting New Values
+
+Next, we might want to predict new values. There are a couple of ways to do this. The first is that you can directly reference the cell outputted from the regression analysis tool in Excel. The second is computing the **slope** and **intercept** yourself and using this in our regression formula. You will use two formulas, appropriately named `=SLOPE` and `=INTERCEPT`. Select the appropriate `X` and `y` cells in the formula below.
 
 ![Slope and Intercept]({static}../../images/posts/regression_07.png)
 
-Once you have your slop and intercept, you can plug them into the linear regression equation.  Because this is a simple linear regression, we can think of this as the equation of a line or `Y = MX + B` where `M` is the **Slope** and `B` is the **Y-Intercept**. Something we learned back in high school math is now paying dividends in data science! 
+Once you have your slop and intercept, you can plug them into the linear regression equation. Because this is a simple linear regression, we can think of this as the equation of a line or `Y = MX + B` where `M` is the **Slope** and `B` is the **Y-Intercept**. Something we learned back in high school math is now paying dividends in data science! 
 
 ![Predicting New Values]({static}../../images/posts/regression_08.png)
 
 ## Conclusion
 
-We covered linear regressiona and specifically a simple linear regression consisting of two variables and the Ordinary Least Sqares method of evaluating the accuracy of the model.  
+We covered linear regression and specifically a simple linear regression consisting of two variables and the Ordinary Least Squares method of evaluating the model's accuracy. 
 
-* First we walked through how **R** performs this regression using the base `lm` function.  
-* Next we looked at how **Python** does the same thing with the `statsmodels` package.  
-* Finally, we saw how the **Data Analysis** Regression tool in **Excel** performed the same analysis with the click of a few buttons! 
+* First, we walked through how **R** performs this regression using the base `lm` function. 
+* Next, we looked at how **Python** does the same thing with the `statsmodels` package. 
+* Finally, we saw how the **Data Analysis** Regression tool in **Excel** performed the same analysis with a few buttons! 
 
-When it comes to a simple linear regression model, Excel provides a comprehensive tool for performing an analysis.  While R and Python can perform similar analysis, you can get the exact same results using Excel!
+When it comes to a simple linear regression model, Excel provides a comprehensive tool for performing an analysis. While R and Python can perform a similar analysis, you can get the same results using Excel!
+
 
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
