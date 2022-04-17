@@ -1,4 +1,4 @@
-Title: I Bet You Didn’t Know Excel Could Do a Linear Regression Like This
+Title: Learn Excel’s Powerful Tools for Linear Regression
 Date: 2022-03-27
 Modified: 2022-03-27
 Status: published
