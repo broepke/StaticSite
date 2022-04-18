@@ -1,0 +1,46 @@
+Title: Model Explainability in Machine Learning
+Date: 2022-01-22
+Modified: 2022-01-22
+Status: draft
+Tags: datascience, machine learning
+Slug: explainability
+Authors: Brian Roepke
+Summary: Techniques for selecting the most impactful features in a dataset
+Header_Cover: images/covers/selection.jpg
+Og_Image: images/covers/selection.jpg
+Twitter_Image: images/covers/selection.jpg
+
+
+
+
+
+## What is Explainability?
+
+Explainability is one of the most important topics you can learn and apply in Machine Learning and Data Science.  Building a model that performs well is one thing, the ability to help you and others understand *why* a model produces the outcomes it does is another.
+
+Let's take an example.  Let's say you're building a machine learning model that will predict the likelyhood that a customer will purchase a product.  We might have different demgraphic information about them, we might have information about other products they consume, and we might have marketing information about them.  Simply predicting the likelyhood that a customer will purchase a product is not enough to understand why they will purchase it.  We need to understand why they will purchase it.  By understanding the key drivers of the model, we might even be able to improve sales conversion rates by focusing on those key drivers.  For example, we we know that people are more likely to convert during certain times of the month or times of the day, we can focus our sales efforts around those windows of time that are more productive.
+
+Now think back to your basic statistics classes and learning about simple linear regression.  We all probably remember the equation of a line: `Y = MX + B`.  We utilize this equation along with the coeefficients to predict new values for `Y`. The same goes for many machine learning models. If we can explain how each of the features of a model affect the outcome, we can help others understand how it works.  For more on simple linear regression check out my article : [Learn Excel’s Powerful Tools for Linear Regression]({filename}regression.md)
+
+
+## Conclusion
+
+
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
+## References
+
+Photo by <a href="https://unsplash.com/@edgr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Edu Grande</a> on <a href="https://unsplash.com/s/photos/selection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+
+https://machinelearningmastery.com/feature-selection-machine-learning-python/
+
+https://towardsdatascience.com/feature-selection-techniques-in-machine-learning-with-python-f24e7da3f36e
+
+https://towardsdatascience.com/four-popular-feature-selection-methods-for-efficient-machine-learning-in-python-fdd34762efdb
+
+https://www.analyticsvidhya.com/blog/2021/11/model-explainability/
+
+https://towardsdatascience.com/an-overview-of-model-explainability-in-modern-machine-learning-fc0f22c8c29a
+
+
