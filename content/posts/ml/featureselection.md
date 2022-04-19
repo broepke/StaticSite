@@ -1,11 +1,11 @@
-Title: Feature Selection in Machine Learning
-Date: 2022-01-22
-Modified: 2022-01-22
-Status: draft
+Title: 4 Methods to Power Feature Engineering for Your Next ML Model
+Date: 2022-04-18
+Modified: 2022-04-18
+Status: published
 Tags: datascience, machine learning
 Slug: featureselection
 Authors: Brian Roepke
-Summary: Techniques for selecting the most impactful features in a dataset
+Summary: Plus tips for dealing with categoric, numeric, and mixed data!
 Header_Cover: images/covers/selection.jpg
 Og_Image: images/covers/selection.jpg
 Twitter_Image: images/covers/selection.jpg
@@ -15,15 +15,20 @@ Twitter_Image: images/covers/selection.jpg
 
 **Feature Selection** in Machine Learning is selecting the most impactful features, or columns, in a dataset. Does your dataset have many columns, and do you want to see which have the biggest impact? Do you want to discard those that aren't generating much value? By performing feature selection, you're not only **reducing the amount of data** that needs to be processed to speed up your analysis, but you're **simplifying the interpretation** of the model, making it easier to understand.
 
-Depending on the types of data you have, one can use several techniques, ranging from Statistical methods applied to leveraging a machine learning model to make the selection. We'll look at a few of the most common techniques and see how they are applied in practice!
+Depending on the types of data you have, one can use several techniques, ranging from Statistical methods to leveraging a machine learning model to make the selection. We'll look at a few of the most common techniques and see how they are applied in practice!
 
-For our demonstration today, we will use the **Bank Marketing UCI** dataset, which one can find on [Kaggle](https://www.kaggle.com/c/bank-marketing-uci). This dataset contains information about Bank customers in a marketing campaign, and it contains a target variable that one can utilize in a classification model. This dataset is in the public domain under CC0: Public Domain and can be used.
-
-For more information on building classification models, check out: [Everything You Need to Know to Build an Amazing Binary Classifier]({filename}classification.md) and [Go Beyond Binary Classification with Multiclass and Multi-Label Models]({filename} multiclass.md)
+1. Categorical data using the **Chi-Squared Test**
+2. **Pearson's Correlation Coefficient** for Numeric Data
+3. **Principal Component Analysis** for Numeric Data
+4. **Feature Importance** with **Random Forests** for Both Categorical and Numeric Data
 
 Let's get started! 
 
 ### Data and Imports
+
+For our demonstration today, we will use the **Bank Marketing UCI** dataset, which one can find on [Kaggle](https://www.kaggle.com/c/bank-marketing-uci). This dataset contains information about Bank customers in a marketing campaign, and it contains a target variable that one can utilize in a classification model. This dataset is in the public domain under CC0: Public Domain and can be used.
+
+For more information on building classification models, check out: [Everything You Need to Know to Build an Amazing Binary Classifier]({filename}classification.md) and [Go Beyond Binary Classification with Multiclass and Multi-Label Models]({filename}multiclass.md)
 
 We will start by importing the necessary libraries and loading the data. We'll be utilizing Scikit-Learn for each of our different techniques. In addition to what is demonstrated here, there are many other [supported methods](https://scikit-learn.org/stable/modules/feature_selection.html).
 
@@ -49,14 +54,13 @@ df = pd.read_csv("bank.csv", delimiter=";")
 
 ### Feature Selection for Categorical Values
 
-Depending on whether or not your data has all numeric, all categorical, or a mix of both, you will need to apply different methods. If your dataset is all categorical in nature, we can use the [Pearson's Chi-Squared Test](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test). According to Wikipedia: 
-
+If your dataset is all categorical in nature, we can use the [Pearson's Chi-Squared Test](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test). According to Wikipedia: 
 
 > The Chi-Squared test is a statistical test applied to categorical data to evaluate how likely it is that any observed difference between the sets arose by chance.
 
-You apply the Chi-Squared test when both your data is categorical as well as your target data is [categorical](https://machinelearningmastery.com/chi-squared-test-for-machine-learning/) (classification problems).
+You apply the Chi-Squared test when both your **feature data** is categorical as well as your **target data** is [categorical](https://machinelearningmastery.com/chi-squared-test-for-machine-learning/) e.g., classification problems.
 
-**Note:** *While this dataset contains a mix of categorical and numeric values, we'll isolate the categorical values to demonstrate how you would apply the Chi-Squared test. A better method for this dataset will be described below to select features across categorical and numeric types.*
+**Note:** *While this dataset contains a mix of categorical and numeric values, we'll isolate the categorical values to demonstrate how you would apply the Chi-Squared test. A better method for this dataset will be described below via Feature Importances to select features across categorical and numeric types.*
 
 We'll start by selecting only those types that are categorical or of type `object` in Pandas. Pandas stores text as objects, so you should validate if these are absolute values before simply utilizing the `object` type.
 
@@ -202,7 +206,7 @@ In this example, **days** and **previous** have the strongest correlation of `0.
 
 #### Principal Component Analysis
 
-The most powerful method for feature selection in models where all of the data is numeric is **Principal Component Analysis**. **PCA** is not a feature selection method but a dimensionality reduction method. However, the objective with PCA is similar to Feature Selection, where we're looking to reduce the amount of data that is needed to compute the model. 
+The most powerful method for feature selection in models where all of the data is numeric is **Principal Component Analysis**. **PCA** is not a feature selection method but a dimensionality reduction method. However, the objective with PCA is similar to Feature Selection, where we're looking to reduce the amount of data needed to compute the model. 
 
 The following image represents PCA applied to a photo. The plot represents the amount of cumulative explained variance for each principal component. 
 
@@ -210,24 +214,34 @@ The following image represents PCA applied to a photo. The plot represents the a
 
 For more information on how PCA works and how to perform it, please review the following articles: [2 Beautiful Ways to Visualize PCA]({filename}pcavisualized.md) and [The Magic of Principal Component Analysis through Image Compression]({filename}imagepca.md)
 
-### Built-In Methods in Algoritms
+### Feature Importance from Random Forests
+
+Finally, my preferred method for feature selection is to utilize **Random Forests** and its ability to calculate **Feature Importance**. As an output of a trained model, [Scikit-Learn](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html?highlight=feature_importances_) and Random Forest can output the list of features and their relative contribution to the overall performance of a model. This method also works with other Bagged trees like **Extra Trees** and **Gradient Boosting** for classification and regression.
+
+The bonus of this method is that it fits well with the overall flow of building a model. Let's walk through how this works. Let's start by getting all the columns from our Data Frame. Note that we can utilize both categorical and numeric data in this case.
 
 ```python
 print(df.columns)
 ```
-
 ```text
 Index(['age', 'job', 'marital', 'education', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'poutcome', 'y'],
       dtype='object')
 ```
 
-> **Duration**: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+When reading the documentation for this dataset, you'll notice that the **Duration** column is something that we shouldn't use to train your model. We'll manually remove it from our list of columns.
 
+> **Duration**: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0, then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+
+Additionally, we can remove any other features that might not be useful if we'd like. For our example, we'll keep all of them aside from duration.
 
 ```python
 # Remove columns from the list that are not relevant. 
 targets = ['age', 'job', 'marital', 'education', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'campaign', 'pdays', 'previous', 'poutcome']
 ```
+
+Next, we will utilize a **Column Transfomer** to transform our data into a machine learning acceptable format. I prefer to use pipelines whenever I build a model for repeatability. For more information on them, check out my article: [Stop Building Your Models One Step at a Time. Automate the Process with Pipelines!]({filename}sklearnpipelines.md).
+
+For our transformation, I've chosen the `MinMaxScaler` for numeric features and the `OrdinalEncoder` encoder for categorical features. In the final model, I would most likely `OneHotEncode` (OHE) for the categorical features, but to determine feature importance, we don't want to expand the columns with OHE; we'll get more value out of treating them as one column with ordinal encoded values.
 
 ```python
 column_trans = ColumnTransformer(transformers=
@@ -236,22 +250,28 @@ column_trans = ColumnTransformer(transformers=
         remainder='drop')
 ```
 
+Next, we create an instance of our classifier with a few preferred settings such as `class_weight='balanced'`, which helps deal with imbalanced data. We'll also set the `random_state=42` to ensure that we get the same results.
+
+For more on imbalanced data, check out my article: [Don’t Get Caught in the Trap of Imbalanced Data When Building Your ML Model]({filename}imbalanced.md).
+
 ```python
 # Create a random forest classifier for feature importance
 clf = RandomForestClassifier(random_state=42, n_jobs=6, class_weight='balanced')
 
 pipeline = Pipeline([('prep',column_trans),
-                        ('clf', clf)])
+                     ('clf', clf)])
 ```
+
+Next, we'll split our data into training and test sets and fit our model to the training data.
 
 ```python
 # Split the data into 30% test and 70% training
 X_train, X_test, y_train, y_test = train_test_split(df[targets], df['y'], test_size=0.3, random_state=0)
-```
 
-```python
 pipeline.fit(X_train, y_train)
 ```
+
+We can call the `feature_importances_` method against the classifier to see the output. Note how you reference the classifier in the pipeline by calling its name `clf`, similar to a dictionary in Python.
 
 ```python
 pipeline['clf'].feature_importances_
@@ -261,6 +281,8 @@ array([0.12097191, 0.1551929 , 0.10382712, 0.04618367, 0.04876248,
        0.02484967, 0.11530121, 0.15703306, 0.10358275, 0.04916597,
        0.05092775, 0.02420151])
 ```
+
+Next, let's display these sorted by the **greatest importance** and their **cumulative importance**. The cumulative importance column is useful to visualize how the total adds up to `1`. There is also a loop to cut off any feature that contributes less than `0.5` to the overall importance. This cutoff value is arbitrary. You could look for total cumulative importance of, say, `0.8` or `0.9`. Play around with how your model performs with fewer or more features.
 
 ```python
 feat_list = []
@@ -303,6 +325,8 @@ df_imp
 9         day    0.004043  1.000000
 ```
 
+Finally, based on that loop, let's print out the features that we've selected overall. Based on this analysis, we removed about 50% of them from our model, and we can see which ones have the highest impact!
+
 ```python
 print('Most Important Features:')
 print(included_feats)
@@ -314,26 +338,14 @@ Most Important Features:
 Number of Included Features = 7
 ```
 
-
+Thank you for reading! You can find all the code for this article on [GitHub](https://github.com/broepke/FeatureSelection/blob/main/FeatureSelection.ipynb)
 
 ## Conclusion
 
+Feature Selection is a critical part of the model building process, and it not only helps improve performance but also simplifies your model and its interpretation. We started out looking at how to utilize the Chi-Squared test for independence to select categorical features. Next, we looked at a Pearson's Correlation Matrix to visually identify highly correlated numeric features and also touched on Principal Component Analysis (PCA) as a tool to reduce dimensionality automatically on numeric datasets. Last, we looked at `feature_importances_` from Random Forest as a way to select across both categorical and numeric values. We hope this gets you started on your journey to Feature Selection!
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
 
 Photo by <a href="https://unsplash.com/@edgr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Edu Grande</a> on <a href="https://unsplash.com/s/photos/selection?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-
-https://machinelearningmastery.com/feature-selection-machine-learning-python/
-
-https://towardsdatascience.com/feature-selection-techniques-in-machine-learning-with-python-f24e7da3f36e
-
-https://towardsdatascience.com/four-popular-feature-selection-methods-for-efficient-machine-learning-in-python-fdd34762efdb
-
-https://www.analyticsvidhya.com/blog/2021/11/model-explainability/
-
-https://towardsdatascience.com/an-overview-of-model-explainability-in-modern-machine-learning-fc0f22c8c29a
-
-
