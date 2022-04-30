@@ -1,4 +1,4 @@
-Title: 4 Methods to Power Feature Engineering for Your Next ML Model
+Title: 4 Methods to Power Feature Selection for Your Next ML Model
 Date: 2022-04-18
 Modified: 2022-04-18
 Status: published
