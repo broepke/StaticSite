@@ -5,7 +5,7 @@ Status: published
 Tags: datascience, machine learning
 Slug: modelselection
 Authors: Brian Roepke
-Summary: Leverage cross validation, performance metrics, and runtime to determine the best model for your data.
+Summary: Leverage cross validation, performance metrics, and total runtime to determine the best model for your data.
 Header_Cover: images/covers/choice.jpg
 Og_Image: images/covers/choice.jpg
 Twitter_Image: images/covers/choice.jpg
@@ -15,7 +15,7 @@ Twitter_Image: images/covers/choice.jpg
 
 Model selection in Machine Learning is selecting the best model for your data. Different models will perform differently on different data sets and potentially by a large margin. It's pretty common these days that gradient boosted trees are the [best performing models](https://www.quora.com/Why-is-XGBoost-among-most-used-machine-learning-method-on-Kaggle) for tabular data, such as [XGBoost](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d), or the implementation in SciKit Learn. However, instead of always defaulting to a model such as XGBoost, it's important to evaluate the performance of different algorithms and see which one will perform the best for you.
 
-Additionally, there can be some advantages to different models. For example, Logistic regression can tell you the model's coefficients, allowing you to explain the impact of each feature on the final prediction. Bagged Tree Models like RandomForest can tell you the importance of each feature in the model, similar to the coefficients of Logistic Regression. When you 
+Additionally, there can be some advantages to different models. For example, **Logistic Regression** can tell you the model's **coefficients**, allowing you to explain the impact of each feature on the final prediction. Bagged Tree Models like **RandomForest** can tell you the **Feature Importance** of each column in the model, similar to the coefficients of Logistic Regression. When you 
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ For our demonstration today, we will use the **Bank Marketing UCI** dataset, whi
 
 For more information on building classification models, check out: [Everything You Need to Know to Build an Amazing Binary Classifier]({filename}classification.md) and [Go Beyond Binary Classification with Multiclass and Multi-Label Models]({filename}multiclass.md)
 
-We will start by importing the necessary libraries and loading the data. We'll be utilizing Scikit-Learn for each of our different techniques. In addition to what is demonstrated here, there are many other [supported methods](https://scikit-learn.org/stable/modules/feature_selection.html).
+We will start by importing the necessary libraries and loading the data. We'll be utilizing Scikit-Learn for our analysis today.
 
 ```python
 import numpy as np
@@ -57,7 +57,7 @@ from sklearn.compose import make_column_selector as selector
 from sklearn.pipeline import Pipeline
 ```
 
-Next, we'll load the data into a Pandas DataFrame and look at its shape.
+Next, we'll load the data into a **Pandas DataFrame** and look at its shape.
 
 ```python
 df = pd.read_csv("bank.csv", delimiter=";")
@@ -69,7 +69,7 @@ df.shape
 
 ## Data Cleaning
 
-We have **4,500 row**s of data with **17 columns** including the target variable. We'll perform some light clean-up of the data before performing our model selection and first looking for null values, which there were none, and dropping any duplicates.
+We have **4,500 row**s of data with **17 columns** including the target variable. We'll perform some light clean-up of the data before performing our model selection and first looking for **null values**, which there were none, and dropping any **duplicates**.
 
 ```python
 # check for nan/null
@@ -105,7 +105,7 @@ y = enc.transform(y)
 
 Next, we will utilize a **Column Transfomer** to transform our data into a machine learning acceptable format. I prefer to use pipelines whenever I build a model for repeatability. For more information on them, check out my article: [Stop Building Your Models One Step at a Time. Automate the Process with Pipelines!]({filename}sklearnpipelines.md).
 
-For our transformation, I've chosen the `MinMaxScaler` for numeric features and an `OneHotEncode` (OHE) for the categorical features. OHE transforms categorical data into a binary representation, preventing models from predicting values between ordinal values. For more information on OHE, check out: [One Hot Encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html).
+For our transformation, we've chosen the `MinMaxScaler` for numeric features and an `OneHotEncode` (OHE) for the categorical features. OHE transforms categorical data into a binary representation, preventing models from predicting values between ordinal values. For more information on OHE, check out: [One Hot Encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html).
 
 ```python
 column_trans = ColumnTransformer(transformers=
@@ -116,7 +116,7 @@ column_trans = ColumnTransformer(transformers=
 
 ## Creating a List of Models for Model Selection
 
-And now we're going to build a dictionary with our different models. Each entry in the dictionary consists of the **name of the model** as the *Key* and the **pipeline** as the *Value*.
+And now we're going to build a dictionary with our different models. Each entry in the dictionary consists of the **name of the model** as the **Key** and the **pipeline** as the **Value**.
 
 The idea with model selection is to pick the best performing model, not tune the model for its best performance. That's known as Hyper Parameter Tuning, and you can read more about it here: [5-10x Faster Hyperparameter Tuning with HalvingGridSearch]({filename}hyperparameter.md).
 
@@ -164,19 +164,23 @@ def get_models():
 
 ## Cross-Validation
 
-It's critical when training a model that you do not overfit the model to your data or allow it to see all the data at once. Normally you would perform a **train-test-split** on your data; however, in this case, we're going to use a **Cross-Validation** approach to finding the best model utilizing the `RepeatedStratifiedKFold` method. 
+It's critical when training a model that you do not overfit the model to your data or allow it to see all the data at once. Normally you would perform a **train-test-split** on your data; however, in this case, we're going to use a **Cross-Validation** approach to finding the best model utilizing the `RepeatedStratifiedKFold` method, which will handle partitioning the data into numerous train and test sets. 
 
-A Stratified sampling ensures that relative class frequencies are approximately preserved in each train and validation fold and is critical for imbalanced data. For more information on this method, check out: [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html).
+A **Stratified** sampling ensures that relative class frequencies are approximately preserved in each train and validation fold and is critical for imbalanced data. For more information on this method, check out: [Cross-validation: evaluating estimator performance](https://scikit-learn.org/stable/modules/cross_validation.html).
 
-We'll build a reusable function that will allow us to test the different models we stored in our dictionary. There are a few parameters you can play with here, depending on your dataset size. You can determine the number of **splits** and **repeats**. If you have a smaller dataset like this example, try not to split your data too many times, or you won't have sufficient samples to test against.
+We'll build a reusable function that will allow us to test the different models we stored in our dictionary. There are a few parameters you can play with here, depending on your dataset size. You can determine the number of **splits** and **repeats**. If you have a smaller dataset like this example, try not to split your data too many times, or you won't have sufficient samples to train and test against.
 
-Additionally, you need to specify the scoring metric you want to use. Scikit-Learn supports numerous different ones, and you can see how to reference them in their [documentation](https://scikit-learn.org/stable/modules/model_evaluation.html). For this example, I've chosen ROC-AUC as my metric. For more information on choosing the best metric, check out: [Stop Using Accuracy to Evaluate Your Classification Models]({filename}modeleval.md).
+Additionally, you need to specify the scoring metric you want to use. Scikit-Learn supports numerous different ones, and you can see how to reference them in their [documentation](https://scikit-learn.org/stable/modules/model_evaluation.html). For this example, I've chosen **ROC-AUC** as my metric. For more information on choosing the best metric, check out: [Stop Using Accuracy to Evaluate Your Classification Models]({filename}modeleval.md).
 
 ```python
 # evaluate a give model using cross-validation
 def evaluate_model(model, X, y):
-    cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=10, random_state=1)
-    scores = cross_val_score(model, X, y, scoring='roc_auc', cv=cv, n_jobs=-1)
+    cv = RepeatedStratifiedKFold(n_splits=5, 
+                                 n_repeats=10, 
+                                 random_state=1)
+    scores = cross_val_score(model, X, y, 
+                             scoring='roc_auc', 
+                             cv=cv, n_jobs=-1)
     return scores
 ```
 
@@ -184,7 +188,7 @@ def evaluate_model(model, X, y):
 
 And now we can run our evaluation. We'll loop over our dictionary calling the `evaluate_model` function, and store the results in a list. We'll do the same for the model's name to make it simple for us to plot.
 
-Each time the model is evaluated, we're also checking the time using the magic command `%time`, which prints out the time it took to evaluate the model, aiding our selection. We also print out the **mean score** and **standard deviation** of the scores for the ten repeats.
+Each time the model is evaluated, we're also checking the speed of the model using the magic command `%time`, which prints out the time it took to evaluate the model, aiding our selection. We also print out the **mean score** and **standard deviation** of the scores for the ten repeats.
 
 Finally, we'll plot the results on a single plot utilizing **box-and-whiskers** plots of the scores.
 
@@ -242,9 +246,11 @@ plt.xticks(rotation=45)
 
 ![Default Settings]({static}../../images/posts/modelselection_01.png)
 
-Here we can get an excellent visual of each model's performance. Certain algorithms performed poorly, and we can discard them for this use case, such as a simple** decision tree**, the **nearest neighbor** classifier, and **perceptron**. These are all some of the most simple models on the list, and it isn't a surprise that they performed poorer than the others. The Gradient Boosted Tree was the best performing classifier with a ROC-AUC score of `0.756`, true to its reputation. AdaBoost and RandomForest were the next best, with `0.733` and `0.730` scores, respectively.
+Here we get an excellent visual of each model's performance. Certain algorithms performed poorly, and we can discard them for this use case, such as the simple **decision tree**, the **nearest neighbor** classifier, and **perceptron** classifier. These are all some of the more simple models on the list, and it isn't a surprise that they performed poorer than the others. The **Gradient Boosted Tree** was the best performing classifier with a ROC-AUC score of `0.756`, true to its reputation. **AdaBoost** and **RandomForest** were the next best, with `0.733` and `0.730` scores, respectively.
 
 We can also take a look at the time it took to run. Of these models, the Gradient Boosted Tree performed the slowest at `2.75` seconds, and AdaBoost the best of these at `886` milliseconds. Look at Logistic Regression; however, it performed reasonably well at `0.721` but was extremely fast at `290` milliseconds which might weigh into our selection process. Logistic Regression has the advantage of high explainability by utilizing its coefficients and is performing at about 10% of the time of the Gradient Boosted Tree.
+
+The final selection is up to you, but these methods should give you a strong baseline for how to select the best model for your use case!
 
 All of the code for this article is available on [GitHub](https://github.com/broepke/ModelSelection)
 
