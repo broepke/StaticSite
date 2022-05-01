@@ -15,7 +15,9 @@ Twitter_Image: images/covers/choice.jpg
 
 Model selection in Machine Learning is selecting the best model for your data. Different models will perform differently on different data sets and potentially by a large margin. It's pretty common these days that gradient boosted trees are the [best performing models](https://www.quora.com/Why-is-XGBoost-among-most-used-machine-learning-method-on-Kaggle) for tabular data, such as [XGBoost](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d), or the implementation in SciKit Learn. However, instead of always defaulting to a model such as XGBoost, it's important to evaluate the performance of different algorithms and see which one will perform the best for you.
 
-Additionally, there can be some advantages to different models. For example, **Logistic Regression** can tell you the model's **coefficients**, allowing you to explain the impact of each feature on the final prediction. Bagged Tree Models like **RandomForest** can tell you the **Feature Importance** of each column in the model, similar to the coefficients of Logistic Regression. When you 
+Additionally, there can be some advantages to different models. For example, **Logistic Regression** can tell you the model's **coefficients**, allowing you to explain the impact of each feature on the final prediction. Bagged Tree Models like **RandomForest** can tell you the **Feature Importance** of each column in the model, similar to the coefficients of Logistic Regression.
+
+Let's take a look at how to choose the best model across both a scoring metric of your choice as well as the speed of training. 
 
 ## Getting Started
 
@@ -256,7 +258,7 @@ All of the code for this article is available on [GitHub](https://github.com/bro
 
 ## Conclusion
 
-Model Selection is a critical step in your machine learning model building. Choosing the right model can greatly impact the performance of your machine learning model, and choosing the wrong model, can leave you with unacceptable results. We walked through the process of preparing our data by utilizing a Pipeline for consistent data preparation. We then built a list of models that we wanted to evaluate their performance. We utilized Cross-Validation to test each model on various data slices and finally plotted out the results. Utilizing this method is a quick and powerful way to select the right model for your application!
+**Model Selection** is a critical step in your machine learning model building. Choosing the right model can greatly impact the performance of your machine learning model, and choosing the wrong model, can leave you with unacceptable results. We walked through the process of **preparing our data** by utilizing a **Pipeline** for consistency. We then built a list of models that we wanted to **evaluate their performance**. We utilized **cross-validation** to test each model on various data slices and finally plotted out the results. Utilizing this process is a quick and powerful way to select the right model for your application!
 
 ## References
 
