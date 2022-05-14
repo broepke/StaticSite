@@ -18,37 +18,29 @@ Feature Engineering in machine learning is the process of creating new feature f
 1. Encoding categorical data
 2. Calculate the difference between dates or times.
 3. Aggregate data int a single row such as summing, counting, or calculating averages.
-4. Converting text int a numerical values.
-5. Merge data from different sources into a single set of observations.
+4. Creating aggregate date windows
+5. Converting text int a numerical values.
+6. Merge data from different sources into a single set of observations.
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Feature_engineering):
 
 >Feature engineering or feature extraction is the process of using domain knowledge to extract features (characteristics, properties, attributes) from raw data. The motivation is to use these extra features to improve the quality of results from a machine learning process, compared with supplying only the raw data to the machine learning process.
 
 
-BLAH BLAH
+The general process of buildng a model is as follows.
 
-* Feature Engineering
-* Feature Selection
-* Feature Feature Importantce
+1. [Exploratory Data Analysis including Data Cleaning]({filename}eda.md)
+2. Feature Engineering (This article)
+3. [Feature Selection]({filename}featureselection.md)
+4. [Model Selection]({filename}modelselection.md)
+5. [Model Training and Evaluation]({filename}modeleval.md)
+
+**Note**: *Follow each of those links to learn more about the other steps!*
+
+Out of all these steps, arguably the most important is the Feature Engineering step.  By defaulting only to the raw data, you risk missing out on providing valuable context as to why a behavior is happening.  Whether this is a predicting the behavior of a user, or even a machine, this is crucial to the success of your project. 
 
 
 
-
-## The Process of Feature Engineering
-
-**RE-WRITE THIS**
-(tasks before here…)
-Select Data: Integrate data, de-normalize it into a dataset, collect it together.
-Preprocess Data: Format it, clean it, sample it so you can work with it.
-Transform Data: Feature Engineer happens here.
-Model Data: Create models, evaluate them and tune them.
-(tasks after here…)
-
-* Brainstorm features: Really get into the problem, look at a lot of data, study feature engineering on other problems and see what you can steal.
-* Devise features: Depends on your problem, but you may use automatic feature extraction, manual feature construction and mixtures of the two.
-* Select features: Use different feature importance scorings and feature selection methods to prepare one or more “views” for your models to operate upon.
-* Evaluate models: Estimate model accuracy on unseen data using the chosen features.
 
 ## Domain Knowledge
 
@@ -237,7 +229,51 @@ df_agg.head()
 4  account102          35           1        3 2019-10-30   214  14744
 ```
 
+## Creating Aggregate Date Windows
 
+
+```python
+# in order to use "last" calculations, you need a date based index
+df_ts = df_event.set_index('DATE')
+```
+
+```python
+df_14 = df_ts.last('14D').groupby('ACCOUNT_ID')[['COUNT']].sum()
+df_14.rename(columns={"COUNT": "COUNT_LAST_14"}, inplace=True)
+
+df_30 = df_ts.last('30D').groupby('ACCOUNT_ID')[['COUNT']].sum()
+df_30.rename(columns={"COUNT": "COUNT_LAST_30"}, inplace=True)
+
+df_60 = df_ts.last('60D').groupby('ACCOUNT_ID')[['COUNT']].sum()
+df_60.rename(columns={"COUNT": "COUNT_LAST_60"}, inplace=True)
+```
+
+```python
+df_agg = pd.merge(df_agg, df_14, on="ACCOUNT_ID", how='left')
+df_agg = pd.merge(df_agg, df_30, on="ACCOUNT_ID", how='left')
+df_agg = pd.merge(df_agg, df_60, on="ACCOUNT_ID", how='left')
+
+# Finally - fill null values with Zeros for future modeling
+df_agg.fillna(0, inplace=True)
+```
+
+```python
+df_agg.sample(10)
+```
+
+```text
+     COUNT_LAST_14  COUNT_LAST_30  COUNT_LAST_60  
+340        12107.0        46918.0          87659  
+472           88.0         1502.0           2042  
+295           47.0          262.0            412  
+453          955.0         5921.0          13915  
+242          175.0          663.0            946  
+286          165.0         1106.0           2066  
+461          469.0         3722.0           7984  
+85           503.0         1954.0           4183  
+46           157.0         1808.0           3165  
+444            0.0            2.0              2 
+```
 
 
 ## Converting Text to Numerical Values
@@ -254,15 +290,7 @@ Personal vs. Corporate Users
 ```python
 # Merge the datasets on Account ID
 df = pd.merge(df_opp, df_agg, on="ACCOUNT_ID")
-```
-
-
-
-```python
-# Reorder the columns by preference
-df = df[['ACCOUNT_ID', 'OPP_ID', 'ORDER_DATE', 'PRODUCT', 'QUANTITY', 'START', 'END',
-         'PROJECT_ID', 'DATE', 'DAYS_LAST_USED', 'TYPE', 'COUNT']]
-df.head()
+df
 ```
 ```text
   ACCOUNT_ID OPP_ID ORDER_DATE  \
@@ -285,6 +313,13 @@ df.head()
 2 2021-04-16          22 2019-10-16             183   185  19377
 3 2021-04-16          22 2019-10-16             183   185  19377
 4 2021-04-09          27 2019-10-08             184    64    556
+
+   COUNT_LAST_14  COUNT_LAST_30  COUNT_LAST_60  DAYS_LAST_USED  
+0            7.0          136.0            216             213  
+1            7.0          136.0            216             213  
+2         1157.0        10109.0          19314             183  
+3         1157.0        10109.0          19314             183  
+4            7.0          372.0            556             184 
 ```
 
 ```python
