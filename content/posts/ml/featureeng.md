@@ -1,7 +1,7 @@
-Title: Feature Engineering in Machine Learning
-Date: 2022-05-14
-Modified: 2022-05-14
-Status: draft
+Title: 6 Tips to Power Feature Engineering in Your Next Machine Learning Project
+Date: 2022-05-15
+Modified: 2022-05-15
+Status: published
 Tags: datascience, machine learning
 Slug: featureeng
 Authors: Brian Roepke
@@ -10,24 +10,9 @@ Header_Cover: images/covers/engineering.jpg
 Og_Image: images/covers/engineering.jpg
 Twitter_Image: images/covers/engineering.jpg
 
+## What is Feature Engineering?
 
-## What is Feature Engineerring?
-
-Feature Engineering in machine learning is the process of creating new feature from existing data. Often times with raw data, the information contained within may not be sufficent from a learning perspective.  Because of this, you may need to transform this data into new features, or columns that help you represent the data in a way that is more useful for learning.  A few examples of what might need to be done:
-
-1. Encoding categorical data
-2. Calculate the difference between dates or times.
-3. Aggregate data int a single row such as summing, counting, or calculating averages.
-4. Creating aggregate date windows
-5. Converting text int a numerical values.
-6. Merge data from different sources into a single set of observations.
-
-According to [Wikipedia](https://en.wikipedia.org/wiki/Feature_engineering):
-
->Feature engineering or feature extraction is the process of using domain knowledge to extract features (characteristics, properties, attributes) from raw data. The motivation is to use these extra features to improve the quality of results from a machine learning process, compared with supplying only the raw data to the machine learning process.
-
-
-The general process of buildng a model is as follows.
+Feature Engineering in machine learning is creating new features from existing data. Often, with raw data, the information contained within may not be sufficient from a learning perspective. Because of this, you may need to transform this data into new features or columns that help you represent the data in a way that is more useful for learning. The general process of building a model is as follows.
 
 1. [Exploratory Data Analysis including Data Cleaning]({filename}eda.md)
 2. Feature Engineering (This article)
@@ -35,18 +20,44 @@ The general process of buildng a model is as follows.
 4. [Model Selection]({filename}modelselection.md)
 5. [Model Training and Evaluation]({filename}modeleval.md)
 
-**Note**: *Follow each of those links to learn more about the other steps!*
+Of all these steps, **arguably the most important is the Feature Engineering** step. By defaulting only to the raw data, you risk missing out on providing valuable context as to why a behavior is happening. Whether predicting the behavior of a user, or a machine, Feature Engineering is crucial to the success of your project. A few examples of what might need to be done:
 
-Out of all these steps, arguably the most important is the Feature Engineering step.  By defaulting only to the raw data, you risk missing out on providing valuable context as to why a behavior is happening.  Whether this is a predicting the behavior of a user, or even a machine, this is crucial to the success of your project. 
+1. Scaling numeric data and encoding categorical data
+2. Converting long-form text into a numerical values
+3. Calculate the difference between dates or times
+4. Aggregate data into a single row, such as summing, counting, or calculating averages
+5. Creating aggregate date windows
+6. Merge data from different sources into a single set of observations
 
+I liked the definition provided on [Wikipedia](https://en.wikipedia.org/wiki/Feature_engineering). It sums up the idea of using domain knowledge to extract new features:
 
+>Feature engineering or feature extraction is the process of using domain knowledge to extract features (characteristics, properties, attributes) from raw data. The motivation is to use these extra features to improve the quality of results from a machine learning process, compared with supplying only the raw data to the machine learning process.
 
+We can start with just that; domain knowledge.
 
 ## Domain Knowledge
 
-One of the critical parts of feature engineering is that you need to apply business and domain knowlege to your data in order to create the best features.  There isn't ever a single way or rule on how to create features, but many of the methods require you to know the context of why they might be relevant.
+One of the critical parts of feature engineering is applying **business** and **domain knowledge** to your data to create the best features. There is not a single way or rule on how to create features, but many of the methods require you to know the context of why they might be relevant.
+
+For this example, the dataset we'll use was synthetically generated (by the Author) to represent companies that have purchased software and randomly generated usage data to simulate events that a user might attempt in their day-to-day use of the software.
+
+When brainstorming what features you might want to create, think about the context of the data. We will create several features that represent how active an account is for this. We will demonstrate a number of these below.
+
+First, we need to understand how the data is structured and the relationships.
+
+## Understanding Our Data Structure
+
+Let's look at this visualized with an [Entity Relationship Diagram](https://www.lucidchart.com/pages/er-diagrams) or ERD. An ERDs is the best way to visualize tables of information. We can see everything we need to and how the data from columns, types, and relationships in a single image.
+
+In our first table, **OPPORTUNITIES**, we have a **composite key** that makes up the **primary key** consisting of **ACCOUNT_ID**, **OPPORTUNITY_ID**, **RENEWAL_DATE**, and **PRODUCT_CODE**. The primary key allows us to identify an opportunity uniquely. In the **EVENTS** table, we have a **foreign key** relationship with **ACCOUNT_ID**. For each account, we have **zero to many** potential events.
+
+![ERD]({static}../../images/posts/featureeng_01.png)
+
+Now that we have a general understanding of the data structure, we can import our data and start the process of Feature Engineering.
 
 ## Loading and Cleaning the Data
+
+The first step is to load and clean our data. We can understand here the size and shape of our data as well.
 
 ```python
 import pandas as pd
@@ -63,6 +74,8 @@ print(df_event.shape)
 (1000, 8)
 (1048575, 7)
 ```
+
+We see that we have about 1,000 opportunities and 1,000,000 events.
 
 ```python
 df_opp.info()
@@ -103,6 +116,8 @@ Data columns (total 7 columns):
 dtypes: int64(1), object(6)
 memory usage: 56.0+ MB
 ```
+
+Both tables contain mostly strings (objects) with one numeric column. 
 
 ```python
 df_event.head()
@@ -149,34 +164,44 @@ df_opp.head()
 4 2020-04-10    2021-04-09
 ```
 
+A typical part of this process is to ensure that we do not have null values. After inspection of the data (not shown), we have a few things. We have some null values in our **OPP** table, we'll drop these for simplicity, and with the **EVENTS** table, we have a few null values for the **PROJECT_ID**, which we can fill with another value, such as the **COMPANY_ID**. It takes understanding the business context of handling null values; these are just two examples. 
+
 ```python
 # Drop any null values from important variables
-df_opp.dropna(subset=['START'], inplace=True)
+df_opp.dropna(inplace=True)
 
 # Fill any missing PROJECT_IDS with the COMPANY_ID
 df_event['PROJECT_ID'].fillna(df_event['COMPANY_ID'], inplace=True)
 ```
 
+## Scaling Numeric Data and Encoding Categorical Data
 
+A very simple transformation of data is scaling numerical data and encoding categorical data. While numeric scaling of data isn't feature engineering, it is important since many algorithms do not like data that isn't scaled.
 
-## Understanding the Data Structure
+A common method for transforming categorical data is to use a process known as **One-Hot-Encoding** or **OHE**. OHE takes categorical data and expands them into new columns where there is a new column for each categorical value and a binary value indicating if that category is in the row or not. OHE prevents models from predicting values between ordinal values. For more information on OHE, check out: [One Hot Encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html).
 
-Let's take a look at what this looks like visualized with an Entity Relationship Diagram.  I tend to this this is the best way to visualize tables of information because in a single image, we can see everything we need to know to understand how the data is strcutured from columns, data types, and the relationships between them.
+A typical process for this is to wrap and utilize a column transformer. You can read more about this process here: [Stop Building Your Models One Step at a Time. Automate the Process with Pipelines!]({filename}sklearnpipelines.md)
 
-In our first table, **OPPORTUNITIES**, we have a **composite key** that makes up the **primary key** cnsisting of **ACCOUNT_ID**, **OPPORTUNITY_ID**, **RENEWAL_DATE**, and **PRODUCT_CODE**.  The primary key allows us to uniquely identify an opportunity.  In the **EVENTS** table we have a **foreign key** relationship with **ACCOUNT_ID**.  For each account, we have **zero to many** potential events.
+```python
+column_trans = ColumnTransformer(transformers=
+        [('num', MinMaxScaler(), selector(dtype_exclude="object")),
+        ('cat', OneHotEncoder(), selector(dtype_include="object"))],
+        remainder='drop')
+```
 
-![ERD]({static}../../images/posts/featureeng_01.png)
+## Converting Long-Form Text into a Numeric Values
 
-## Encoding Categorical Data
+Another common method for dealing with long text data is to represent the **length** of the text as a **number**, useful in cases such as product reviews. For example, are long reviews typically tied to more negative or positive reviews? Are longer reviews more useful, so the product associated with them tends to sell better? You might need to experiment with this. Our dataset doesn't have long-form text, but here is an example of how to do this.
 
-One Hot Encoding
+```python
+df['text_len'] = df.apply(lambda row: len(row['text']), axis = 1)
+```
 
-Ordinal Encoding
+## Calculate the Difference Between Dates or Times
 
+Typically, a date itself is not a useful feature in machine learning. What does 01/05/2021 mean versus 05/01/2012? We need to convert these into something more useful for learning. Or example, we are talking about sales opportunities whether or not a customer will continue to purchase or subscribe to our theoretical product. Something that might be more useful is to capture if the customer has been active recently. A customer that has not been active would most likely not re-purchase our software.
 
-## Date Differences
-
-First you need to make sure that any dates are actually in a date-time format
+First, you need to ensure that any dates are actually in a date-time format. To accomplish this, we can utilize Pandas `to_datetime` function.
 
 ```python
 # Convert dates to datetime type
@@ -186,14 +211,22 @@ df_opp['START'] = pd.to_datetime(df_opp['START'])
 df_opp['END'] = pd.to_datetime(df_opp['END'])
 ```
 
-Next, we can constuct new columns that represent the difference between the start and end dates.
+Next, we can construct new columns that represent the number of days since the last time they utilized the software. After we have converted to the date-time format, it's a simple subtraction operation and storing it as a new column called **DAYS_LAST_USED**.
+
+**Note:** *This calculation is done last in our notebook but fits better with the article.*
 
 ```python
 # Add a column for the number of days transpired since the last known event and the renewal date
 df['DAYS_LAST_USED'] = (df['ORDER_DATE'] - df['DATE']).dt.days
 ```
 
-## Aggregating Data Into Single Observations
+## Aggregate Data Into a Single Row Such as Summing, Counting, or Calculating Averages
+
+A critical step is making sure we only have one row or **one observation that represents each unique opportunity**.  As We saw above during import as having 1,000 customers but 1,000,000 events. We need to aggregate our events into a single row for each account or opportunity. For our example, we will aggregate events by the **ACCOUNT_ID**. 
+
+**Pandas** has an amazing feature for this with `groupby` called `.agg`. We can aggregate all the columns with different aggregate operators in a single operation. Here you can pass a function name string like `sum` or `count`. You can utilize Numpy functions like `mean` and `std` or even pass a custom function; it's incredibly powerful. Read more [here](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.SeriesGroupBy.aggregate.html). 
+
+Take note of `nunique` - a powerful way to count the number of unique values in a column. Very powerful for categorical data.
 
 ```python
 df_agg = df_event.groupby(['ACCOUNT_ID'], as_index=False).agg(
@@ -229,13 +262,20 @@ df_agg.head()
 4  account102          35           1        3 2019-10-30   214  14744
 ```
 
+After the aggregation is complete, we now have a simple Data Frame with a numeric representation for each column, including the maximum date the product was last utilized, which can then be used to convert it to a numeric value as shown above. 
+
 ## Creating Aggregate Date Windows
 
+Another excellent Feature Engineering technique is to create different aggregate counts based on rolling timeframes. For example, how active was a customer over the past week, month, or quarter? Similar to the idea with the number of days since the account was last active, we calculated the amount of usage during these time windows. Certainly, more active users, more recently, will most likely imply the desire to keep utilizing the software. 
+
+Pandas have incredible functionality for working with **Time Series data**. You can read more about it [here](https://pandas.pydata.org/docs/user_guide/timeseries.html). One of the caveats to working with Time Series functions is that you need a **date-time-based index**. So the first thing we will do is set the index to our **DATE** column. 
 
 ```python
 # in order to use "last" calculations, you need a date based index
 df_ts = df_event.set_index('DATE')
 ```
+
+Next, we can use an operation that allows us to **aggregate** by the `last` number of days (weeks, months, years) and utilize a `groupby` operation and aggregator such as `sum` like we did above. Because we want to store a few of these values, we'll first calculate them, save them as a new Data Frame, and rename the column to something more descriptive.
 
 ```python
 df_14 = df_ts.last('14D').groupby('ACCOUNT_ID')[['COUNT']].sum()
@@ -247,6 +287,8 @@ df_30.rename(columns={"COUNT": "COUNT_LAST_30"}, inplace=True)
 df_60 = df_ts.last('60D').groupby('ACCOUNT_ID')[['COUNT']].sum()
 df_60.rename(columns={"COUNT": "COUNT_LAST_60"}, inplace=True)
 ```
+
+Finally, we'll `merge` these back into our main aggregated Data Frame, appending our three new features.
 
 ```python
 df_agg = pd.merge(df_agg, df_14, on="ACCOUNT_ID", how='left')
@@ -275,17 +317,9 @@ df_agg.sample(10)
 444            0.0            2.0              2 
 ```
 
+## Merge Data From Different Sources Into a Single set of Observations
 
-## Converting Text to Numerical Values
-
-
-## An More!
-
-Personal vs. Corporate Users
-
-
-
-## Merging Datasets
+Finally, we need to merge our newly aggregated **EVENTS** table with all of our features into the **OPPS** Data Frame.  We can do this with the same `merge` function above.  
 
 ```python
 # Merge the datasets on Account ID
@@ -329,14 +363,14 @@ df.shape
 (949, 13)
 ```
 
+And there you have it! In our final Data Frame, we have about 1,000 rows (after dropping *null* values) with our newly created features appended. Based on these new features, we can perform Feature Selection and train the model.
 
-
+For the full code for this article, please visit [GitHub](https://github.com/broepke/FeatureEngineering)
 
 ## Conclusion
 
-
+Feature Engineering is arguably the most critical step in Machine Learning. Feature Engineering is creating new columns in your data by using domain and business knowledge to construct new information from the data. We covered multiple techniques for dealing with categorical data, multiple methods for working with date-time data, and how to aggregate multiple observations into new representations that can be merged back into the original data. While this scratches the topic's surface, I hope it gets you started on your journey! 
 
 ## References
 
-Photo by Vishnu Mohanan on Unsplash
-https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu Mohanan</a> on <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
