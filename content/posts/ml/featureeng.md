@@ -1,4 +1,4 @@
-Title: 6 Tips to Power Feature Engineering in Your Next Machine Learning Project
+Title: 6 Techniques to Power Feature Engineering in Your Next Machine Learning Project
 Date: 2022-05-15
 Modified: 2022-05-15
 Status: published
