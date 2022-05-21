@@ -3,7 +3,7 @@ Subtitle: How to Utilize Unsupervised Machine Learning to Automatically Detect P
 Date: 2022-01-09
 Modified: 2022-01-09
 Status: published
-Tags: datascience, nlp, machinelearning
+Tags: datascience, nlp, machine learning
 Slug: textclustering
 Authors: Brian Roepke
 Summary: Clustering Wine Reviews into Varietals with k-Means
