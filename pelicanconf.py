@@ -66,7 +66,7 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 
-# https://github.com/getpelican/pelican-plugins/tree/master/sitemap 
+# https://github.com/pelican-plugins/sitemap
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -80,3 +80,9 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
+
+# https://github.com/pelican-plugins/seo
+SEO_REPORT = True
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True
+SEO_ENHANCER_TWITTER_CARDS = True
