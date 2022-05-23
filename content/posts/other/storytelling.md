@@ -55,6 +55,7 @@ Using our outline format, here is an overly simplified example of of SCR.  In pr
 
 ## The One Miniute Per Slide Rule
 
+This one is simple and effective. As opposed to creating your presentation and reherssing the timing, just consider that each major content slide will **take one minute to present**.  If you have a 20 minute presentation, aim for 20 slides with content.  This doesn't include section dividers, the cover or a closing logo slide.  
 
 ## The Rule of Three
 
@@ -64,6 +65,9 @@ http://uberconvince.com/2018/01/14/rule-3-trios-makes-copy-memorable-according-s
 
 https://copyblogger.com/rule-of-three/
 
+>Because four is intellectually lazy.
+
+![Mind Map Outline]({static}../../images/posts/storytelling_02.png)
 
 ## Write Slide Titles as Outcomes
 
