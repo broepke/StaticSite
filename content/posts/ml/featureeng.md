@@ -1,4 +1,4 @@
-Title: 6 Techniques to Power Feature Engineering in Your Next Machine Learning Project
+Title: 6 Techniques for Feature Engineering in Your Next ML Project
 Date: 2022-05-15
 Modified: 2022-05-15
 Status: published
@@ -6,11 +6,12 @@ Tags: datascience, machine learning
 Slug: featureeng
 Authors: Brian Roepke
 Summary: Techniques for creating new features from data
+Description: Feature Engineering in Machine Learning is creating new features from existing data, transforming it into new columns that are more useful for learning.
 Header_Cover: images/covers/engineering.jpg
 Og_Image: images/covers/engineering.jpg
 Twitter_Image: images/covers/engineering.jpg
 
-## What is Feature Engineering?
+# What is Feature Engineering?
 
 Feature Engineering in machine learning is creating new features from existing data. Often, with raw data, the information contained within may not be sufficient from a learning perspective. Because of this, you may need to transform this data into new features or columns that help you represent the data in a way that is more useful for learning. The general process of building a model is as follows.
 

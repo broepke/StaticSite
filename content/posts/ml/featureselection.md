@@ -1,4 +1,4 @@
-Title: 4 Methods to Power Feature Selection for Your Next ML Model
+Title: 4 Methods that Power Feature Selection in a Machine Learning Model
 Date: 2022-04-18
 Modified: 2022-04-18
 Status: published
@@ -6,12 +6,13 @@ Tags: datascience, machine learning
 Slug: featureselection
 Authors: Brian Roepke
 Summary: Plus tips for dealing with categoric, numeric, and mixed data!
+Description: Feature Selection is selecting the most impactful features, in a dataset reducing the amount of data that needs to be processed to speed up your analysis.
 Header_Cover: images/covers/selection.jpg
 Og_Image: images/covers/selection.jpg
 Twitter_Image: images/covers/selection.jpg
 
 
-## What is Feature Selection?
+# What is Feature Selection?
 
 **Feature Selection** in Machine Learning is selecting the most impactful features, or columns, in a dataset. Does your dataset have many columns, and do you want to see which have the biggest impact? Do you want to discard those that aren't generating much value? By performing feature selection, you're not only **reducing the amount of data** that needs to be processed to speed up your analysis, but you're **simplifying the interpretation** of the model, making it easier to understand.
 

@@ -1,4 +1,4 @@
-Title: Demystify Machine Learning Model Selection
+Title: Demystify Machine Learning Model Selection, a Step by Step Guide
 Date: 2022-05-01
 Modified: 2022-05-01
 Status: published
@@ -6,12 +6,13 @@ Tags: datascience, machine learning
 Slug: modelselection
 Authors: Brian Roepke
 Summary: Leverage cross validation, performance metrics, and total runtime to determine the best model for your data.
+Description: Model selection in ML is selecting the best model for your data via cross validation, performance metrics, and total runtime to determine the best model.
 Header_Cover: images/covers/choice.jpg
 Og_Image: images/covers/choice.jpg
 Twitter_Image: images/covers/choice.jpg
 
 
-## What is Model Selection?
+# What is Model Selection?
 
 Model selection in Machine Learning is selecting the best model for your data. Different models will perform differently on different data sets and potentially by a large margin. It's pretty common these days that gradient boosted trees are the [best performing models](https://www.quora.com/Why-is-XGBoost-among-most-used-machine-learning-method-on-Kaggle) for tabular data, such as [XGBoost](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d), or the implementation in SciKit Learn. However, instead of always defaulting to a model such as XGBoost, it's important to evaluate the performance of different algorithms and see which one will perform the best for you.
 

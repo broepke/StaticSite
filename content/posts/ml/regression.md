@@ -1,4 +1,4 @@
-Title: Learn Excel’s Powerful Tools for Linear Regression
+Title: Learn Excel’s Hidden, yet Powerful Tools for Linear Regression
 Date: 2022-03-27
 Modified: 2022-03-27
 Status: published
@@ -6,11 +6,12 @@ Tags: datascience, machine learning
 Slug: regression
 Authors: Brian Roepke
 Summary: Plus, Compare How R and Python Stack Up With the Same Data
+Description: Linear Regression is the most common type of regression analysis and you just might find that Excel is the perfect tool for you to complete your next analysis.
 Header_Cover: images/covers/divide.jpg
 Og_Image: images/covers/divide.jpg
 Twitter_Image: images/covers/divide.jpg
 
-## Introduction
+# Introduction to Regression
 
 **Linear Regression** is the most common type of regression analysis and is an incredibly powerful tool. On smaller projects or business-oriented use cases, you might find a [simple linear regression](https://en.wikipedia.org/wiki/Simple_linear_regression) model using **Excel** is the perfect tool for you to complete your analysis quickly.
 
@@ -217,12 +218,16 @@ We covered linear regression and specifically a simple linear regression consist
 
 When it comes to a simple linear regression model, Excel provides a comprehensive tool for performing an analysis. While R and Python can perform a similar analysis, you can get the same results using Excel!
 
-
-
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
 
-Photo by <a href="https://unsplash.com/@willfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will Francis</a> on <a href="https://unsplash.com/s/photos/divide?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+Check out other tutorials for Machine Learning:
 
+1. [Exploratory Data Analysis including Data Cleaning]({filename}eda.md)
+2. [Feature Engineering]({filename}featureeng.md)
+3. [Feature Selection]({filename}featureselection.md)
+4. [Model Selection]({filename}modelselection.md)
+5. [Model Training and Evaluation]({filename}modeleval.md)
+
+Photo by <a href="https://unsplash.com/@willfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will Francis</a> on <a href="https://unsplash.com/s/photos/divide?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

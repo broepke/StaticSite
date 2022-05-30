@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Brian Roepke'
 SITENAME = 'Data Knows All'
 SITESUBTITLE = 'Machine Learning, Natural Language Processing, SQL, and More'
+TAGLINE = 'Machine Learning, Natural Language Processing, SQL, and More'
 SITEURL = 'https://www.dataknowsall.com'
 
 # https://analytics.google.com/analytics/web
@@ -40,7 +41,7 @@ PATH = 'content'
 ARTICLE_PATHS = ['posts',]
 PAGE_PATHS = ['pages',]
 PLUGIN_PATHS=['pelican-plugins']
-PLUGINS = ['render_math', 'gravatar', 'sitemap']
+PLUGINS = ['render_math', 'gravatar', 'sitemap', 'seo']
 
 MENUITEMS = (
     ('Résumé', '/pdf/cv.pdf'),
@@ -58,6 +59,14 @@ SOCIAL = (
     ('github', 'https://github.com/broepke'),
     ('linkedin','https://www.linkedin.com/in/broepke/')
 )
+
+# https://github.com/pelican-plugins/seo
+SEO_REPORT = True
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True
+SEO_ENHANCER_TWITTER_CARDS = True
+SEO_ARTICLES_LIMIT = 50
+SEO_PAGES_LIMIT = 50
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf', 'other']
@@ -80,9 +89,3 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
-
-# https://github.com/pelican-plugins/seo
-SEO_REPORT = True
-SEO_ENHANCER = True
-SEO_ENHANCER_OPEN_GRAPH = True
-SEO_ENHANCER_TWITTER_CARDS = True
