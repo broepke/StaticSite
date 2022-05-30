@@ -1,4 +1,4 @@
-Title: Tips for Creating a Compelling Data Science Presentation
+Title: Tips for Creating a Compelling Presentation for all Data Scientists
 Date: 2022-06-07
 Modified: 2022-06-07
 Status: draft
@@ -6,17 +6,17 @@ Tags: analytics, datascience, visualization
 Slug: storytelling
 Authors: Brian Roepke
 Summary: Tricks every analyst and data scientist can learn to make a compelling presentation
+Description: One skill every Data Scientist needs to learn is  the ability to create a compelling data science presentation, capturing your audiences attention with key takeaways.
 Header_Cover: images/covers/story.jpg
 Og_Image: images/covers/story.jpg
 Twitter_Image: images/covers/story.jpg
 
 
-
-## How to Create a Compelling Slide Deck
+# How to Create a Compelling Slide Deck
 
 As a data scientist, or an analyst, we spend countless hours perfecting our ability to analyze data, build machine learning models, and keep up with the latest technology trends.  One skill however, that everyone needs is the ability to create a compelling data science presentation.
 
-**I can not stress enough, that every Data Scientist, Analyst and Data Engineer needs to get good at building a compelling presentation.**
+>Every Data Scientist, Analyst and Data Engineer needs to get good at building a compelling presentation.
 
 Here are tips and tricks I've gathered over 20 years of presenting to executives, customers, and peers.  None of these tips are actually limited to Data Science and can be used for anyone creating a presentation.  Let's take a qucik look at them.
 
@@ -35,7 +35,7 @@ Let's get started!
 
 Often times, when starting a presentation, they open PowerPoint, Keynote or their tool of choice and start trying to immedialy build the deck.  This issues of course is you're going to iterate 100 times on the slides and probably end up deleting most of what you've created.  
 
-A better way to approach this is to start with an outline, No different than you were taught in English 101.  But don't think of this as an outline of the slides you want to create, think of this as the story you're going to tell.  There are two common ways to create an outline. The first is by simply using orderd lists and scructure your online by ideas or sections of your story (I'll cover the stoytelling part next) or if you're a more visual person you can use a mind mapp and structure it similarily.
+A better way to approach this is to start with an **outline**, No different than you were taught in English 101.  But don't think of this as an outline of the slides you want to create, think of this as the story you're going to tell.  There are two common ways to create an outline. The first is by simply using orderd lists and scructure your online by ideas or sections of your story (I'll cover the stoytelling part next) or if you're a more visual person you can use a **mind map** and structure it similarily.
 
 Once you have your ouline set, creating the supporting content is a breeze.
 
@@ -43,29 +43,29 @@ Once you have your ouline set, creating the supporting content is a breeze.
 
 A classic story telling framework is known as the [Hero's Journey](https://en.wikipedia.org/wiki/Hero%27s_journey).  The general idea is that a hero goes on a journey, some sort of obstical is introduced into and finally the hero is able to overcome that obstical and everyone lives hapily ever after.
 
-In our business presentations we can use a similar framework called **Situation-Complication-Resolution** or SCR.  I was first introduced to SCR through the book [The Pyramid Principle](https://www.amazon.com/Pyramid-Principle-Logic-Writing-Thinking/dp/1292372265/ref=sr_1_1?keywords=the+pyramid+principle+logic+in+writing+and+thinking&qid=1653223332) by Barbara Minto who popularized this method while working at McKinsey Consulting.  The structure of this is perfect for creating a business story.  It's a simple framework, it keeps you organized in your structure and it brings action oriented results.
+In our business presentations we can use a similar framework called **Situation-Complication-Resolution** or **SCR**.  I was first introduced to SCR through the book [The Pyramid Principle](https://www.amazon.com/Pyramid-Principle-Logic-Writing-Thinking/dp/1292372265) by Barbara Minto who popularized this method while working at McKinsey Consulting.  The structure of this is perfect for creating a business story.  It's a simple framework, it keeps you organized in your structure, it brings action oriented results, and it fits into the Rule-of-Three which I'll cover later.
 
 * **Situation**: Facts about the current state.
 * **Complication**: The reason action is required based on the situation.
 * **Resolution**: The action taken or reccomended to solve the complication.
 
-Using our outline format, here is an overly simplified example of of SCR.  In practice, you would introduce more details as sub items of the nodes.  In practice, utilizing SCR will help you create a clean, compelling story!
+Using our outline format, here is an overly simplified example of of SCR.  In practice, you would introduce more details as sub items of the nodes. Utilizing SCR will help you create a clean, compelling story!
 
 ![Mind Map Outline]({static}../../images/posts/storytelling_01.png)
 
 ## The One Miniute Per Slide Rule
 
-This one is simple and effective. As opposed to creating your presentation and reherssing the timing, just consider that each major content slide will **take one minute to present**.  If you have a 20 minute presentation, aim for 20 slides with content.  This doesn't include section dividers, the cover or a closing logo slide.  
+This one is simple and effective. As opposed to creating your presentation and reherssing the timing, just consider that each major content slide will **take one minute to present**.  If you have a 20 minute presentation, aim for 20 slides with content.  This doesn't include section dividers, the cover or a closing logo slide.  What i've found over the years is that generally speaking, some will take longer, some will be shorter, but on average, they'll take about a minute.
+
+Eliminate the stress from trying to figure out how much content you need to create.
 
 ## The Rule of Three
 
-https://www.inc.com/carmine-gallo/apple-is-obsessed-with-magical-number-3-it-will-transform-your-presentations-too.html
+Another wonderful rule of thumb is the **Rule of Three**.  The rule of three is simple, stick with three and only three items when building your structure.  Whether it's sections of your story, as in the SCR framework, or the number of bullet points on your slide.  [Apple](https://www.inc.com/carmine-gallo/apple-is-obsessed-with-magical-number-3-it-will-transform-your-presentations-too.html) has implemented this all over their presentation and product lines and [science has shown](http://uberconvince.com/2018/01/14/rule-3-trios-makes-copy-memorable-according-science/) that our brain loves patterns and three is the minimum number needed to form a [pattern](https://copyblogger.com/rule-of-three/).
 
-http://uberconvince.com/2018/01/14/rule-3-trios-makes-copy-memorable-according-science/
+Structuring your slides utilizing the rule of three will not only help your audience remember your content, but it will also simplify building the presentation.  You might be tempted to think "more information is better with four, six, eight bullet points.  No one will ever be able to follow all of that, so cut it down to the three most impactful messages.
 
-https://copyblogger.com/rule-of-three/
-
->Because four is intellectually lazy.
+Another trick if you have slightly more information is to structure in three-by-three like the image below.  
 
 ![Mind Map Outline]({static}../../images/posts/storytelling_02.png)
 
@@ -99,6 +99,3 @@ For the rest of the slide, do not to read the conntent, especially if you ues a 
 ## References
 
 Photo by <a href="https://unsplash.com/@cosmictimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cosmic Timetraveler</a> on <a href="https://unsplash.com/@cosmictimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-
-
