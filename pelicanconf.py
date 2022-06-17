@@ -18,11 +18,11 @@ ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 RELATIVE_URLS = True
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
-USE_FOLDER_AS_CATEGORY = True 
+USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = 6
 
 # https://github.com/gilsondev/pelican-clean-blog/
-THEME='theme'
+THEME = 'theme'
 COLOR_SCHEME_CSS = 'tomorrow.css'
 HEADER_COVER = 'images/home.jpg'
 
@@ -38,9 +38,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 PATH = 'content'
-ARTICLE_PATHS = ['posts',]
-PAGE_PATHS = ['pages',]
-PLUGIN_PATHS=['pelican-plugins']
+ARTICLE_PATHS = ['posts', ]
+PAGE_PATHS = ['pages', ]
+PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['render_math', 'gravatar', 'sitemap', 'seo']
 
 MENUITEMS = (
@@ -57,7 +57,7 @@ MENUITEMS = (
 SOCIAL = (
     ('twitter', 'https://twitter.com/broepke'),
     ('github', 'https://github.com/broepke'),
-    ('linkedin','https://www.linkedin.com/in/broepke/')
+    ('linkedin', 'https://www.linkedin.com/in/broepke/')
 )
 
 # https://github.com/pelican-plugins/seo
@@ -69,7 +69,8 @@ SEO_ARTICLES_LIMIT = 50
 SEO_PAGES_LIMIT = 50
 
 # static paths will be copied without parsing their contents
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'pdf', 'other']
+STATIC_PATHS = ['images', 'extra/robots.txt',
+                'extra/favicon.ico', 'pdf', 'other']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
