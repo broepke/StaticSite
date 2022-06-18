@@ -22,7 +22,7 @@ Here are tips and tricks I've gathered over 20 years of presenting to executives
 
 1. Start With an Outline
 2. Storytelling with Situation, Complication, Resolution
-3. The One Miniute Per Slide Rule
+3. The One Minute Per Slide Rule
 4. The Rule of Three
 5. Write Slide Titles as Outcomes
 6. Reading Titles Outloud
@@ -35,7 +35,7 @@ Let's get started!
 
 When starting a presentation, they often open PowerPoint, Keynote, or their tool of choice and start trying to build the deck immediately. This issue, of course, is that you're going to iterate 100 times on the slides and probably end up deleting most of what you've created. 
 
-A better way to approach this is to start with an **outline**, No different than you were taught in English 101. But don't think of this as an outline of the slides you want to create.  Think of the outline as the story you're going to tell. There are two common ways to create an outline. The first is simply using ordered lists and structuring your online by ideas or sections of your story (I'll cover the storytelling part next). If you're a more visual person, you can use a **mind map** and structure it similarily.
+A better way to approach this is to start with an **outline**, No different than you were taught in English 101. But don't think of this as an outline of the slides you want to create.  Think of the outline as **the story you're going to tell**. There are two common ways to create an outline. The first is simply using **ordered lists** and structuring your online by ideas or sections of your story (I'll cover the storytelling part next). If you're a more visual person, you can use a **mind map** and structure it similarly.
 
 Once you have your outline set, creating the supporting content is a breeze.
 
@@ -53,17 +53,19 @@ Using our outline format, here is an overly simplified example of SCR. In practi
 
 ![Mind Map Outline]({static}../../images/posts/storytelling_01.png)
 
-## The One Miniute Per Slide Rule
+## The One Minute Per Slide Rule
 
-This one is simple and effective. Instead of creating your presentation and rehearsing the timing, consider that each major content slide will **take one minute to present**. If you have a 20-minute presentation, aim for 20 slides with content. You should not include section dividers, the cover, or a closing logo slide in your count. I've found over the years that, generally speaking, some will take longer, some will be shorter, but on average, they'll take about a minute.
+This one is simple and effective. Instead of creating your presentation and rehearsing the timing, consider that each major content slide will take **one minute to present**. If you have a 20-minute presentation, aim for 20 slides with content. You should not include section dividers, the cover, or a closing logo slide in your count. I've found over the years that, generally speaking, some will take longer, some will be shorter, but on average, they'll take about a minute.
 
 Eliminate the stress from figuring out how much content you need to create.
 
 ## The Rule of Three
 
-Another great rule of thumb is the **Rule of Three**. The rule of three is simple: stick with three and only three items when building your structure, sections of your story, as in the SCR framework, or the number of bullet points on your slide. [Apple](https://www.inc.com/carmine-gallo/apple-is-obsessed-with-magical-number-3-it-will-transform-your-presentations-too.html) has implemented this all over their presentation and product lines, and [science has shown](http://uberconvince.com/2018/01/14/rule-3-trios-makes-copy-memorable-according-science/) that our brain loves patterns and three is the minimum number needed to form a [pattern](https://copyblogger.com/rule-of-three/).
+Another guiding principle is the **Rule of Three**. The rule of three is simple: **stick with three and only three items** when building your structure, sections of your story, or the number of bullet points on your slide. 
 
-Structuring your slides utilizing the rule of three will help your audience remember your content and simplify building the presentation. You might be tempted to think, "more information is better with four, six, or eight bullet points. No one will ever be able to follow all that, so cut it down to the three most impactful messages.
+[Apple](https://www.inc.com/carmine-gallo/apple-is-obsessed-with-magical-number-3-it-will-transform-your-presentations-too.html) has implemented this all over their presentation and product lines, and [science has shown](http://uberconvince.com/2018/01/14/rule-3-trios-makes-copy-memorable-according-science/) that our brain loves patterns and three is the minimum number needed to form a [pattern](https://copyblogger.com/rule-of-three/).
+
+Structuring your slides utilizing the rule of three will help your audience remember your content and simplify building the presentation. You might be tempted to think, "more information is better with four, six, or eight bullet points. No one will be able to follow all that, so cut it down to the three most impactful messages.
 
 Another trick if you have slightly more information is to structure it three-by-three like the image below. 
 
@@ -128,4 +130,4 @@ Learning how to present your Data Scient project results compellingly is one of 
 
 ## References
 
-Photo by <a href="https://unsplash.com/@cosmictimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cosmic Timetraveler</a> on <a href="https://unsplash.com/@cosmictimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Photo by <a href="https://unsplash.com/@cosmi   ctimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cosmic Timetraveler</a> on <a href="https://unsplash.com/@cosmictimetraveler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
