@@ -35,7 +35,7 @@ Let's get started!
 
 When starting a presentation, they often open PowerPoint, Keynote, or their tool of choice and start trying to build the deck immediately. This issue, of course, is that you're going to iterate 100 times on the slides and probably end up deleting most of what you've created. 
 
-A better way to approach this is to start with an **outline**, No different than you were taught in English 101. But don't think of this as an outline of the slides you want to create.  Think of the outline as **the story you're going to tell**. There are two common ways to create an outline. The first is simply using **ordered lists** and structuring your online by ideas or sections of your story (I'll cover the storytelling part next). If you're a more visual person, you can use a **mind map** and structure it similarly.
+A better way to approach this is to start with an **outline**, No different than you were taught in English 101. But don't think of this as an outline of the slides you want to create.  Think of the outline as **the story you're going to tell**. There are two common ways to create an outline. The first is simply using **ordered lists** and structuring your outline by ideas or sections of your story (I'll cover the storytelling part next). If you're a more visual person, you can use a **mind map** and structure it similarly.
 
 Once you have your outline set, creating the supporting content is a breeze.
 
