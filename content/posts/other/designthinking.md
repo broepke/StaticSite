@@ -94,6 +94,8 @@ Whenever starting a project you want to think about who your users, or stakehold
 
 The first method I like to do anytime i start a new project is to run a [**Stakeholder Mapping**](https://www.luma-institute.com/stakeholder-mapping/) exercise.  This is a great exercise to do with a your team if you can.  It helps build a shared understanding of who the most important people are.  I like to start off with a tree like structure with the most important people at the top and build from there.  Then map each player based on their level of involement in the project.
 
+After you have identified all of the key people, you can map them to a simple two-by-two matrix with **Influence** and **Interest/Availabilty** as your axis.  This based on where they land, you can determine your engagement model for them such as **Keep Satisfied**, **Activley Engage**, **Keep Informed**, and **Monitor**.  A simple model to keep your structured in your engagement.
+
 ![Stakeholder Map]({static}../../images/posts/designthinking_sm.png)
 
 Next, based on my stakeholder map I like to think about my [**Interviewing**](https://www.luma-institute.com/interviewing/) strategy.  Who will I talk to to ensure that I understand my customer's needs properly.  Interviewing is a simple process but there are a few best practices.  First ensure that you have the person's consent if you're recording the interview for later use. Next, make sure that you have a consistent set of questions so that you can compare across interviewees.  Start with simple questions and then get more specific as you go.  Finally, make sure you're a good listener, and that you're not leading the person to the answer that you want.
@@ -116,6 +118,8 @@ As you start out on a project, it's critical for you to make sure you're solving
 [**Buy a Feature**](https://www.luma-institute.com/buy-a-feature/)
 
 [**Importance/Difficulty Matrix**](https://www.luma-institute.com/importance-difficulty-matrix/)
+
+![Importance Difficulty Matrix]({static}../../images/posts/designthinking_id.png)
 
 ## Getting Thoughful Critique
 
@@ -146,4 +150,3 @@ As you start out on a project, it's critical for you to make sure you're solving
 
 Photo by <a href="https://unsplash.com/@whmii?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Will H McMahan</a> on <a href="https://unsplash.com/s/photos/postit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
