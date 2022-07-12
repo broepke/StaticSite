@@ -67,7 +67,7 @@ Notice the difference? Much more inspiring and also brings the user into the pro
 
 ## Design Thinking Methods
 
-There are many different design thinking methods that you can utilize.  There probably are hundreds or even thousands of them. Different organizations have curated "systems" of design thinking methods and selected ones for you such as [IDEO's Design Kit](https://www.designkit.org/methods), [Google Design Sprints](https://designsprintkit.withgoogle.com) or the set that I'm certified in, the [LUMA Institudes Methods](https://www.luma-institute.com/about-luma/luma-system-explore-methods/).
+There are many different design thinking methods that you can utilize.  There probably are hundreds or even thousands of them. Different organizations have curated "systems" of design thinking methods and selected ones for you such as [IDEO's Design Kit](https://www.designkit.org/methods), [Google Design Sprints](https://designsprintkit.withgoogle.com) or the set that I'm certified in, the [LUMA Institute's Methods](https://www.luma-institute.com/about-luma/luma-system-explore-methods/).
 
 
 Here are a full list of the LUMA methods from their [website](https://www.luma-institute.com/about-luma/luma-system-explore-methods/).  We'll cover several of these in this post, but in reality, every one of these can apply at some point in time to Data Science.  Each method is documented on their website if you'd like to learn more.
@@ -139,7 +139,11 @@ As you start out on a project, it's critical for you to make sure you're solving
 
 [**Concept Poster**](https://www.luma-institute.com/concept-poster/)
 
+![Concept Poster]({static}../../images/posts/designthinking_cp.png)
+
 [**Cover Story Mockup**](https://www.luma-institute.com/cover-story-mock-up/)
+
+![Cover Story Mockup]({static}../../images/posts/designthinking_csm.png)
 
 
 ## Conclusion
