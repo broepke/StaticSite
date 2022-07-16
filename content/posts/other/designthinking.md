@@ -28,7 +28,7 @@ As a Data Scientist, there are numerous ways that you can incorporate Design Thi
 3. Prioritizing Work
 4. Getting Thoughful Critique
 5. Determing the Usability of Your Solution
-6. Build a Launch Plan
+6. Build a Launch Plan, Before You Build
 
 Before jumping in, let's take a look a a few fundamentals of Design Thinking.
 
@@ -103,50 +103,85 @@ Next, based on my stakeholder map I like to think about my [**Interviewing**](ht
 
 ## Identifying the Most Important Problem to Solve
 
-As you start out on a project, it's critical for you to make sure you're solving the right problem.  We started with identifying our stakeholders and interviewing them, but how do we pull out the most important problem that 
+As you start out on a project, it's critical for you to make sure you're solving the right problem.  We started with identifying our stakeholders and interviewing them, but how do we pull out the most important problem that a great way to determine what is most critical to work on is to get all of your stakeholders together for a facilitated session and have them generate ideas in realtime.  There are a lot of different methods to us, but two that I utilize frequently are the combination of a divergent activity called **Creative Matrix** and then a convergent activity called **Visualize the Vote**.
 
-[**Creative Matrix**](https://www.luma-institute.com/creative-matrix/)
+The [**Creative Matrix**](https://www.luma-institute.com/creative-matrix/) contains rows and colums that allow you to give your participants a litle help around where ideas fit.  The rows typically represent some sort of **enabler**, such as technology, environments, locations, games, and more.  The columns typically represent **people or a problem statement**.  For people it can be roles such as sales, service, engineer or any problem statement.  Typically if you use problem statements, you might want to brainstorm with your group to come up with those problem statements before you start this exercise.
+
+Set a timer for 5-10 minutes and encourage people to fill in all the boxes of the matrix with ideas.  Even point out areas that are lacking and guide them to fill the boxes in.
 
 ![Creative Matrix]({static}../../images/posts/designthinking_cm.png)
 
+After you've generated ideas in the Creative Matrix, you can narrow these down by having participants vote on the most impactful things with a technique called [**Vizualize the Vote**](https://www.luma-institute.com/visualize-the-vote/).  Give each person a number of voting dots (stickers), 4-5 typically works well, and have them sliently review, and place them on the the board.  After you're finished you can extact the top voted ideas and further develop them.
 
-[**Vizualize the Vote**](https://www.luma-institute.com/visualize-the-vote/)
-
+As a bonus, electronic tools such as [MURAL](https://support.mural.co/en/articles/2113758-run-a-voting-session) have voting mechnisms build right in! 
 
 ## Prioritizing Work
 
-[**Buy a Feature**](https://www.luma-institute.com/buy-a-feature/)
+Often times when you have a large backlog of work, you need additional assistance in choosing the best order to work on them.  There are lots of techniques for prioritizing work, but if you want to do this collaboratively there are some fun techniques such as **Buy a Feature** and **Importance Difficulty Matrix**.
 
-[**Importance/Difficulty Matrix**](https://www.luma-institute.com/importance-difficulty-matrix/)
+[**Buy a Feature**](https://www.luma-institute.com/buy-a-feature/) is a tool that allows you to have your participants put a weighted value on various features they want to vote on.  You start by assiging a dollar value to each of the features you have.  This value should be based off of the relative size of effort or implementation for the feature.  A really massive undertaking might have a really high value, where as something that could be done in a day or so might have a smaller value.
+
+Give your participants a limited amount of money to spend.  They'll be then forced to choose how much they want to spend on each feature.  You can instruct them to split it up any way that they wish, including putting all the money onto a single feature.  
+
+One really cool trick with this technique is to make a feature that is very costly to implement is impossible to buy with the amount of money that they have.  For example it could bit $200 to buy it, but they only receive $100.  Then tell them that they can work together to pool their money as a group to fund this more expensive features.
+
+Next up is the [**Importance/Difficulty Matrix**](https://www.luma-institute.com/importance-difficulty-matrix/).  Also a great tool for working together as a group.  There are two axes that represent two distinct values.  You start by putting a single idea in the middle bottom of the board.  Then take your next idea and determine if it is more important or less than the one placed in the middle.  Continue this process until they're all laid out along the bottom as in the image below.
+
+Next, take one idea and place move it vertically up to the middle of the board.  Then repeat the process until all ideas are ranked.  One really critical tip for this exercise is that each note should only occupy one row or column on the board.  This forces the group to not place everything in one quadarant.  Every idea is relative important and difficultiy to each other.  What you end up with is four quadrants that represent **Quick Wins**, **Best Bets**, **Moonshots**, and **Low Priority** based on importance and ease of implementation.
 
 ![Importance Difficulty Matrix]({static}../../images/posts/designthinking_id.png)
 
 ## Getting Thoughful Critique
 
-[**Rose-Thorn-Bud**](https://www.luma-institute.com/rose-thorn-bud/)
+I've found in my career that getting positive feedback is easy, getting critique (not critisim) can be very difficult.  Often times, people don't want to say something that they might consider negative.  This is a bad cultural issue at companies, but I've seen it over and over again.  A fantastic way to overcome this is to utilize the technique [**Rose-Thorn-Bud**](https://www.luma-institute.com/rose-thorn-bud/) which provides a convienient way bring ideas of the following types:
 
-![Stakeholder Map]({static}../../images/posts/designthinking_rtb.png)
+* **Rose**: Positive things
+* **Thorn**: Negative things
+* **Bud**: Things that have potential
+
+With these categories, it's easy for your participants to give you feedback of all types.  Make sure after the ideas are genearated that you discuss them as a group.  You'll find that this method works wonders for providing feedback which gets you beyond the fluffy "everything is great" feedback you might typically receive.
+
+![Rose-Thorn-Bud]({static}../../images/posts/designthinking_rtb.png)
 
 ## Determing the Usability of Your Solution
 
-[**Experience Diagramming**](https://www.luma-institute.com/experience-diagramming/)
+So, you've built your latest dashboard, your churn prediction utility, or your amazing forcasting model.  How do you get feedback on its usability? We can use common techniques used in product development to evaluate our data science projects no different than any other product.  In my team, we do usability studies all the time on our data products and dashboards.
+
+The first technique I like to use is [**Experience Diagramming**](https://www.luma-institute.com/experience-diagramming/).  This method has a user walk through their journey through your tool and then give and indication as to how their experience was along the way.  Start with a horizontal line and on the top have **positive experience** and at the bottom, **negative experience**.  Then have the user write down the flow through the tool.  Each step of the process and place that step above the line or below.  This will give you a great indication of what's working and what's not in the eyes of the user.
 
 ![Experience Diagramming]({static}../../images/posts/designthinking_exp.png)
 
-[**System Usability Scale**](https://www.luma-institute.com/system-usability-scale/)
+If you want a more systematic, and repeatable usability test you can use [**System Usability Scale**](https://www.luma-institute.com/system-usability-scale/) or SUS.  SUS is a proven method for determining usability.  It is a simple 10 question survey that asks questions:
 
-## Build a Launch Plan
+1. I think that I would like to use this system frequently.
+2. I found the system unnecessarily complex.
+3. I thought the system was easy to use.
+4. I think that I would need the support of a technical person to be able to use this system.
+5. I found the various functions in this system were well integrated.
+6. I thought there was too much inconsistency in this system.
+7. I would imagine that most people would learn to use this system very quickly.
+8. I found the system very cumbersome to use.
+9. I felt very confident using the system.
+10. I needed to learn a lot of things before I could get going with this system.
 
-[**Concept Poster**](https://www.luma-institute.com/concept-poster/)
+You can read a little more about it [here](https://www.usability.gov/how-to-and-tools/methods/system-usability-scale.html).  You can even administer this with digital survey tools like Survey Monkey or [Question Pro](https://www.questionpro.com/survey-templates/system-usability-scale-survey-questions-template/). 
+
+## Build a Launch Plan, Before You Build
+
+Finally, you're ready to launch your Data Scienace project.  The good news is that you don't have to wait for all the work to be completed to start thinking about your launch.  They can be done right at the initiation of your product.
+
+The first method is to develop a [**Concept Poster**](https://www.luma-institute.com/concept-poster/).  This framework makes it simple to think about some of the practicalities of building and launching a solution.  In a concept post your fill out the problem you're trying to solve, the key stakeholders, the big idea, reasons it might fail, how to prototype and test and finally how you'll measure success. You also can include an illustration of the idea to drive it home.
 
 ![Concept Poster]({static}../../images/posts/designthinking_cp.png)
 
-[**Cover Story Mockup**](https://www.luma-institute.com/cover-story-mock-up/)
+And last but not least is the [**Cover Story Mockup**](https://www.luma-institute.com/cover-story-mock-up/).  This is similar to writing a press release for your product launch but helps you tell the story about the impact you will make from the onset of the project.  You'll find that by creating a cover story or press release, that the project team members will have a better understanding of the customer value that you want to create, since the story is centered around your customer.  Have fun with these.  Include details about the value created, and even fake customer quotes based on the type of feedback you hope to receive.
 
 ![Cover Story Mockup]({static}../../images/posts/designthinking_csm.png)
 
 
 ## Conclusion
+
+Design thinking is a human-centered approach to innovation and has the ability to bring people together, and form new ideas that you might not even thought were possible before you started.  I covered methods on how to identify and prioritize how you interact with stakeholders on your project.  Ways to generation a divergent set of ideas and then naorrow them down to the most important ones.  I covered a couple of ways to prioritze your work via the inclusion of your stakeholders.  When you're ready for feedback, the Rose-Thorn-Bud method was covered as an excellent way to solicit critique.  I presented two different methods for determininng the usability of your solution that can help you fine tune what you build.  Finally, I shared a couple of ways to think about the launch of your product before it launches.  This article is just a high-level overview of how Design Thinking can be incorporated into your Data Science work.  I encourage you to learn more and start to leverage one or two techniques!
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
