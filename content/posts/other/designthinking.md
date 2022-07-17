@@ -127,7 +127,7 @@ Often when you have a large backlog of work, you need additional assistance in c
 
 Give your participants a limited amount of money to spend. They'll then be forced to choose how much they want to spend on each feature. You can instruct them to split it up any way they wish, including putting all the money onto a single feature. 
 
-One cool trick with this technique is to make a very costly feature to implement impossible to buy with the amount of money they have. For example, it could bit $200 to buy it, but participants only receive $100. Then tell them they can work together to pool their money as a group to fund these more expensive features.
+One cool trick with this technique is to make a very costly feature to implement impossible to buy with the amount of money they have. For example, it could be $200 to buy it, but participants only receive $100. Then tell them they can work together to pool their money as a group to fund these more expensive features.
 
 Next up is the [**Importance/Difficulty Matrix**](https://www.luma-institute.com/importance-difficulty-matrix/). Also a great tool for working together as a group. Two axes represent two distinct values. You start by putting a single idea at the bottom of the board. Then take your next idea and determine if it is more important or less than the one in the middle. Continue this process until they're all laid out along the bottom, as in the image below.
 
