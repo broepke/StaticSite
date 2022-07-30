@@ -18,9 +18,16 @@ Twitter_Image: images/covers/why.jpg
 
 Explainability is one of the most important topics you can learn and apply in Machine Learning and Data Science.  Building a model that performs well is one thing, the ability to help you and others understand *why* a model produces the outcomes it does is another.
 
-Let's take an example.  Let's say you're building a machine learning model that will predict the likelyhood that a customer will purchase a product.  We might have different demgraphic information about them, we might have information about other products they consume, and we might have marketing information about them.  Simply predicting the likelyhood that a customer will purchase a product is not enough to understand why they will purchase it.  We need to understand why they will purchase it.  By understanding the key drivers of the model, we might even be able to improve sales conversion rates by focusing on those key drivers.  For example, we we know that people are more likely to convert during certain times of the month or times of the day, we can focus our sales efforts around those windows of time that are more productive.
+Let's take an example.  Let's say you're building a machine learning model that will predict the likelyhood that a customer will purchase a product.  We might have different demgraphic information about them, we might have information about other products they consume, and we might have marketing information about them.  Simply predicting the likelyhood that a customer will purchase a product is not enough to understand why they will purchase it.  We need to understand why they will purchase it.  
+
+By understanding the key drivers of the model, we might even be able to improve sales conversion rates by focusing on those key drivers.  For example, we we know that people are more likely to convert during certain times of the month or times of the day, we can focus our sales efforts around those windows of time that are more productive.
 
 Now think back to your basic statistics classes and learning about simple linear regression.  We all probably remember the equation of a line: `Y = MX + B`.  We utilize this equation along with the coeefficients to predict new values for `Y`. The same goes for many machine learning models. If we can explain how each of the features of a model affect the outcome, we can help others understand how it works.  For more on simple linear regression check out my article : [Learn Excel’s Powerful Tools for Linear Regression]({filename}regression.md)
+
+
+1. Coeeficients
+2. Feature Importance
+3. SHAP Values
 
 
 ## Conclusion
@@ -31,6 +38,7 @@ Now think back to your basic statistics classes and learning about simple linear
 ## References
 
 Photo by <a href="https://unsplash.com/@77hn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">The 77 Human Needs System</a> on <a href="https://unsplash.com/s/photos/why?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
+[Top Explainable AI (XAI) Python Frameworks in 2022](https://medium.com/@moez-62905/top-explainable-ai-xai-python-frameworks-in-2022-94ff4610b0f5) 
   
 "why"
