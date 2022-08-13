@@ -21,7 +21,7 @@ By understanding the **key drivers** of the model, we might even be able to impr
 
 Now think back to your basic statistics classes and learning about simple linear regression.  We all probably remember the equation of a line: `Y = MX + B`.  We utilize this equation along with the coeefficients to predict new values for `Y`. The same goes for many machine learning models. If we can explain how each of the features of a model affect the outcome, we can help others understand how it works.  For more on simple linear regression check out my article : [Learn Excel’s Powerful Tools for Linear Regression]({filename}regression.md)
 
-1. Coeeficients for Linear and Logistic Regression
+1. Coefficients for Linear and Logistic Regression
 2. Feature Importance
 3. SHAP Values
 
