@@ -237,7 +237,7 @@ df_imp
 9         day    0.004043  1.000000
 ```
 
-We can see that **education** is the most important feature, followed by **job** and **age**. Again, note that this is a little different than the way we looked at coefficients. For example, **age** is very interpretable with the coefficents since the larger the number the older the person is, but with **job**, we have an encoded feature that is not truly ordinal making it make less sense with coefficients but more sense with feature importance. This is something to consider with your pipeline and **encoding strategy** - how will you interpret the results?
+We can see that **job** is the most important feature, followed by **age** and **marital**. Again, note that this is a little different than the way we looked at coefficients. For example, **age** is very interpretable with the coefficents since the larger the number the older the person is, but with **job**, we have an encoded feature that is not truly ordinal making it make less sense with coefficients but more sense with feature importance. This is something to consider with your pipeline and **encoding strategy** - how will you interpret the results?
 
 ## SHAP Values
 
