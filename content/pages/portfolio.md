@@ -3,9 +3,9 @@ Date: 2021-11-20
 Modified: 2021-11-20
 Slug: portfolio
 Authors: Brian Roepke
-Header_Cover: images/covers/cranes_night.jpg
-Og_Image: images/covers/cranes_night.jpg
-Twitter_Image: images/covers/cranes_night.jpg
+Header_Cover: images/covers/prototype.jpg
+Og_Image: images/covers/prototype.jpg
+Twitter_Image: images/covers/prototype.jpg
 
 *The following are a few projects I've worked on, mostly in context of my recent undergraduate degree in Data Analytics.  Other examples available upon request.*
 ## Tesla User Forums "Voice of Customer" Analysis
@@ -63,3 +63,8 @@ As a clothing retailer with an e-Commerce presence, it's important for us to und
 1. **Department Prediction**: Finally, we'll use a multi-label classification model to predict the departments a product belongs to based on the description that's being used.  This might identify cross-selling opportunities or cross-listing opportunities for products in new categories.
 
 [View the Full Analysis Utilizing Python Here]({static}../other/clothing.html)
+
+## References
+
+Photo by <a href="https://unsplash.com/@halacious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hal Gatewood</a> on <a href="https://unsplash.com/s/photos/portfolio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
