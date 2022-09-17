@@ -1,7 +1,7 @@
 Title: 1 Trick That Changed the Way I Write Queries Forever
 Date: 2021-10-24
 Modified: 2021-10-24
-Tags: datascience, sql
+Tags: datascience, sql, databases
 Slug: cte
 Authors: Brian Roepke
 Summary: Leverage Common Table Expressions to Simplify the Writing and Troubleshooting Complex Queries
