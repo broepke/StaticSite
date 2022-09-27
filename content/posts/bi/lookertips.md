@@ -14,9 +14,6 @@ Twitter_Image: images/covers/magnify.jpg
 
 # So You Develop Dashboards in Looker, Now What?
 
-
-
-
 1. Create a Quick Explorer from a Join in SQL
 2. Manually Setting Targets in Single Value Tiles
 3. Table Calculations

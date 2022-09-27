@@ -21,6 +21,7 @@ Often when you start learning about classification problems in Machine Learning,
 Before you start, If you want a deep dive on Binary Classification, check out my article: [Everything You Need to Know to Build an Amazing Binary Classifier]({filename}classification.md)
 
 Now, let us dig into multi-class strategies.
+
 ## Multi-Class Strategies
 
 Strategies are how you approach instructing the classifier to handle more than two classes which may affect performance in terms of **generalization** or compute resources. Generalization refers to how well the classifier works on unseen data in the future; this is the opposite of *overfitting*. Check out the Scikit-Learn [documentation](https://scikit-learn.org/stable/modules/multiclass.html#ovr-classification) for more information.
