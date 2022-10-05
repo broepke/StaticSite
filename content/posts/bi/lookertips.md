@@ -23,6 +23,41 @@ Twitter_Image: images/covers/magnify.jpg
 7. Save as Look for Easy Sharing
 
 
+# What is Looker? 
+
+Looker is a Business Intelligence (BI) tool from Google.  It's entirely web based and inherently multi-platform
+
+## Create a Quick Explorer from a Join in SQL
+
+
+
+## Manually Setting Targets in Single Value Tiles
+
+
+
+## Table Calculations
+
+
+
+## CASE statements to clean up Dimensions
+
+
+
+## Grouping Dimensions
+
+
+
+## Organize with Looker Boards
+
+
+
+## Save as Look for Easy Sharing
+
+
+## Conclusion
+
+
+
 
 ## References
 
