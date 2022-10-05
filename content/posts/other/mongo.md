@@ -223,6 +223,8 @@ As always, the code used in this article is available on [GitHub](https://github
 
 That's it! We created our Free Tier MongoDB Atlas cluster and configured it for access to our environment. We then showed you how to authenticate to your server and query the database on your server. Finally, we showed you how to save a collection to a Pandas DataFrame. With these basic steps, you can utilize the power of Pandas and Python to analyze data and even build any number of machine learning models. While we just scratched the surface of what's possible with MongoDB, with these simple steps, you can quickly start your data science projects with MongoDB Atlas.
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@vincegx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vince Gx</a> on <a href="https://unsplash.com/s/photos/mongolia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
