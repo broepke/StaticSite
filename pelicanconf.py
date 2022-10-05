@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Brian Roepke'
 SITENAME = 'Data Knows All'
-SITESUBTITLE = 'Machine Learning, Natural Language Processing, SQL, and More'
-TAGLINE = 'Machine Learning, Natural Language Processing, SQL, and More'
+SITESUBTITLE = 'Machine Learning, Natural Language Processing, SQL, and More by Brian Roepke'
+TAGLINE = 'Machine Learning, Natural Language Processing, SQL, and More by Brian Roepke'
 SITEURL = 'https://www.dataknowsall.com'
 
 # https://analytics.google.com/analytics/web
