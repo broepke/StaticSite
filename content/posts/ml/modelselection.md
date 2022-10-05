@@ -261,6 +261,8 @@ All of the code for this article is available on [GitHub](https://github.com/bro
 
 **Model Selection** is a critical step in your machine learning model building. Choosing the right model can greatly impact the performance of your machine learning model, and choosing the wrong model, can leave you with unacceptable results. We walked through the process of **preparing our data** by utilizing a **Pipeline** for consistency. We then built a list of models that we wanted to **evaluate their performance**. We utilized **cross-validation** to test each model on various data slices and finally plotted out the results. Utilizing this process is a quick and powerful way to select the right model for your application!
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@gcalebjones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Caleb Jones</a> on <a href="https://unsplash.com/@gcalebjones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

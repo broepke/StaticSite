@@ -372,6 +372,8 @@ For the full code for this article, please visit [GitHub](https://github.com/bro
 
 Feature Engineering is arguably the most critical step in Machine Learning. Feature Engineering is creating new columns in your data by using domain and business knowledge to construct new information from the data. We covered multiple techniques for dealing with categorical data, multiple methods for working with date-time data, and how to aggregate multiple observations into new representations that can be merged back into the original data. While this scratches the topic's surface, I hope it gets you started on your journey! 
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Photo by <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vishnu Mohanan</a> on <a href="https://unsplash.com/@vishnumaiea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
