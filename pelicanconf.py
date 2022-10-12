@@ -44,9 +44,9 @@ PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['render_math', 'gravatar', 'sitemap', 'seo']
 
 MENUITEMS = (
+    ('About', '/pages/about.html'),
     ('Résumé', '/pdf/cv.pdf'),
     ('Portfolio', '/pages/portfolio.html'),
-    ('About', '/pages/about.html'),
     ('Subscribe', 'https://campaign.dataknowsall.com/subscribe'),
     # Similar to the above, uncomment these to have a custom static homepage
     # ('Blog', '/blog_index.html'),
