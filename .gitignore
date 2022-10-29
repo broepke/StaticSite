@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+/pelican-plugins/*
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -130,4 +132,4 @@ dmypy.json
 
 .idea/
 output/
-pelican-plugins/
+
