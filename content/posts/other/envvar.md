@@ -1,6 +1,6 @@
 Title: Get in This Simple Habit Now! Store Sensitive Data Like This.
-Date: 2022-11-11
-Modified: 2022-11-11
+Date: 2022-11-06
+Modified: 2022-11-06
 Status: published
 Tags: analytics, datascience, databases, sql
 Slug: envvar

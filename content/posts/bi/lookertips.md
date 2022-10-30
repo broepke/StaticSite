@@ -12,9 +12,15 @@ Og_Image: images/covers/magnify.jpg
 Twitter_Image: images/covers/magnify.jpg
 
 
-# So You Develop in Looker, How About Some Power User Tips?
+# What is Looker? 
 
-Over the past couple of years of developing in [Looker](https://cloud.google.com/looker), I've come across some tips and tricks that might benefit everyone. Some of these are rather simple, but you haven't yet encountered them. Others are true power-user tricks that will take your looker usage to the next level. I'll start with the basic tips and finish with a few of my absolute favorites.
+Looker is a Business Intelligence (BI) tool from Google. It's entirely web-based and inherently multi-platform. I've had the pleasure of working with PowerBI, Tableau, SAS, and Others. However, Looker remains my favorite BI platform due to its beautiful presentation layer, powerful LookML modeling language, and its integration with GitHub. 
+
+Looker has a wonderful training environment that you can use to learn the basics of the platform. I highly recommend you start there. I'll use the training environment and the sample data provided in this post. Check out [Looker Connect](https://connect.looker.com/).
+
+## How About Some Power User Tips?
+
+Over the past couple of years of developing in [Looker](https://cloud.google.com/looker), I've come across some tips and tricks that might benefit everyone. Some of these are rather simple, but maybe you haven't yet encountered them. Others are true power-user tricks that will take your looker usage to the next level. I'll start with the basic tips and finish with a few of my absolute favorites.
 
 1. Table Calculations
 2. Save as Look for Easy Sharing
@@ -22,13 +28,6 @@ Over the past couple of years of developing in [Looker](https://cloud.google.com
 4. CASE statements to clean up Dimensions
 5. Manually Setting Targets in Single Value Tiles
 6. Create a Quick Explorer from SQL Runner
-
-
-## What is Looker? 
-
-Looker is a Business Intelligence (BI) tool from Google. It's entirely web-based and inherently multi-platform. I've had the pleasure of working with PowerBI, Tableau, SAS, and Others. However, Looker remains my favorite BI platform due to its beautiful presentation layer, powerful LookML modeling language, and its integration with GitHub. 
-
-Looker has a wonderful training environment that you can use to learn the basics of the platform. I highly recommend you start there. I'll use the training environment and the sample data provided in this post. Check out [Looker Connect](https://connect.looker.com/).
 
 
 ## Table Calculations
