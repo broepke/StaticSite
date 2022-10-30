@@ -5,8 +5,8 @@ Status: draft
 Tags: bi, analytics, datascience, visualization, communication
 Slug: metricdesign
 Authors: Brian Roepke
-Summary: xxxx
-Description: xxxx
+Summary: Metrics design foo
+Description: Metrics design bar
 Header_Cover: images/covers/measure.jpg
 Og_Image: images/covers/measure.jpg
 Twitter_Image: images/covers/measure.jpg

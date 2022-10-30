@@ -1,20 +1,20 @@
-Title: 6 Looker Tips That Will Power Up Your Analysis
+Title: 6 Looker Tips That Will Power Up Your Next Data Analysis Job
 Date: 2022-10-30
 Modified: 2022-10-30
 Status: published
 Tags: bi, analytics, datascience, visualization, communication
 Slug: lookertips
 Authors: Brian Roepke
-Summary: xxxx
-Description: xxxx
+Summary: Explore six tips from basic to advanced that will help you accomplish more with Looker on your next project.
+Description: From dashboard design to data modeling, explore six tips from basic to advanced that will help you accomplish more with Looker on your next analytics project.
 Header_Cover: images/covers/magnify.jpg
 Og_Image: images/covers/magnify.jpg
 Twitter_Image: images/covers/magnify.jpg
 
 
-# So You Develop in Looker, Now What?
+# So You Develop in Looker, How About Some Power User Tips?
 
-Over the past couple of years of developing in Looker, I've come across some tips and tricks that might benefit everyone. Some of these are rather simple, but you haven't yet encountered them. Others are true power-user tricks that will take your looker usage to the next level. I'll start with the basic tips and finish with a few of my absolute favorites.
+Over the past couple of years of developing in [Looker](https://cloud.google.com/looker), I've come across some tips and tricks that might benefit everyone. Some of these are rather simple, but you haven't yet encountered them. Others are true power-user tricks that will take your looker usage to the next level. I'll start with the basic tips and finish with a few of my absolute favorites.
 
 1. Table Calculations
 2. Save as Look for Easy Sharing
@@ -24,7 +24,7 @@ Over the past couple of years of developing in Looker, I've come across some tip
 6. Create a Quick Explorer from SQL Runner
 
 
-# What is Looker? 
+## What is Looker? 
 
 Looker is a Business Intelligence (BI) tool from Google. It's entirely web-based and inherently multi-platform. I've had the pleasure of working with PowerBI, Tableau, SAS, and Others. However, Looker remains my favorite BI platform due to its beautiful presentation layer, powerful LookML modeling language, and its integration with GitHub. 
 
@@ -131,9 +131,9 @@ To make this work, be sure to **hide** the other columns from the visualization.
 
 Last tip of the day and by far the one that was a game changer for me. The ability to create an **Explorer** from a Query in the **SQL Runner**. What makes this so powerful is that you can quickly perform analysis across multiple tables without all of the LookML configurations. 
 
-How do I use this? Let's say you have a few massive tables you use all the time in your Data Warehouse. Then you get a set of data from another source and want to join it all together. In my case, I might get some data in the form of a CSV with a list of customers pulled from a different source, and I will upload that data into a temporary table in the Warehouse. Once it's in the Warehouse, I can perform a join with the other tables I need to finish the task. However, because this is temporary, I want to set up only some of the infrastructure to permanently make it appear in Looker. The SQL Runner is the perfect place to make this all happen. 
+How do I use this? Let's say you have a few massive tables you use all the time in your Data Warehouse. Then you get a set of data from another source and want to join it all together. In my case, I might get some data in the form of a CSV with a list of customers pulled from a different source, and I will upload that data into a temporary table in the Warehouse. Once it's in the Warehouse, I can perform a join with the other tables I need to finish the task. However, because this is temporary, I want to set up only some of the infrastructure to permanently make it appear in Looker. The **SQL Runner** is the perfect place to make this all happen. 
 
-Head over to SQL runner and build your query, something simple like the one below, or it could even be a massive query built up with Common Table Expressions (CTEs). 
+Head over to **SQL Runner** and build your query, something simple like the one below, or it could even be a massive query built up with [Common Table Expressions]({filename}../other/cte.md) (CTEs). 
 
 ```sql
 SELECT * 
@@ -151,6 +151,7 @@ Once your query is built, click the **Explore** option. You are left with a coup
 
 There you have it. Six quick looker tips that will help you improve and speed up your analysis. Looker is an incredibly powerful BI tool; these tips will help you get the most out of it. I started with three basic tips Table Calculating, saving Explorers as Looks, and Grouping dimensions. Next, I shared a few more advanced tips. I was first starting by using CASE statements to clean up data. Then I showed you how to set targets in Single Value Tiles manually. Finally, I showed you how to create an Explorer from a query in the SQL Runner. Enjoy and happy building! 
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
 
