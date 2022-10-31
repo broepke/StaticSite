@@ -40,7 +40,7 @@ AUTHOR_FEED_RSS = None
 PATH = 'content'
 ARTICLE_PATHS = ['posts', ]
 PAGE_PATHS = ['pages', ]
-PLUGIN_PATHS = ['pelican-plugins']
+PLUGIN_PATHS = ['pelican-plugins', '/Users/brianroepke/Projects/pelican-plugins']
 PLUGINS = ['render_math', 'gravatar', 'sitemap', 'seo']
 
 MENUITEMS = (
