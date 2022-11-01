@@ -77,15 +77,15 @@ import os
 Then we use the `os.environ` command to get the value of our environment variable and store them in memory.
 
 ```python
-user = os.environ.get("USER")
-pw = os.environ.get("PASS")
-host = os.environ.get("HOST")
+USER = os.environ.get("USER")
+PW = os.environ.get("PASS")
+HOST = os.environ.get("HOST")
 ```
 
 Like any other variable, you can pass them into functions, connection strings, or whatever you'd like. Here's an example of how you might use them in a connection string.
 
 ```python
-uri = f"mongodb+srv://{username}:{password}@{host}"
+uri = f"mongodb+srv://{USER}:{PW}@{HOST}"
 client = MongoClient(uri)
 ```
 
