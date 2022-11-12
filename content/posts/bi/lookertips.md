@@ -1,6 +1,6 @@
 Title: 6 Looker Tips That Will Power Up Your Next Data Analysis Job
 Date: 2022-10-30
-Modified: 2022-10-30
+Modified: 2022-11-12
 Status: published
 Tags: bi, analytics, datascience, visualization, communication
 Slug: lookertips
@@ -124,6 +124,13 @@ Notice how the **Target** Table Calculation shows the actual value for the first
 To make this work, be sure to **hide** the other columns from the visualization. Do this for each column that isn't the Target column.
 
 ![Hide from Visual]({static}../../images/posts/lookertips_target_03.png)
+
+
+**Update**
+
+I learned a new way to set an even easier target when talking with a colleague this week. Create a table calculation just like before but instead of the `if` statement, you enter the numeric value of your target directly! Then, make sure you unhide both the value and the target columns. That's it!
+
+![Hide from Visual]({static}../../images/posts/lookertips_target_04.png)
 
 
 ## Create a Quick Explorer from SQL Runner
