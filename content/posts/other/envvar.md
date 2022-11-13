@@ -1,6 +1,6 @@
 Title: Get in This Simple Habit Now! Store Sensitive Data Like This.
-Date: 2022-11-14
-Modified: 2022-11-14
+Date: 2022-11-15
+Modified: 2022-11-15
 Status: published
 Tags: analytics, datascience, databases, sql
 Slug: envvar
@@ -94,7 +94,7 @@ Check out my [article]({filename}mongo.md) on pulling data from MongoDB with Pyt
 
 ## Conclusion
 
-Knowing how to properly store and retrieve sensitive data is a critical task for any data scientist and analyst. It's a really simple habit to get into that will ensure you're not exposing sensitive information to the world or possibly looking silly in your first professional role! We started by adding our environment variables to the **.zshrc** file. Then we used the `os` library to retrieve them in Python. Now you're ready to go!
+Knowing how to store and retrieve sensitive data properly is critical for any data scientist and analyst. It's a really simple habit to get into that will ensure you're not exposing sensitive information to the world or possibly looking silly in your first professional role! We started by adding our environment variables to the **.zshrc** file. Then we used the `os` library to retrieve them in Python. Now you're ready to go!
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
