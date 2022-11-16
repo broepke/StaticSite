@@ -1,4 +1,4 @@
-Title: Get in This Simple Habit Now! Store Sensitive Data Like This.
+Title: A Quick Guide to on How to Safely Store and Retrieve Sensitive Data
 Date: 2022-11-15
 Modified: 2022-11-15
 Status: published
@@ -13,22 +13,25 @@ Twitter_Image: images/covers/safe.jpg
 
 # Working with Environment Variables in Python
 
+**Note:** *This article advises a safe way to store and retrieve sensitive data from Environment Variables when developing locally. When working in corporate environments, follow recommended best practices from your company.*
+
 If you've ever worked with any API (such as Twitter) or tried to connect to any remote data source, you've probably come across the need to pass in sensitive parameters such as **API Keys**, **User Names**, and **Passwords**. Do you use GitHub to showcase your work? If you do, and you've entered these values as plain text in your notebooks or code, surely you've gotten the email warning that your sensitive information is public! 
 
 ```python
-# Note that this is not a real key! :) 
 twitter_api_key = 'frBtFyG7JefJcBRHY7A6SnTlyOuT2iPAUg4567ndbhKpj9vERw'
 ```
 
 The good news is that you can get into a simple habit that will keep your keys, secrets, and sensitive information private only to you. We'll leverage **Environment Variables** and a simple Python library called `os` that will allow us to retrieve these values from our local machine.
 
-**NOTE:** Please do this! Never store your API Keys, User Names, or Passwords in plain text in your code. It's a bad habit that will surely get you in trouble in a professional environment!
+## What are Environment Variables?
+
+**Environment Variables** are stored in your user profile locally on your machine. They can be ready dynamically in python when executing your code and keep sensitive data out of human-readable code.
 
 ## Adding Environment Variables
 
 Let's get started by adding our environment variables. The **.zshrc** is a configuration file that contains the commands that run the zsh shell, just like the **.bashrc** file that contains commands for the bash shell. You can run the following command to see your **.zshrc** file. Note that it's a hidden file, so you must add the `-a` parameter to the `ls` command.
 
-```shell
+```bash
 ls -a
 ```
 
@@ -36,13 +39,35 @@ ls -a
 
 Now we're going to get into a little **VIM**. VIM is an open-source screen-based text editor that's built-in MacOS. VIM can be *a bit* complicated to get used to if you've never been exposed to it, but it's quite powerful. If you're unfamiliar with VIM, I recommend you check out this [VIM Tutorial](https://www.openvim.com/). I'll run through the exact basic command you'll need to add your environment variables to the **.zshrc** file. Let's start by opening our **.zshrc** file in VIM.
 
-```shell
+```bash
 vim .zshrc
+```
+
+Your **.zshrc** file will open with various settings depending on what other solutions have been written to it. It might look something like this where I have Anaconda installed already.
+
+```bash
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/brianroepke/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/brianroepke/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/brianroepke/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/brianroepke/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 ```
 
 Next, we can navigate around. There are two modes in VIM. The editor will open in **normal** mode, where you can navigate around the file. Your trackpad/mouse should be fine, or you can use arrow keys. Scroll to the bottom of your file and press `i` to enter **insert** mode. Now you can add your environment variables. I'll add a couple of examples below.
 
-```shell
+```bash
 export USER="test_user"
 export PW="some_very_hard_to_crack_password"
 export HOST="foo.bar.net"
@@ -54,13 +79,13 @@ When you add to the **.zshrc** file or make changes, you need to reload the file
 
 **Note:** I sometimes find that even after I do this, I need to reboot my computer to get python to be able to read them with the `os.environ` command.
 
-```shell
+```bash
 source ~/.zshrc 
 ```
 
 Check your new **environment variables** with the following command:
 
-```shell
+```bash
 export
 ```
 
