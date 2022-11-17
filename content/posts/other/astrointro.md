@@ -61,6 +61,8 @@ Run the command `astro dev init`, creating a new project with a few files and fo
 
  You will also find a **requirements.txt** file in the folder that contains all the python packages you'll need to run your DAGs. You can add additional packages to this file as needed. As we get here, we'll not have any additional dependencies; the only one present will be `apache-airflow`.
 
+ ![Project Structure]({static}../../images/posts/astrointro_00.png)
+
 ## The Anatomy of a DAG
 
 DAGs placed in the `/dags` directory will automatically appear in the Airflow UI. It's important that the `.py` file that contains the logic for the DAG has a DAG context manager definition; you can see the one below in the line `with DAG('example_dag'`. Newer versions of Airflow use decorators (`@dag(`) to accomplish the same thing.
