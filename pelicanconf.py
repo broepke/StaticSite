@@ -48,6 +48,7 @@ MENUITEMS = (
     ('Résumé', '/pdf/cv.pdf'),
     ('Portfolio', '/pages/portfolio.html'),
     ('Subscribe', 'https://campaign.dataknowsall.com/subscribe'),
+    ('Humor', '/pages/humor.html'),
     # Similar to the above, uncomment these to have a custom static homepage
     # ('Blog', '/blog_index.html'),
     # ('Blog Home', '/index.html'),
