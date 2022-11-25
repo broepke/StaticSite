@@ -114,7 +114,7 @@ uri = f"mongodb+srv://{USER}:{PW}@{HOST}"
 client = MongoClient(uri)
 ```
 
-Check out my [article]({filename}mongo.md) on pulling data from MongoDB with Python for more details on how to use this connection string.
+Check out my [article]({filename}../de/mongo.md) on pulling data from MongoDB with Python for more details on how to use this connection string.
 
 
 ## Conclusion
