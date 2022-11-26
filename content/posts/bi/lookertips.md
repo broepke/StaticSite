@@ -139,7 +139,7 @@ Last tip of the day and by far the one that was a game changer for me. The abili
 
 How do I use this? Let's say you have a few massive tables you use all the time in your Data Warehouse. Then you get a set of data from another source and want to join it all together. In my case, I might get some data in the form of a CSV with a list of customers pulled from a different source, and I will upload that data into a temporary table in the Warehouse. Once it's in the Warehouse, I can perform a join with the other tables I need to finish the task. However, because this is temporary, I want to set up only some of the infrastructure to permanently make it appear in Looker. The **SQL Runner** is the perfect place to make this all happen. 
 
-Head over to **SQL Runner** and build your query, something simple like the one below, or it could even be a massive query built up with [Common Table Expressions]({filename}../other/cte.md) (CTEs). 
+Head over to **SQL Runner** and build your query, something simple like the one below, or it could even be a massive query built up with [Common Table Expressions]({filename}cte.md) (CTEs). 
 
 ```sql
 SELECT * 
