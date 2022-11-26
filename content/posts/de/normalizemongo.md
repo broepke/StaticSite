@@ -207,6 +207,8 @@ Notice that we're using the fully qualified path (`fivetran_database.mongo_fxdmz
 
 MongoDB is a powerful back-end database that powers many applications. As a data scientist or analyst, you will come across MongoDB and need to know how to transform it to work in a way that works for you. This article covered syncing the data with Fivetran, a powerful connector framework that automatically syncs and ingests data. We then covered how JSON data is stored in Snowflake and how to extract the data into their normalized queries. Finally, we wrapped those queries in views to create a separate, normalized view of your MongoDB data. Happy querying!
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Warehouse Photo by <a href="https://unsplash.com/es/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/s/photos/warehouse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
