@@ -1,4 +1,4 @@
-Title: Getting Started with Astronomer Airflow - The Data Engineering Workhorse
+Title: Getting Started with Astronomer Airflow: The Data Engineering Workhorse
 Date: 2022-11-29
 Modified: 2022-11-29
 Status: published
