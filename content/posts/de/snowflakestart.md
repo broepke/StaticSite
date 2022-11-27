@@ -14,52 +14,62 @@ Twitter_Image: images/covers/snowflake.jpg
 
 # What is Snowflake?
 
-Snowflake is a cloud-based data warehouse that is designed to be easy to use and fast. It is a fully managed service that is easy to get started with. Snowflake has gained temendous populariy due to its cloude native approach, speed, and ease of use.  Some of the world's largest companies use snowflake but it can also be used by any sized organization.
+**Snowflake** is a cloud-based data warehouse designed to be easy to use and fast, and it is a **fully managed** which means there is no software to install or maintain. Snowflake has gained tremendous popularity due to its **cloud-native** approach, **speed**, and **ease of use**. Some of the world's largest companies use Snowflake, but any sized organization can also use it.
 
-Some of the features of Snowflake are:
+My favorite features of Snowflake are:
 
-* **Separation of storage and compute**, which allows users to scale both resources dynamically and independently of each other.
+* **Separation of storage and compute** allows users to scale both resources dynamically and independently of each other.
 * **Flexible pricing** model that allows users to pay for only the resources they use.
-* Support for **multiple public cloud providers** like Amazon Web Services (AWS) or Microsoft Azure  and Google Cloud Platform (GCP) which lets you run snowflake in the same region as your other cloud services saving you on networking costs.
-* The ability to **Time Travel** which allows you access to historical data where you can perform operations such as **undrop** a table that was accidentally deleted or even **undo a query** that updated data incorrectly.
+* Support for **multiple public cloud providers** like Amazon Web Services (AWS) or Microsoft Azure and Google Cloud Platform (GCP), which lets you run Snowflake in the same region as your other cloud services, saving you on networking costs.
+* The ability to **Time Travel** allows you access to historical data where you can perform operations such as **undrop** a table that you accidentally deleted or even **undo a query** that updated data incorrectly.
+* A unique **Data Sharing** feature allows you to share data with other users or organizations.
+* A **Marketplace** full of data from third-party providers that you can use to enrich your warehouse.
 
-In this post, I will show you how to get started with Snowflake and how to perfor Extract,  Load, and Transform (ELT) workflows.
+In this post, I will show you how to get started with Snowflake and how to perform **Extract**, **Load**, and **Transform** (ELT) workflows.
 
-## ELT versus ETL
+## What is ELT?
 
-Traditionally, the way data was loaded into a Data Warehouse was through a process called **Extract**, **Transform**, and **Load** or ETL.  In the ETL process, you would extract data from a source system and transfrom it with some sort of compute like Apache Spark, and *then* load it into the warehouse in its final format.  However, with the rise of modern Data Warehouses like Snowflake, we invert the second and third parts of the process to perform **Extract**, **Load**, and **Transform**.
+Traditionally, you loaded data into a Data Warehouse through a process called **Extract**, **Transform**, and **Load** or ETL. In the ETL process, you would extract data from a source system, transform it with external computing such as Apache Spark, and *then* load it into the warehouse in its final format. 
 
-**Stages** are used for both ELT and ETL, but with ELT, the staging area is in a database along side your normal tables, views, and more.  Take a look at the image below to see them directly along side each other.
+With the rise of modern Data Warehouses like Snowflake, we invert the second and third parts of the process to perform **Extract**, **Load**, and **Transform**, known as ELT. In ELT, we extract data from a source system, load it into the warehouse, and then transform it. This process allows us to perform transformations in the warehouse, which can also be much faster than doing it in a separate computing engine. 
+
+The load process happens in what is referred to as **Stages**. In Snowflake, the stage is in your database alongside the tables, views, etc. Please look at the image below to see them directly alongside each other.
 
 ![Snowflake Stages]({static}../../images/posts/snowflake_stages.png)
 
 ## Create a Snowflake Trial Account
 
-To get, head over to their site and createa a [Snowflake 30-Day Trial](https://signup.snowflake.com/).   After registering you will need to choose a few basic things such as the the cloud provider of your choice as well as the region to run it in.  No credit card information is needed unless you choose to upgrade to a paid account.
+Head to the Snowflake and create a [30-Day Trial](https://signup.snowflake.com/). After registering, you will need to choose a few basic things, such as the cloud provider of your choice and the region to run it in. No credit card information is needed unless you upgrade to a paid account.
 
 ![Snowflake Trial]({static}../../images/posts/snowflake_trial.png)
 
 ## Create a Warehouse
 
-Next we need to create a **Warehouse**.  A warehouse in Snowflake nomenclature is not a place to store data, but rather the **compute resources**.  Snowflake allows you to create multiple warehouses, giving the ability to both track different types of jobs, as well as to adjust the scale up and down for different types of jobs.  For example, if you want to run a large ETL job, you can create a warehouse with a large number of cores and then scale it down when the job is complete.
+Next, we need to create a **Warehouse**. A warehouse in Snowflake terminology is not a place to store data, but rather the **compute resources**. Snowflake allows you to create multiple warehouses, allowing you to track different types of jobs and adjust the scale up and down for different types of jobs. For example, if you want to run a large ETL job, you can create a warehouse with many cores and then scale it down when the job is complete.
 
 ![Snowflake Create a Warehouse]({static}../../images/posts/snowflake_warehouse_1.png)
 
-Note that in the drop-down for the size, it allows you to go from **X-Small** which costs 1 credit per hour, up to the massive **6X-Large** which is a whopping 512 credits an hour!  It's important to note that Snowflake supports **auto-suspend** and **auto-resume**.  The warehouses will shut themselves down automatically when not in use to avoid running up a bill when you're not doing work.  
+Note that in the drop-down for the size, it allows you to go from **X-Small**, which costs one credit per hour, up to the massive **6X-Large**, which is a whopping 512 credits an hour! It's important to note that Snowflake supports **auto-suspend** and **auto-resume**. The warehouses will shut themselves down automatically when not used to avoid running up a bill when you're not doing work. 
 
 ![Snowflake Create a Warehouse]({static}../../images/posts/snowflake_warehouse_2.png)
 
 
 ## Putting it Into Practice
 
+Go into the **Worksheets** section of the user interface and create a new woksheet. This is where we will write our SQL queries.  Snowflake saves your worksheets so you can come back to them at a later time.  They're a great way to organize and track your work.  
+
+Run the following queries.  Note that each of these have a semi-colon at the end of the line.  This is required in Snowflake to separate each query.  If you don't put a semi-colon, Snowflake will execute the rest of the code below until it runs into the end of file or another semi-colon.
+
+We're going to create a database, and set the warehouse to the one we created earlier.  Next will tell Snowflake to use the database that was just created and then use the **public** schema, which was created by default.
+
 ```sql
 create database weather;
-use role sysadmin;
 use warehouse elt;
 use database weather;
 use schema public;
 ```
 
+Once we have a database, we can create a table.  We're going to create a single table with one column called `v` that is set to be a [variant](https://docs.snowflake.com/en/sql-reference/data-types-semistructured.html#characteristics-of-a-variant) type.  This is a special type in Snowflake that allows us to store any type of data.  We're going to use this to store JSON data.
 
 ```sql
 -- Note the variant type for JSON data.  V is the column name
@@ -70,13 +80,15 @@ create table json_weather_data (v variant);
 
 Now we can create our **stage** and set the source for the loading.  A simple as this two lines of code to load your data into Snowflake.
 
+Snowflake supports many different ways of [loading data](https://docs.snowflake.com/en/user-guide-data-load.html).  One of the coolest and easiest ways is to pull in data directly from an S3 bucket.  S3 is AWS's [Simple Storage Service](https://aws.amazon.com/s3/).  It's a great way to store data in the cloud and very common in industry workflows.
+
 ```sql
 -- Load the data from S3
 create stage nyc_weather
 url = 's3://snowflake-workshop-lab/zero-weather-nyc';
 ```
 
-Next we can use the `list` command with the `@` symbol to list the files in the stage.  This is a great way to see what files are in the stage and to make sure that you are loading the correct files.
+Next we can use the `list` command with the `@` symbol to list the files in the stage.  Below we can see the list of files stored in the stage. each of them is a JSON file with weather data in a compressed format (`gz`).
 
 ```sql
 -- See what's in the stage
@@ -84,6 +96,10 @@ list @nyc_weather;
 ```
 
 ![JSON Files Loaded Into Stage]({static}../../images/posts/snowflake_files_staged.png)
+
+Now we need to move the data from the stage into the table.  We can do this with the **copy into** command.  We can also use the `file_format` option to specify the format of the data which will do and tell the process to strip the outer array.  Many JSON formats will start with `[` and end with `]` and in our use case we won't need those.  You can also create a custom file format that support just about any file format you will come across.
+
+We'll also run a `select` statement to see the data in the table.
 
 ```sql
 copy into json_weather_data
@@ -95,7 +111,9 @@ select * from json_weather_data limit 10;
 
 ![Raw JSON]({static}../../images/posts/snowflake_json.png)
 
-```text
+If we inspect a single entry from our `v` column, the JSON looks like the below snippet.  While this is a great start, it certainly doesn't help us with data analysis.  We need to **Transform** this data now into a tabular format.
+
+```json
 {
   "coco": 7,
   "country": "US",
@@ -125,6 +143,12 @@ select * from json_weather_data limit 10;
 
 ### Transforming Data
 
+This step next is how we're going to transform our data directly in Snowflake.  This sample JSON data is fairly simple but will illustrate the point very well.  Snowflake support the ability to query JSON data directly in the database specifying key names in your query.
+
+In order to make this data more accessible, and always in a tablular format, we'll create a new **View** of this data which will be based off of the raw JSON data in our Table.  That way, any time the data is updated in the Table, the View will reflect the changes.
+
+Note the syntax of the query.  `column:key_name::data_type`.  This pattern is repeated for each value we want to exract.  We should also alias each of the columns with the `as` keyword to make them more readable.  
+
 ```sql
 -- create a view that will put structure onto the semi-structured data
 create or replace view json_weather_data_view as
@@ -151,6 +175,8 @@ where
     station_id = '72502';
 ```
 
+Now a `select` statement to query our new view will return a tabular format of the data.
+
 ```sql
 select * from json_weather_data_view
 where date_trunc('month',observation_time) = '2018-01-01'
@@ -159,12 +185,11 @@ limit 10;
 
 ![Raw JSON]({static}../../images/posts/snowflake_final.png)
 
-
-To see more on this workflow using data from MongoDB, check out my article [How to Normalize MongoDB Data in Snowflake for Data Science Workflows]({filename}normalizemongo.md) and to run through the whole Snowflake quick start tutorial visit [Snowflake Quickstarts](https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#0)
+That's it! We've now loaded, transformed, and queried our data in Snowflake.  We can now use this data for analysis or visualization.  To see more on this workflow using data from MongoDB, check out my article [How to Normalize MongoDB Data in Snowflake for Data Science Workflows]({filename}normalizemongo.md) and to run through the whole Snowflake quick start tutorial visit [Snowflake Quickstarts](https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html#0)
 
 ## Conclusion
 
-
+Snowflake 
 
 
 ## References
