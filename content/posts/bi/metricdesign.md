@@ -15,10 +15,16 @@ Twitter_Image: images/covers/measure.jpg
 # Metric Design
 
 
+![Metrics and KPIs]({static}../../images/posts/metrics_01.png)
+
+
+![Leading to Lagging]({static}../../images/posts/metrics_02.png)
+
+
 ## Conclusion
 
 
-
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
 ## References
 
