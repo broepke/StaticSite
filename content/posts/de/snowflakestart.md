@@ -197,6 +197,8 @@ Take it further and automate the workflow from an S3 bucket to a snowflake stage
 
 Snowflake is a cloud-native Data Warehouse solution built to scale from startups to enterprises. We talked about how modern data warehouses support the process of ELT or transform data directly in the Data Warehouse as an alternative to ETL. Next, we walked through loading data from an S3 Bucket into a Stage, then copying it into a Table. Finally, we showed Snowflake's powerful ability to query JSON directly and create columns from the keys. This article will hopefully give you a head start and on your way to new Data Engineering skills! 
 
+*If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
+
 ## References
 
 Snowflake photo by <a href="https://unsplash.com/@aaronburden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aaron Burden</a> on <a href="https://unsplash.com/s/photos/snowflake?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

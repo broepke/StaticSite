@@ -18,6 +18,8 @@ MongoDB is a document database that stores data in JSON-like documents, and it i
 
 In a [previous article]({filename}mongo.md) I talked about how to get MongoDB data into a Pandas Dataframe. However, to speed up your data science and analysis, having it in a relational, clean format will benefit you greatly.
 
+**Note:** For an introduction to Snowflake, check out: [Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud]({filename}snowflakestart.md).
+
 ## The Data
 
 This article is using Data from a company in the Media and Entertainment space called [**FX-DMZ**](https://www.fx-dmz.com).  They provide high-quality, accessible, and unbiased data throughout the production process, as unstructured and poor-quality data is the biggest hurdle in operations.  The data presented throught this article is used with permission from FX-DMZ (info@fx-dmz.com).
