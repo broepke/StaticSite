@@ -1,4 +1,4 @@
-Title: Metric Design
+Title: How to Design a Great KPI & Metric Tracking Program for Your Business
 Date: 2022-09-22
 Modified: 2022-09-22
 Status: draft
@@ -12,7 +12,7 @@ Og_Image: images/covers/measure.jpg
 Twitter_Image: images/covers/measure.jpg
 
 
-# Metric Design
+# How to Design a Great Metric Tracking Program for Your Business
 
 
 ![Metrics and KPIs]({static}../../images/posts/metrics_01.png)
@@ -20,6 +20,21 @@ Twitter_Image: images/covers/measure.jpg
 
 ![Leading to Lagging]({static}../../images/posts/metrics_02.png)
 
+## OKRs
+
+
+
+## KPIs
+
+
+
+## Metrics
+
+
+
+## Executve Dashboard in Excel and Google Sheets
+
+![Executive Dashboard]({static}../../images/posts/metrics_03.png)
 
 ## Conclusion
 

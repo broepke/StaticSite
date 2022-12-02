@@ -1,6 +1,6 @@
 Title: How to Normalize MongoDB Data in Snowflake for Data Science Workflows
-Date: 2022-12-13
-Modified: 2022-12-13
+Date: 2022-12-20
+Modified: 2022-12-20
 Status: published
 Tags: bi, analytics, datascience, datawarehouse, dataengineering, mongodb, snowflake
 Slug: normalizemongo

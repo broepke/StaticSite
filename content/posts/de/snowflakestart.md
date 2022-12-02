@@ -1,6 +1,6 @@
 Title: Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud
-Date: 2022-12-20
-Modified: 2022-12-20
+Date: 2022-12-13
+Modified: 2022-12-13
 Status: published
 Tags: bi, analytics, datascience, datawarehouse, snowflake
 Slug: snowflakestart
