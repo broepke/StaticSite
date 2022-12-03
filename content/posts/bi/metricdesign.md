@@ -1,6 +1,6 @@
 Title: How to Design a Great KPI & Metric Tracking Program for Your Business
-Date: 2022-09-22
-Modified: 2022-09-22
+Date: 2023-01-03
+Modified: 2023-01-03
 Status: draft
 Tags: bi, analytics, datascience, visualization, communication
 Slug: metricdesign
@@ -34,7 +34,7 @@ Twitter_Image: images/covers/measure.jpg
 
 ## Executve Dashboard in Excel and Google Sheets
 
-![Executive Dashboard]({static}../../images/posts/metrics_03.png)
+
 
 ## Conclusion
 

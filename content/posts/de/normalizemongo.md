@@ -5,8 +5,8 @@ Status: published
 Tags: bi, analytics, datascience, datawarehouse, dataengineering, mongodb, snowflake
 Slug: normalizemongo
 Authors: Brian Roepke
-Summary: Leverage the Power of MongoDB and Snowflake to Create a Data Warehouse that built for Data Science and Analytics Workflows for Data Engineers, Data Scientists.
-Description: Leverage the Power of MongoDB and Snowflake to Create a Data Warehouse that built for Data Science and Analytics Workflows for Data Engineers, Data Scientists.
+Summary: Leverage the Power of MongoDB and Snowflake to Create a Data Warehouse that is built for Data Science and Analytics Workflows for Data Engineers, Data Scientists.
+Description: Leverage the Power of MongoDB and Snowflake to Create a Data Warehouse that is built for Data Science and Analytics Workflows for Data Engineers, Data Scientists.
 Header_Cover: images/covers/warehouse.jpg
 Og_Image: images/covers/warehouse.jpg
 Twitter_Image: images/covers/warehouse.jpg
@@ -16,13 +16,13 @@ Twitter_Image: images/covers/warehouse.jpg
 
 MongoDB is a document database that stores data in JSON-like documents, and it is a NoSQL database that is very popular for web applications. When using your MongoDB data for **Data Science** or **Analytics**, you'll probably be much more comfortable if the data is structured like a [**normalized**](https://en.wikipedia.org/wiki/Database_normalization) relational database. A normalized database reduces redundancy by storing different data types in its tables. In this post, I will show you an approach that works very well to normalize MongoDB data in Snowflake.
 
-In a [previous article]({filename}mongo.md) I talked about how to get MongoDB data into a Pandas Dataframe. However, to speed up your data science and analysis, having it in a relational, clean format will benefit you greatly.
+In a [previous article]({filename}mongo.md), I talked about how to get MongoDB data into a Pandas Dataframe. However, to speed up your data science and analysis, having it in a relational, clean format will benefit you greatly.
 
 **Note:** For an introduction to Snowflake, check out: [Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud]({filename}snowflakestart.md).
 
 ## The Data
 
-This article is using Data from a company in the Media and Entertainment space called [**FX-DMZ**](https://www.fx-dmz.com).  They provide high-quality, accessible, and unbiased data throughout the production process, as unstructured and poor-quality data is the biggest hurdle in operations.  The data presented throught this article is used with permission from FX-DMZ (info@fx-dmz.com).
+This article uses data from a company in the Media and Entertainment space called [**FX-DMZ**](https://www.fx-dmz.com).  They provide high-quality, accessible, and unbiased data throughout the production process, as unstructured and poor-quality data is the biggest hurdle in operations.  The data presented in this article is used with permission from FX-DMZ (info@fx-dmz.com).
 
 ## MongoDB Documents
 
@@ -110,7 +110,7 @@ Time to start breaking these columns out into their tables (or **views**. more o
 
 We need to transform this into a relational way that makes more sense for a normalized data model. We need the participant's unique identifier, and the field in our data is the `id` field in the JSON. Then we need to create a table that "fans out" the data into several rows for each dictionary entry where the keys are the names of the columns, and the values are the values in the column.
 
-To do this, we can use the `FLATTEN` function in Snowflake, and a `LATERAL` join to connect it back to the data. 
+To do this, we can use the `FLATTEN` function in Snowflake and a `LATERAL` join to connect it back to the data. 
 
 ### Expanding a List of Strings
 
@@ -171,7 +171,7 @@ The `status` field for our sample participant looks like this.
 }
 ```
 
-To break those into columns when we query, we don't have to use the `flatten` function, and we can just use the `value` keyword in the select statement.
+To break those into columns when we query, we don't have to use the `flatten` function, and we can use the `value` keyword in the select statement.
 
 ```sql
 select    id as Org_ID
@@ -189,7 +189,7 @@ from participants;
 
 As mentioned earlier in the article, we don't want to operate off of the sync data from Fivetran but rather create a series of normalized views for us to query and use in Data Science projects. Now that we have the building blocks of creating the right tables for our nested data, we can create a view for each of the "tables" we want to have in our data model.
 
-This process is super easy. We're going to start by creating a new **Database** in that will be the destination for our new views. You can do this with the Snowflake UI if you wish. Then, use the command `create or replace view` and the name of the view you want to create. Then you can use the `as` keyword to define the query that Snowflake will use to create the view. Here's an example.
+This process is super easy. We're going to start by creating a new **Database** that will be the destination for our new views. You can do this with the Snowflake UI if you wish. Then, use the command `create or replace view` and the name of the view you want to create. Then you can use the `as` keyword to define the query that Snowflake will use to create the view. Here's an example.
 
 ```sql
 create or replace view org_functional_types as
@@ -201,7 +201,7 @@ lateral flatten(input => functional_kinds);
 
 The `or replace` allows you to update this view very quickly. Because this is just a **View** into the Fivetran data, we're changing how the data is presented, and it's always referring back to the original data. 
 
-Notice that we're using the fully qualified path (`fivetran_database.mongo_fxdmz.participants`) in the Fivetran table; ensure that you're querying the table from Fivetran while trying to write in your new Datbase.
+Notice that we're using the fully qualified path (`fivetran_database.mongo_fxdmz.participants`) in the Fivetran table; ensure that you're querying the table from Fivetran while trying to write in your new Database.
 
 ![Views in the Main Database]({static}../../images/posts/normalize_views.png)
 
