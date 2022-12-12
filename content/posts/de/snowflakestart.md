@@ -2,7 +2,7 @@ Title: Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud
 Date: 2022-12-13
 Modified: 2022-12-13
 Status: published
-Tags: bi, analytics, datascience, datawarehouse, snowflake
+Tags: bi, analytics, datascience, datawarehouse, dataengineering, snowflake
 Slug: snowflakestart
 Authors: Brian Roepke
 Summary: How Modern Data Warehouses like Snowflake are changing the way we load and transform data right in our warehouse with no extra tooling or compute needed.
