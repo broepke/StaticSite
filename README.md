@@ -49,3 +49,16 @@ Clone the following repo at the top level:
 Generated originally based on the tutorial from:  
 
 [How to Create Your First Static Site with Pelican and Jinja2](https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html)
+
+
+## Adding Canonical Link to Template
+
+[Improve your Pelican based website SEO by adding canonical url](https://www.andreagrandi.it/2020/10/14/improve-pelican-based-website-seo-adding-canonical-url/)
+
+```
+    ...
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+    {% endif%}
+</head>
+```
