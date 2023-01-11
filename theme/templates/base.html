@@ -97,6 +97,9 @@
     {% if FAVICON %}
     <link rel="icon" href="/{{FAVICON}}">
     {% endif %}
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+    {% endif%}
 </head>
 
 {% if page %}
