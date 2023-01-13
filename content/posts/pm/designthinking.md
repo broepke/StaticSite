@@ -2,7 +2,7 @@ Title: How Might We Utilize Design Thinking to Boost Data Science Projects
 Date: 2022-07-17
 Modified: 2022-07-17
 Status: published
-Tags: design thinking, datascience, innovation
+Tags: design thinking, datascience, innovation, product management
 Slug: designthinking
 Authors: Brian Roepke
 Summary: How can you think like a designer and make more usable, impactful, and innovative data-driven products!

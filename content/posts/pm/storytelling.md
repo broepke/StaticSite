@@ -2,7 +2,7 @@ Title: 8 Tips for Creating a Compelling Presentation for Data Science
 Date: 2022-06-19
 Modified: 2022-06-19
 Status: published
-Tags: analytics, datascience, visualization, communication
+Tags: analytics, datascience, visualization, communication, product management
 Slug: storytelling
 Authors: Brian Roepke
 Summary: Tricks every analyst and data scientist can learn to make a compelling presentation
