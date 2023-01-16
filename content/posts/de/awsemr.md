@@ -1,6 +1,7 @@
 Title: How to Setup AWS EMR and Jupyter Notebooks Without Breaking the Bank
 Date: 2022-02-05
 Modified: 2022-02-05
+Status: published
 Tags: aws, datascience, python, data
 Slug: awsemr
 Authors: Brian Roepke
