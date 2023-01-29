@@ -14,7 +14,7 @@ Twitter_Image: images/covers/snowflake.jpg
 
 # What is Snowflake?
 
-**Snowflake** is a cloud-based data warehouse designed to be easy to use and fast, and it is a **fully managed** which means there is no software to install or maintain. Snowflake has gained tremendous popularity due to its **cloud-native** approach, **speed**, and **ease of use**. Some of the world's largest companies use Snowflake, but any sized organization can also use it.
+**Snowflake** is a cloud-based data platform designed to be easy to use and fast, and it is a **fully managed** which means there is no software to install or maintain. Snowflake has gained tremendous popularity due to its **cloud-native** approach, **speed**, and **ease of use**. Some of the world's largest companies use Snowflake, but any sized organization can also use it.
 
 My favorite features of Snowflake are:
 
@@ -29,7 +29,7 @@ In this post, I will show you how to get started with Snowflake and how to perfo
 
 ## What is ELT?
 
-Traditionally, you loaded data into a Data Warehouse through a process called **Extract**, **Transform**, and **Load** or ETL. In the ETL process, you would extract data from a source system, transform it with external computing such as Apache Spark, and *then* load it into the warehouse in its final format. 
+Traditionally, you loaded data into a data warehouse through a process called **Extract**, **Transform**, and **Load** or ETL. In the ETL process, you would extract data from a source system, transform it with external computing such as Apache Spark, and *then* load it into the warehouse in its final format. 
 
 With the rise of modern Data Warehouses like Snowflake, we invert the second and third parts of the process to perform **Extract**, **Load**, and **Transform**, known as **ELT**. In ELT, we extract data from a source system, load it into the warehouse, and then transform it. This process allows us to perform transformations in the warehouse, which can also be **much faster** than doing it in a separate computing engine. You also can **reduce the complexity** of your data pipeline by removing the need for an external computing engine.
 

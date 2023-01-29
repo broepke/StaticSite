@@ -38,23 +38,6 @@ It's a good practice to create a new role to help you isolate only the permissio
 
 ![Set Timeout]({static}../../images/posts/lambdaetl_timeout.png)
 
-## Creating a VPC
-
-
-
-![VPC Creation Wizard]({static}../../images/posts/lambdaetl_wizard.png)
-
-
-![Include NAT]({static}../../images/posts/lambdaetl_nat.png)
-
-
-## Attaching the VPC to Your Lambda Function
-
-
-
-![Modify Inbound Rules]({static}../../images/posts/lambdaetl_inbound_rules.png)
-
-
 
 ## Using the Parameters and Secrets Extension
 
