@@ -1,7 +1,7 @@
 Title: A Quick Introduction to Bag of Words and TF-IDF
 Subtitle: How Machine Learning and Natural Language Processing Models Deal with Text
-Date: 2022-01-22
-Modified: 2022-01-22
+Date: 2022-01-02
+Modified: 2022-01-02
 Status: published
 Tags: datascience, nlp
 Slug: bowtfidf
