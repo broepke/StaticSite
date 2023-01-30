@@ -20,10 +20,6 @@ In a [previous article]({filename}mongo.md), I talked about how to get MongoDB d
 
 **Note:** For an introduction to Snowflake, check out: [Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud]({filename}snowflakestart.md).
 
-## The Data
-
-This article uses data from a company in the Media and Entertainment space called [**FX-DMZ**](https://www.fx-dmz.com).  They provide high-quality, accessible, and unbiased data throughout the production process, as unstructured and poor-quality data is the biggest hurdle in operations.  The data presented in this article is used with permission from FX-DMZ (info@fx-dmz.com).
-
 ## MongoDB Documents
 
 Let's take a quick look at what MongoDB refers to as a document. A document is a JSON-like object that contains a set of key-value pairs. Below we see the Keys and Values for the document. There are simple cases like `kind` below where the value is `Organization`; however, there are more complex cases such as `altNames`, a list of dictionaries (in python nomenclature). Additionally, we have `functionalKinds` whose value is `['Content Vendor', 'Content Producer', 'Content Organization']`, which is a list or array. Finally, we have `status`, which is a single dictionary. All these different structures mean that simply leaving them as-is will make it easier to manage.
@@ -195,13 +191,13 @@ This process is super easy. We're going to start by creating a new **Database** 
 create or replace view org_functional_types as
 select id as Org_Id
      , value::varchar(256) as Org_Functional_Types
-from fivetran_database.mongo_fxdmz.participants, 
+from fivetran_database.mongo.participants, 
 lateral flatten(input => functional_kinds);
 ```
 
 The `or replace` allows you to update this view very quickly. Because this is just a **View** into the Fivetran data, we're changing how the data is presented, and it's always referring back to the original data. 
 
-Notice that we're using the fully qualified path (`fivetran_database.mongo_fxdmz.participants`) in the Fivetran table; ensure that you're querying the table from Fivetran while trying to write in your new Database.
+Notice that we're using the fully qualified path (`fivetran_database.mongo.participants`) in the Fivetran table; ensure that you're querying the table from Fivetran while trying to write in your new Database.
 
 ![Views in the Main Database]({static}../../images/posts/normalize_views.png)
 

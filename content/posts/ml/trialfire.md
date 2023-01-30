@@ -13,6 +13,10 @@ Twitter_Image: images/covers/marketing.jpg
 
 # What is Trialfire?
 
+Predicting Which Users Will Convert to Paid With Trialfire and XGBoost
+A Real-World Approach with XGBoost on With Marketing Attribution Data
+
+
 Trialfire is a Marketing Attribution Platform.  While 
 
 [Trialfire](https://trialfire.com)
