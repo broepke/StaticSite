@@ -25,7 +25,7 @@ https://docs.trialfire.com/#/sql_access?id=connecting
 
 ## Motivation
 
-In this article, I will focus less on the fundamentals of model building and more on the **overall thought process** in setting up the end-to-end process for moving this into production. There will be references to best practices throughout as needed.
+This article will focus less on the fundamentals of model building and more on the **overall methodology** in setting up the end-to-end process for moving this into production. There will be references to best practices throughout as needed.
 
 I am going to break this down into three steps:
 
