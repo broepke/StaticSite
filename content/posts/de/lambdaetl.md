@@ -13,7 +13,15 @@ Twitter_Image: images/covers/lamb.jpg
 
 # What is AWS Lambda and Serverless Computing?
 
+A Lambda function in AWS is a piece of code that is executed in response to an event.  The event can be a request to an API endpoint, a file being uploaded to an S3 bucket, or a scheduled event.  The code is executed in a container that is spun up on demand and then destroyed when the code has finished executing.  This is called serverless computing.
 
+From [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) Documentation:
+
+>Lambda runs your function only when needed and scales automatically, from a few requests per day to thousands per second. You pay only for the compute time that you consume—there is no charge when your code is not running. For more information, see AWS Lambda Pricing.
+
+A Lambda function is a wonderful way to think about ETL for smaller jobs that need to run frequently.  Such as on a trigger, like an API call, or nightly on a schedule.  It also allows you to orchestrate multiple Lambda functions together to create a more complex ETL pipeline.
+
+Let's dive into creating our first Lambda function.
 
 ## Creating Your Lamba Function
 
