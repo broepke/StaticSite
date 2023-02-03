@@ -1,35 +1,29 @@
-Title: Predicting Which Users Will Convert to Paid With Trialfire and XGBoost
+Title: A Real-World Approach with XGBoost on With Marketing Attribution Data
 Date: 2023-02-05
 Modified: 2023-02-05
 Status: published
 Tags: datascience, machine learning, marketing, analytics, python
 Slug: trialfire
 Authors: Brian Roepke
-Summary: How to build a production ML process for predicting which users will convert to paid.  From feature engineering, to model building, to inference on new data.
-Description: How to build a production ML process for predicting which users will convert to paid.  From feature engineering, to model building, to inference on new data.
+Summary: Leverage Triafire for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
+Description: LLeverage Triafire for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
 Header_Cover: images/covers/marketing.jpg
 Og_Image: images/covers/marketing.jpg
 Twitter_Image: images/covers/marketing.jpg
 
-# What is Trialfire?
+# What is a Marketing Attribution Platform?
 
-Predicting Which Users Will Convert to Paid With Trialfire and XGBoost
-A Real-World Approach with XGBoost on With Marketing Attribution Data
+a Marketing Attribution Platform is a tool that allows you to track the effectiveness of your marketing campaigns. It does this by tracking the user's journey from the first time they visit your site to the point of conversion. 
 
-
-Trialfire is a Marketing Attribution Platform.  While 
-
-[Trialfire](https://trialfire.com)
-
-https://docs.trialfire.com/#/sql_access?id=connecting
+[Trialfire](https://trialfire.com) is a Marketing Attribution Platform with a couple of huge advantages. Not only does it make it easy to instrument your site with a point-and-click interface, but the data is also organized so that it's incredibly clean and easy to build Machine Learning models. In many cases, all the features you would need to create are already available, and it even has binary classification targets pre-built into the data. In this article, I'll show you how to leverage Trialfire to build a model that predicts which users will convert to paid.
 
 ## Motivation
 
-This article will focus less on the fundamentals of model building and more on the **overall methodology** in setting up the end-to-end process for moving this into production. There will be references to best practices throughout as needed.
+This article will focus less on the fundamentals of model building and more on the **overall methodology** in setting up the **end-to-end process** for moving this into production. There will be references to best practices throughout as needed.
 
 I am going to break this down into three steps:
 
-* **Step 1**: Creating Queries for Our Model
+* **Step 1**: Creating Production-Ready Queries for Our Model
 * **Step 2**: Model Building with XGBoost
 * **Step 3**: Inferencing on Fresh Data
 
@@ -37,9 +31,11 @@ In each of these steps, I'll explain the thought process and logic behind the st
 
 Let's go! 
 
-## Step 1: Creating Queries for Our Model
+## Step 1: Creating Production-Ready Queries for Our Model
 
-One of the goals was to create queries that included all of the **selected features** needed plus all **feature engineering** already performed. By doing this, we can avoid a lot of clean up when we **infer** our model on new data. I'll show the inferencing at the end of this article, demonstrating how simple it is to build clean queries from the start.
+One of the goals was to create queries that included all of the **selected features** needed plus all **feature engineering** already performed. By doing this, we can avoid a lot of cleanup when we **infer** our model on new data. I'll show the inferencing at the end of this article, demonstrating how simple it is to build clean queries from the start.
+
+The product has great [documentation](https://docs.trialfire.com/#/sql_access) for direct SQL access, which I'll use below. By giving you direct SQL access, as a Data Scientist, you instantly are comfortable working with this data.
 
 ### Keeping Your Dataset Balanced
 
@@ -161,7 +157,7 @@ print(df_test.shape)
 (265888, 23)
 ```
 
-We have **116k** records for our purchased class, **690k** for our not purchased class, and **266k** for our validation set. Check out the entire process and code for this portion on [GitHub](https://github.com/broepke/TrialFire/blob/main/01_tf_get_data.ipynb)
+We have **116k** records for our purchased class, **690k** for our not purchased class, and **266k** for our validation set. Check out the entire process and code for this portion on [GitHub](https://github.com/broepke/TrialFire/blob/main/01_tf_get_data.ipynb).
 
 ## Step 2: Model Building with XGBoost
 
@@ -265,7 +261,7 @@ And now, we can fit our model into our training data.
 pipeline.fit(X_train, y_train)
 ```
 
-We can utilize the `feature_importances_` to see how much weight each feature has on our mode; a great way to introduce [Explainability]({filename}../ml/explainability.md) into our process, where we can describe to business stakeholders how our model is making decisions.
+We can utilize the `feature_importances_` to see how much weight each feature has on our model; a great way to introduce [Explainability]({filename}../ml/explainability.md) into our process, where we can describe to business stakeholders how our model is making decisions.
 
 ```python
 feat_list = []
