@@ -1,6 +1,6 @@
 Title: A Real-World Approach with XGBoost on With Marketing Attribution Data
-Date: 2023-02-05
-Modified: 2023-02-05
+Date: 2023-01-31
+Modified: 2023-01-31
 Status: published
 Tags: datascience, machine learning, marketing, analytics, python
 Slug: trialfire
