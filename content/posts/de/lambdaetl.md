@@ -24,7 +24,7 @@ Each of these has its advantages. If you're looking for simplicity in setup, mai
 
 Notice I said **simple**. AWS Lambdas are not meant for compute-intensive or long-running jobs. They're suitable for executing small amounts of code that take minutes versus hours.
 
-## What is AWS Lambda and Serverless Computing?
+## What are AWS Lambda and Serverless Computing?
 
 A Lambda function in AWS is a piece of code that is executed in response to an event. The event can be a request to an API endpoint, a file being uploaded to an S3 bucket, or a scheduled event. The code is executed, and the results are returned. Here is a great description of how it works from [AWS](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html):
 
@@ -156,7 +156,7 @@ Next, I wrote a simple `bash` script that I can call from my local terminal, whi
 # delete the old zip
 rm tmdb-deployment-package.zip
 
-# change the directory to the site-packagaes directory and zip the contents
+# change the directory to the site-packages directory and zip the contents
 cd venv/lib/python3.9/site-packages
 
 # Explicitly add the tmdbsimple package folders needed for the lambda function
@@ -221,7 +221,7 @@ def lambda_handler(event, context):
     params = event["multiValueQueryStringParameters"]
     id_list = params['ids']
     
-    # Get credentials from from Secrets Manager
+    # Get credentials from the Secrets Manager
     KEY = get_tmdb_api_key()
     
     # Loop through the IDs passed and do something with them
@@ -252,7 +252,7 @@ You can find the full code for this project on [GitHub](https://github.com/broep
 
 ## Conclusion
 
-When building ETL pipelines, you have many options to choose from when it comes to computing. For simple jobs, an AWS Lambda function can be a wondeful way to enrich your data or process quickly and efficiently. We started by showing you how to create a Lambda, including setting up the role to run it. Then we covered several recommendations, such as leveraging the Parameters and Secrets Extension to safely store information such as API keys. Then we look at how you can automate deployment using the AWS CLI. Finally, we triggered the function with an API Gateway and monitored it with CloudWatch. I hope this article shows howe wonderful Lambdas can be and how you can add Lambda to your ETL toolbelt.
+When building ETL pipelines, you have many options to choose from when it comes to computing. For simple jobs, an AWS Lambda function can be a wonderful way to enrich your data or process quickly and efficiently. We started by showing you how to create a Lambda, including setting up the role to run it. Then we covered several recommendations, such as leveraging the Parameters and Secrets Extension to safely store information such as API keys. Then we look at how you can automate deployment using the AWS CLI. Finally, we triggered the function with an API Gateway and monitored it with CloudWatch. I hope this article shows how wonderful Lambdas can be and how you can add Lambda to your ETL toolbelt.
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe), and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
