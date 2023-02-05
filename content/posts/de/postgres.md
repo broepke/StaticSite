@@ -1,6 +1,6 @@
 Title: A Quick Start to Connecting to PostgreSQL and Pulling Data into Pandas
-Date: 2023-02-14
-Modified: 2023-02-14
+Date: 2023-02-21
+Modified: 2023-02-21
 Status: published
 Tags: analytics, datascience, databases, sql, dataengineering
 Slug: postgres
