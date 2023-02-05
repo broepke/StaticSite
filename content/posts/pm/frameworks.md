@@ -1,4 +1,4 @@
-Title: Borrows Powerful Tools from Product Management to Improve Data Science
+Title: How I Borrow Powerful Tools from Product Management to Improve Data Science
 Date: 2023-01-17
 Modified: 2022-01-17
 Status: draft
@@ -12,6 +12,29 @@ Og_Image: images/covers/frameworks.jpg
 Twitter_Image: images/covers/frameworks.jpg
 
 # Product Management Frameworks For Data Science
+
+
+
+## Prioritization
+
+
+
+## Design Thinking
+
+
+
+## Interviewing
+
+
+
+## Stakeholder Management
+
+
+
+## Roadmapping
+
+
+
 
 
 
