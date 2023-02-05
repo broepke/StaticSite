@@ -115,7 +115,7 @@ We will then use the `read_sql` function from `pandas` to pull our data into a D
 df = pd.read_sql(q, dbConnection);
 ```
 
-Now that we have a data frame and can display the 
+Now that we have a data frame and can display the first few rows and see our data.
 
 ```python
 df.head()
