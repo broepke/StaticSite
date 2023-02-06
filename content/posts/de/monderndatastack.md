@@ -24,6 +24,9 @@ My criteria for selecting them is as follows.
 * **Great Documentation**: Great products have great documentation.  Each one of my selections are fantastic.
 * **Ecosystem**: You want to ensure that you're not the only user. Are people asking questions in public forums? Are there accessible support channel if needed? 
 
+
+![Modern Data Stack]({static}../../images/posts/moderndatastack_logos.png)
+
 ## Data Warehouse / Platform
 
 Snowflake
