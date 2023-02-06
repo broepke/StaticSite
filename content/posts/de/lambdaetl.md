@@ -13,7 +13,7 @@ Twitter_Image: images/covers/lamb.jpg
 
 # Introduction to ETL with AWS Lambda
 
-When it comes time to build an ETL pipeline, many options exist. You can use a tool like [Astronomer]({filename}astrointro.md) or [Prefect](http://prefect.io) for Orchestration, but you will also need somewhere to run the compute. With this, you have a few options:
+When it comes time to build an ETL pipeline, many options exist. You can use a tool like [Astronomer]({filename}astrointro.md) or [Prefect]({filename}prefectintro.md) for Orchestration, but you will also need somewhere to run the compute. With this, you have a few options:
 
 * Virtual Machine (VM) like AWS EC2
 * Container services like AWS ECS or AWS Fargate
@@ -246,7 +246,9 @@ def lambda_handler(event, context):
 
 ## Orchestrating and Processing the Data in your Warehouse
 
-The final step is to trigger the API Endpoint in a workflow and then process the data in your warehouse. An example of how JSON works with snowflake can be found in my article [Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud]({filename}snowflakestart.md), and I'll cover orchestration in a future article.
+The final step is to trigger the API Endpoint in a workflow and then process the data in your warehouse. An example of how JSON works with snowflake can be found in my article [Getting Started with Snowflake and the Rise of ELT Workflows in the Cloud]({filename}snowflakestart.md).
+
+For orchestration, check out [Getting Started with Prefect: Powerful Orchestration for Your Data]({filename}prefectintro.md) for the full details on how to orchestrate this particular workflow.
 
 You can find the full code for this project on [GitHub](https://github.com/broepke/LambdaTMDB)
 
