@@ -5,8 +5,8 @@ Status: draft
 Tags: analytics, datascience, databases, sql, dataengineering
 Slug: moderndatastack
 Authors: Brian Roepke
-Summary: XXX
-Description: XXX
+Summary: The modern data stack is often talked about and heavily debated.  Here is my take on it with the spin that it should be affordable or free for individuals and small teams
+Description: The modern data stack is often talked about and heavily debated.  Here is my take on it with the spin that it should be affordable or free for individuals and small teams
 Header_Cover: images/covers/containers.jpg
 Og_Image: images/covers/containers.jpg
 Twitter_Image: images/covers/containers.jpg
