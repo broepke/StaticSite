@@ -20,7 +20,7 @@ When it comes time to build an ETL pipeline, many options exist. You can use a t
 * Apache Spark like AWS EMR (Elastic Map Reduce)
 * Serverless Computing like AWS Lambda
 
-Each of these has its advantages. If you're looking for simplicity in setup, maintenance, and cost, you can run *simple* jobs with** AWS Lambdas** or Serverless Computing.
+Each of these has its advantages. If you're looking for simplicity in setup, maintenance, and cost, you can run *simple* jobs with **AWS Lambdas** or Serverless Computing.
 
 Notice I said **simple**. AWS Lambdas are not meant for compute-intensive or long-running jobs. They're suitable for executing small amounts of code that take minutes versus hours.
 
