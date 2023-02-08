@@ -28,7 +28,7 @@ My criteria for selecting them is as follows.
 
 ![Modern Data Stack]({static}../../images/posts/moderndatastack_logos.png)
 
-## Data Warehouse / Data Platform
+## Data Warehouse / Data Platform: Snowflake
 
 The foundation of any data stack is a data warehouse or data platform.  Without a doubt, the best choice here is Snowflake.  You can sign up for a [30-Day Trial](https://signup.snowflake.com/) and then after that, just enter your credit card information.  As long as you're not processing a ton of data, the charges should be pretty minimal.  I've not found a *free* data warehouse, but since Snowflake is consumption based, you only pay for what you use.  
 
@@ -47,7 +47,9 @@ Some of the key features of Snowflake are:
 
 **URL**: [https://signup.snowflake.com/](https://signup.snowflake.com/)
 
-## Connector Sync Framework
+![Snowflake]({static}../../images/posts/moderndatastack_snowflake.png)
+
+## Connector Sync Framework: Fivetran
 
 Next up is a **connector based framework** that simplifies data engineering tasks.  If you can get the ability to sync your data off the shelf, then do it; don't write this yourself! Starting in 2023, Fivetran [annouced](https://fivetran.com/docs/getting-started/consumption-based-pricing/2023-cbp-faq) a Free tier of their product.
 
@@ -63,7 +65,9 @@ There is nothing easier, or better than this product for **most**, if not all, o
 
 **Cost:** Free
 
-## Workflow Orchestration
+![Fivetran]({static}../../images/posts/moderndatastack_fivetran.png)
+
+## Workflow Orchestration: Prefect
 
 If you can't accomplish everything with Fivetran, you need a workflow orchestration tool.  Similar to other tools on the market (Like Airflow), it's python based and allows you to pretty much do anything want.  It's free to use as well as has a great community.  Join their **Slack** channel and **Discourse** for additional help.
 
@@ -80,7 +84,9 @@ The only downside to this vs. more expensive tools, is you need to supply your o
 
 **URL**: [https://prefect.io](https://prefect.io)
 
-## Business Intelligence (BI)
+![Prefect]({static}../../images/posts/moderndatastack_prefect.png)
+
+## Business Intelligence (BI): Preset
 
 Preset is a Business Intelligence (BI) tool that is built on the Apache Open-Source project called [Superset](https://superset.apache.org).  It provides easy connectivity to Snowflake and a graphical explorer for working with data.  It allows you to crate what they refer to as **Virtual Data Sets** which is any SQL Query you want to run presented as a table.  You can then create **Dashboards** that are composed of these Virtual Data Sets.
 
@@ -88,21 +94,28 @@ Preset is a Business Intelligence (BI) tool that is built on the Apache Open-Sou
 
 **URL**: [https://preset.io](https://preset.io)
 
-## Notebook Environment
+![Preset]({static}../../images/posts/moderndatastack_preset.png)
 
+## Notebook Environment: Mode & Hex
+
+### Mode 
 Mode offers a combination of both visualzation tools as well as a built in notebook environment.  You start by defining any query you'd like to select data from your warehouse, and then you can build visuals off of those queries or use them as a dataset which can be access directly as a Pandas dataframe.
 
 **Note**: I didn't included this as a BI tool becuase I feel the SQL only access to data is a bit of a limiting function.  I prefer the way you can pre-package datasets in Preset.
 
+**URL**: [Mode](http://modeanalytics.com/)
+
+![Mode]({static}../../images/posts/moderndatastack_mode.png)
+
+### Hex
+
 **URL**: [https://preset.io](https://preset.io)
 
-Hex
-
-**URL**: [https://preset.io](https://preset.io)
+![Hex]({static}../../images/posts/moderndatastack_hex.png)
 
 **Cost:** Free
 
-## Cloud Platform
+## Cloud Platform: AWS
 
 AWS and it's magical consumption based pricing and free tier!
 
