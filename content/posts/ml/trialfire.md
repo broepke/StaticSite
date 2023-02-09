@@ -41,7 +41,7 @@ The product has great [documentation](https://docs.trialfire.com/#/sql_access) f
 
 I know from investigating this dataset that we have very [imbalanced data]({filename}../ml/imbalanced.md). Imbalanced data is a common situation where fewer people have purchased products that have yet to. I also know that this is a very large dataset. I wanted to develop an approach for training that would allow me to take a subset of the data but preserve the class balance.
 
-I'll start by getting the counts of each class for the window of time that I intend to train my data on (which is essentially six months of data. More on that shortly.) I'm also utilizing a date-based constraint where I'm fetching data where the user's `last_seen` data is older than seven days but later than six months. In cases like this model, trying to predict purchase behavior, we want to stay within our data since multiple things could have changed, such as ad campaigns, product offerings, and more. With Postgres, I can use the `INTERVAL` function to do this easily.
+I'll start by getting the counts of each class for the window of time that I intend to train my data on (which is essentially six months of data. More on that shortly.) I'm also utilizing a date-based constraint where I'm fetching data where the user's `last_seen` date is older than seven days but later than six months. In cases like this model, trying to predict purchase behavior, we want to stay within our data since multiple things could have changed, such as ad campaigns, product offerings, and more. With Postgres, I can use the `INTERVAL` function to do this easily.
 
 ```python
 true_counts = """
