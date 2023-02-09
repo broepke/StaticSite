@@ -13,7 +13,7 @@ Twitter_Image: images/covers/marketing.jpg
 
 # What is a Marketing Attribution Platform?
 
-a Marketing Attribution Platform is a tool that allows you to track the effectiveness of your marketing campaigns. It does this by tracking the user's journey from the first time they visit your site to the point of conversion. 
+A Marketing Attribution Platform is a tool that allows you to track the effectiveness of your marketing campaigns. It does this by tracking the user's journey from the first time they visit your site to the point of conversion. 
 
 [Trialfire](https://trialfire.com) is a Marketing Attribution Platform with a couple of huge advantages. Not only does it make it easy to instrument your site with a point-and-click interface, but the data is also organized so that it's incredibly clean and easy to build Machine Learning models. In many cases, all the features you would need to create are already available, and it even has binary classification targets pre-built into the data. In this article, I'll show you how to leverage Trialfire to build a model that predicts which users will convert to paid.
 
