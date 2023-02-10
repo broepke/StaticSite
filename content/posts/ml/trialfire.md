@@ -1,4 +1,4 @@
-Title: A Real-World Approach with XGBoost on With Marketing Attribution Data
+Title: A Real-World Approach with XGBoost on Marketing Attribution Data
 Date: 2023-01-31
 Modified: 2023-01-31
 Status: published
@@ -33,7 +33,7 @@ Let's go!
 
 ## Step 1: Creating Production-Ready Queries for Our Model
 
-One of the goals was to create queries that included all of the **selected features** needed plus all **feature engineering** already performed. By doing this, we can avoid a lot of cleanup when we **infer** our model on new data. I'll show the inferencing at the end of this article, demonstrating how simple it is to build clean queries from the start.
+One of the goals was to create queries that included all of the **selected features** needed plus all **feature engineering** already performed. By doing this, we can avoid a lot of cleanup when we **inference** new data. I'll show the inferencing at the end of this article, demonstrating how simple it is to build clean queries from the start.
 
 The product has great [documentation](https://docs.trialfire.com/#/sql_access) for direct SQL access, which I'll use below. By giving you direct SQL access, as a Data Scientist, you instantly are comfortable working with this data.
 
