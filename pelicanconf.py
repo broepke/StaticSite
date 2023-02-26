@@ -11,7 +11,7 @@ SITEURL = 'https://www.dataknowsall.com'
 # https://analytics.google.com/analytics/web
 GOOGLE_ANALYTICS = 'G-W5GPXKDEPB'
 # https://disqus.com/admin/
-DISQUS_SITENAME = 'roepkeb'
+# DISQUS_SITENAME = 'roepkeb'
 # https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings
 ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
 
