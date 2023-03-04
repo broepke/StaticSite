@@ -6,7 +6,7 @@ Tags: analytics, datascience, databases, dataengineering
 Slug: prefectintro
 Authors: Brian Roepke
 Summary: Learn how to leverage Prefect to build cloud based orchestrations for your data engineering projects.  with cloud based scheduling, monitoring, and alerting.
-Description: Learn how to leverage of Prefect to build cloud based orchestrations for your data engineering projects.  with cloud based scheduling, monitoring, and alerting.
+Description: Learn how to leverage Prefect to build cloud based orchestrations for your data engineering projects.  with cloud based scheduling, monitoring, and alerting.
 Header_Cover: images/covers/orchestra.jpg
 Og_Image: images/covers/orchestra.jpg
 Twitter_Image: images/covers/orchestra.jpg
