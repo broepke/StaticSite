@@ -11,7 +11,7 @@ Header_Cover: images/covers/pm.jpg
 Og_Image: images/covers/pm.jpg
 Twitter_Image: images/covers/pm.jpg
 
-# Excellent Product Management Frameworks for Data Science Products
+# Excellent Frameworks for Data Science Products
 
 Product management is a crucial aspect of any business, and with the increasing importance of data science, it has become essential to have frameworks that cater specifically to data science products. In this blog post, we will discuss some of the most useful product management frameworks for data science products, including:
 
