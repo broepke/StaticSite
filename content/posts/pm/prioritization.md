@@ -5,8 +5,8 @@ Status: published
 Tags: design thinking, datascience, innovation, product management
 Slug: prioritization
 Authors: Brian Roepke
-Summary: How Data Scientists can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
-Description: How Data Scientists can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
+Summary: How Data Scientists can learn from how a Product Manager prioritizes features and requirements to build a successful product.
+Description: How Data Scientists can learn from how a Product Manager prioritizes features and requirements to build a successful product.
 Header_Cover: images/covers/frameworks.jpg
 Og_Image: images/covers/frameworks.jpg
 Twitter_Image: images/covers/frameworks.jpg
