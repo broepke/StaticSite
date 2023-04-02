@@ -5,8 +5,8 @@ Status: published
 Tags: design thinking, datascience, innovation, product management
 Slug: prioritization
 Authors: Brian Roepke
-Summary: How Data Scientist can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
-Description: How Data Scientist can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
+Summary: How Data Scientists can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
+Description: How Data Scientists can learn from how a Product Manager builds a product, thinks about customer-centricity, and ensures that the product is successful.
 Header_Cover: images/covers/frameworks.jpg
 Og_Image: images/covers/frameworks.jpg
 Twitter_Image: images/covers/frameworks.jpg
@@ -21,7 +21,7 @@ As a Data Scientist, Analyst, or anyone developing a product or solution, you ca
 4. Buy a Feature
 5. Kano Model
 
-Each technique has its strengths and situations where they work the best. Try them all and learn when to apply each one.  Let's walk through each of them with some basics on how to peform them and when to use them.
+Each technique has its strengths and situations where they work the best. Try them all and learn when to apply each one.  Let's walk through each of them with some basics on how to perform them and when to use them.
 
 ## User Story Mapping
 
