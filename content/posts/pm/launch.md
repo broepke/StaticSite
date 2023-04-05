@@ -1,4 +1,4 @@
-Title: Leveraging Lean Startup and MVPs: A Guide for Data Scientists and Analysts
+Title: My #1 Tip for Data Scientists: Launch Your Products Early and Often
 Date: 2023-05-16
 Modified: 2022-05-16
 Status: draft
@@ -13,7 +13,9 @@ Twitter_Image: images/covers/rooster.jpg
 
 # Product Management, Lean Startup, and the MVP
 
-In today's competitive business environment, companies are under increasing pressure to develop innovative products that meet the needs of their users. However, developing successful products is not easy, and many companies struggle to create products that resonate with their target users.
+Most of my career has been in **Product Management** and over my 20+ years I've built a few companies, a lot of products from scratch, and even sold one to a technology company in the Bay Area. I've had the fortune of learning a lot about how to build better products. When I transitioned to my role as the leader of a Data Science and Analytics organization, I took all the things that I learned about building products and put them to work in every aspect of what I deliver.  The first and most important thing I teach people.  **Launch early** and **often**, **get feedback**, and **iterate**.
+
+One of the common mistakes a Data Scientist makes is to wait for **what they think is perfection** before the let anyone see what thev've built.  Whether this is a model's performance, the design of a dashboard, or the summary of their findings.  The biggest problem with waiting for "perfection" is that no solution is ever perfect, or even close to perfect the first time you get feedback.  A better way is to get the bare-bones working and start getting feedbback from your users.  This is the core of **the Lean Startup methodology** and the **Minimum Viable Product (MVP)**.
 
 In this article, we will explore how data scientists and analysts can learn from product managers about the principles of lean startup and MVPs to build better products. We will cover the following topics:
 
@@ -27,7 +29,7 @@ By the end of this article, you will have a better understanding of how to lever
 
 ## The Lean Startup Methodology
 
-The lean startup methodology is an approach to product development that emphasizes getting feedback from users early on in the process. This approach is designed to help companies avoid wasting time and resources on developing products that don't meet the needs of users.
+The [Lean Startup](https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898) methodology is an approach to product development that emphasizes getting feedback from users early on in the process. This approach is designed to help companies avoid wasting time and resources on developing products that don't meet the needs of users.
 
 To leverage the principles of the lean startup methodology, data scientists and analysts should start by identifying their target users and understanding their needs. This requires conducting research and gathering data on user behavior, preferences, and pain points. Once they have a clear understanding of their target users, they can start developing hypotheses about how to meet their needs.
 
@@ -69,11 +71,7 @@ Finally, leveraging lean startup and MVPs can help companies to be more agile an
 
 ## Conclusion
 
-In conclusion, data scientists and analysts can learn a lot from product managers about the principles of lean startup and MVPs. By working closely with product managers and leveraging these principles in their product development, data scientists and analysts can build products that are more likely to be successful in the marketplace.
-
-To successfully leverage these principles, data scientists and analysts should focus on understanding their target users, creating simple and easy-to-use MVPs, and getting feedback from users as soon as possible. By following these steps and iterating on their MVPs based on user feedback, they can build products that meet the needs of users and that are more likely to be successful in the marketplace.
-
-In today's fast-paced business environment, it's more important than ever for companies to be agile and adaptable in their product development. By leveraging the principles of lean startup and MVPs, data scientists and analysts can help their companies stay ahead of the competition and deliver products that truly meet the needs of their users.
+In conclusion, data scientists and analysts can learn a lot from product managers about the principles of lean startup and MVPs. By working closely with product managers and leveraging these principles in their product development, data scientists and analysts can build products that are more likely to be successful in the marketplace.  To successfully leverage these principles, data scientists and analysts should focus on understanding their target users, creating simple and easy-to-use MVPs, and getting feedback from users as soon as possible. By following these steps and iterating on their MVPs based on user feedback, they can build products that meet the needs of users and that are more likely to be successful in the marketplace.
 
 *If you liked what you read, [subscribe to my newsletter](https://campaign.dataknowsall.com/subscribe) and you will get my cheat sheet on Python, Machine Learning (ML), Natural Language Processing (NLP), SQL, and more. You will receive an email each time a new article is posted.*
 
