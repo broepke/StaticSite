@@ -61,7 +61,7 @@ Click on the **Configuration** tab, and under **General Configuration**, set the
 
 ## Using the Parameters and Secrets Extension
 
-Next - this isn't 100% necessary, but it's a great practice when you want to ensure that you're handling sensitive data safely and not exposing it in your code. In the past, I've written about how to use [Environment Variables]({filename}../other/envvar.md) to do this locally; however, in AWS, we'll use the **Parameters and Secrets Extension**.
+Next - this isn't 100% necessary, but it's a great practice when you want to ensure that you're handling sensitive data safely and not exposing it in your code. In the past, I've written about how to use [Environment Variables]({filename}../de/envvar.md) to do this locally; however, in AWS, we'll use the **Parameters and Secrets Extension**.
 
 The **Parameters and Secrets Extension** allows you to store sensitive data in the AWS Secrets Manager and access it in your Lambda function, a great way to store API keys, database credentials, etc. You can also use it to store non-sensitive data like configuration settings. You can read up more on this functionality here: [Configure the Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets_lambda.html)
 
