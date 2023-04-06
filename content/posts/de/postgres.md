@@ -65,7 +65,7 @@ from sqlalchemy import create_engine
 from urllib.parse import quote_plus
 ```
 
-Next, we want to ensure we're not hard-coding our sensitive information but rather pulling it from environment variables. If you'd like to learn more about this process, check out this [article]({filename}../de/envvar.md).
+Next, we want to ensure we're not hard-coding our sensitive information but rather pulling it from environment variables. If you'd like to learn more about this process, check out this [article]({filename}envvar.md).
 
 ```python
 user = os.environ.get("USER")
