@@ -1,11 +1,11 @@
-Title: My Number One Tip as a Product Manager to Data Scientists
+Title: The Most Important Skills They Don't Teach You in School: Soft Skills
 Date: 2022-07-17
 Modified: 2022-07-17
 Status: draft
 Tags: product management, datascience, tips
-Slug: pmtips
+Slug: softskills
 Authors: Brian Roepke
-Summary: How getting early and often feedback on your Data Science project will transform your ability to deliver results
+Summary: xxx
 Description: xxx
 Header_Cover: images/covers/postit.jpg
 Og_Image: images/covers/postit.jpg
