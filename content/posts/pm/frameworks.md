@@ -1,6 +1,6 @@
 Title: How I Borrow Tools from Product Management to Improve Data Products
-Date: 2023-04-25
-Modified: 2022-04-25
+Date: 2023-05-25
+Modified: 2022-05-25
 Status: draft
 Tags: design thinking, datascience, product management
 Slug: frameworks
