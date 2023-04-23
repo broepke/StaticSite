@@ -1,7 +1,7 @@
 Title: Streamline Your Matplotlib Settings with Global Plot Configurations
-Date: 2023-05-18
-Modified: 2023-05-18
-Status: draft
+Date: 2023-05-23
+Modified: 2023-05-23
+Status: published
 Tags: analytics, datascience, analytics, latex, school
 Slug: globalplot
 Authors: Brian Roepke
