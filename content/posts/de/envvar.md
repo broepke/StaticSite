@@ -126,4 +126,6 @@ Knowing how to store and retrieve sensitive data properly is critical for any da
 ## References
 
 Safe Photo by <a href="https://unsplash.com/@moneyphotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">regularguy.eth</a> on <a href="https://unsplash.com/s/photos/safe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Image Credit [Guardian](https://guardiansafeandvault.com/)
   
