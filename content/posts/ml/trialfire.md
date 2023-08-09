@@ -5,8 +5,8 @@ Status: published
 Tags: datascience, machine learning, marketing, analytics, python
 Slug: trialfire
 Authors: Brian Roepke
-Summary: Leverage Triafire for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
-Description: LLeverage Triafire for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
+Summary: Leverage Lassoo for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
+Description: LLeverage Lassoo for ML-ready marketing data to predict which users will convert to paid. From feature engineering to model building, and finally, new data.
 Header_Cover: images/covers/marketing.jpg
 Og_Image: images/covers/marketing.jpg
 Twitter_Image: images/covers/marketing.jpg
@@ -15,7 +15,7 @@ Twitter_Image: images/covers/marketing.jpg
 
 A **Marketing Attribution Platform** is a tool that allows you to track the effectiveness of your marketing campaigns. It does this by tracking the user's journey from the first time they visit your site to the point of conversion. 
 
-[Trialfire](https://trialfire.com) is a Marketing Attribution Platform with a couple of huge advantages. Not only does it make it easy to instrument your site with a point-and-click interface, but the data is also organized so that it's incredibly clean and easy to build Machine Learning models. In many cases, all the features you would need to create are already available, and it even has binary classification targets pre-built into the data. In this article, I'll show you how to leverage Trialfire to build a model that predicts which users will convert to paid.
+[Lassoo](https://lassoo.io) is a Marketing Attribution Platform with a couple of huge advantages. Not only does it make it easy to instrument your site with a point-and-click interface, but the data is also organized so that it's incredibly clean and easy to build Machine Learning models. In many cases, all the features you would need to create are already available, and it even has binary classification targets pre-built into the data. In this article, I'll show you how to leverage Lassoo to build a model that predicts which users will convert to paid.
 
 ## Motivation
 
@@ -428,7 +428,7 @@ That's it! We can take this further by deploying it to production, but we'll lea
 
 ## Conclusion
 
-In this post, we showed you how you could take a real-world example of data coming from the marketing attribution platform, Trialfire and apply a Machine Learning model to that data to help you predict which customers might be likely to purchase. We started by building SQL queries directly into the database with all of our feature selection and feature engineering. Next, we used the very powerful XGBoost library to train a model on our data, which had a very strong performance. Finally, we persisted in using our model to run on new data that was never seen, representing those customers who visited the site in the past seven days. I hope this was a helpful demonstration of a real-world use case you can use in your organization.
+In this post, we showed you how you could take a real-world example of data coming from the marketing attribution platform, Lassoo and apply a Machine Learning model to that data to help you predict which customers might be likely to purchase. We started by building SQL queries directly into the database with all of our feature selection and feature engineering. Next, we used the very powerful XGBoost library to train a model on our data, which had a very strong performance. Finally, we persisted in using our model to run on new data that was never seen, representing those customers who visited the site in the past seven days. I hope this was a helpful demonstration of a real-world use case you can use in your organization.
 
 As always, you can find the full code on [GitHub](https://github.com/broepke/TrialFire)
 
