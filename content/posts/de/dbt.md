@@ -1,7 +1,7 @@
 Title: Getting Started with dbt
 Date: 2022-12-13
 Modified: 2022-12-13
-Status: published
+Status: draft
 Tags: bi, analytics, datascience, datawarehouse, dataengineering, snowflake
 Slug: snowflakestart
 Authors: Brian Roepke
