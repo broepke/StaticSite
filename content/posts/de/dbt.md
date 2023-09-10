@@ -14,7 +14,7 @@ Twitter_Image: images/covers/snowflake.jpg
 
 # What is dbt?
 
-
+https://www.getdbt.com/what-is-analytics-engineering
 
 ## Conclusion
 
