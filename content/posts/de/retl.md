@@ -1,9 +1,9 @@
-Title: Getting Started with dbt
+Title: Reverse ETL
 Date: 2022-12-13
 Modified: 2022-12-13
 Status: draft
-Tags: bi, analytics, datascience, datawarehouse, dataengineering, snowflake
-Slug: dbt
+Tags: bi, analytics, datawarehouse, dataengineering, snowflake
+Slug: retl
 Authors: Brian Roepke
 Summary: 
 Description: 
