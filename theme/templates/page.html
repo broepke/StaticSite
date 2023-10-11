@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% block analytics %}
+{{ super() }}
+<script>
+    mixpanel.track("Page", {"Name": "{{ page.title }}", "url": "{{output_file}}"  }) ;
+</script>
+{% endblock analytics %}
+
 {% block title %}{{ page.title }}{% endblock title %}
 
 {% block header %}

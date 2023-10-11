@@ -10,6 +10,7 @@ SITEURL = 'https://www.dataknowsall.com'
 
 # https://analytics.google.com/analytics/web
 GOOGLE_ANALYTICS = 'G-W5GPXKDEPB'
+MIXPANEL_ANALYTICS = '5d435ed3f2fa6c2ccc0142c74fedd280'
 # https://disqus.com/admin/
 # DISQUS_SITENAME = 'roepkeb'
 # https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings

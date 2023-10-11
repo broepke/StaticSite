@@ -86,6 +86,13 @@
         {% endif %}
 {% endblock %}
 
+{% block analytics %}
+{{ super() }}
+<script>
+    mixpanel.track("Page", {"Name": "{{article.title}}", "url": "{{output_file}}"  }) ;
+</script>
+{% endblock analytics %}
+
 {% block header %}
     <!-- Page Header -->
     {% if article.header_cover %}
