@@ -136,22 +136,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% for title, link in MENUITEMS %}
-                        {% if title == "Subscribe" %}
-                        <li><a href="{{ link }}" id="subscribe-link">{{ title }}</a></li>
+                        <li><a href="{{ link }}" id="{{ title }}">{{ title }}</a></li>
                         <script>
                         // Get the subscribe link element by its ID
-                        var subscribeLink = document.getElementById('subscribe-link');
+                        var subscribeLink = document.getElementById('{{ title }}');
                         // Add a click event listener to the hyperlink
                         subscribeLink.addEventListener('click', function() {
                             // Log the "Subscribe Clicked" event to Amplitude
-                            amplitude.logEvent('Subscribe Clicked');
+                            amplitude.logEvent('{{ title }} Clicked');
                         });
                         </script>
-                        {% else %}
-                        <li><a href="{{ link }}">{{ title }}</a></li>
-                        {% endif %}
                     {% endfor %}
-
                     {% if DISPLAY_PAGES_ON_MENU %}
                         {# FIXME: Simplify to 'for p in pages' when we are ready to drop support for Pelican < 3.7 #}
                         {% for p in PAGES or pages %}
