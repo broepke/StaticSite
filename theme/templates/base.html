@@ -101,17 +101,6 @@
         <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
     {% endif%}
 
-    <!-- Trialfire Start -->
-    <script>
-    var s=document.createElement("script"),tf={$q:[],do:function(){tf.$q.push(
-    [].slice.call(arguments))}};["init","ready","identify","property","logout",
-    "track","optout"].forEach(function(t){tf[t]=function(){tf.do.apply(null,
-    [t].concat([].slice.call(arguments)))}}),window.Trialfire=tf,
-    s.src="//cdn.trialfire.com/tf.js",document.head.appendChild(s),
-    Trialfire.init("b0949cdc-8437-4abf-b665-0c36f5caf918");
-    </script>
-    <!-- Trialfire End -->
-
     {% block analytics %}
     {% include 'analytics.html' %}
     {% endblock analytics %}
@@ -147,7 +136,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% for title, link in MENUITEMS %}
+                        {% if title == "Subscribe" %}
+                        <li><a href="{{ link }}" id="subscribe-link">{{ title }}</a></li>
+                        <script>
+                        // Get the subscribe link element by its ID
+                        var subscribeLink = document.getElementById('subscribe-link');
+                        // Add a click event listener to the hyperlink
+                        subscribeLink.addEventListener('click', function() {
+                            // Log the "Subscribe Clicked" event to Amplitude
+                            amplitude.logEvent('Subscribe Clicked');
+                        });
+                        </script>
+                        {% else %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
+                        {% endif %}
                     {% endfor %}
 
                     {% if DISPLAY_PAGES_ON_MENU %}
