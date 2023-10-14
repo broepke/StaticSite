@@ -13,6 +13,7 @@ GOOGLE_ANALYTICS = 'G-W5GPXKDEPB'
 MIXPANEL_ANALYTICS = '5d435ed3f2fa6c2ccc0142c74fedd280'
 AMPLITUDE_ANALYTICS = 'c21bb4a2cbb18d63acc7010820bf12dc'
 LASSO_ANALYTICS = 'b0949cdc-8437-4abf-b665-0c36f5caf918'
+HUBSPOT_ANALYTICS = True
 # https://disqus.com/admin/
 # DISQUS_SITENAME = 'roepkeb'
 # https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings
