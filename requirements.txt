@@ -1,3 +1,4 @@
+black
 pelican
 markdown
 boto3

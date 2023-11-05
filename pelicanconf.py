@@ -2,22 +2,22 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Brian Roepke'
-SITENAME = 'Data Knows All'
-SITESUBTITLE = 'Machine Learning, Natural Language Processing, Data Engineering, and More by Brian Roepke'
-TAGLINE = 'Machine Learning, Natural Language Processing, Data Engineerin, and More by Brian Roepke'
-SITEURL = 'https://www.dataknowsall.com'
+AUTHOR = "Brian Roepke"
+SITENAME = "Data Knows All"
+SITESUBTITLE = "Machine Learning, Natural Language Processing, Data Engineering, and More by Brian Roepke"
+TAGLINE = "Machine Learning, Natural Language Processing, Data Engineerin, and More by Brian Roepke"
+SITEURL = "https://www.dataknowsall.com"
 
 # https://analytics.google.com/analytics/web
-GOOGLE_ANALYTICS = 'G-W5GPXKDEPB'
-MIXPANEL_ANALYTICS = '5d435ed3f2fa6c2ccc0142c74fedd280'
-AMPLITUDE_ANALYTICS = 'c21bb4a2cbb18d63acc7010820bf12dc'
-LASSO_ANALYTICS = 'b0949cdc-8437-4abf-b665-0c36f5caf918'
+GOOGLE_ANALYTICS = "G-W5GPXKDEPB"
+MIXPANEL_ANALYTICS = "5d435ed3f2fa6c2ccc0142c74fedd280"
+AMPLITUDE_ANALYTICS = "c21bb4a2cbb18d63acc7010820bf12dc"
+LASSO_ANALYTICS = "b0949cdc-8437-4abf-b665-0c36f5caf918"
 HUBSPOT_ANALYTICS = True
 # https://disqus.com/admin/
 # DISQUS_SITENAME = 'roepkeb'
 # https://www.addthis.com/dashboard#profile-options/ra-617ff7ceb50a32be/general-settings
-ADDTHIS_PUBID = 'ra-617ff7ceb50a32be'
+ADDTHIS_PUBID = "ra-617ff7ceb50a32be"
 
 RELATIVE_URLS = True
 DISPLAY_PAGES_ON_MENU = False
@@ -26,12 +26,12 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_PAGINATION = 6
 
 # https://github.com/gilsondev/pelican-clean-blog/
-THEME = 'theme'
-COLOR_SCHEME_CSS = 'tomorrow.css'
-HEADER_COVER = 'images/home.jpg'
+THEME = "theme"
+COLOR_SCHEME_CSS = "tomorrow.css"
+HEADER_COVER = "images/home.jpg"
 
-TIMEZONE = 'America/Los_Angeles'
-DEFAULT_LANG = 'en'
+TIMEZONE = "America/Los_Angeles"
+DEFAULT_LANG = "en"
 # Used this if you want to have a custom static homepage and not blogroll
 # INDEX_SAVE_AS = 'blog_index.html'
 
@@ -41,18 +41,22 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-PATH = 'content'
-ARTICLE_PATHS = ['posts', ]
-PAGE_PATHS = ['pages', ]
-PLUGIN_PATHS = ['pelican-plugins', '../pelican-plugins']
-PLUGINS = ['render_math', 'gravatar', 'sitemap', 'seo']
+PATH = "content"
+ARTICLE_PATHS = [
+    "posts",
+]
+PAGE_PATHS = [
+    "pages",
+]
+PLUGIN_PATHS = ["pelican-plugins", "../pelican-plugins"]
+PLUGINS = ["render_math", "gravatar", "sitemap", "seo"]
 
 MENUITEMS = (
-    ('About', '/pages/about.html'),
-    ('Résumé', '/pdf/cv.pdf'),
-    ('Portfolio', '/pages/portfolio.html'),
-    ('Subscribe', 'https://campaign.dataknowsall.com/subscribe'),
-    #('Humor', '/pages/humor.html'),
+    ("About", "/pages/about.html"),
+    ("Résumé", "/pdf/cv.pdf"),
+    ("Portfolio", "/pages/portfolio.html"),
+    ("Subscribe", "https://campaign.dataknowsall.com/subscribe"),
+    # ('Humor', '/pages/humor.html'),
     # Similar to the above, uncomment these to have a custom static homepage
     # ('Blog', '/blog_index.html'),
     # ('Blog Home', '/index.html'),
@@ -60,9 +64,9 @@ MENUITEMS = (
 
 # Social widget
 SOCIAL = (
-    ('twitter', 'https://twitter.com/broepke'),
-    ('github', 'https://github.com/broepke'),
-    ('linkedin', 'https://www.linkedin.com/in/broepke/')
+    ("twitter", "https://twitter.com/broepke"),
+    ("github", "https://github.com/broepke"),
+    ("linkedin", "https://www.linkedin.com/in/broepke/"),
 )
 
 # https://github.com/pelican-plugins/seo
@@ -74,24 +78,15 @@ SEO_ARTICLES_LIMIT = 50
 SEO_PAGES_LIMIT = 50
 
 # static paths will be copied without parsing their contents
-STATIC_PATHS = ['images', 'extra/robots.txt',
-                'extra/favicon.ico', 'pdf', 'other']
+STATIC_PATHS = ["images", "extra/robots.txt", "extra/favicon.ico", "pdf", "other"]
 EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
+    "extra/robots.txt": {"path": "robots.txt"},
+    "extra/favicon.ico": {"path": "favicon.ico"},
 }
 
 # https://github.com/pelican-plugins/sitemap
 SITEMAP = {
-    'format': 'xml',
-    'priorities': {
-        'articles': 0.8,
-        'indexes': 0.1,
-        'pages': 0.8
-    },
-    'changefreqs': {
-        'articles': 'weekly',
-        'indexes': 'weekly',
-        'pages': 'monthly'
-    }
+    "format": "xml",
+    "priorities": {"articles": 0.8, "indexes": 0.1, "pages": 0.8},
+    "changefreqs": {"articles": "weekly", "indexes": "weekly", "pages": "monthly"},
 }
