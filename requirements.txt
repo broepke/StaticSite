@@ -1,3 +1,4 @@
 pelican
 markdown
 boto3
+pelican-seo
