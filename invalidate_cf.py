@@ -2,7 +2,7 @@ import boto3
 import time
 
 # Create CloudFront client
-cf = boto3.client('cloudfront')
+cf = boto3.client("cloudfront")
 
 # Enter Original name
 
@@ -15,16 +15,11 @@ def create_invalidation():
     res = cf.create_invalidation(
         DistributionId=DISTRIBUTION_ID,
         InvalidationBatch={
-            'Paths': {
-                'Quantity': 1,
-                'Items': [
-                    '/*'
-                ]
-            },
-            'CallerReference': str(time.time()).replace(".", "")
-        }
+            "Paths": {"Quantity": 1, "Items": ["/*"]},
+            "CallerReference": str(time.time()).replace(".", ""),
+        },
     )
-    invalidation_id = res['Invalidation']['Id']
+    invalidation_id = res["Invalidation"]["Id"]
     return invalidation_id
 
 
